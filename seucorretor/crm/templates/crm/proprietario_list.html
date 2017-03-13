@@ -1,0 +1,88 @@
+{% extends 'core/base_core.html' %}
+
+{% block navbar_area %}
+
+  {% include "core/includes/navigation.html" with corretor=corretor  %}
+
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+    <section class="intro section-padding">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <div align="center">
+                <br>
+                <h1>Proprietários</h1>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="spaced-box-sm">
+              <form method='get' action="{% url 'crm.proprietario.lista' %}">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>
+                      <input type="text" class="form-control input-lg" name="palavras" placeholder="Digite uma palavra para filtro" id="id_palavras" maxlength="32">
+                    </p>
+                  </div>
+                                  
+                  <div class="col-xs-4">
+                    <p>
+                      <button type="submit" class="btn btn-warning btn-lg">
+                        <i class="fa fa-search"></i> Filtrar 
+                      </button>
+                    </p>
+                 </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="light-box spaced-box-sm">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Nome / Conjuge</th>
+                    <th>Fones</th>
+                    <th>emails</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for proprietario in proprietario_list %}
+                    <tr class="edit-popup">
+                      <td>
+                        <a href="{% url 'crm.proprietario.update' proprietario.id  %}">{{ proprietario.nome }}
+                        {% if proprietario.nome_conjuge %}
+                         / {{ proprietario.nome_conjuge }}
+                        {% endif %}</a></td>
+                      <td><small>
+                        <span class="badge">{{ proprietario.fone }}</span>
+                        {% if proprietario.fone2 %}<span class="badge">{{ proprietario.fone2 }}</span>{% endif%}
+                        {% if proprietario.fone3 %}<span class="badge">{{ proprietario.fone3 }}</span>{% endif%}
+                        {% if proprietario.fone4 %}<span class="badge">{{ proprietario.fone4 }}</span>{% endif%}
+                        </small>
+                      </td>
+                      <td><small>
+                        <strong>{{ proprietario.email }}</strong>
+                        {% if proprietario.email_alternativo %}
+                          <span>, {{ proprietario.email_alternativo }}</span></small>
+                        {% endif %}
+                      </td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

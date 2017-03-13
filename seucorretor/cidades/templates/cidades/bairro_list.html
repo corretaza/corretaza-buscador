@@ -1,0 +1,101 @@
+{% extends 'core/base_core.html' %}
+
+{% block navbar_area %}
+
+  {% include "core/includes/navigation.html" with corretor=corretor  %}
+
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+    <section class="intro section-padding">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <div align="center">
+                <br>
+                <h1>Bairros & Cidades</h1>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="spaced-box-sm">
+              <form method='get' action="{% url 'cidades.bairro.lista' %}">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>
+                      <input type="text" class="form-control input-lg" name="palavras" placeholder="Digite uma palavra para filtro" id="id_palavras" maxlength="32">
+                    </p>
+                  </div>
+                                  
+                  <div class="col-xs-4">
+                    <p>
+                      <button type="submit" class="btn btn-warning btn-lg">
+                        <i class="fa fa-search"></i> Filtrar 
+                      </button>
+                    </p>
+                 </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-12">
+            <div class="light-box spaced-box-sm">
+              <div class="row">
+                <div class="col-md-6">
+                </div>
+                <div class="col-md-6">
+                  <div class="edit-popup">
+                    <a href="{% url 'cidades.cidade.create' %}" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Inserir Cidade</a>
+
+                    <a href="{% url 'cidades.bairro.create' %}" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Inserir Bairro</a>
+
+                    <a href="{% url 'cidades.regiao.create' %}" class="btn btn-default btn-sm"><i class="fa fa-plus"></i> Inserir Região</a>
+                  </div>
+                </div>                
+              </div>
+
+              <table class="table table-hover table-condensed">
+                <thead>
+                  <tr>
+                    <th>Cidade</th>
+                    <th>Bairro</th>
+                    <th>Região</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {% regroup bairro_list by cidade as cidade_grupo %}
+                  
+                  {% for cidade in cidade_grupo %}
+                    <tr class="edit-popup">
+                      <td><strong><a href="{% url 'cidades.cidade.update' cidade.grouper.id %}">{{ cidade.grouper }}</a></strong></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    {% for bairro in cidade.list %}
+
+                      <tr class="edit-popup">
+                        <td></td>
+                        <td><a href="{% url 'cidades.bairro.update' bairro.id %}">{{ bairro }}</a></td>
+                        <td>{{ bairro.regiao }}</td>
+                      </tr>
+
+                    {% endfor %}
+
+                  {% endfor %}
+
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

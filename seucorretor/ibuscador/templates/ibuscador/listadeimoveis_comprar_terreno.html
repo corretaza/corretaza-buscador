@@ -1,0 +1,57 @@
+{% extends view.listadeimoveis_base_template %}
+
+{% load static %}
+{% load humanize %}
+
+{% load floppyforms %}
+
+{% block extrajs_top %}
+  {{ block.super }}
+  {{ form.media }}
+{% endblock %}
+
+  {% block filtro_tipoimovel %}
+  <div class="col-xs-2">
+  </div>
+  {% endblock filtro_tipoimovel %}
+
+  {% block filtro_tamanho %}
+  {% endblock filtro_tamanho %}
+
+  {% block filtro_outros %}
+    <div class="col-xs-12">
+      <div class="row">
+        <div class="col-xs-2"></div>
+        <div class="col-xs-2">
+          <div class="checkbox">
+            <label><input type="checkbox"> Em condomínio</label>
+          </div>
+        </div>
+      </div>
+    </div>
+  {% endblock filtro_outros %}
+
+  {% block campos_exibidos %}
+    <tr>
+      <td>Área</td>
+      <td>Valor m&sup2;</td>
+      {% if imovel.condominio %}
+        <td>Condomínio</td>
+      {% endif %}
+      <td>Dimensão terreno</td>
+    </tr>
+    <tr>
+      <td>{{ imovel.area_terreno }}m&sup2;</td>
+      <td>
+        <small>R$</small>{{ imovel.media_metro_quadrado|intcomma }}
+      </td>
+      {% if imovel.condominio %}
+        <td>
+          <small>R$</small>{{ imovel.valor_condominio|intcomma }}
+        </td>
+      {% endif %}
+      <td>
+        {{ imovel.dimensoes_terreno }}
+      </td>
+    </tr>
+  {% endblock campos_exibidos %}

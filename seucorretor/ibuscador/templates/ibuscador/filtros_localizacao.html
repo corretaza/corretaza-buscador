@@ -1,0 +1,18 @@
+{% load floppyforms %}
+
+  <div class="col-xs-1">
+    <center style="color: #777777;">
+      <p><i class="fa fa-map-marker" style="font-size: 40px;" ></i></p>
+      <h3>Localização</h3>
+    </center>
+  </div>
+
+  <div class="col-xs-11">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>
+          {% formrow form_filtro_valor.bairros %}
+        </p>
+      </div>
+    </div>
+  </div>

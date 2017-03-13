@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListingDataFeed xmlns="http://www.vivareal.com/schemas/1.0/VRSync"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.vivareal.com/schemas/1.0/VRSync  http://xml.vivareal.com/vrsync.xsd">
+    <Header>
+        <Provider>SJC Vale Imóveis</Provider>
+        <Email>contato@sjcvaleimoveis.com.br</Email>
+        <ContactName>Silvia</ContactName>
+        <Telephone>(12) 3939-9111 (12) 3322-6942</Telephone>
+        <PublishDate>{{data|date:"Y-m-d\TH:i:s"}}</PublishDate>
+        <Logo>http://{{ domain }}/static/themes/sydney/img/logo_sjc_sem_nome.png</Logo>
+    </Header>
+    <Listings>
+        {% for imovel in imoveis %}
+            <Listing>
+                <ListingID>{{imovel.imovel_ref}}</ListingID>
+                <Title><![CDATA[{{imovel.titulo_verbose}}]]></Title>
+                <TransactionType>{{imovel.tipo_transacao}}</TransactionType>
+                <Featured>false</Featured>
+                <ListDate>{{imovel.data_cadastro|date:"Y-m-d\TH:i:s"}}</ListDate>
+                <LastUpdateDate>{{imovel.atualizado_em|date:"Y-m-d\TH:i:s"}}</LastUpdateDate>
+                <DetailViewUrl>http://{{ domain }}/buscador/lista/imovel_referencia/{{ imovel.imovel_ref }}</DetailViewUrl>
+                <Media>
+                  {% for foto in imovel.fotos_list %}
+                    <Item medium="image" caption="Img{{foto.id}}" {% if foto.eh_principal %}primary="true"{% endif %}>http://{{ domain }}/media/{{foto.picture}}</Item>
+                  {% endfor %}
+                </Media>
+                <Details>
+                  <PropertyType>{{imovel.tipo_imovel_vivareal.title}}</PropertyType>
+                  {{imovel.tags|safe}}
+                  {% if imovel.areadelazer_imovel.all %}
+                    <Features>
+                      {% for lazer in imovel.areadelazer_imovel.all %}
+                        {% if lazer.tag_vivareal %}<Feature>{{lazer.tag_vivareal}}</Feature>{% endif %}
+                      {% endfor %}
+                    </Features>
+                  {% elif imovel.condominio and imovel.condominio.areadelazer_condominio.all %}
+                    <Features>
+                      {% for lazer in imovel.condominio.areadelazer_condominio.all %}
+                        {% if lazer.tag_vivareal %}<Feature>{{lazer.tag_vivareal}}</Feature>{% endif %}
+                      {% endfor %}
+                    </Features>
+                  {% endif %}
+                </Details>
+                <Location displayAddress="Street">
+                  <Country abbreviation="BR">Brasil</Country>
+                  <State abbreviation="SP">Sao Paulo</State>
+                  <City>{{imovel.cidade}}</City>
+                  <Zone>{{imovel.regiao}}</Zone>
+                  <Neighborhood>{{imovel.bairro.descricao}}</Neighborhood>
+                  <Address>{{imovel.logradouro}}</Address>
+                  <StreetNumber>{{imovel.numero}}</StreetNumber> 
+                  <PostalCode>{{imovel.cep}}</PostalCode>
+                  <Latitude></Latitude>
+                  <Longitude></Longitude>
+                </Location>
+                <ContactInfo>
+                  <Name>SJC Vale Imóveis</Name>
+                  <Email>contato@sjcvaleimoveis.com.br</Email>
+                  <Website>http://sjcvaleimoveis.com.br/</Website>
+                  <Logo>http://{{ domain }}/static/themes/sydney/img/logo_sjc_sem_nome.png</Logo>
+                  <Telephone>(12) 3939-9111 (12) 3322-6942</Telephone>
+                  <Location>
+                    <Country abbreviation="BR">Brasil</Country>
+                    <State abbreviation="SP">Sao Paulo</State>
+                    <City>São José dos Campos</City>
+                    <Neighborhood>Jardim Satélite</Neighborhood>
+                    <Address>Rua Francisca Maria de Jesus, 347 - Sala 212</Address> 
+                    <PostalCode>12230-083</PostalCode>
+                  </Location>
+                 </ContactInfo>
+            </Listing>
+        {% endfor %}
+    </Listings>
+</ListingDataFeed>

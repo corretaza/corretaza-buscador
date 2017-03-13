@@ -1,0 +1,49 @@
+{% extends 'signup/base_signup.html' %}
+
+{% load floppyforms %}
+{% load static %}
+
+{% block content %}
+
+    <section class="dark-bg" id="signup-login">
+
+        <div class="row">
+      
+            <div class="col-md-4"></div>
+
+            <div class="col-md-4">
+
+                <div class="light-box spaced-box">
+
+                    <div class="text-center">
+                        <img width="220" src="{% static 'themes/sydney/img/logo_sjc_sem_nome.png' %}">
+                        <h1>SJC Vale Imóveis</h1>                        
+                    </div>
+
+                    <form method="post" action="{% url 'url_login_auth' %}">{% csrf_token %}
+                        
+                        {{ form }}
+
+                        <div>
+                            <a class="close" href="#" data-dismiss="alert">×</a>
+                            <p><a href="{% url 'url_login_password_reset' %}">Esqueci </a> minha senha?</p>
+                        </div>
+                        
+                        <p>
+                            <button type="submit" class="btn btn-primary btn-lg">
+                              Login  <i class="fa fa-sign-in"></i> 
+                            </button>
+                        </p>
+                        <input type="hidden" name="next" value="{{ next }}" />
+
+                    </form>                    
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+{% endblock %}

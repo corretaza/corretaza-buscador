@@ -1,0 +1,113 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block toplogo %}
+<tr>
+  <td style="padding-top:3px;padding-bottom:15px" align="center">
+    <div style="color:#909192; font-weight:500;font-size:11px;letter-spacing: 0.5px; text-align:center;">SJC Vale Imóveis</div>
+  </td>
+</tr>
+{% endblock toplogo %}
+
+{% block message_logo %}
+  <a href="#" style="color:#6b7075" target="_blank">
+    <img class="rAc" src="http://sjcvaleimoveis.com.br/static/themes/default/img/stats.jpg" style="-webkit-user-select: none;
+    width: 240px" alt="{{ domain }}" title="SJC Vale Imóveis" border="0" width="220">
+  </a>
+{% endblock message_logo %}
+
+{% block message_content %}
+  <h3 style="line-height:125%;font-size:25px;font-weight:500;margin-top:0;margin-bottom:13px; color:#363c43;">{{ corretor.nome }}, segue seu trabalho do período:</h3>
+  <h4>{{ inicio|date:'d/m/Y' }} - {{ fim|date:'d/m/Y' }}</h4>
+  <div style="font-size:16px;margin-bottom:0;line-height:135%; color:#6b7075;">
+    <h3>Atendimentos</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>Novos:</td><td><strong> {{ interesse_novos }}</strong></td>
+        </tr>
+        <tr>
+          <td>Finalizados:</td><td><strong> {{ interesse_finalizados }}</strong></td>
+        </tr>
+        <tr>
+          <td>Com proposta:</td><td><strong> {{ interesse_com_proposta }}</strong></td>
+        </tr>
+        <tr>
+          <td>Com contrato:&nbsp;&nbsp;</td><td><strong> {{ interesse_com_contrato }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Mensagens</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>Enviadas:</td><td><strong> {{ msg_enviadas }}</strong></td>
+        </tr>
+        <tr>
+          <td>Resposta de clientes:</td><td><strong> {{ msg_com_resposta }}</strong></td>
+        </tr>
+        <tr>
+          <td>Atendimentos sem msg:&nbsp;&nbsp;</td><td><strong> {{ atendimentos_sem_msg }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Ref. de Imóveis</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>Novas Ref. para cliente:</td><td><strong> {{ novas_ref }}</strong></td>
+        </tr>
+        <tr>
+          <td>Agendamentos:</td><td><strong> {{ visitas_agendadas }}</strong></td>
+        </tr>
+        <tr>
+          <td>Visitas efetuadas:</td><td><strong> {{ visitas_efetuadas }}</strong></td>
+        </tr>
+        <tr>
+          <td>Atendimentos com 1 Ref:&nbsp;&nbsp;</td><td><strong> {{ atendimentos_com_1ref }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Atividades</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>Resp. de melhor horário:</td><td><strong> {{ melhor_horario }}</strong></td>
+        </tr>
+        <tr>
+          <td>Clicks em gostou:</td><td><strong> {{ clicou_gostou }}</strong></td>
+        </tr>
+        <tr>
+          <td>Clicks em NÃO gostou:</td><td><strong> {{ clicou_naogostou }}</strong></td>
+        </tr>
+        <tr>
+          <td>Quantidade acessos aos painéis:&nbsp;&nbsp;</td><td><strong> {{ page_views }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Captações</h3>
+    <table>
+      <tbody>
+        <tr>
+          <td>Novas captações:&nbsp;&nbsp;</td><td><strong> {{ novas_captacoes }}</strong></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+{% endblock message_content %}
+
+{% block message_actions %}
+{% endblock message_actions %}
+
+{% block footer_options %}
+{% endblock footer_options %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% block image_tracker %}
+{% endblock image_tracker %}

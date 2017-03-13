@@ -1,0 +1,127 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+<div class="popup-content">
+
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <h1><strong>Novo imóvel</strong></h1>
+        <h4><strong>Passo 1 de 5</strong></h4>
+        <div class="btn-group">
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-angle-right"></i><b> Proprietário</b>
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Tipo Imóvel
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Condomínio
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Endereço
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Cadastro
+          </a>
+        </div>
+        <p><br/></p>
+      </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
+
+          <div id="painel-busca">
+            <div class="alert alert-danger" role="alert" style="padding: 8px;">
+              <h3> <i class="fa fa-info-circle fa-2x"></i><strong style="font-size: 1.4em;"> Atenção</strong></h3>
+            </div>
+
+            <h1 style="font-size: 1.6em;">Antes de incluir um novo imóvel é necessário certificar que o mesmo <strong>NÃO</strong>  esta cadastrado.</h1>
+            <h1 style="font-size: 1.6em;">Faça uma busca por <strong>endereço, Cep</strong> e <strong>condomínio.</strong></h1>
+            <form target="_blank" method='get' action="{% url 'ibuscador.lista.imovel_por_palavra' %}">
+              <div class="row">
+                <div class="col-xs-6">
+                  <input type="search" class="form-control" name="palavras" id="id_palavras"  maxlength="64" placeholder="Rua, bairro, condomínio ou cep...">
+                </div>
+                <div class="col-xs-3">
+                  <button type="submit" class="btn btn-lg btn-warning">
+                    <i class="fa fa-search"></i> Buscar
+                  </button>
+                </div>
+              </div>
+            </form>
+            <br><br><br>
+            <a id="btn-continuar-cadastro" class="btn btn-success btn-lg" href="#">Pesquisei e preciso de um <strong>Novo Imóvel</strong></a>
+            <a href="{% url 'imovel.lista.todos' %}" class="btn btn-default" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+          </div>
+
+          <div id="painel-proprietario" style="display: none;">
+            <div class="bg-warning" style="padding: 8px;">
+              <p><i class="fa fa-info-circle"></i> Escolha um proprietário existente OU cadastre um <span class="edit-popup"><a href="{% url 'crm.proprietario.create' %}" class="btn btn-default" role="button" ><i class="fa fa-plus"></i> Novo proprietário</a></span></p>
+            </div>
+
+            <br>
+            <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+                <input type="hidden" name="id" id="id_id" value="">
+                
+                {{ form }}
+              
+                <br><br>
+                <div align="center">
+                  <button type="submit" class="btn btn-lg btn-success">
+                    <i class="fa fa-check"></i> Continuar
+                  </button>
+                  <a href="{% url 'imovel.lista.todos' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+                </div>
+
+            </form>
+          </div>
+
+
+            <div class="clearfix"><br><br><br><br></div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+
+{% block extrajs_bottom %}
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $proprietario = $('#id_proprietario').selectize({create: true});
+      proprietario  = $proprietario[0].selectize;
+      proprietario.focus();
+
+      $('#btn-continuar-cadastro').click(function() {
+        $('#painel-busca').toggle();
+        $('#painel-proprietario').toggle('fast');
+      });
+      
+
+    });
+  </script>
+
+{% endblock extrajs_bottom %}

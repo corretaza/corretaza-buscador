@@ -1,0 +1,77 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+    <form action="" method="POST">
+        <div class="popup-content">
+            <h1><i class="fa fa-envelope"></i> Contatar anunciante</h1>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 faleconosco-campos">
+                    <form method='post' enctype="multipart/form-data">
+                      {% csrf_token %}
+
+                      <div class="row">
+                        <div class="col-sm-6">
+                          {% formrow form.email %}
+                        </div>
+                        <div class="col-sm-6">
+                          {% formrow form.telefone %}
+                        </div>
+                      </div>
+
+                      <div class="row">
+                        <div class="col-sm-12">
+                          {% formrow form.nome %}
+                        </div>
+                        <div class="col-sm-12">
+                          {% formrow form.mensagem %}
+                        </div>
+                        <div class="col-sm-12">
+                          {% formrow form.receber_contato %}
+                        </div>
+                        {% formrow form.imovel_ref %}
+                        
+                      </div>
+                    
+                      <button type="submit" class="btn-destaque-lg">
+                        <i class="fa fa-envelope"></i> Enviar mensagem
+                      </button> 
+
+                      <p style="font-size: 1.2em;"><small>Ao enviar, você concorda com os Termos de Uso e Política de Privacidade</small></p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+{% block extrajs_bottom %}
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+        
+        $("label[for='id_imovel_ref']").hide();
+        $("label[for='id_email']").hide();
+        $("label[for='id_telefone']").hide();
+        $("label[for='id_nome']").hide();
+        $("label[for='id_mensagem']").hide();
+        $(".faleconosco-campos input").removeClass("input-lg");
+        $( '#id_email' ).focus();
+        if ($("#id_email").val().length > 0) {
+          $( '#id_telefone' ).focus();
+        }
+
+      });
+  </script>
+{% endblock extrajs_bottom %} 

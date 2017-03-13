@@ -1,0 +1,30 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block css%}{% endblock css%}
+
+{% block body %}
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+    <tr>
+      <td>
+        <center>
+        <img alt="{{ domain }}" src="http://{{ domain }}/static/themes/sydney/img/logo_sjc_sem_nome.png" style="display:block" width="180" tabindex="0">
+        </center>
+      </td>      
+    </tr>
+    <tr>
+      <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
+        <h2 style="font-size:20px;font-weight:normal;color:#4d4d4d"><span style="color:#4d4d4d">{{ nome_corretor }},</span></h2>
+        <h1 style="font-size:26px;letter-spacing:-1px;color:#000000">Novo contato esperando atendimento:</h1>
+        <h2 style="font-size:20px;font-weight:normal;color:#4d4d4d"><span style="color:#4d4d4d">{{ nome }}</span></h2>
+        <h2 style="font-size:20px;font-weight:normal;color:#4d4d4d;line-height:24px;font-size:18px">
+          <span style="color:#4d4d4d">Acesse seu painel para mais informações:</span>
+          <br>
+          <a href="http://{{ domain }}{{ painel_url }}">
+          http://{{ domain }}{{ painel_url }}</a>
+        </h2>
+      </td>
+    </tr>      
+    </tbody>
+</table>
+{% endblock body %}

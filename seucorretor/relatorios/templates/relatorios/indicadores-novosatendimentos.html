@@ -1,0 +1,120 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load chartkick %}
+
+{% block extrajs_top %}
+
+  {{ block.super }}
+
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="{% static 'chartkick/chartkick.js' %}"></script>
+
+{% endblock %}   
+
+{% block navbar_area %}
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+  <section class="dark-bg section-padding contact-wrap">
+    <div class="container">
+
+      <div class="row">
+        <p class="text-right">
+          <a href="{% url 'core.userpage' %}#atendimentos" class="btn btn-sm btn-success"><i class="fa fa-chevron-left"></i> Voltar</a>
+        </p>
+        <h1>Indicadores</h1>
+      </div>
+
+      <div class="row">
+
+        <div class="col-sm-12">
+          <h1><strong>Novos atendimentos: {{ atendimentos_count }} </strong></h1>
+          <h3>Contatos via site: <strong>{{ contatos_via_site }}</strong></h3>
+          <h3>Contatos via site (clientes existentes): <strong>{{ contatos_via_site_cliente_voltou }}</strong></h3>
+        </div>
+
+        <div class="col-sm-8">
+          <h3>Por tipo de interesse</h3>
+          {% pie_chart atendimentos_tipo_interesse %}
+        </div>
+        <div class="col-sm-4">
+          <h3>&nbsp;</h3>
+          <table class="table table-condensed">
+            {% for item, value in atendimentos_tipo_interesse.items %}
+              <tr><td>{{ item}}</td><td>{{ value }}</td></tr>
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+
+
+        <div class="col-sm-8">
+          <h3>Por tipo de imóvel</h3>
+          {% pie_chart atendimentos_tipo_imovel %}
+        </div>
+        <div class="col-sm-4">
+          <h3>&nbsp;</h3>
+          <table class="table table-condensed">
+            {% for item, value in atendimentos_tipo_imovel.items %}
+              <tr><td>{{ item}}</td><td>{{ value }}</td></tr>
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+
+
+        <div class="col-sm-8">
+          <h3>Vindo via</h3>
+          {% pie_chart atendimentos_criado_via %}
+        </div>
+        <div class="col-sm-4">
+          <h3>&nbsp;</h3>
+          <table class="table table-condensed">
+            {% for item, value in atendimentos_criado_via.items %}
+              <tr><td>{{ item}}</td><td>{{ value }}</td></tr>
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+
+        <div class="col-sm-8">
+          <h3>Por regiões</h3>
+          {% pie_chart atendimentos_por_regioes %}
+        </div>
+        <div class="col-sm-4">
+          <h3>&nbsp;</h3>
+          <table class="table table-condensed">
+            {% for item, value in atendimentos_por_regioes.items %}
+              <tr><td>{{ item}}</td><td>{{ value }}</td></tr>
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+
+        <div class="col-sm-8">
+          <h3>Por bairros</h3>
+          {% column_chart atendimentos_por_bairros %}
+          <h3>Atendimento sem informação de bairro: <strong class="text-danger">{{ atendimentos_sem_bairro }}</strong></h3>
+        </div>
+        <div class="col-sm-4">
+          <h3>&nbsp;</h3>
+          <table class="table table-condensed">
+            {% for item, value in atendimentos_por_bairros.items %}
+              <tr><td>{{ item}}</td><td>{{ value }}</td></tr>
+            {% endfor %}
+          </table>
+          <br>
+        </div>
+
+        <div class="col-sm-8">
+          <h3><strong>Em breve</strong></h3>
+          <h3>- Por faixa de valores</h3>
+        </div>
+
+    </div>
+  </section>      
+
+{% endblock content %}

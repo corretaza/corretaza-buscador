@@ -1,0 +1,140 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+<div class="popup-content">
+
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <h1><strong>Confirme o proprietário e selecione o tipo do imóvel</strong></h1>
+        <h4><strong>Passo 2 de 5</strong></h4>
+        <div class="btn-group">
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-check"></i><b> Proprietário</b>
+          </a>
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-angle-right"></i><b> Tipo Imóvel</b>
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Condomínio
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Endereço
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Cadastro
+          </a>
+        </div>
+        <p><br/></p>
+      </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
+
+          <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+              <input type="hidden" name="id" id="id_id" value="">
+
+              <div class="bg-warning" style="padding: 16px;">
+
+              <div class="row">
+                <div class="col-sm-8">
+
+                  {% formrow form.proprietario %}
+
+                  <p>Email: <strong>{{ proprietario.email }}</strong></p>
+                  <p>Fones: <strong>{{ proprietario.fone }} {{ proprietario.fone2 }}  {{ proprietario.fone3 }}</strong>
+                  WhatsApp: <strong>{{ proprietario.whatsapp }}</strong></p>
+                  <p>Melhor forma de contato: <strong>{{ proprietario.melhor_forma_contato }}</strong></p>
+                </div>
+
+                <div class="col-sm-4">
+                  <br/>
+                  <div class="icon-edit edit-popup">
+                    <a href="{% url 'crm.proprietario.update' proprietario.id %}"><i class="fa fa-pencil fa-2x"></i></a>
+                  </div>
+                </div>
+
+              </div>
+
+                
+              {% if imovel_list %}
+              <h3><i class="fa fa-exclamation-circle"></i> Imóveis desde mesmo proprietário</h3>
+              {% endif %}
+              <p>
+                <table class="table table-condensed table-hover">
+                  <tbody>
+                  {% for imovel in imovel_list %}
+                  <tr>
+                    <td>
+                      <a target="_new" href="{{ imovel.get_absolute_url }}"><span>Ref. <i class="fa fa-home"></i> {{ imovel.imovel_ref }}</span></a>
+                    </td>
+                    <td>{{ imovel.status }}</td>
+                    <td>{{ imovel.titulo }}</td>
+                    <td>{{ imovel.logradouro }} {{ imovel.complemento }}</td>
+                  </tr>
+                  {% empty %}
+                  <tr class="bg-warning">
+                    <td><h3><i class="fa fa-exclamation-circle"></i> Este será o primeiro imóvel deste proprietário</h3></td>
+                  </tr>
+                  {% endfor %}
+                  </tbody>
+                </table>
+              </p>
+              </div>
+
+            {% formrow form.eh_comercial %}
+            {% formrow form.tipo_imovel %}
+            {% formrow form.valor_venda %}
+            {% formrow form.cidade %}
+          
+            <div align="center">
+              <button type="submit" class="btn btn-lg btn-success">
+                <i class="fa fa-check"></i> Continuar
+              </button>
+              <a href="{% url 'imovel.lista.todos' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+            </div>
+
+          </form> 
+
+          <div class="clearfix"><br><br><br><br></div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+{% block extrajs_bottom %}
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $proprietario = $('#id_proprietario').selectize({create: true});
+      proprietario  = $proprietario[0].selectize;
+      proprietario.lock();
+
+      $('#id_tipo_imovel').focus();
+
+    });
+  </script>
+
+{% endblock extrajs_bottom %}

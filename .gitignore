@@ -1,0 +1,16 @@
+.idea
+*.pyc
+*.swp
+.config
+.pip
+.cache
+.coverage
+seucorretor/db.sqlite3
+components
+assets/
+node_modules/
+media/
+src/
+htmlcov/
+.ipython/
+

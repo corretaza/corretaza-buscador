@@ -1,0 +1,88 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% block navbar_area %}{% endblock navbar_area %}
+
+{% block content %}
+
+  <section class="dark-bg section-padding contact-wrap">
+    <div class="container">
+
+      <div class="row">
+        <form method='get' action="{% url 'relatorios.mensal.tempos' %}" enctype="multipart/form-data">{% csrf_token %}
+          <div class="col-md-1">
+            <span>Período: </span>
+          </div>
+          <div class="col-md-2">
+            <select class="form-control input-lg" name="ano">
+              {% for option in anos %}
+                <option value="{{ option.0 }}"{% if option.0 == ano_value %} selected="selected"{% endif %}>{{ option.1 }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control input-lg" name="mes">
+              {% for option in meses %}
+                <option value="{{ option.0 }}"{% if option.0 == mes_value %} selected="selected"{% endif %}>{{ option.1 }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-3">
+            <select class="form-control input-lg" name="corretor">
+              {% for option in corretor_list %}
+                <option value="{{ option.id }}"{% ifequal option.id corretor_value %} selected="selected"{% endifequal %}>{{ option.nome }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="col-md-2">
+            <input type="submit" class="btn btn-lg btn-success" value="Exibir" />
+          </div>
+
+        </form>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <h1>{{ interesse_list|length }}</h1>
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>Data</th>
+                <th>Atendimento</th>
+                <th>Tempo p/ cadastrar</th>
+                <th>Envio p/ corretor</th>
+                <th>1a. mensagem</th>
+                <th>Cliente Leu</th>
+                <th>Tem Resp.</th>
+              </tr>
+            </thead>
+            {% for interesse in interesse_list %}
+              <tr>
+                <td><small>{{ interesse.data_envio_contato|date:"D d/m H:i" }}</small></td>
+                <td>{{ interesse.tipo_interesse }} <span class="badge"> {{ interesse.status_verbose }}</span><br/>
+                {{ interesse.cliente }}
+                </td>
+                <td>+{{ interesse.tempo_cadastro }}
+                </td>
+                <td>
+                  {% if interesse.primeira_mensagem_contato %}
+                    +{{ interesse.tempo_envio_para_corretor }}
+                  {% endif %}                
+                </td>
+                <td></td>
+                <td>{% if interesse.leu_email %}<i class="fa fa-check-circle"></i>{% endif %}</td>
+                <td>{% if interesse.respondido %}<i class="fa fa-check-circle"></i>{% endif %}
+              </tr>
+            {% endfor %}
+          </table>
+        </div>
+
+      </div>
+
+    </div>
+  </section>	    
+
+{% endblock content %}

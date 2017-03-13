@@ -1,0 +1,111 @@
+{% extends 'core/base_core.html' %}
+
+{% block navbar_area %}
+
+  {% include "core/includes/navigation.html" with corretor=corretor  %}
+
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+    <section class="intro section-padding">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <div align="center">
+                <br>
+                <h1>Condomínios</h1>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="spaced-box-sm">
+              <form method='get' action="{% url 'imovel.condominio.lista' %}">
+                <div class="row">
+                  <div class="col-xs-8">
+                    <p>
+                      <input type="text" class="form-control input-lg" name="palavras" placeholder="Digite uma palavra para filtro" id="id_palavras" maxlength="64" value="{{ palavras }}">
+                    </p>
+                  </div>
+                                  
+                  <div class="col-xs-4">
+                    <p>
+                      <button type="submit" class="btn btn-warning btn-lg">
+                        <i class="fa fa-search"></i> Filtrar 
+                      </button>
+                    </p>
+                 </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="light-box spaced-box-sm">
+              <p class="edit-popup">
+                <a href="{% url 'ibuscador.condominio.create' %}" class="btn btn-warning">Novo Condomínio</a>
+              </p>
+
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Condomínio</th>
+                    <th>Bairro/Cidade</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for condominio in condominio_list %}
+                    <tr class="edit-popup">
+                      <td>
+                        <a href="{% url 'ibuscador.condominio.update' condominio.id  %}">{{ condominio.nome }}</a><br>
+                        <small style="color: gray">{{ condominio.construtora }} ({{ condominio.ano_construcao|default:"Sem ano construção" }})</small>
+                      </td>
+                      <td><small>{{ condominio.logradouro }}<br> {{ condominio.bairro }}<br>
+                          {{ condominio.cidade }}</small>
+                      </td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+          
+          <div class="col-md-4">
+            <div class="light-box spaced-box-sm">
+              <h3><i class="fa fa-paw"></i> Histórico de Alterações</h3>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Data</th>
+                    <th>Condomínio</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for historico in ultimas_alteracoes %}
+                    <tr class="edit-popup">
+                      <td><small>{{ historico.atualizado_em|date:"d b y G:i" }}</small></td>
+                      <td>
+                        <small>
+                          <a href="{% url 'ibuscador.condominio.update' historico.id  %}">{{ historico.nome }}</a>
+                        </small>
+                      </td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

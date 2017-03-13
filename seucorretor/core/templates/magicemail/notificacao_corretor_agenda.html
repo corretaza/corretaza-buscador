@@ -1,0 +1,42 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block css%}{% endblock css%}
+
+{% block body %}
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+    <tr>
+      <td>
+        <center>
+        <img alt="{{ domain }}" src="http://{{ domain }}/static/themes/sydney/img/logo_sjc_sem_nome.png" style="display:block" width="180" tabindex="0">
+        </center>
+      </td>      
+    </tr>
+    <tr>
+      <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
+        <h2>{{ corretor }},</h2>
+        <h2 style="font-size:21px;letter-spacing:-1px;color:#4d4d4d">{{ cliente.nome }} informou preferências para agendar visitas:</h2>
+        {% if cliente.pode_fazer_visita_na_seg %}
+          <h3>Segunda</h3>
+        {% endif %}
+        {% if cliente.pode_fazer_visita_na_ter %}
+          <h3>Terça</h3>
+        {% endif %}
+        {% if cliente.pode_fazer_visita_na_qua %}
+          <h3>Quarta</h3>
+        {% endif %}
+        {% if cliente.pode_fazer_visita_na_qui %}
+          <h3>Quinta</h3>
+        {% endif %}
+        {% if cliente.pode_fazer_visita_na_sex %}
+          <h3>Sexta</h3>
+        {% endif %}
+        {% if cliente.pode_fazer_visita_no_sab %}
+          <h3>Sábado</h3>
+        {% endif %}
+        <h3>{{ cliente.melhor_hora_para_visita }}</h3>
+      </td>
+    </tr>      
+    </tbody>
+</table>
+{% endblock body %}

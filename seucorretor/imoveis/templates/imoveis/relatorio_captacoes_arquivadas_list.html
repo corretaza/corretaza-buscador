@@ -1,0 +1,163 @@
+{% extends 'ibuscador/base_ibuscador.html' %}
+
+{% load static %}
+
+{% block navbar_area %}
+{% endblock navbar_area %}
+
+{% block header_area %}
+{% endblock header_area %}
+
+{% block content %}
+
+  <div class="container">
+
+    <div class="row">
+
+      <div class="col-md-1">
+      </div>
+
+      <div class="col-md-10">
+
+        <br><br><br>
+        <h1>Relatório de captações arquivadas</h1>
+        <br>
+        <h3>Filtrar por</h3>
+        <p>
+          <button id="show_hide_comprar" type="button" class="btn btn-default btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar apenas para venda">Para venda
+          </button>
+
+          <button id="show_hide_alugar" type="button" class="btn btn-default btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar apenas para locação">Para alugar
+          </button>
+
+          <button id="show_hide_casa" type="button" class="btn btn-default btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar apenas casas">Casa
+          </button>
+
+          <button id="show_hide_apartamento" type="button" class="btn btn-default btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar apenas apartamentos">Apartamento
+          </button>
+
+          <button id="show_hide_outro" type="button" class="btn btn-default btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar apenas outros tipos">Outro
+          </button>
+
+        </p>
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Última atualização</td>
+              <td>Tipo Imóvel</td>
+              <td>Localização</td>
+              <td>Proprietário</td>
+              <td>Ref.</td>
+              <td>Captado por</td>
+              <td></td>
+            </tr>
+
+            {% for imovel in captacoes_list %}
+              <tr class="{% if imovel.eh_para_venda %}VENDA{% endif %} {% if imovel.eh_para_locacao %}LOCACAO{% endif %} {{ imovel.tipo_imovel }}">
+                <td><small>{{ imovel.atualizado_em|date:"d b Y" }}</small></td>
+                <td>{{ imovel.tipo_imovel_verbose }}<br>
+                  <span class="badge">{% if imovel.eh_para_venda %}VENDA{% endif %}</span>
+                  <span class="badge">{% if imovel.eh_para_locacao %}LOCACAO{% endif %}</span>
+                </td>
+                <td>{{ imovel.bairro }} <br> {{ imovel.cidade }}</td>
+                <td>{{ imovel.proprietario.nome }}</td>
+                <td><i class="fa fa-home"></i> {{ imovel.imovel_ref }}</td>
+                <td><small>
+                  {% for corretor in imovel.corretores.all %}
+                    {{ corretor }}, 
+                  {% endfor %}</small>
+                </td>
+                <td><a target="_new" class="btn btn-default" href="{% url 'imoveis.imovel.update' imovel.id %}">Detalhes</a></td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+
+      </div>
+
+
+                  
+    </div>
+  </div>
+
+
+{% endblock content %}
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+{% block extrajs_bottom %}
+  <script type="text/javascript">
+
+    $(document).ready(function(){
+
+      //filtrar comprar e alugar
+      $( "#show_hide_comprar" ).click(function() {
+        $( "#show_hide_comprar" ).toggleClass( "btn-primary" );
+        if ( $( "#show_hide_comprar" ).hasClass("btn-primary") ) {
+          $( ".VENDA" ).show();
+        } else {
+          $( ".VENDA" ).hide();
+        }
+      });
+
+      $( "#show_hide_alugar" ).click(function() {
+        $( "#show_hide_alugar" ).toggleClass( "btn-primary" );
+        if ( $( "#show_hide_alugar" ).hasClass("btn-primary") ) {
+          $( ".LOCACAO" ).show();
+        } else {
+          $( ".LOCACAO" ).hide();
+        }
+      });
+
+      $( "#show_hide_casa" ).click(function() {
+        $( "#show_hide_casa" ).toggleClass( "btn-primary" );
+
+        if ( $( "#show_hide_casa" ).hasClass( "btn-primary" ) ) {
+          $( ".casa" ).show();
+        } else {
+          $( ".casa" ).hide();
+        }
+      });
+
+      $( "#show_hide_apartamento" ).click(function() {
+        $( "#show_hide_apartamento" ).toggleClass( "btn-primary" );
+
+        if ( $( "#show_hide_apartamento" ).hasClass( "btn-primary" ) ) {
+          $( ".apartamento" ).show();
+        } else {
+          $( ".apartamento" ).hide();
+        }
+      });
+
+      $( "#show_hide_outro" ).click(function() {
+        $( "#show_hide_outro" ).toggleClass( "btn-primary" );
+
+        if ( $( "#show_hide_outro" ).hasClass( "btn-primary" ) ) {
+          $( ".terreno" ).show();
+          $( ".areaurbana" ).show();
+          $( ".chacara" ).show();
+          $( ".loja" ).show();
+          $( ".sala" ).show();
+          $( ".galpao" ).show();
+          $( ".edificio" ).show();
+        } else {
+          $( ".terreno" ).hide();
+          $( ".areaurbana" ).hide();
+          $( ".chacara" ).hide();
+          $( ".loja" ).hide();
+          $( ".sala" ).hide();
+          $( ".galpao" ).hide();
+          $( ".edificio" ).hide();
+
+        }
+      });
+
+      $('[data-toggle="tooltip"]').tooltip();
+
+      //$( "#show_hide_comprar" ).click();
+
+    });
+  </script>
+{% endblock extrajs_bottom %} 

@@ -1,0 +1,9 @@
+{
+  "name": "seucorretor",
+  "version": "0.0.1",
+  "description": "frontend dependencies",
+  "repository": "seucorretor",
+  "dependencies": {
+    "phantomjs": "^2.1.7"
+  }
+}

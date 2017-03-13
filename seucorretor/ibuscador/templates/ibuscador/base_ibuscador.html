@@ -1,0 +1,65 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+
+{% block topheader_area %}
+
+  {% if user.is_authenticated %}
+
+    {% include "core/includes/navigation.html" with corretor=corretor  %}
+
+  {% else %}
+
+    {% include "core/includes/menu_hamburguer.html" %}
+
+  {% endif %}
+
+{% endblock topheader_area %}
+
+
+{% block navbar_area %}
+
+  <section class="content-intro content-padding" id="content-intro" style="padding: 40px;">
+    <div class="container container-padding">
+      <div class="row">
+
+        <div class="col-md-3">
+          <div>
+              <a data-toggle="tooltip" data-placement="right" data-original-title="Início" href="{% url 'ibuscador.home' %}">
+                <img width="120" src="{% static 'themes/sydney/img/logo_sjc_sem_nome.png' %}">
+                <h3><strong>SJC Vale Imóveis</strong></h3>
+                <p>CRECI: <strong>26474-J</strong></p>
+              </a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <center>
+            <h1 style="font-size: 17px; letter-spacing: 1.5px;"><i class="fa fa-map-marker"></i> LOCALIZAÇÃO</h1>
+            <p style="line-height: 10px;">Rua Francisca Maria de Jesus, 347 - Sala 212</p>
+            <p style="line-height: 10px;">Ed. Atrium Offices - Jd. Satélite</p>
+            <p style="line-height: 10px;">São José dos Campos/SP</p>            
+          </center>
+        </div>
+
+        <div class="col-md-3">
+          <center>
+            <h1 style="font-size: 17px; letter-spacing: 1.5px;"><i class="fa fa-mobile"></i> CONTATO</h1>
+            <p style="line-height: 10px;">(12) 3939 9111</p>
+            <p style="line-height: 10px;">(12) 3322 6942</p>
+            <p style="line-height: 10px;">contato@sjcvaleimoveis.com.br</p>            
+          </center>
+        </div>
+
+        <div class="col-md-2">
+          <center class="edit-popup">
+            <h1 style="font-size: 17px; letter-spacing: 1.5px;"><i class="fa fa-envelope"></i></h1>
+            <h1 style="font-size: 17px; letter-spacing: 1.5px;">
+              <a id="open-faleconosco" href="{% url 'ibuscador.contatar.anunciante.passo1' 0 %}">FALE CONOSCO</a>
+            </h1>
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock navbar_area %}

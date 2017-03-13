@@ -1,0 +1,173 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        {% block css %}
+		<link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
+
+		<!--
+		<link href="{% static 'themes/default/css/normalize.css' %}" rel="stylesheet">
+		<link href="{% static 'themes/default/css/demo.css' %}" rel="stylesheet">
+		<link href="{% static 'themes/default/css/component.css' %}" rel="stylesheet">
+		<link href="{% static 'themes/default/css/cs-select.css' %}" rel="stylesheet">
+		<link href="{% static 'themes/default/css/cs-skin-boxes.css' %}" rel="stylesheet">
+		<link href="{% static 'themes/default/css/normalize.css' %}" rel="stylesheet">
+		-->
+
+    	<!-- Custom styles for this template -->
+        <link href="{% static 'themes/default/css/base.css' %}" rel="stylesheet" media="screen">
+
+
+		{% endblock css %}
+
+		<!-- CHILD PAGES COULD ADD EXTRA JAVASCRIPT -->
+		{% block extracss %}
+		{% endblock %}		
+
+		<script src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+
+		<!-- CHILD PAGES COULD ADD EXTRA JAVASCRIPT -->
+		{% block extrajs_top %}
+			<!-- # django-floppyforms -->
+			{{ form.media }}
+			<script src="{% static 'themes/default/js/modernizr.custom.js' %}"></script>
+
+		{% endblock %}
+
+        <title>{% block title %}Seu Corretor{% endblock %}</title>
+    </head>
+	<body>
+
+		{% block slider_area %}
+		{% endblock %}
+
+		
+		<!-- 
+		****** HERE MUST GO ALL MENU RELATED HTML
+		=== NAVBAR ===
+		-->
+		{% block navbar_area %}
+			<div class="header">
+				<div class="row">
+					<div class="col-lg-7">
+
+			        {% if user.is_authenticated %}
+
+						<!-- 
+						****** HERE MUST GO THE COMPANY PART - COMMON PART 
+						=== MAIN CONTENT === 
+						-->						        
+						{% block content_company %}
+
+						{% endblock %}
+						
+			        {% else %}
+			        <h3 class="text-muted">Seu Corretor</h3>
+			        {% endif %}
+			        </div>
+					
+					<div class="col-lg-5">
+				        <ul class="nav nav-pills pull-right">
+							{% block navbar %}
+
+							{% endblock %}
+				        </ul>
+					</div>
+				</div>
+
+		        <!--<img src="" class="logo">-->
+			</div>
+		{% endblock %}
+
+		<!-- 
+		****** HERE MUST GO EXTRA CONTENT ABOVE THE MENU (HEADER)
+		=== HEADER ===
+		-->
+		{% block header_area %}
+				{% block header %}
+				{% endblock %}
+		{% endblock %}
+
+		<!-- 
+		****** HERE MUST GO THE BODY - COMMON PART 
+		=== MAIN CONTENT === 
+		-->
+		{% block content_area %}
+			<div class="container">
+			<!-- 
+			****** HERE MUST GO THE BODY - SPECIFIC PART 
+			       THIS PART WILL BE CODED OVER THE OTHER HTML PAGES THAT WILL EXTEND THIS BASE.HTML
+			=== MAIN CONTENT === 
+			-->
+			{% block content %}
+
+			{% endblock %}
+			</div>
+
+		{% endblock %}
+
+		<!-- 
+		=== EXTRA CONTENT === 
+		-->
+		{% block extra_content_area %}
+		{% endblock %}
+
+		<!-- 
+		****** HERE MUST GO THE FOOTER - COMMON PART 
+		=== FOOTER === 
+		-->
+		{% block footer_area %}
+	    <footer id="footer-area">
+
+				<!-- 
+				****** HERE MUST GO THE FOOTER - PART I
+				=== FOOTER === 
+				-->
+            	{% block footer_top %}
+                {% endblock %}	
+
+				<!-- 
+				****** HERE MUST GO THE FOOTER - PART I I
+				=== FOOTER === 
+				-->
+				{% block footer %}
+				{% endblock %}
+
+				<div class="footer">
+					<br/><br/>
+					<p><abbr title="Page:{% block footer_page_name %}None{% endblock %}">HTML</abbr></p>
+					<p class="footerBottom">Copyright © 2014 - 321 Induct</p>
+					<p><strong>Policies:</strong>&nbsp;&nbsp;
+						<a href="">Privacy Policy</a>
+						&nbsp;&nbsp; - &nbsp;&nbsp; 
+						<a href="">Terms of Use</a>
+					</p>
+					<p class="footerBottom">Magically Created by Djenie.</p>
+					<p>
+					</p>
+				</div>					
+
+	    </footer>
+
+	    {% endblock %}
+
+		
+		
+
+		<script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+		<!--
+		<script src="{% static 'themes/default/js/classie.js' %}"></script>
+		<script src="{% static 'themes/default/js/selectFx.js' %}"></script>
+		<script src="{% static 'themes/default/js/fullscreenForm.js' %}"></script>		
+		-->
+
+		<!-- CHILD PAGES COULD ADD EXTRA JAVASCRIPT -->
+		{% block extrajs_bottom %}
+		{% endblock %}
+
+	</body>
+</html>

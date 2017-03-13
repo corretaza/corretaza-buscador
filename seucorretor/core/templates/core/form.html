@@ -1,0 +1,69 @@
+{% extends 'core/base_core.html' %}
+
+{% block footer_page_name %}#2.1 - Landing Page [core/home.html]{% endblock %}
+
+{% block content %}
+
+			<div class="fs-form-wrap" id="fs-form-wrap">
+				<div class="fs-title">
+					<h3>Iremos te ajudar a encontrar o imóvel ideal para você!</h3>
+					<h1>Porem, precisamos de algumas informações...</h1>
+				</div>
+				<form id="myform" class="fs-form fs-form-full" autocomplete="off">
+					<ol class="fs-fields">
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q1">Qual seu nome?</label>
+							<input class="fs-anim-lower" id="q1" name="q1" type="text" placeholder="Roberto" required/>
+						</li>
+
+						<li data-input-trigger>
+							<label class="fs-field-label fs-anim-upper" for="q3" data-info="This will help us know what kind of service you need">O que você precisa?</label>
+							<div class="fs-radio-group fs-radio-custom clearfix fs-anim-lower">
+								<span><input id="q3b" name="q3" type="radio" value="conversion"/><label for="q3b" class="radio-conversion">Alugar</label></span>
+								<span><input id="q3c" name="q3" type="radio" value="social"/><label for="q3c" class="radio-social">Comprar</label></span>
+							</div>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q4">Descreva seu imóvel ideal</label>
+							<textarea class="fs-anim-lower" id="q4" name="q4" placeholder="Número de quartos, ou um bairro desejado..."></textarea>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q5">Quanto você deseja gastar?</label>
+							<input class="fs-mark fs-anim-lower" id="q5" name="q5" type="number" placeholder="1000" step="100" min="600"/>
+						</li>
+						<li>
+							<label class="fs-field-label fs-anim-upper" for="q2" data-info="Não se preocupe, não iremos enviar spam, nós prometemos...">Qual seu email?</label>
+							<input class="fs-anim-lower" id="q2" name="q2" type="email" placeholder="seuemail@provedor.com.br" required/>
+						</li>
+					</ol><!-- /fs-fields -->
+					<button class="fs-submit" type="submit">Enviar</button>
+				</form><!-- /fs-form -->
+			</div><!-- /fs-form-wrap -->
+
+{% endblock %}
+
+
+
+{% block extrajs_bottom %}
+	<script>
+		(function() {
+			var formWrap = document.getElementById( 'fs-form-wrap' );
+
+			[].slice.call( document.querySelectorAll( 'select.cs-select' ) ).forEach( function(el) {	
+				new SelectFx( el, {
+					stickyPlaceholder: false,
+					onChange: function(val){
+						document.querySelector('span.cs-placeholder').style.backgroundColor = val;
+					}
+				});
+			} );
+
+			new FForm( formWrap, {
+				onReview : function() {
+					classie.add( document.body, 'overview' ); // for demo purposes only
+				}
+			} );
+		})();
+	</script>
+{% endblock %}
+

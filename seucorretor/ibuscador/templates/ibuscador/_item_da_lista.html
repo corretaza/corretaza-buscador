@@ -1,0 +1,127 @@
+{% load static %}
+{% load humanize %}
+
+{% load cropping %}
+{% load floppyforms %}
+{% load permission_tags %}
+
+            <tr class="{{ imovel.add_tipo_imovel_class }} grid-item">
+              <td>
+                <a href="{{ imovel.get_absolute_url }}">
+                  <figure class="imagem-caption">
+                    {% if imovel.foto_principal %}
+                      <img data-toggle="tooltip" data-placement="right" data-original-title="Clique para mais informações" width="320" src="{% cropped_thumbnail imovel.foto_principal 'picture_cropping' scale=0.5 %}">
+                      
+                    {% else %}
+                      <img data-toggle="tooltip" data-placement="right" data-original-title="Clique para mais informações" height="240" src="{% static 'themes/sydney/img/imovel_sem_foto.jpg' %}" alt="Sem Foto, clique para detalhes">
+                    {% endif %}
+                    {% if tipo_interesse == 'comprar' %}
+                      <figcaption style="width: 320px;">R$
+                        {{ imovel.valor_venda|intcomma }}
+                      </figcaption>
+                    {% elif tipo_interesse == 'alugar' %}
+                      <figcaption style="width: 320px;">R$
+                        {{ imovel.valor_locacao_total|intcomma }}
+                        {% if imovel.valor_condominio %} Com condomínio {% endif %}
+                      </figcaption>
+                    {% endif %}
+                  </figure>
+                </a>
+              </td>
+              <td>
+                <a href="{{ imovel.get_absolute_url }}">
+                  <h1>
+                    <span class="badge pull-right" style="font-size: 0.6em;">Ref: {{ imovel.imovel_ref }}</span>   
+                    <span>{{ imovel.titulo }}
+                    {% if imovel.esta_arquivado %}
+                      <span class="badge" style="font-size: 0.8em;">Não disponível</span>
+                    {% endif %}
+                  </h1>
+                </a>
+                {% if imovel.eh_para_venda %}
+                <h1><small>Venda:</small> R$<strong>{{ imovel.valor_venda|intcomma }}</strong></h1>
+                {% endif %}
+                {% if imovel.eh_para_locacao %}
+                  <h1><small>Locação:</small> R$<strong>{{ imovel.valor_locacao|intcomma }}</strong>
+                  </h1>
+                {% endif %}
+                <h3><i class="fa fa-map-marker"></i> {{ imovel.bairro }} <small>({{ imovel.regiao.nome }}) {{ imovel.cidade }}</small></h3>
+                {% if user.is_authenticated %}
+                  <p>
+                    {% if imovel.condominio %}
+                      {{ imovel.condominio }}
+                    {% else %}
+                      {{ imovel.logradouro }}, {{ imovel.numero }} 
+                    {% endif %}
+                    , {{ imovel.complemento }} CEP: {{ imovel.cep }}
+                    <a href="{{ imovel.googlemaps }}" target="_blank"> <i class="fa fa-map-marker"></i> mapa</a>
+                  </p>
+                {% endif %}
+                <table class="table">
+                  <tbody>
+                    {% block campos_exibidos %}
+                    <tr>
+                      <td>Área</td>
+                      {% if imovel.area_terreno %}<td>Área Total</td>{% endif %}
+                      <td>Quartos</td>
+                      <td>Suítes</td>
+                      <td>Vagas</td>
+                      {% if imovel.valor_venda and tipo_interesse == 'comprar' %}
+                        <td>Valor m&sup2;</td>
+                      {% endif %}
+                      {% if imovel.condominio %}
+                        <td>Condomínio</td>
+                      {% endif %}
+                      {% if imovel.tipo_imovel == "terreno" %}
+                        <td>Dimensão terreno</td>
+                      {% endif %}
+                    </tr>
+                    <tr>
+                      <td>{{ imovel.area_construida }}m&sup2;</td>
+                      {% if imovel.area_terreno %}<td>{{ imovel.area_terreno }}m&sup2;</td>{% endif %}
+                      <td>{{ imovel.dormitorios }}</td>
+                      <td>{{ imovel.suites_verbose }}</td>
+                      <td>{{ imovel.vagas_garagem }}</td>
+                      {% if imovel.valor_venda and tipo_interesse == 'comprar' %}
+                        <td>
+                          <small>R$</small>{{ imovel.media_metro_quadrado|intcomma }}
+                        </td>
+                      {% endif %}
+                      {% if imovel.condominio %}
+                        <td>
+                          <small>R$</small>{{ imovel.valor_condominio|intcomma }}
+                        </td>
+                      {% endif %}
+                      {% if imovel.tipo_imovel == "terreno" %}
+                        <td>
+                          {{ imovel.dimensoes_terreno }}
+                        </td>
+                      {% endif %}
+                    </tr>
+                    {% endblock campos_exibidos %}
+                  </tbody>
+                </table>
+                {% if user|has_role:'corretor,gerente' %}
+                <p>
+                  <i class="fa fa-key"></i> {{ imovel.proprietario }}
+                </p>
+                {% endif %}
+                <p>
+                    <a href="{{ imovel.get_absolute_url }}" class="btn btn-success">
+                        <i class="fa fa-info-circle"></i>
+                        Ver detalhes
+                    </a>
+                    <span class="edit-popup">
+                        <a href="{% url 'ibuscador.contatar.anunciante.passo1' imovel.imovel_ref %}" class="btn btn-warning"><i class="fa fa-envelope"></i> Contatar anunciante</a>
+                    </span>
+                </p>
+
+              </td>
+              <td>
+                {% if user.is_authenticated %}
+                  <div class="icon-edit">
+                    <a href="{% url 'imoveis.imovel.update' imovel.id %}"><i class="fa fa-pencil fa-2x"></i></a>
+                  </div>
+                {% endif %}
+              </td>
+            </tr>

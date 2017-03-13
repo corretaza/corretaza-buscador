@@ -1,0 +1,623 @@
+{% extends 'imoveis/base_imoveis.html' %}
+
+{% load static %}
+{% load floppyforms %}
+{% load cropping %}
+{% load permission_tags %}
+
+{% block content %}
+
+  {% if messages %}
+    {% include "core/includes/messages-notifications.html" with messages=messages %}
+  {% endif %}
+
+  <div class="popup-content">
+    <p><br/><br/></p>
+    <p class="text-right">
+      <a href="{% url 'core.userpage' %}" class="btn btn-sm btn-success"><i class="fa fa-chevron-left"></i> Voltar</a>
+      <a href="{{ imovel.get_absolute_url }}" class="btn btn-sm btn-warning"><i class="fa fa-home"></i> Visualizar</a>
+      {% if user|has_role:'gerente' %}
+      <a href="{% url 'imoveis.novo.imovel' %}" class="btn btn-lg btn-default"><i class="fa fa-plus"></i> Novo Imóvel</a>
+      {% endif %}
+    </p>
+    <h1>
+      <strong>{{ imovel.titulo|capfirst }}</strong><br> do(a) <strong>{{ imovel.proprietario }} </strong>
+      {% if imovel.eh_novo and user|has_role:'gerente' %}
+      <span class="edit-popup">
+        <a href="{% url 'imoveis.imovel.tipo.update' imovel.id  %}"><i class="fa fa-pencil"></i></a>
+      </span>
+      {% endif %}
+      <span class="badge pull-right" style="font-size: 24px;" >Ref: {{ imovel.imovel_ref }}</span>
+    </h1>
+
+    <div class="row">
+      <div class="col-sm-2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h3>Estado atual: <a class="btn btn-default">{{ imovel.status|capfirst }}</a></h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-10">
+
+        {% if user|has_role:'gerente' %}
+  
+          {% if not imovel.esta_publicado %}
+          <div class="panel panel-warning edit-popup">
+            <div class="panel-heading">
+              <h3 >Este imóvel não esta visível para os clientes. É necessário <a href="{% url 'imoveis.imovel.update.publicar' imovel.id %}" class="btn btn-warning"><i class="fa fa-globe"></i> Publicar</a> para deixá-lo disponível para compra/venda.</h3>
+            </div>
+          </div>
+          {% elif imovel.esta_publicado %}
+          <div class="panel panel-default edit-popup">
+            <div class="panel-heading">
+              <h3>Para não exibir este imóvel no buscador, é necessário <a href="{% url 'imoveis.imovel.update.arquivar' imovel.id %}" class="btn btn-warning"><i class="fa fa-pause"></i> Arquivá-lo</a>.</h3>
+            </div>
+          </div>
+          {% endif %}
+
+        {% else %}
+          <div class="panel panel-warning edit-popup">
+            <div class="panel-heading">
+              <h3>Imóvel não <span class="btn btn-warning"><i class="fa fa-globe"></i> Publicado</a></span></h3>
+            </div>
+          </div>
+        {% endif %}
+
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        {# Find a better way to do this #}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <div class="alert alert-danger ">
+                    <a class="close" href="#" data-dismiss="alert">×</a>
+                    {{ field.label }}: {{ error }}
+                </div><!--- .alert.alert-error -->
+            {% endfor %}
+        {% endfor %}
+
+        <form id="imovelform" method='post' enctype="multipart/form-data" >{% csrf_token %}
+
+          {% if imovel.eh_apartamento %}
+            <input type="hidden" name="eh_apartamento" id="id_eh_apartamento" value="">
+          {% elif imovel.eh_terreno %}
+            <input type="hidden" name="eh_terreno" id="id_eh_terreno" value="">
+          {% endif %}
+
+          {% if imovel.condominio %}
+            <input type="hidden" id="tem_condominio" value="sim">
+          {% endif %}
+          
+          <ul id="myTab" class="nav nav-tabs" role="tablist">
+
+            <li role="presentation">
+              <a href="#corretores" role="tab" id="corretores-tab" data-toggle="tab" aria-controls="corretores" aria-expanded="false"><i class="fa fa-file"></i> Corretores</a>
+            </li>
+
+            <li role="presentation">
+              <a href="#localizacao" role="tab" id="localizacao-tab" data-toggle="tab" aria-controls="localizacao" aria-expanded="false"><i class="fa fa-map-marker"></i> Localização | Condomínio</a>
+            </li>
+
+            <li role="presentation">
+              <a href="#valor" id="valor-tab" role="tab" data-toggle="tab" aria-controls="valor" aria-expanded="true"><i class="fa fa-dollar"></i> Valor</a>
+            </li>
+
+            <li role="presentation" class="active">
+              <a href="#tamanho" role="tab" id="tamanho-tab" data-toggle="tab" aria-controls="tamanho" aria-expanded="false"><i class="fa fa-crop"></i> Tamanho</a>
+            </li>
+
+            <li role="presentation">
+              <a href="#lazer" role="tab" id="lazer-tab" data-toggle="tab" aria-controls="lazer" aria-expanded="false"><i class="fa fa-coffee"></i> Área Lazer</a>
+            </li>
+
+            <li role="presentation">
+              <a href="#geral" id="geral-tab" role="tab" data-toggle="tab" aria-controls="geral" aria-expanded="true"><i class="fa fa-building"></i> Geral</a>
+            </li>
+
+            <li role="presentation">
+              <a href="#proprietario" role="tab" id="proprietario-tab" data-toggle="tab" aria-controls="proprietario" aria-expanded="false"><i class="fa fa-user"></i> Proprietário | <i class="fa fa-key"></i> Chave</a>
+            </li>
+
+          </ul>
+
+          <div id="myTabContent" class="tab-content">
+
+            <div role="tabpanel" class="tab-pane fade active in" id="tamanho" aria-labelledby="tamanho-tab">
+              <h1>Tamanho</h1>
+              <div class="row">
+                <div class="col-xs-3">{% formrow form.dormitorios %}</div>
+                <div class="col-xs-3">{% formrow form.suites %}</div>
+                <div class="col-xs-3">{% formrow form.banheiros %}</div>
+                <div class="col-xs-3">{% formrow form.vagas_garagem %}</div>
+                <div class="col-xs-3">{% formrow form.area_construida %}</div>
+                <div class="col-xs-3">{% formrow form.area_terreno %}</div>
+                <div class="col-xs-6">{% formrow form.dimensoes_terreno %}</div>
+              </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade in" id="valor" aria-labelledby="valor-tab">
+              <h1>Valor</h1>
+              <div class="row">
+                <div class="col-xs-2">{% formrow form.eh_para_locacao %}</div>
+                <div class="col-xs-4">{% formrow form.valor_locacao %}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-2">{% formrow form.eh_para_venda %}</div>
+                <div class="col-xs-4">{% formrow form.valor_venda %}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4">{% formrow form.valor_condominio %}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  {% formrow form.forma_de_pagamentos %}
+                  {% formrow form.outra_forma_de_pagamento %}
+                </div>
+              </div>
+            </div>
+
+            <div role="tabpanel" class="tab-pane fade in" id="geral" aria-labelledby="geral-tab">
+              <h1>Geral</h1>
+              
+              {% formrow form.imovel_ref %}
+
+              <div class="row">
+                <div class="col-xs-6">{% formrow form.eh_comercial %}</div>
+                <div class="col-xs-6">{% formrow form.eh_imovel_novo %}</div>
+              </div>
+              <div class="row">
+              </div>
+              <div class="row">
+                {% if imovel.eh_apartamento %}
+                <div class="col-xs-4">{% formrow form.eh_apto_duplex %}</div>
+                <div class="col-xs-4">{% formrow form.eh_apto_triplex %}</div>
+                <div class="col-xs-4">{% formrow form.eh_apto_cobertura %}</div>
+                <div class="col-xs-3">{% formrow form.eh_kitnet %}</div>
+                {% elif imovel.eh_casa %}
+                <div class="col-xs-3">{% formrow form.eh_casa_terrea %}</div>
+                <div class="col-xs-3">{% formrow form.eh_casa_edicula %}</div>
+                <div class="col-xs-3">{% formrow form.eh_casa_sobreloja %}</div>
+                <div class="col-xs-3">{% formrow form.eh_casa_sobrado %}</div>
+                <div class="col-xs-3">{% formrow form.eh_casa_geminada %}</div>
+                <div class="col-xs-3">{% formrow form.eh_kitnet %}</div>
+                {% endif %}
+              </div>
+              <div class="row">
+                <div class="col-xs-3">
+                  <p>Adicionar descrição</p>
+                  <p>
+                    <select class="form-control input-sm" name="adiciona_descricao" id="id_adiciona_descricao">
+                      <option value="">Digite aqui...</option>
+                      {% for descricao in descricaoimovel_list %}
+                        <option value="{{ descricao.id }}">{{ descricao }}</option>
+                      {% endfor %}
+                    </select>
+                  </p>
+                </div>
+
+                <div class="col-xs-9">
+                {% formrow form.descricao_imovel %}
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-6">{% formrow form.esta_ocupado %}</div>
+                <div class="col-xs-6">{% formrow form.esta_mobiliado %}</div>
+              </div>
+              <div class="row">
+
+                <div class="col-xs-3">
+                  <p>Adicionar descrição</p>
+                  <p>
+                    <select class="form-control input-sm" name="adiciona_desc_comodo" id="id_adiciona_desc_comodo">
+                      <option value="">Digite aqui...</option>
+                      {% for descricao in descricaocomodo_list %}
+                        <option value="{{ descricao.id }}">{{ descricao }}</option>
+                      {% endfor %}
+                    </select>
+                  </p>
+                </div>
+
+                <div class="col-xs-9">{% formrow form.descricao_comodos %}</div>
+
+                <div class="col-xs-3">{% formrow form.esta_com_placa %}</div>
+                <div class="col-xs-12">{% formrow form.observacoes_internas %}</div>
+              </div>
+            </div>
+
+
+            <!-- area de lazer -->
+            <div role="tabpanel" class="tab-pane fade in" id="lazer" aria-labelledby="lazer-tab">
+              <h1>Área de Lazer</h1>
+              <div class="row">
+                <div class="col-xs-6">{% formrow form.areadelazer_imovel %}</div>
+                <div class="col-xs-6">
+                  {% if object.condominio %}
+                    <p>
+                      <label>Do condomínio: {{ object.condominio }}</label>
+                    </p>
+                    {% if not user|has_role:'gerente' %}
+                    <div class="bg-warning" style="padding: 4px;">
+                      <p><i class="fa fa-info-circle"></i> Informar o Administrador divergências nos valores abaixo do condomínio</p>
+                    </div>
+                    {% endif %}
+                    <div class="line-distance-small">
+                    {% for areadelazer in object.condominio.areadelazer_condominio.all %}
+                      <p>{{ areadelazer }}</p>
+                    {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+              </div>
+            </div>
+
+            <!-- localizacao -->
+            <div role="tabpanel" class="tab-pane fade in" id="localizacao" aria-labelledby="localizacao-tab">
+              <h1>Localização</h1>
+
+              <div class="row">
+                <div class="col-xs-6">{% formrow form.condominio %}</div>
+                {% if object.condominio %}
+                <div class="col-xs-6">
+                  {% if user|has_role:'gerente' %}
+                  <div class="icon-edit edit-popup">
+                    <a href="{% url 'ibuscador.condominio.update' object.condominio.id  %}"><i class="fa fa-pencil fa-2x"></i></a>
+                  </div>
+                  {% else %}
+                  <div class="bg-warning" style="padding: 4px;">
+                    <p><i class="fa fa-info-circle"></i> Informar o Administrador divergências nos valores abaixo do condomínio</p>
+                  </div>
+
+                  {% endif %}
+                  <p>
+                    <label for="id_condominio">Detalhes:</label><br/>
+                    Nro Blocos: <strong>{{ object.condominio.blocos }}</strong>&nbsp;&nbsp; 
+                    Andares: <strong>{{ object.condominio.andares }}</strong>&nbsp;&nbsp;
+                    Apto por andar: <strong>{{ object.condominio.apto_por_andar }}</strong>&nbsp;&nbsp;
+                    Elevador: <strong>{{ object.condominio.elevador }}</strong>&nbsp;&nbsp;<br/>
+                    Construtora: <strong>{{ object.condominio.construtora }}</strong>&nbsp;&nbsp; ({{ object.condominio.ano_construcao }})
+                  </p>
+                </div>
+                {% endif %}
+              </div>
+
+              <div class="row">
+                <div class="col-xs-7">{% formrow form.logradouro %}</div>
+                <div class="col-xs-2">{% formrow form.numero %}</div>
+                <div class="col-xs-3">{% formrow form.complemento %}</div>
+              </div>
+
+              <div class="row">
+                <div class="col-xs-3">{% formrow form.bairro %}</div>
+                <div class="col-xs-3">{% formrow form.regiao %}</div>
+                <div class="col-xs-3">{% formrow form.cidade %}</div>
+                <div class="col-xs-3">{% formrow form.cep %}</div>
+              </div>
+            </div>
+
+            <!-- proprietario -->
+            <div role="tabpanel" class="tab-pane fade in" id="proprietario" aria-labelledby="proprietario-tab">
+              <h1>Proprietário(a)</h1>
+              <div class="row">
+                <div class="col-xs-8">{% formrow form.proprietario %}</div>
+                <div class="col-xs-4">
+                  <div id="edit-popup" class="icon-edit edit-popup">
+                    <a href="{% url 'crm.proprietario.update' object.proprietario.id %}"><i class="fa fa-pencil fa-2x"></i></a>
+                  </div>
+                  <p>
+                    Melhor forma de contato: <strong>{{ object.proprietario.melhor_forma_contato }}</strong><br/>
+                    Email: <strong>{{ object.proprietario.email }}</strong><br/>
+                    Email alternativo: <strong>{{ object.proprietario.email_alternativo }}</strong><br/>
+                    Fone: <strong>{{ object.proprietario.fone_verbose }}</strong>
+                     {{ object.proprietario.fone_melhorhora }}<br/>
+                    Fone 2: <strong>{{ object.proprietario.fone2_verbose }}</strong>
+                     {{ object.proprietario.fone2_melhorhora }}<br/>
+                    Fone 3: <strong>{{ object.proprietario.fone3_verbose }}</strong>
+                     {{ object.proprietario.fone3_melhorhora }}<br/>
+                    Fone 4: <strong>{{ object.proprietario.fone4_verbose }}</strong><br/>
+                    WhatsApp: <strong>{{ object.proprietario.whatsapp }}</strong><br/>
+                  </p>
+                  
+                </div>
+              </div>
+
+              <h1>Chave</h1>
+              <div class="row">
+                <div class="col-xs-12">{% formrow form.local_chave %}</div>
+                <div class="col-xs-12">{% formrow form.local_chave_observacao %}</div>
+              </div>
+            </div>
+
+            <!-- corretores -->
+            <div role="tabpanel" class="tab-pane fade in" id="corretores" aria-labelledby="corretores-tab">
+              <h1>Corretores</h1>
+              <div class="row">
+                <div class="col-xs-6">
+
+                {% if user|has_role:'gerente' %}
+
+                  {% formrow form.corretores %}
+
+                {% else %}
+
+                  <table>
+                  {% for corretor in imovel.corretores.all %}
+                    <tr>
+                      <td>{{ corretor }}</td>
+                    </tr>
+                  {% endfor %}
+                  </table>
+                  <div style="display: none">
+                    <!-- TODO: descobrir, porque se remover isto aqui, o campo corretores é perdido -->
+                    {% formrow form.corretores %}
+                  </div>
+
+                {% endif %}
+
+                {% formrow form.indicado_por %}
+
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <br/><br/>
+          <div>
+            {% if user|can:'alterar_imovel' %}
+              <button type="submit" class="btn btn-lg btn-success">
+                <i class="fa fa-check"></i> Salvar
+              </button>
+            {% else %}
+              <a class="btn btn-lg btn-success disabled"><i class="fa fa-check"></i> Salvar</a>
+            {% endif %}
+            <a href="{% url 'core.paineldocorretor.admin' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+          </div>
+        </form> 
+
+      </div>
+
+      <div class="col-sm-8">
+        {% if not object.fotos_list %}
+          <p class="text-danger">
+            <i class="fa fa-camera"></i> Este imóvel precisa de fotos
+          </p>
+        {% elif not object.foto_principal %}
+          <p class="text-danger">
+            <i class="fa fa-camera"></i> É necessário marcar a foto principal
+          </p>
+
+        {% endif %}
+
+
+        <br/>
+        <h1><i class="fa fa-camera"></i> Fotos</h1>
+        <div class="row">
+          <div class="col-xs-12">
+            <table class="table">
+              <tbody>
+                <tr>
+                  <th><center>Ordem</center></th>
+                  <th></th>
+                  <th><center>Foto principal?</center></th>
+                  <th></th>
+                </tr>
+                {% for foto in object.fotos_list %}
+                <tr>
+                  <td style="vertical-align: middle;font-size: 1.6em;"><center>{{ foto.ordem }}</center></td>
+                  <td>
+                    <figure>
+                      <img width="240" src="{% cropped_thumbnail foto 'picture_cropping' scale=0.5 %}" alt="{{ foto.descricao }}">
+                    </figure>
+                  </td>
+                  <td>
+                    <center>
+                    {% if foto.eh_principal %}<i class="fa fa-check" style="font-size: 24px;"></i>{% endif %}                      
+                    </center>
+                  </td>
+                  <td>
+                    <h3>{{ foto.descricao|default:"Sem descrição" }}</h3>
+                    {% if user|can:'alterar_imovel' %}
+                    <p class="pull-left edit-popup">
+                      <a href="{% url 'imoveis.imovel.foto.update' foto.pk %}"><i class="fa fa-pencil"></i> Editar</a>&nbsp;&nbsp; <br>
+                      <a href="{% url 'imoveis.imovel.foto.delete' foto.pk %}"><i class="fa fa-trash"></i> Apagar</a>
+                    </p>
+                    {% endif %}
+                  </td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {% if user|can:'alterar_imovel' %}
+        <form method='post' enctype="multipart/form-data" class="dropzone text-center" style="border: 2px dashed rgba(0,0,0,0.3);background: #F7F4F4;" action="{% url 'imoveis.imovel.foto.upload' object.pk %}" id="galleryItemForm">
+
+          <div style="position: relative; display: inline-block;">
+            <img src="{% static 'themes/default/img/dragndrop-image.png' %}" class="px1 py1">
+          </div> 
+          
+          {% csrf_token %}
+          <input type="file" name="picture" style="display: none;" />
+        </form>
+        {% endif %}
+
+        <div class="clearfix"><br><br><br><br></div>
+
+      </div>
+
+      <div class="col-sm-4">
+        <br/>
+        <h1><i class="fa fa-paw"></i> Histórico de Alterações</h1>
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td>
+                <span class="edit-popup">
+                  <a href="{% url 'ibuscador.historico.create' imovel.id %}" class="btn btn-xs btn-default"><i class="fa fa-plus"></i> Novo histórico</a>
+                </span>                
+              </td>
+            </tr>
+          {% for historico in imovel.historico_list %}
+            <tr>
+              <td><small>{{ historico.data|date:"d b y G:i" }}</small></td>
+              <td><span>{{ historico.usuario|capfirst }}</span></td>
+              <td>{{ historico.conteudo }}</td>
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+{% block extrajs_bottom %}
+  <script src="{% static 'themes/sydney/js/cep.js' %}"></script>
+  <script type="text/javascript">
+    $(function(){
+      Dropzone.options.galleryItemForm = {
+        paramName: 'picture',
+        parallelUploads: 1,
+        dictDefaultMessage: "Arraste e solte fotos aqui ou clique para selecionar",
+        acceptedFiles: 'image/*',
+        init: function() {
+          this.on("addedfile", function(file){
+            var fileSize = file.size;
+            var maxSize = 5242880; // 5MB in bytes
+            if (fileSize > maxSize){
+              alert('the file is too big, the max allowed size is 5MB.');
+              this.removeFile(file);
+            }
+          });          
+          this.on("success", function(picture, response){
+            var editLink = Dropzone.createElement('<a href="{{ request.path }}"><i class="fa fa-refresh"></i></a>');
+            picture.previewElement.appendChild(editLink);
+          });
+        }
+      };
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function(){
+        var form_changed = false;
+        $("input").change(function(){form_changed = true;})
+        $.magnificPopup.instance.open = function (data) {
+            if (form_changed){
+                if (!confirm("Modificações realizadas serão perdidas. " +
+                                "\nDeseja continuar?")) {
+                    return;
+                }
+            }
+            $.magnificPopup.proto.open.call(this, data);
+        };
+        $('#myTab a').click(function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+
+      //Descricao imovel
+      $add_descri = $('#id_adiciona_descricao').selectize({create: true});
+      add_descri  = $add_descri[0].selectize;
+
+      var copia_texto = function(value) { 
+        var texto = $("#id_adiciona_descricao option:selected").text();
+        var descricao = $( "#id_descricao_imovel" ).val();
+        $( "#id_descricao_imovel" ).val(descricao + " \n" + texto);
+        add_descri.clear(true);
+      };
+      add_descri.on('change', copia_texto);
+
+      //Descricao comodo  
+      $add_desc_comodo = $('#id_adiciona_desc_comodo').selectize({create: true});
+      add_desc_comodo  = $add_desc_comodo[0].selectize;
+
+      var copia_texto = function(value) { 
+        var texto = $("#id_adiciona_desc_comodo option:selected").text();
+        var descricao = $( "#id_descricao_comodos" ).val();
+        $( "#id_descricao_comodos" ).val(descricao + " \n" + texto);
+        add_desc_comodo.clear(true);
+      };
+      add_desc_comodo.on('change', copia_texto);
+
+      //Evita fazer submit do form ao dar enter
+      //$("#imovelform").bind("keypress", function (e) {
+      $(".selectize-control").bind("keypress", function (e) {
+        if (e.keyCode == 13) {
+          return false;
+        }
+      });
+
+      //Mantem somente leitura os campos que 
+      //NÃO são referentes ao tipo do imovel
+      if ( $( "#id_eh_apartamento" ).length ) {
+        $('#id_area_terreno').prop('readonly', true);
+        $('#id_dimensoes_terreno').prop('readonly', true);
+
+      } else if ( $( "#id_eh_terreno" ).length ) {
+        $('#id_dormitorios').prop('readonly', true);
+        $('#id_suites').prop('readonly', true);
+        $('#id_banheiros').prop('readonly', true);
+        $('#id_vagas_garagem').prop('readonly', true);
+        $('#id_area_construida').prop('readonly', true);
+      }
+
+      if ( ! $('#tem_condominio').val()) {
+        $( '#id_valor_condominio' ).prop('readonly', true);
+      }
+
+
+      // CEP
+      $( "#id_cep" ).focusout(function(){ajax_cep($("#id_cidade option:selected").text())});
+//      $("form").submit(function(event) {
+//          if (!ajax_cep($("#id_cidade option:selected").text())){
+//              event.preventDefault();
+//              return false;
+//          }
+//      });
+
+
+        // AJAX
+        function ajax_option(campo, url){
+            $.ajax({
+                url: url,
+                type: "POST",
+                data: {
+                    'csrfmiddlewaretoken': $("input[name='csrfmiddlewaretoken']").val(),
+                    'cidade': $("#id_cidade option:selected").text()},
+                success: function(data){
+                    $("#"+campo+" option").remove();
+                    $("#"+campo).append("<option value=''> -----------------");
+                    $.each(data.options, function(key, value){
+                        $("#"+campo).append("<option value='"+value[0]+"'>" + value[1]);
+                    });
+                },
+                error: function(){
+                    $("#"+campo+" option").remove();
+                    $("#"+campo).append("<option value=''> -----------------");
+                }
+            });
+        }
+        // Bairro/Regiao CIDADE
+        $('#id_cidade').change(function(){
+            ajax_option("id_bairro","{% url 'imovel.bairros.cidade' %}" );
+            ajax_option("id_regiao","{% url 'imovel.regioes.cidade' %}");
+            ajax_option("id_condominio","{% url 'imovel.condominio.cidade' %}");
+        });
+
+    });
+  </script>
+
+{% endblock extrajs_bottom %}

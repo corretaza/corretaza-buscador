@@ -1,0 +1,94 @@
+{% extends 'imobiliaria/imobiliaria_base.html' %}
+
+{% load cropping %}
+{% load static %}
+
+{% block content %}
+
+    <div align="center">
+      <div>
+        <a data-toggle="tooltip" data-placement="right" data-original-title="Início" href="{% url 'ibuscador.home' %}">
+          <img width="120" src="{% static 'themes/sydney/img/logo_sjc_sem_nome.png' %}">
+          <h3><strong>SJC Vale Imóveis</strong></h3>
+          <p>CRECI: <strong>26474-J</strong></p>
+        </a>
+      </div>
+    </div>
+
+    <style type="text/css">
+      .semspaco {
+        margin-bottom: 4px;margin-top: 4px; line-height: 21px;
+      }
+    </style>
+
+    <section class="intro section-padding">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-4">
+            <center>
+              <h1 style="font-size: 20px; letter-spacing: 1.5px;"><i class="fa fa-home"></i></h1>
+              <h1 style="font-size: 17px; letter-spacing: 1.5px;">
+              <a href="{% url 'ibuscador.home' %}">Buscar imóvel</a>
+            </center>
+          </div>
+
+          <div class="col-md-4"></div>
+
+          <div class="col-md-4">
+            <center class="edit-popup">
+              <h1 style="font-size: 20px; letter-spacing: 1.5px;"><i class="fa fa-envelope"></i></h1>
+              <h1 style="font-size: 17px; letter-spacing: 1.5px;">
+                <a id="open-faleconosco" href="{% url 'ibuscador.contatar.anunciante.passo1' 0 %}">FALE CONOSCO</a>
+              </h1>
+            </center>
+            <br><br>
+          </div>
+
+          {% for corretor in object_list %}
+
+            <div class="col-md-4">
+              <div class="clearfix spaced-box-sm">
+              </div>
+
+              <div class="spaced-box-sm light-box" style="text-align: center; min-height: 600px;">
+
+                {% if corretor.foto %}
+                  <div style="text-align:center; padding: 26px;">
+                    <figure class="imglist" style="display:block;margin-left: auto;margin-right: auto;width: 174px;">
+                        <img src="{% cropped_thumbnail corretor 'foto_cropping' scale=0.5 %}" alt="{{ corretor.nome }}">
+                    </figure>
+                  </div>
+                {% endif %}
+                <h3 class="semspaco"><strong>{{ corretor }}</strong></h3>
+                <h3 class="semspaco">Corretor de Imóveis</h3>
+                <h3 class="semspaco"><small style="font-size: 14px;">CRECI: {{ corretor.creci }}</small></h3>
+                <h4 class="semspaco">{{ corretor.email }}</h4>
+                <h4 class="semspaco">{{ corretor.fone }} <small>{{ corretor.fone_detalhe }}</small></h4>
+                {% if corretor.fone2 %}
+                  <h4 class="semspaco">{{ corretor.fone2 }} <small>{{ corretor.fone2_detalhe }}</small></h4>
+                {% endif %}
+                {% if corretor.whatsapp %}
+                  <h4 class="semspaco">
+                    <img width="48" src="{% static 'themes/sydney/img/whatsapp.jpg' %}" alt="WhatsApp">
+                     {{ corretor.whatsapp }} <small>WhatsApp</small>
+                  </h4>
+                {% endif %}
+                <p>
+                  <a class="btn btn-default" href="{% url 'core.corretor.adicionarcontato' corretor.pk %}"><i class="fa fa-user-plus"></i> ADICIONAR CONTATO</a>
+                </p>
+
+              </div>
+
+            </div>
+            {% if forloop.counter|divisibleby:3 %}
+              <div class="clearfix visible-sm-block"></div>
+            {% endif %}
+            
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

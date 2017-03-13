@@ -1,0 +1,273 @@
+{% extends 'ibuscador/base_ibuscador.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% load cropping %}
+{% load floppyforms %}
+{% load permission_tags %}
+
+{% block extrajs_top %}
+  {{ block.super }}
+  {{ form.media }}
+  <script type="text/javascript" src="{% static 'list.js/dist/list.min.js' %}"></script>
+{% endblock %}
+
+{% block navbar_area %}
+
+  <section style="padding: 16px 0 0 0;">
+
+    <div class="container">
+
+      <!-- hamburguer menu -->
+      <div class="row">
+        <div class="col-md-12 text-right navicon">
+          <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {{ block.super }}
+
+{% endblock navbar_area %}
+
+{% block content %}
+
+
+    <div class="row" style="background-color: rgb(233, 242, 238);">
+
+      <div class="col-md-9">
+
+        <div align="center">
+          <h1 style="font-size: 1.6em;">
+            {% if imoveis_list|length == 50 %}
+              <strong>Existem + de {{ imoveis_list|length }}</strong> {{ tipo_imovel }}{{ imoveis_list|pluralize }}
+                para {{ tipo_interesse }} encontrado{{ imoveis_list|pluralize }} em {{cidade}}
+            {% elif imoveis_list|length %}
+              <strong>{{ imoveis_list|length }}</strong> {{ tipo_imovel }}{{ imoveis_list|pluralize }}
+                para {{ tipo_interesse }} encontrado{{ imoveis_list|pluralize }} 
+                {% if cidade %}
+                em {{cidade}}
+                {% endif %}
+            {% else %}
+              <strong>Ops! Estamos sem imóveis para os critérios informados. Que tal mudar os filtros?</strong>
+            {% endif %}
+          </h1>
+        </div>
+      </div>
+      <div class="col-md-3" style="background-color: rgb(233, 242, 238); padding: 10px;">
+        <a href="{% url 'ibuscador.home' %}" class="btn btn-default">Nova busca</a>
+      </div>
+
+      <form method="get" enctype="multipart/form-data" id="form_resultado" style="padding-left: 45px; padding-right: 30px;">
+
+        <div class="col-md-12" style="background-color: rgb(233, 242, 238);" id="filtros-div">
+
+          {% if imoveis_list|length == 50 %}
+            <h1 class="text-danger" style="font-size: 1.2em; margin-left: 40px;"><i class="fa fa-info-circle"></i> Dica: Refine sua pesquisa com os filtros abaixo</h1>
+          {% endif %}
+
+          {% block filtro %}
+            <!--<div class="panel-group" id="accordion"> -->
+
+              <!-- filtro valor 
+              <div class="panel panel-default">
+                <div class="panel-heading" id="headingOne">
+                  <h4 class="panel-title" id="id-filtrar-por-valor"><i class="fa fa-dollar"></i> Filtrar por valor & Tamanho</h4>
+                </div> -->
+                <div id="filtrar-por-valor">
+                  <div class="panel-body">
+                    <div class="row">
+                      
+                      {% include 'ibuscador/filtros_valor.html' %}
+
+                      <center id="btn-filtro-padrao">
+                        <a href="#" class="btn btn-success btn-filtrar-copy btn-lg"><i class="fa fa-search"></i> Filtrar</a>
+                        <a href="#link-filtrar-por-localizacao" class="btn btn-default" id="btn-filtrar-por-localizacao" style="padding: 8px; margin: 12px;"><i class="fa fa-map-marker"></i> Filtrar por bairro</a>
+                        <a href="#link-filtrar-por-tipo" class="btn btn-default" id="btn-filtrar-por-tipo" style="padding: 8px; margin: 12px;"><i class="fa fa-building"></i> Mais filtros</a>
+                      </center>
+                    </div>
+                  </div>
+                </div>
+              <!--</div>-->
+
+              <!-- filtro localizacao
+              <div class="panel panel-default">
+                <div class="panel-heading" id="headingTwo">
+                  <h4 class="panel-title" id="id-filtrar-por-localizacao"><i class="fa fa-map-marker"></i> Filtrar por localização</h4>
+                </div> -->
+
+                <a name="link-filtrar-por-localizacao"></a>
+                <div id="filtrar-por-localizacao" style="display: none; margin-top: 60px;">
+                  <div class="panel-body">
+                    <div class="row">
+
+                      {% include 'ibuscador/filtros_localizacao.html' %}
+
+                      <div class="col-xs-12">
+                          <center>
+                              <a href="#" class="btn btn-lg btn-success btn-filtrar-copy"><i class="fa fa-search"></i> Filtrar</a>
+                              <a href="#" class="btn btn-default" id="btn-filtrar-por-localizacao-fechar" style="padding: 8px; margin: 12px;"><i class="fa fa-times"></i> Fechar</a>
+                          </center>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              <!--</div>-->
+
+              <!-- filtro subtipo 
+              <div class="panel panel-default">
+                <div class="panel-heading" id="headingThree">
+                  <h4 class="panel-title" id="id-filtrar-por-tipo"><i class="fa fa-building"></i> Mais filtros</h4>
+                </div> -->
+                
+                <a name="link-filtrar-por-tipo"></a>
+                <div id="filtrar-por-tipo" style="display: none; margin-top: 60px;">
+                  <div class="panel-body">
+                    <div class="row">
+                      
+                      <div class="col-xs-1">
+                        <center style="color: #777777;">
+                          <p><i class="fa fa-building" style="font-size: 42px;" ></i></p>
+                          <h3>Tipo</h3>
+                        </center>
+                      </div>
+
+                      {% block filtro_tipoimovel %}
+                      <div class="col-xs-4">
+                      </div>
+                      {% endblock filtro_tipoimovel %}
+
+                      {% block filtro_outros %}
+
+                        {% include 'ibuscador/filtros_subtipo.html' %}
+
+                      {% endblock filtro_outros %}
+
+                      <div class="col-xs-12">
+                        <center>
+                          <a href="#" class="btn btn-lg btn-success btn-filtrar-copy"><i class="fa fa-search"></i> Filtrar</a>
+                          <a href="#" class="btn btn-default" id="btn-filtrar-por-tipo-fechar" style="padding: 8px; margin: 12px;"><i class="fa fa-times"></i> Fechar</a>
+                        </center>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              <!--</div>-->
+            <!-- </div> -->
+
+            <div class="row" id="idOrdernar">
+              <div class="col-xs-8"></div>
+              <div class="col-xs-4">
+                <p>
+                <div class="row">
+                  <div class="col-xs-4 text-right">
+                    <label class="control-label" for="ordenar_por">Ordenar por:</label>  
+                  </div>
+                  <div class="col-xs-8">
+                    <select class="form-control input-sm" name="ordenar_por" id="id_ordenar_por" style="min-width: 170px; max-width: 190px;">
+                    <option value="menor_valor">Menor valor</option>
+                    {% if tipo_interesse == 'comprar' %}
+                        <option value="custo_m_quadrado">Menor custo por m&sup2;</option>
+                    {% endif %}
+                    <option value="maior_area">Maior área</option>
+                  </select> 
+                  </div> 
+                </div>
+                </p>
+              </div>
+            </div>
+
+          {% endblock filtro %}
+            
+        </div>
+
+        <button id="btn-filtrar" type="submit" class="btn btn-success btn-lg" style="display: none;">
+          <i class="fa fa-search"></i> Filtrar imóveis
+        </button>
+
+      </form>
+
+    </div>
+
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+
+      <div class="col-md-10">
+
+        <table class="table">
+          <tbody id="paginationGrid" data-pag-selector='.pagination' data-pag-next='.pagination a' data-item-selector=".grid-item">
+            {% for imovel in imoveis_list %}
+              {% include 'ibuscador/_item_da_lista.html' %}
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+        <nav class="pagination">
+          {% if imoveis_list|length >= 50 %}
+          <a href="?page=2">Page 2</a>
+          {% endif %}
+        </nav>
+
+        <center>
+          <a class="btn btn-default" href="{% url 'ibuscador.home' %}">Voltar</a>
+        </center>
+
+      </div>
+                  
+    </div>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+
+  <script src="{% static 'themes/sydney/js/filtro.js?v=0.0.2' %}"></script>
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+               
+        $('.btn-filtrar-copy').click(function () {
+          $("#btn-filtrar").click();
+        });
+
+        $( '#btn-filtrar-por-localizacao' ).click( function() {
+          $( '#filtrar-por-tipo' ).hide();
+          $( '#btn-filtro-padrao' ).hide();
+          $( '#filtrar-por-localizacao' ).show('fast');
+          $( '#id_bairro_search' ).focus();
+        });
+
+        $( '#btn-filtrar-por-tipo' ).click( function() {
+          $( '#filtrar-por-localizacao' ).hide();
+          $( '#btn-filtro-padrao' ).hide();
+          $( '#filtrar-por-tipo' ).show('fast');
+        });
+
+        $( '#btn-filtrar-por-localizacao-fechar' ).click( function() {
+          $( '#filtrar-por-localizacao' ).hide();
+          $( '#btn-filtro-padrao' ).show('fast');
+        });
+
+        $( '#btn-filtrar-por-tipo-fechar' ).click( function() {
+          $( '#filtrar-por-tipo' ).hide();
+          $( '#btn-filtro-padrao' ).show('fast');
+        });
+
+        $('#id_ordenar_por').on('change', function() {
+          $("#btn-filtrar").click();
+        });
+
+        //buscador de bairros
+        var bairroList = new List('bairros_count', {valueNames: [ 'name' ]});
+
+      });
+  </script>
+
+{% endblock extrajs_bottom %} 

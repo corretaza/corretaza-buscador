@@ -1,0 +1,60 @@
+{% extends view.listadeimoveis_base_template %}
+
+{% load static %}
+
+{% load floppyforms %}
+
+{% block extrajs_top %}
+  {{ block.super }}
+  {{ form.media }}
+{% endblock %}
+
+{% block filtro_tipoimovel %}
+<div class="col-xs-5">
+  <p>
+    <label>Tipo:</label>
+  </p>
+  <p class="tipo">
+    <button value="cobertura" id="cobertura" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar cobertura">
+      <i class="fa fa-building-o"></i> Cobertura
+    </button>
+    <button value="normal" id="normal" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar normal">
+      <i class="fa fa-building-o"></i> Normal
+    </button>
+    <button value="todos_tipos" id="todos_tipos" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar Todos">
+      <i class="fa fa-asterisk"></i> Todos
+    </button>
+  </p>
+  <p>
+    <label>Estrutura:</label>
+  </p>
+  <p class="estrutura">
+    <button value="convencional" id="convencional" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar convencional">
+      <i class="fa fa-building-o"></i> Convencional
+    </button>
+    <button value="duplex" id="duplex" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar duplex">
+      <i class="fa fa-building-o"></i> Duplex
+    </button>
+    <button value="triplex" id="triplex" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar triplex">
+      <i class="fa fa-building-o"></i> Triplex
+    </button>
+    <button value="todos_estrutura" id="todos_estrutura" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar todos">
+      <i class="fa fa-asterisk"></i> Todos
+    </button>
+  </p>
+</div>
+{% endblock filtro_tipoimovel %}
+
+{% block extrajs_bottom %}
+
+  {{ block.super }}
+
+  <script type="text/javascript">
+      $(document).ready(function(){
+        $( "#show_hide_emcondominio" ).remove();
+        unique_type(".tipo");
+        unique_type(".estrutura");
+      });
+  </script>
+
+{% endblock extrajs_bottom %} 

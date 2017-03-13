@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="col-xs-12" id="bairros_count">
+    <input class="search bairros_count_list__search" id="id_bairro_search" placeholder="Digite um bairro" style="margin-left: 40px;" />
+    <ul class="list" id="bairros_count_list">
+      {% for group_name, choices in optgroups %}
+        {% for choice in choices %}
+          <li>
+            <div class="checkbox">
+              <label style="min-width: 196px;" for="{{ attrs.id }}_{{ forloop.counter }}"><input {% if choice.0 in value %}checked="checked" {% endif %}type="checkbox" id="{{ attrs.id }}_{{ forloop.counter }}" name="{{ name }}" value="{{ choice.0 }}"> <span class="name">{{ choice.1.bairro.descricao }}</span>
+                <small style="color: grey;">
+                 {% if tipo_interesse == 'comprar' %}
+                 <span class="para_venda">({{ choice.1.contador_venda }})</span>
+                 {% else %}
+                 <span class="para_locacao">({{ choice.1.contador_locacao }})</span>
+                 {% endif %}
+                </small> 
+              </label>
+            </div>
+          </li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+</div>

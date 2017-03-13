@@ -1,0 +1,63 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load floppyforms %}
+{% load cropping %}
+
+{% block content %}
+
+  <div class="popup-content">
+
+    <h1>
+      <strong>{{ object.titulo|capfirst }}</strong> do(a) <strong>{{ object.proprietario }} </strong>
+      <span class="badge" style="font-size: 24px;" >Ref: {{ object.imovel_ref }}</span>
+    </h1>
+
+    {% if object.eh_para_venda %}
+      <h1>Valor venda: <strong>R${{ object.valor_venda }}</strong></h1>
+    {% endif %}
+    {% if object.eh_para_locacao %}
+      <h1>Valor locação: <strong>R${{ object.valor_locacao }}</strong></h1>
+    {% endif %}
+    {% if object.condominio %}
+      <h1>Valor condomínio: <strong>R${{ object.valor_condominio }}</strong></h1>
+    {% endif %}
+
+    <h3>{{ object.bairro.descricao }} <small>({{ object.regiao.nome }}) {{ object.cidade }}</small></h3>
+
+    <div class="row">
+
+      <div class="col-sm-1">
+      </div>
+
+      <div class="col-sm-10">
+
+        <form method='post' enctype="multipart/form-data">{% csrf_token %}
+        
+          {{ form }}
+
+          <div class="bottom-fix-menu" align="center">
+            <button type="submit" class="btn btn-lg btn-warning">
+              {% if object.status != 'publicado' %}
+              <i class="fa fa-globe"></i> Publicar
+              {% else %}
+              <i class="fa fa-pause"></i> Arquivar
+              {% endif %}
+            </button>
+            <a href="{% url 'core.windows_close' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+          </div>
+
+        </form> 
+
+        <div class="clearfix"><br><br><br><br></div>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}
+

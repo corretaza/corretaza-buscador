@@ -1,0 +1,54 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load chartkick %}
+
+{% block extrajs_top %}
+
+  {{ block.super }}
+
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="{% static 'chartkick/chartkick.js' %}"></script>
+
+{% endblock %}   
+
+{% block navbar_area %}
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+  <section class="dark-bg section-padding contact-wrap">
+    <div class="container">
+
+      <div class="row">
+        <p class="text-right">
+          <a href="{% url 'core.userpage' %}#atendimentos" class="btn btn-sm btn-success"><i class="fa fa-chevron-left"></i> Voltar</a>
+        </p>
+        <h1>Captações dos últimos 6 meses</h1>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12">
+
+           {% column_chart mensagens %}
+
+           <p>
+             <br><br><br>
+           </p>
+        </div>
+
+        <div class="col-md-12">
+
+           {% line_chart mensagens %}
+
+        </div>
+
+
+      </div>
+
+    </div>
+  </section>      
+
+{% endblock content %}

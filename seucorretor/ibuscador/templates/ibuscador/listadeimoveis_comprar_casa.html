@@ -1,0 +1,42 @@
+{% extends view.listadeimoveis_base_template %}
+
+{% load static %}
+
+{% load floppyforms %}
+
+{% block extrajs_top %}
+  {{ block.super }}
+  {{ form.media }}
+{% endblock %}
+
+{% block filtro_tipoimovel %}
+<div class="col-xs-4">
+  <p><label>Tipo:</label></p>
+  <p class="casa">
+      <button value="terrea" id="terrea" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar/ocultar casa térrea">
+        <i class="fa fa-bank"></i> Térrea
+      </button>
+      <button value="sobrado" id="sobrado" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar/ocultar sobrado">
+        <i class="fa fa-bank"></i> Sobrado
+      </button>
+      <button value="edicula" id="edicula" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar/ocultar edícula">
+          <i class="fa fa-bank"></i> Edícula
+      </button>
+      <button value="sobreloja" id="sobreloja" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar/ocultar sobreloja">
+          <i class="fa fa-bank"></i> Sobreloja
+      </button>
+      <button value="todos_tipo_casa" id="todos_tipo_casa" type="button" class="mais_filtro btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Mostrar Todos">
+          <i class="fa fa-asterisk"></i> Todos
+      </button>
+  </p>
+</div>
+{% endblock filtro_tipoimovel %}
+
+{% block extrajs_bottom %}
+
+  {{ block.super }}
+
+  <script>
+    unique_type(".casa");
+  </script>
+{% endblock extrajs_bottom %} 

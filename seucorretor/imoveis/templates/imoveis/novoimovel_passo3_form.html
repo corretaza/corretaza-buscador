@@ -1,0 +1,140 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+<div class="popup-content">
+
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <h1><strong>Endereço</strong></h1>
+        <h4><strong>Passo 4 de 5</strong></h4>
+        <div class="btn-group">
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-check"></i><b> Proprietário</b>
+          </a>
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-check"></i><b> Tipo Imóvel</b>
+          </a>
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-check"></i><b> Condomínio</b>
+          </a>
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-angle-right"></i><b> Endereço </b>
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Cadastro
+          </a>
+        </div>
+        <p><br/></p>
+      </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-xs-2">
+        </div>
+        <div class="col-xs-8">
+
+            <h1><strong>{{ object.tipo_imovel|capfirst }}</strong> do(a) <strong>{{ object.proprietario }}</strong></h1>
+
+            {% if object.condominio %}
+
+              <div class="row">
+                <div class="col-sm-7">
+                  <h1><small>Condomínio: <b>{{ object.condominio.nome }}</b> 
+                  (R${{ object.condominio.valor }})</small></h1>
+                  <h3 style="font-size: 1.8em;">
+                    <small>Blocos: {{ object.condominio.blocos }}
+                    Andares: {{ object.condominio.andares }}
+                    </small>
+                  </h3>
+                </div>
+                <div class="col-sm-5">
+                  <br/>
+                  <div class="icon-edit edit-popup">
+                    <a href="{% url 'ibuscador.condominio.update' object.condominio.id  %}"><i class="fa fa-pencil fa-2x"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <input type="hidden" id="tem_condominio" value="sim">
+            {% endif %}
+            <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+                <input type="hidden" name="id" id="id_id" value="">
+                
+                {{ form }}
+              
+                <div align="center">
+                  <button type="submit" class="btn btn-lg btn-success">
+                    <i class="fa fa-check"></i> Continuar
+                  </button>
+                  <a href="{% url 'imovel.lista.todos' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+                </div>
+
+            </form> 
+
+            <div class="clearfix"><br><br><br><br></div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+
+{% block extrajs_bottom %}
+  <script src="{% static 'themes/sydney/js/cep.js' %}"></script>
+  <script type="text/javascript">
+
+    function disable_dropbox(dropbox_id) {
+      $dropbox = $(dropbox_id).selectize({create: true});
+      dropbox  = $dropbox[0].selectize;
+      dropbox.lock();
+
+    }
+
+    $(document).ready(function(){
+
+      $('#id_cep').css('width', '200px');
+      disable_dropbox( '#id_cidade' );
+      if ($('#tem_condominio').val()) {
+        $('#id_cep').prop('readonly', true);
+        $('#id_logradouro').prop('readonly', true);
+        $('#id_numero').prop('readonly', true);
+        disable_dropbox( '#id_bairro' );
+        disable_dropbox( '#id_regiao' );
+      } else {
+
+        $bairro = $('#id_bairro').selectize({create: true});
+        bairro  = $bairro[0].selectize;
+
+        $( '#id_valor_condominio' ).prop('readonly', true);
+        $( "#id_cep" ).focus();
+        $( "#id_cep" ).focusout(function(){ajax_cep($("#id_cidade").text())});
+        $("form").submit(function(event) {
+          if (!ajax_cep($("#id_cidade").text())){
+              event.preventDefault();
+              return false;
+          }
+      });
+      }
+
+    });
+  </script>
+
+{% endblock extrajs_bottom %}

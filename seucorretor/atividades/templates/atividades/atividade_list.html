@@ -1,0 +1,81 @@
+{% extends 'atividades/base_atividades.html' %}
+
+{% load static %}
+
+{% block css %}
+
+  <link href="{% static 'themes/sydney/css/reset.css' %}" rel="stylesheet">
+
+  {{ block.super }}
+
+  <link href="{% static 'themes/sydney/css/styles_timeline.css' %}" rel="stylesheet">
+
+{% endblock css %}
+
+
+{% block navbar_area %}
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+    <div class="container" style="background-color: white;">
+      
+      <div class="row">
+        <div class="col-md-2">
+          <div class="spaced-box-sm">        
+            <img width="120" src="{% static 'themes/sydney/img/logo_sjc_sem_nome.png' %}">
+          </div>
+        </div>
+        <div class="col-md-8">
+          <h3>Registro de Atividades do</h3>
+          <h3>Painel do <strong>{{ interesse.cliente}}</strong> </h3>
+        </div>
+        <div class="col-md-2">
+        	<p>
+        		<a href="{{ interesse.get_absolute_url }}" class="btn btn-sm btn-success"><i class="fa fa-chevron-left"></i> Voltar</a>        		
+        	</p>
+        </div>
+      
+      </div>
+
+    </div>
+
+    <section id="cd-timeline" class="cd-container" style="color: #7f8c97; background-color: #e9f0f5;" >
+
+	    {% for atividade in object_list %}
+
+		    <div class="cd-timeline-block">
+
+		      <div class="cd-timeline-img cd-picture">
+		        <!-- <img src="" alt="Picture"> -->
+		      </div> <!-- cd-timeline-img -->
+
+		      <div class="cd-timeline-content">
+		        <h3>{{ atividade }}</h3>
+		        <p>{{ atividade.detalhe }}</p>
+		        <span class="cd-date">{{ atividade.data }}</span>
+		      </div> <!-- cd-timeline-content -->
+		    </div> <!-- cd-timeline-block -->
+
+	    {% endfor %}
+
+	    <div class="cd-timeline-block">
+
+	      <div class="cd-timeline-img cd-picture">
+	        <!-- <img src="" alt="Picture"> -->
+	      </div> <!-- cd-timeline-img -->
+
+	      <div class="cd-timeline-content">
+	      	<h3>
+	      	  <span class="edit-popup" >
+	        	<a href="{% url 'atividades.create' interesse.id %}" class="btn btn-lg btn-default">Inserir Atividade</a>
+	      	  </span>
+	      	</h3>
+	        <span> </span>
+	      </div> <!-- cd-timeline-content -->
+	    </div> <!-- cd-timeline-block -->	    
+
+    </section>
+
+{% endblock content %}

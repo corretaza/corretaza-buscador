@@ -1,0 +1,148 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load chartkick %}
+
+{% block extrajs_top %}
+
+  {{ block.super }}
+
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="{% static 'chartkick/chartkick.js' %}"></script>
+
+{% endblock %}   
+
+{% block navbar_area %}
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+  <section class="dark-bg section-padding contact-wrap">
+    <div class="container">
+
+      <div class="row">
+        <p class="text-right">
+          <a href="{% url 'core.userpage' %}#atendimentos" class="btn btn-sm btn-success"><i class="fa fa-chevron-left"></i> Voltar</a>
+        </p>
+        <h1>Período: <strong>Março 2015</strong></h1>
+      </div>
+
+      <div class="row">
+
+			  <div class="col-md-6">
+	    	  {% pie_chart atendimentos_sucesso %}
+			  </div>
+        <div class="col-md-6">
+        </div>
+        <div class="col-md-12">
+          
+        </div>
+        <div class="col-md-6">
+          <h3>Preço médio para comprar</h3>
+          {% column_chart atendimentos_preco_comprar_por_regiao %}
+        </div>
+        <div class="col-md-6">
+          <h3>Preço médio para alugar</h3>
+          {% column_chart atendimentos_preco_alugar_por_regiao %}
+        </div>
+
+        <div class="col-md-6">
+          <h3>Atendimentos Resumo</h3>
+          {% column_chart atendimentos_resumo %}
+        </div>
+
+        <div class="col-md-6">
+          <h3>Atendimentos finalizados</h3>
+          {% pie_chart atendimentos_finalizados %}
+        </div>
+
+			
+			  <div class="col-md-12">
+
+          <br/><br/>
+			    <h1><strong>Opções de imóveis enviados para os {{ atendimentos_validos_count }} atendimentos: {{ opcoes_imoveis_count }}  </strong></h1>
+          <table class="table">
+            <thead>
+              <tr>
+                <th><center>Imóveis por atendimento</center></th>
+                <th><center>Taxa de quer visitar</center></th>
+                <th><center>Taxa de visitas realizadas</center></th>
+                <th><center>Indice de não avaliado</center></th>
+                <th><center>Indice de não gostou</center></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr align="center">
+                <td><h3><strong>{{ opcoes_imoveis_por_atendimento|floatformat }}</strong></h3></td>
+                <td><h3><strong>{{ opcoes_imoveis_taxa_quer_visitar|floatformat }}%</strong></h3></td>
+                <td><h3><strong>{{ opcoes_imoveis_taxa_visitado|floatformat }}%</strong></h3></td>
+                <td><h3><strong>{{ opcoes_imoveis_indice_nao_avaliado|floatformat }}%</strong></h3></td>
+                <td><h3><strong>{{ opcoes_imoveis_indice_nao_gostou|floatformat }}%</strong></h3></td>
+              </tr>
+              <tr align="center">
+                <td><p><small>A média de imóveis enviado como opções para cada atendimento válido (atende ligações, temos imóveis para o perfil)</small></p></td>
+                <td><p><small>Percentual de avaliações positivas sobre o total de opções de imóveis</small></p></td>
+                <td><p><small>Percentual de visitas realizadas sobre o total de opções de imóveis</small></p></td>
+                <td><p><small>Percentual de imóveis não avaliado sobre o total de opções de imóveis</small></p></td>
+                <td><p><small>Percentual de imóveis avaliados como NÃO gostou</small></p></td>
+              </tr>
+            </tbody>
+          </table>
+          <table class="table">
+            <thead>
+              <tr>
+                <th><center>Com 1 opção de imóvel</center></th>
+                <th><center>Com 2 opções de imóveis</center></th>
+                <th><center>Com 3 opções de imóveis</center></th>
+                <th><center>Com + de 3 opções</center></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr align="center">
+                <td><h3><strong>{{ opcoes_com_1 }}</strong></h3></td>
+                <td><h3><strong>{{ opcoes_com_2 }}</strong></h3></td>
+                <td><h3><strong>{{ opcoes_com_3 }}</strong></h3></td>
+                <td><h3><strong>{{ opcoes_com_mais_de_3 }}</strong></h3></td>
+              </tr>
+            </tbody>
+          </table>        
+			  </div>
+
+  			<div class="col-md-12">
+  	    	  {% column_chart opcoes_imoveis %}
+  			</div>
+
+
+  			<div class="col-md-12">
+  	     
+          <br/><br/>
+          <h1><strong>Mensagens enviadas para os atendimentos: {{ mensagens_count }}</strong></h1>
+          <table class="table">
+            <thead>
+              <tr>
+                <th><center>Mensagens por atendimento</center></th>
+                <th><center>Indice de leitura</center></th>
+                <th><center>Indice de resposta</center></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr align="center">
+                <td><h3><strong>{{ mensagens_por_atendimento|floatformat }}</strong></h3></td>
+                <td><h3><strong>{{ mensagens_indice_leitura|floatformat }}%</strong></h3></td>
+                <td><h3><strong>{{ mensagens_indice_resposta|floatformat }}%</strong></h3></td>
+              </tr>
+            </tbody>
+          </table>
+
+  	    	 {% column_chart mensagens %}
+
+  			</div>
+
+
+      </div>
+
+    </div>
+  </section>	    
+
+{% endblock content %}

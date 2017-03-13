@@ -1,0 +1,282 @@
+{% load static %}
+
+<!--[if lt IE 9]>
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<![endif]-->
+<!--[if !IE]><!-->
+  <!DOCTYPE html>
+<!--<![endif]-->
+<html lang="en">
+    <head>
+    	<meta charset="utf-8">
+      <!--[if lt IE 9]>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+      <![endif]-->
+      <!--[if gt IE 8]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <![endif]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{% block title %}SJC Vale Imóveis - Sua melhor imobiliaria em São José dos Campos{% endblock %}</title>
+
+    	<link href='http://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'>
+
+      <!-- Basic styles for this template::: SYDNEY -->
+      {% block css %}
+
+    	<link href="{% static 'bootstrap/dist/css/bootstrap.min.css' %}" rel="stylesheet">
+		  <link href="{% static 'magnific-popup/dist/magnific-popup.css' %}" rel="stylesheet" media="screen">
+		  <link href="{% static 'themes/default/css/flexcontent_v2.css?v=0.0.2' %}" rel="stylesheet" media="screen">
+
+    	<link href="{% static 'font-awesome-bower/css/font-awesome.css' %}" rel="stylesheet">
+
+    	<link href="{% static 'themes/sydney/css/styles.css?v=0.0.7' %}" rel="stylesheet">
+      <link href="{% static 'themes/sydney/css/queries.css' %}" rel="stylesheet">
+      <link href="{% static 'themes/sydney/css/animate.css' %}" rel="stylesheet">
+      <link href="{% static 'themes/sydney/css/others.css' %}" rel="stylesheet">
+      <link href="{% static 'themes/sydney/css/flip-switch.css' %}" rel="stylesheet">
+
+      <link href="{% static 'themes/default/css/notifications.css?v=0.0.2' %}" rel="stylesheet">
+
+      <link href="{% static 'pickadate/lib/compressed/themes/classic.css' %}" rel="stylesheet">
+      <link href="{% static 'pickadate/lib/compressed/themes/classic.date.css' %}" rel="stylesheet">
+      <link href="{% static 'pickadate/lib/compressed/themes/classic.time.css' %}" rel="stylesheet">
+
+      {% if user.is_authenticated %}
+        <link href="{% static 'dropzone/dist/min/dropzone.min.css' %}" rel="stylesheet">
+        <link href="{% static 'selectize/dist/css/selectize.bootstrap3.css' %}" rel="stylesheet">
+      {% endif %}
+
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+
+
+    	<!-- Custom styles for this template -->
+      <link href="{% static 'themes/sydney/css/navigation.css?v=0.0.2' %}" rel="stylesheet" media="screen">
+
+      <link href="{% static 'themes/sydney/css/base_v2.css?v=0.0.5' %}" rel="stylesheet" media="screen">
+      <!--
+      <link href="{% static 'themes/default/css/flatpages-edit.css' %}" rel="stylesheet" media="screen">
+      -->
+
+      <!-- Favicon -->
+      <link rel="shortcut icon" href="{% static 'themes/sydney/img/favicon/favicon.ico' %}" type="image/x-icon">
+      <link rel="icon" href="{% static 'themes/sydney/img/favicon/favicon.ico' %}" type="image/x-icon">
+
+		  {% endblock css %}
+
+        <!--  USE THE extracss BLOCK to add CSS here -->
+        {% block extracss %}
+        {% endblock extracss %}
+        
+        <!--  USE THE extrajs_top BLOCK to add javascripts here -->
+      {% block extrajs_top %}
+            <script type="text/javascript" src="{% static 'jquery/dist/jquery.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'magnific-popup/dist/jquery.magnific-popup.min.js' %}"></script>
+            <script type="text/javascript" src="{% static 'themes/default/js/flexcontent.js' %}"></script>
+      {% endblock %}        
+
+        
+    </head>
+
+    
+    <!--  USE THE body BLOCK to override all the body -->
+    {% block body %}
+	<body id="top">
+
+        <!--  USE THE extrabody_top BLOCK to add content here -->
+        {% block extrabody_top %}
+        {% endblock extrabody_top %}
+
+        <!--  USE THE topheader_area BLOCK to add content here -->
+        {% block topheader_area %}
+        {% endblock topheader_area %}
+
+        <!--  USE THE navbar_area BLOCK to add content here -->
+        {% block navbar_area %}
+
+            <header id="home">
+              <nav>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+                      <nav class="pull">
+                        <ul class="top-nav">
+                          <!--  USE THE navbar BLOCK to add menus -->
+                          {% block navbar %}
+                          <li><a href="#intro">Introduction <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                          <li><a href="#features">Features <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                          <li><a href="#responsive">Responsive Design <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                          <li><a href="#portfolio">Portfolio <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                          <li><a href="#team">Team <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                          <li><a href="#contact">Get in Touch <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+                          {% endblock %}                        
+                        </ul>
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </nav>
+
+              {% block featured_header %}{% endblock featured_header %}
+
+            </header>
+
+        {% endblock navbar_area %}
+
+
+        <!--  USE THE header_area BLOCK to add content here -->
+        {% block header_area %}    
+        {% endblock header_area %}
+
+
+
+        <!--  USE THE content_area BLOCK to add the MAIN CONTENT -->
+        {% block content_area %}
+
+            <!--  USE THE slide_area BLOCK to add content here -->
+            {% block slide_area %}
+            {% endblock slide_area %}
+
+
+
+            <!--  OR USE THE content BLOCK DIRECTLY -->
+            {% block content %}
+
+            {% endblock %}
+
+        {% endblock %}
+
+		<!--  USE THE extra_content_area BLOCK to add content here -->
+		{% block extra_content_area %}			
+		{% endblock %}
+    
+
+        <!--  USE THE footer_area BLOCK to add content here -->
+        {% block footer_area %}
+
+          {% block footer_logo %}
+          <section class="section-padding" id="address">
+            <div class="container">
+              <div class="row">
+
+                  <div class="col-lg-10 col-lg-offset-1 text-center">
+                      <a name="contato"></a>
+                      <p><img width="142" alt="logo" src="{% static 'themes/sydney/img/logo_sjc_sem_nome.png' %}"></p>
+                      <h1><strong>SJC Vale Imóveis</strong></h1>
+                      <p style="font-size: 14px; line-height: 1.42857143; color: #333;">
+                      Rua Francisca Maria de Jesus, 347 - Sala 212<br>
+                      Ed. Atrium Offices - Jd.  Satélite - São José dos Campos/SP</p>
+                      <ul class="list-unstyled">
+                          <li>
+                            <i class="fa fa-phone fa-fw"></i> (12) <strong>3939 9111</strong>
+                            <i class="fa fa-phone fa-fw"></i> (12) <strong>3322 6942</strong>
+                          </li>
+                          <li><i class="fa fa-envelope-o fa-fw"></i>  <a href="mailto:contato@sjcvaleimoveis.com.br">contato@sjcvaleimoveis.com.br</a>
+                          </li>
+                          <li><i class="fa fa-globe fa-fw"></i>  <a href="http://www.sjcvaleimoveis.com.br/">www.sjcvaleimoveis.com.br</a>
+                          </li>
+                      </ul>
+                      <p>
+                        Segunda a Sexta-feira: das 9:00 às 18:00 horas, Sábado das 9:00 às 13:00 horas
+                      </p>
+                  </div>
+
+              </div>
+            </div>
+          </section>
+          {% endblock footer_logo %}
+
+<!--[if IE]>
+          <div class="container">
+            <div class="row">
+              <div class="col-md-12">
+                <div style="text-align:center;">
+                  <hr class="small">
+                  <p class="text-muted">
+                   Este conteúdo é melhor visualizado com versões recentes do 
+                   <strong>Firefox</strong> <img alt="firefox" width="24" src="{% static 'themes/sydney/img/firefox.jpg' %}">, 
+                   <strong>Chrome</strong> <img alt="chrome" width="24" src="{% static 'themes/sydney/img/chrome.jpg' %}"> ou 
+                   <strong>Safari</strong> <img alt="safari" width="24" src="{% static 'themes/sydney/img/safari.jpg' %}">
+                  </p>
+                </div>
+              </div>
+            </div>            
+          </div>
+<![endif]-->
+        <footer >
+          <div class="container">
+
+            <!--  USE THE footer_top BLOCK to add content here -->
+            {% block footer_top %}            
+            {% endblock %}  
+
+            <!--  USE THE footer BLOCK to add content here -->
+            {% block footer %}
+            {% endblock %}
+
+
+
+            <div class="row">
+              <div class="col-md-6">
+                <ul class="legals">
+                  <li>Copyright © 2016<a href="http://sjcvaleimoveis.com.br"> SJC Vale Imóveis</a>
+                  </li>
+                </ul>
+              </div>
+
+              <!--  USE THE footer_bottom BLOCK to add content here -->
+              {% block footer_bottom %}
+              <div class="col-md-6 credit">
+                <p>
+                  Criado por <a href="http://corretaza.com.br" style="cursor: pointer; color:#fe6f47;"><img class="" src="{% static 'themes/sydney/img/logo_corretaza_laranja.png' %}" alt="Corretaza, muito mais que um site para sua imobiliaria" style="height: 32px;"> Corretaza</a>
+                </p>
+              </div>
+              {% endblock footer_bottom %}
+
+            </div>
+          </div>
+        </footer>
+
+        {% endblock footer_area %}
+
+        <!--  USE THE extrabody_bottom BLOCK to add content here -->
+        {% block extrabody_bottom %}
+        {% endblock extrabody_bottom %}
+
+        <!-- Basic JS for this template::: SYDNEY -->
+        {% block js %}
+        <!-- todo: add to django-bower -->
+        <script src="{% static 'modernizr/modernizr.js' %}"></script>
+        <!--[if lt IE 9]>
+          <script src="{% static 'jQuery.XDomainRequest/jquery.xdomainrequest.min.js' %}"></script>
+        <![endif]-->
+        <script src="{% static 'waypoints/lib/jquery.waypoints.min.js' %}"></script>
+        <script src="{% static 'bootstrap/dist/js/bootstrap.min.js' %}"></script>
+        <script src="{% static 'themes/sydney/js/scripts.js?v=0.0.3' %}"></script>
+        <script src="{% static 'themes/sydney/js/jquery.flexslider.js' %}"></script>
+        <script src="{% static 'themes/sydney/js/jquery.infinitescroll.min.js' %}"></script>
+        <script src="{% static 'pickadate/lib/compressed/picker.js' %}"></script>
+        <script src="{% static 'pickadate/lib/compressed/picker.time.js' %}"></script>
+        <script src="{% static 'pickadate/lib/compressed/picker.date.js' %}"></script>
+        <script src="{% static 'pickadate/lib/compressed/translations/pt_BR.js' %}"></script>
+
+        {% if user.is_authenticated %}
+          <script src="{% static 'dropzone/dist/min/dropzone.min.js' %}"></script>
+          <script src="{% static 'selectize/dist/js/standalone/selectize.min.js' %}"></script>
+
+        {% endif %}
+
+        {% endblock js %}
+
+        <!--  USE THE extrajs_bottom BLOCK to add extra javascripts here -->
+        {% block extrajs_bottom %}
+        {% endblock %}        
+
+	</body>
+    {% endblock body %}
+
+</html>

@@ -1,0 +1,103 @@
+{% extends 'ibuscador/base_ibuscador.html' %}
+
+{% load static %}
+{% load humanize %}
+
+{% load cropping %}
+{% load floppyforms %}
+{% load permission_tags %}
+
+{% block extrajs_top %}
+  {{ block.super }}
+  {{ form.media }}
+{% endblock %}
+
+{% block navbar_area %}
+
+  <style type="text/css">
+    .semborda {border-bottom-style: hidden;}
+  </style>
+
+  <section style="padding: 16px 0 0 0;">
+
+    <div class="container">
+
+      <!-- hamburguer menu -->
+      <div class="row">
+        <div class="col-md-12 text-right navicon">
+          <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {{ block.super }}
+
+{% endblock navbar_area %}
+
+{% block content %}
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+
+      <div class="col-md-10">
+
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Endereço</td>
+              <td>Bairro</td>
+              <td>Venda</td>
+              <td>Locação</td>
+              <td></td>
+            </tr>
+            {% for imovel in imoveis_list %}
+            
+            <tr {% if imovel.esta_arquivado %}style="color: #b5b4b4;"{% endif %} class="semborda">
+              <td colspan="4">
+                <br>
+                <a href="{{ imovel.get_absolute_url }}">
+                <span class="badge" >Ref: {{ imovel.imovel_ref }}</span>
+                </a>
+                {{ imovel.tipo_imovel_verbose }} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <i class="fa fa-key"></i> {{ imovel.proprietario }}
+                {% if imovel.esta_arquivado %}
+                  <span class="badge" style="font-size: 0.8em;">Arquivado</span>
+                {% endif %}                
+              </td>
+            </tr>
+
+            
+            <tr {% if imovel.esta_arquivado %}style="color: #b5b4b4;"{% endif %}>
+
+              <td>
+              {{ imovel.logradouro }}, {{ imovel.numero }} <strong>{{ imovel.complemento }}</strong><br>
+              <small>{{ imovel.cep }}</small>
+              <br>{{ imovel.condominio|default:"-" }}<br>
+              </td>
+              <td>
+                {{ imovel.bairro }}<br>
+                <small>{{ imovel.cidade }}</small>
+              </td>
+              <td>R$<strong>{{ imovel.valor_venda|intcomma }}</strong></td>
+              <td>R$<strong>{{ imovel.valor_locacao|intcomma }}</strong></td>
+
+
+            </tr>
+
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+        <center>
+          <a class="btn btn-default" href="{% url 'ibuscador.home' %}">Voltar</a>
+        </center>
+
+      </div>
+                  
+    </div>
+
+{% endblock content %}

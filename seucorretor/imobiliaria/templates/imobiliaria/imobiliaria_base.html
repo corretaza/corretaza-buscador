@@ -1,0 +1,18 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+
+{% block topheader_area %}
+
+  {% if user.is_authenticated %}
+
+    {% include "core/includes/navigation.html" with corretor=corretor  %}
+
+  {% else %}
+
+    {% include "core/includes/menu_hamburguer.html" %}
+
+  {% endif %}
+
+{% endblock topheader_area %}
+

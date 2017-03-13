@@ -1,0 +1,41 @@
+
+<table class="table">
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th class="fila_comprar"><center>Fila Comprar</center></th>
+      <th class="fila_alugar"><center>Fila Alugar</center></th>
+      <th><center>Pendentes</center></th>
+      <th><center>Em Andamento</center></th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for group_name, choices in optgroups %}
+      {% for choice in choices %}
+        <tr>
+          <td>
+            {% if forloop.first %}
+            <span class="text-danger">Corretor com menos atendimentos <i class="fa fa-arrow-circle-right"></i></span>
+            {% endif %}
+          </td>
+          <th {% if choice.1.pausado %}class="text-muted"{% endif %}>
+            <label for="{{ attrs.id }}_{{ forloop.counter }}">
+              <input type="radio" id="{{ attrs.id }}_{{ forloop.counter }}" value="{{ choice.0 }}" name="{{ name }}"{% if required %} required{% endif %}{% if choice.0 in value %} checked{% endif %}> {{ choice.1 }}
+              {% if choice.1.pausado %}<i class="fa fa-pause"></i>{% endif %}
+              </label>
+          </th>
+          <td class="fila_comprar"><center><small>{{ choice.1.comprar_contador }}</small></center></td>
+          <td class="fila_alugar"><center><small>{{ choice.1.alugar_contador }}</small></center></td>
+          <td>
+            <div>
+              <input type="text" class="form-control input-sm" value="{{ choice.1.interesse_sem_atendimento }}" readonly style="text-align: center;" />
+            </div>
+          </td>
+          <td><strong> {{ choice.1.interesse_atendimentos_em_andamento }} </strong><small> (Alugar:{{ choice.1.interesse_alugar }} Comprar:{{ choice.1.interesse_comprar }})</small>
+          </td>
+        </tr>
+      {% endfor %}
+    {% endfor %}
+  </tbody>
+</table>

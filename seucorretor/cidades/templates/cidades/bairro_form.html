@@ -1,0 +1,55 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="popup-content">
+    <h1><strong>Bairro</strong></h1>
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+          {{ form }}
+
+          <div class="bottom-fix-menu" align="center">
+            <button type="submit" class="btn btn-lg btn-success">
+              <i class="fa fa-check"></i> Salvar
+            </button>
+            <a href="{% url 'core.windows_close' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+          </div>
+
+        </form> 
+
+        <div class="clearfix"><br><br><br><br></div>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+{% block extrajs_bottom %}
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $('#id_cidade').selectize({create: true});
+      $('#id_regiao').selectize({create: true});
+
+    });
+  </script>
+
+{% endblock extrajs_bottom %}

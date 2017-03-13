@@ -1,0 +1,71 @@
+
+{% load static %}
+{% load permission_tags %}
+
+  <header class="cd-main-header">
+    
+    <div class="cd-search is-hidden">
+
+      <form method='get' action="{% url 'ibuscador.lista.imovel_por_palavra' %}">
+        <input type="search" name="palavras" placeholder="Buscar imóvel..." id="id_palavras" maxlength="32">
+      </form>
+    </div> <!-- cd-search -->
+
+    <nav class="cd-nav" style="min-width: 390px;">
+      <ul class="cd-top-nav">
+        <!-- 
+        TODO: mostrar as pendencias do corretor
+        <li>
+          <a href="Link para as pendencias">
+            <i class="fa fa-bell"></i> <span class="notification">1</span>
+          </a>
+        </li> -->
+        {% if user|has_role:'gerente' %}
+        <li><a href="{% url 'core.paineldocorretor.admin' %}">Admin</a></li>
+        {% endif %}
+        {% if userprofile and userprofile.has_corretor %}
+        <li><a href="{% url 'core.userpage' %}">Meu Painel</a></li>
+        {% endif %}
+        <li><a href="{% url 'ibuscador.home' %}">Buscador</a></li>
+        <li>
+          <div class="dropdown">
+
+            <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="color: white;">
+              <i class="fa fa-user"></i>
+                {{ user.first_name|capfirst }}<span class="caret"></span>
+            </a>
+
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                {% if userprofile and userprofile.has_corretor %}
+                  {% if corretor %}
+                  <li class="edit-popup" role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'core.corretor.perfil.update' corretor.id %}"><i class="fa fa-user"></i> Corretor</a>
+                  </li>
+                  {% endif %}
+                
+                <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'imovel.relatorios.captacoesarquivadas' user.id %}"><i class="fa fa-file-text-o"></i> Rel. Minha captações arquivadas</a></li>
+                {% endif %}
+
+                {% if user.is_staff %}
+                  <li role="presentation"><a href="{% url 'core.paineldocorretor.admin' %}"> Gerenciar corretores</a></li>
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'vivareal.upload' %}"> Importar arquivo VivaReal</a></li>
+
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'vivareal.xml' %}" download="vivareal"> Gerar XML VivaReal</a></li>
+
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'autoatendimento.lista.inbound' %}"> Ver auto atendimentos</a></li>
+
+                  <li class="divider"></li>
+
+                  <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'imobiliaria.corretores.list' %}"> Cad. Corretores</a></li>
+
+                {% endif %}
+
+              <li class="divider"></li>
+              <li role="presentation"><a role="menuitem" tabindex="-1" href="{% url 'auth_logout' %}"><i class="fa fa-sign-out"></i> Sair</a></li>
+            </ul>
+          </div>  
+        </li>
+      </ul>       
+
+    </nav>
+
+  </header> <!-- .cd-main-header -->

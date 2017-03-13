@@ -1,0 +1,64 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block toplogo %}
+<tr>
+  <td style="padding-top:3px;padding-bottom:15px" align="center">
+    <div style="color:#909192; font-weight:500;font-size:11px;letter-spacing: 0.5px; text-align:center;">SJC Vale Imóveis</div>
+  </td>
+</tr>
+{% endblock toplogo %}
+
+{% block message_logo %}
+  <a href="#" style="color:#6b7075" target="_blank">
+    <img class="rAc" src="http://{{ domain }}/static/themes/sydney/img/logo_sjc_sem_nome.png" style="max-width:540px;width:100%;display:block" alt="{{ domain }}" title="SJC Vale Imóveis" border="0" width="540">
+  </a>
+{% endblock message_logo %}
+
+{% block message_content %}
+  <h3 style="line-height:125%;font-size:25px;font-weight:500;margin-top:0;margin-bottom:13px; color:#363c43;">Tempo nos atendimentos:</h3>
+  <h5>{{ inicio|date:'d/m/Y' }} - {{ fim|date:'d/m/Y' }}</h5>
+  <div style="font-size:16px;margin-bottom:0;line-height:135%; color:#6b7075;">
+    <h3>Atendimentos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Data</th>
+          <th>Atendimento</th>
+          <th>Tempo p/ cadastrar</th>
+          <th>Envio p/ corretor</th>
+          <th>Corretor</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for atendimento in atendimento_list %}
+          <tr>
+            <td><small>{{ atendimento.data_contato|date:"D d/m H:i" }}</small></td>
+            <td>{{ atendimento.tipo_interesse }} <span class="badge"> {{ atendimento.status_verbose }}</span> <small>{{ atendimento.cliente }}</small>
+            </td>
+            <td>+{{ atendimento.tempo_cadastro }}</td>
+            <td>
+              {% if atendimento.primeira_mensagem_contato %}
+                +{{ atendimento.tempo_envio_para_corretor }}
+              {% endif %}
+            </td>
+            <td><small>{{ atendimento.corretor }}</small></td>
+          </tr>
+
+        {% endfor %}
+      </tbody>
+    </table>
+
+  </div>
+{% endblock message_content %}
+
+{% block message_actions %}
+{% endblock message_actions %}
+
+{% block footer_options %}
+{% endblock footer_options %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% block image_tracker %}
+{% endblock image_tracker %}

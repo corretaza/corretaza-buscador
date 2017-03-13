@@ -1,0 +1,77 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+<div class="popup-content">
+    <h1>Corretor</h1>
+    <div class="row">
+
+        <div class="col-lg-8">
+
+            <form method='post' enctype="multipart/form-data">{% csrf_token %}           
+
+                {% formrow form.nome %}
+                {% formrow form.email %}
+                {% formrow form.creci %}
+
+                <div class="row">
+                  <div class="col-xs-4">
+                    {% formrow form.fone %}
+                  </div>
+                  <div class="col-xs-8">
+                    {% formrow form.fone_detalhe %}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-4">
+                    {% formrow form.fone2 %}
+                  </div>
+                  <div class="col-xs-8">
+                    {% formrow form.fone2_detalhe %}
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-xs-4">
+                    {% formrow form.fone3 %}
+                  </div>
+                  <div class="col-xs-8">
+                    {% formrow form.fone3_detalhe %}
+                  </div>
+                </div>
+
+                {% formrow form.whatsapp %}
+
+                {% formrow form.foto %}
+                {% formrow form.foto_cropping %}
+
+                {% formrow form.pausado %}
+
+                <div class="bottom-fix-menu" align="center">
+                  <h1>Cliente
+                    <input type="submit" class="btn btn-lg btn-success" value="Salvar" />
+                    <a href="{% url 'core.windows_close' %}" class="btn btn-lg btn-danger" role="button" >Cancel</a>
+                  </h1>
+                </div>
+
+            </form> 
+
+            <span><br/><br/><br/><br/></span>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}

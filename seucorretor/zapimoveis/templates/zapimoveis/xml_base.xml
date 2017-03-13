@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Carga xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Imoveis>
+    {% for imovel in imoveis %}
+    <Imovel>
+      <CodigoImovel>{{ imovel.imovel_ref }}</CodigoImovel>
+      <TipoImovel>{{ imovel.tipo_zap }}</TipoImovel>
+      <SubTipoImovel>{{ imovel.subtipo_zap }}</SubTipoImovel >
+      <CategoriaImovel>{{ imovel.categoria_zap }}</CategoriaImovel>
+      <Cidade>{{ imovel.cidade }}</Cidade>
+      <Bairro>{{ imovel.bairro.descricao }}</Bairro>
+      <Numero>{{ imovel.numero }}</Numero>
+      <Complemento></Complemento>
+      <CEP>{{ imovel.cep }}</CEP>
+      <PrecoVenda>{{ imovel.valor_venda|floatformat:"0" }}</PrecoVenda>
+      <PrecoLocacao>{{ imovel.valor_locacao|floatformat:"0" }}</PrecoLocacao>
+      <PrecoLocacaoTemporada />
+      <PrecoCondominio>{{ imovel.valor_condominio|floatformat:"0" }}</PrecoCondominio>
+      <AreaUtil>{{ imovel.area_construida }}</AreaUtil>
+      {% if imovel.eh_apartamento %}
+      <AreaTotal>{{ imovel.area_construida }}</AreaTotal>
+      {% else %}
+      <AreaTotal>{{ imovel.area_terreno }}</AreaTotal>
+      {% endif %}
+      <UnidadeMetrica />
+      <QtdDormitorios>{{ imovel.dormitorios }}</QtdDormitorios>
+      <QtdSuites>{{ imovel.suites }}</QtdSuites>
+      <QtdBanheiros>{{ imovel.banheiros }}</QtdBanheiros>
+      <QtdSalas>{{ imovel.dormitorios }}</QtdSalas>
+      <QtdVagas>{{ imovel.vagas_garagem }}</QtdVagas>
+      <QtdElevador />
+      <QtdUnidadesAndar />
+      <QtdAndar />
+      <QtdPessoasParaTemporada />
+      <AnoConstrucao />
+      <PossuiDivida />
+      <SaldoDivida />
+      <ValorMensalidadeDivida />
+      <QtdParcelasRestantesDivida />
+      <Observacao />
+      <DataUltimaParcelaDivida />
+      <DiaVencimentoDivida />
+      <AceitaPermuta />
+      <AceitaPermutaCarro />
+      <AceitaPermutaImovel />
+      <AceitaPermutaOutro />
+      <ValorPermutaCarro />
+      <ValorPermutaImovel />
+      <ValorPermutaOutro />
+      <DescricaoPermuta />
+      <Acesso24Horas />
+      <Agua />
+      <ArCondicionado />
+      <ArmarioCozinha />
+      <ArmarioEmbutido />
+      <BusinessCentar />
+      <Cerca />
+      <Churrasqueira />
+      <CoffeeShop />
+      <Convencoes />
+      <Copa />
+      <EntradaCaminhoes />
+      <Escritorio />
+      <EscritorioVirtual />
+      <Esgoto />
+      <Esquina />
+      <EstacionamentoRotativo />
+      <EstacionamentoVisitantes />
+      <EstradaAsfaltada />
+      <GaragemBarcos />
+      <Guarita />
+      <Heliponto />
+      <InfraInternet />
+      <Jardim />
+      <Lago />
+      <Lavoura />
+      <Luz />
+      <Marina />
+      <Mezanino />
+      <Pasto />
+      <PatioEstacionamento />
+      <Pier />
+      <Piscina />
+      <PisoElevado />
+      <PistaPouso />
+      <Playground />
+      <PonteRolante />
+      <QuadraSquash />
+      <QuadraTenis />
+      <QuadraPoliEsportiva />
+      <Quintal />
+      <RedeTelefone />
+      <ReservatorioAgua />
+      <Restaurante />
+      <Rio />
+      <RuaAsfaltada />
+      <SalaGinastica />
+      <SalaoFestas />
+      <SalaoJogos />
+      <Sauna />
+      <Sede />
+      <SegurancaRua />
+      <SegurancaPatrimonial />
+      <Silos />
+      <SistemaIncendio />
+      <Telefone />
+      <TVCabo />
+      <Varanda />
+      <Vestiario />
+      <VidrosReflexivos />
+      <WCEmpregada />
+      <QuartoWCEmpregada />
+      <Lavabo />
+      <EstudaPermuta />
+      <DepositoSubsolo />
+      <Closet />
+      <Hidromassagem />
+      <Lareira />
+      <FrenteMar />
+      <AndarInteiro />
+      <AreaServico />
+      <Bosque />
+      <CampoFutebol />
+      <CasaCaseiro />
+      <CasaFundo />
+      <CasaPrincipal />
+      <Caseiro />
+      <ComServico />
+      <CozinhaAzulejada />
+      <Despensa />
+      <EnergiaEletrica />
+      <EntradaServicoIndependente />
+      <EntradaFacilitada />
+      <EntradaLateral />
+      <Fogao />
+      <Freezer />
+      <Geladeira />
+      <Geminada />
+      <HomeTheater />
+      <ImovelExposicao />
+      <Interfone />
+      <LavaRoupas />
+      <LavanderiaColetiva />
+      <Isolada />
+      <LivingTabuasLargas />
+      <MeioAndar />
+      <Microondas />
+      <Oferta />
+      <Paiol />
+      <ParaIncorporacao />
+      <PistaCooper />
+      <PistaSkate />
+      <Poco />
+      <PocoArtesiano />
+      <PorteiraFechada />
+      <ProntoMorar />
+      <Refeitorio />
+      <RoupaBanho />
+      <RoupaCama />
+      <RoupaMesa />
+      <SalaAlmoco />
+      <SalaJantar />
+      <SalaIntima />
+      <SalaVideo />
+      <SegurancaInterna />
+      <Semigeminada />
+      <SpaHidromassagem />
+      <StandVendasLocal />
+      <TV />
+      <UtensiliosCozinha />
+      <UtilizeFGTS />
+      <VentiladoresTeto />
+      <VisiteImovelDecorado />
+      <Clube />
+      <ChildrenCare />
+      <Curral />
+      <Mobiliado />
+      <Recuo />
+      <Solarium />
+      <CasaMista />
+      <CasaAlvenaria />
+      <CasaMadeira />
+      <Terraco />
+      <TipoOferta>2</TipoOferta>
+      <ValorEntrada>0</ValorEntrada>
+      <ValorMensal>0</ValorMensal>
+      <InformacoesComplementares />
+      <DescricaoLocalizacao /> 
+      <Fotos>{% for foto in imovel.fotos_list %}
+        <Foto>
+          <NomeArquivo></NomeArquivo>
+          <URLArquivo>http://{{ domain }}/media/{{foto.picture}}</URLArquivo>
+          {% if foto.eh_principal %}
+          <Principal>1</Principal>
+          {% endif %}
+          <Alterada>0</Alterada>
+        </Foto>{% endfor %}
+      </Fotos>
+    </Imovel>
+    {% endfor %}
+  </Imoveis>
+</Carga>

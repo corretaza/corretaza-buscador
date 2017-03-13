@@ -1,0 +1,106 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load chartkick %}
+
+{% block extrajs_top %}
+
+  {{ block.super }}
+
+  <script src="http://code.highcharts.com/highcharts.js"></script>
+  <script src="{% static 'chartkick/chartkick.js' %}"></script>
+
+{% endblock %}   
+
+{% block navbar_area %}
+{% endblock navbar_area %}
+
+
+{% block content %}
+
+  <section class="dark-bg section-padding contact-wrap">
+    <div class="container">
+
+      <div class="row">
+        <p class="text-right">
+          <a href="{% url 'core.userpage' %}#atendimentos" class="btn btn-sm btn-success"><i class="fa fa-chevron-left"></i> Voltar</a>
+        </p>
+        <h1>Indicadores</h1>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12">
+          <form method='get' action="{% url 'relatorios.indicadores.geral' %}" enctype="multipart/form-data">{% csrf_token %}
+            <div class="col-md-1">
+              <span>Período: </span>
+            </div>
+            <div class="col-md-3">
+              <select class="form-control input-lg" name="mes">
+                <option value="Dec" {% if mes == 'Dec' %}selected="selected"{% endif %}>Dezembro</option>
+                <option value="Nov" {% if mes == 'Nov' %}selected="selected"{% endif %}>Novembro</option>
+                <option value="Oct" {% if mes == 'Oct' %}selected="selected"{% endif %}>Outubro</option>
+                <option value="Sep" {% if mes == 'Sep' %}selected="selected"{% endif %}>Setembro</option>
+                <option value="Aug" {% if mes == 'Aug' %}selected="selected"{% endif %}>Agosto</option>
+                <option value="Jul" {% if mes == 'Jul' %}selected="selected"{% endif %}>Julho</option>
+                <option value="Jun" {% if mes == 'Jun' %}selected="selected"{% endif %}>Junho</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <select class="form-control input-lg" name="ano">
+                <option value="2016" selected="selected">2016</option>
+              </select>
+            </div>
+            <div class="col-md-2">
+              <input type="submit" class="btn btn-lg btn-success" value="Exibir" />
+            </div>
+          </form>
+        </div>
+
+        {% if mes_int %}
+        <div class="col-md-12">
+          <p>
+            <a class="btn btn-default" href="{% url 'relatorios.indicadores.novosatendimentos' mes_int 2016 %}">Novos atendimentos</a>
+
+            <a class="btn btn-default" href="#">Resposta dos atendimentos</a>
+
+            <a class="btn btn-default" href="#">Qualidade da resposta</a>
+
+          </p>
+        </div>
+        {% endif %}
+
+        <div class="col-md-12">
+
+          <table class="table">
+            
+            {% regroup indicadores_list by data as indicadores %}
+            
+            {% for indicador in indicadores %}
+
+              {% if forloop.counter == 1 %}
+              <tr>
+                <td></td>
+                {% for item in indicador.list %}
+                  <td>{{ item.user }}</td>
+                {% endfor %}
+              </tr>
+              {% endif %}
+
+              <tr>
+                <td><b>{{ indicador.grouper }}</b></td>
+                {% for item in indicador.list %}
+                  <td>{{ item.hits }}</td>
+                {% endfor %}
+              </tr>
+            {% endfor %}
+
+          </table>
+        
+        </div>
+      </div>
+
+    </div>
+  </section>      
+
+{% endblock content %}

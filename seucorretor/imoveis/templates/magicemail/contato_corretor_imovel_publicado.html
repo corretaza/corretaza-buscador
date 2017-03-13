@@ -1,0 +1,33 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block css%}{% endblock css%}
+
+{% block body %}
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+    <tr>
+      <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
+        <p>
+          <span style="color:#4d4d4d">Novo imóvel publicado:<br>
+            <a href="http://{{ domain }}{{ imovel.get_absolute_url }}">Ref: {{ imovel.imovel_ref }}</a>
+          </span>
+        </p>
+        <p>
+          <span>Corretores responsáveis por validar informações cadastradas:</span>
+          <table>
+          {% for corretor in imovel.corretores.all %}
+            <tr>
+              <td>{{ corretor }}</td>
+            </tr>
+          {% endfor %}
+          </table>
+        </p>
+        <p>
+          Link para o imóvel:<br>
+          <a href="http://{{ domain }}{{ imovel.get_absolute_url }}">http://{{ domain }}{{ imovel.get_absolute_url }}</a>
+        </p>
+      </td>
+    </tr>      
+    </tbody>
+</table>
+{% endblock body %}

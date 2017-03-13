@@ -1,0 +1,130 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block css%}{% endblock css%}
+
+{% block body %}
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+    <tr>
+      <td>
+        <div style="text-align:center;">
+          <img alt="SJC Vale Imóveis (clique em exibir imagens para visualizar o logotipo)" src="http://{{ domain }}/tracking/email/opened/?id={{ mensagem_id }}" style="display:block;margin-left: auto;margin-right: auto;" width="100" tabindex="0">
+          <h1 style="font-size: 18px;color: #4d4d4d;font-weight: normal;">SJC Vale Imóveis</h1>
+        </div>
+      </td>      
+    </tr>
+    <tr>
+      <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
+        <h1 style="font-size:22px;font-weight:normal;color:#4d4d4d"><span style="color:#4d4d4d">Olá {{ nome }},</span></h1>
+        <h2 style="font-size:21px;font-weight:normal;color:#201F1F;">
+          <span style="color:#4d4d4d">{{ mensagem|safe }}</span>
+        </h2>
+        <h2 style="font-size:22px;font-weight:normal;color:#201F1F;">Utilize os botões abaixo:</h2>
+        <div style="text-align:center;">
+
+        <p style="padding: 0 0px 20px 0px; margin-bottom: 12px;">
+          <a href="http://{{ domain }}{{ painel_url }}?msg={{ mensagem_id }}" style="color: #fff;background: #4BBB3B;margin: 0;padding: 10px 15px;border-bottom: 3px solid #1F7713;border-radius: 4px;text-decoration: none;font-size: 18px;">Ver Imóveis</a>          
+        </p>
+
+        <p style="padding: 0 0px 20px 0px; margin-bottom: 12px;">
+          <a href="http://{{ domain }}{{ painel_url }}?msg={{ mensagem_id }}#replymsg" style="color: #fff;background: #4BBB3B;margin: 0;padding: 10px 15px;border-bottom: 3px solid #1F7713;border-radius: 4px;text-decoration: none;font-size: 18px;">Responder</a>
+        </p>  
+
+        {% if interesse.cliente.ja_definiu_dias_para_visita %}
+        <p style="text-align:center;">Seus melhores dias/horários para agendar visita são:</p>
+        <p style="text-align:center;">
+          <strong>{{ interesse.cliente.melhor_hora_para_visita_verbose }}</strong>
+          <a href="http://{{ domain }}/{{ interesse.get_melhoragendaparavisita_url }}?msg={{ mensagem_id }}"> Alterar</a>
+        </p>
+        {% else %}
+        <p style="padding: 0 0px 20px 0px; margin-bottom: 12px;">
+          <a href="http://{{ domain }}/{{ interesse.get_melhoragendaparavisita_url }}?msg={{ mensagem_id }}" style="color: #fff;background: #4BBB3B;margin: 0;padding: 10px 15px;border-bottom: 3px solid #1F7713;border-radius: 4px;text-decoration: none;font-size: 18px;">Agendar Visita</a>
+        </p>
+        {% endif %}
+
+        </div>
+      </td>
+    </tr>
+    </tbody>
+</table>
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody style="font-size:16px;font-weight:normal;">
+    <tr>
+      <td style="padding:0 0 0 35px;"><strong>{{ nome_corretor }}</strong></td>
+    </tr>
+    <tr>
+      <td style="padding:0 0 0 35px;"><small>CRECI {{ creci }}</small></td>
+    </tr>      
+    <tr>
+      <td style="padding:0 0 0 35px;">{{ fone }} <small>{{ fone_detalhe }}</small></td>
+    </tr>
+    {% if fone2 %}
+    <tr>
+      <td style="padding:0 0 0 35px;">{{ fone2 }} <small>{{ fone2_detalhe }}</small></td>
+    </tr>
+    {% endif %}
+    {% if fone3 %}
+    <tr>
+      <td style="padding:0 0 0 35px;">{{ fone3 }} <small>{{ fone3_detalhe }}</small></td>
+    </tr>
+    {% endif %}
+    {% if whatsapp %}
+    <tr>
+      <td style="padding:0 0 0 35px;">WhatsApp {{ whatsapp }}</td>
+    </tr>
+    {% endif %}
+    <tr>
+      <td style="padding:0 0 0 35px;">email {{ email_corretor }}</td>
+    </tr>
+    <tr><td><p><br></p></td></tr>
+    <tr>
+      <td>
+        <p style="text-align:center;">
+          <small style="color:#4D4B4B;">Nossa plataforma é melhor visualizada com os navegadores Firefox, Chrome ou Safari</small>
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #EDEAEA; font-family:helvetica,arial;padding: 20px 0 20px 0;">
+          <tbody style="font-size:12px;font-weight:normal;line-height: 18px;color:#272525;">
+            <tr>
+              <td style="text-align: center;padding-top:12px;"><strong>SJC Vale Imóveis</strong></td>
+            </tr>  
+            <tr>
+              <td style="text-align: center;">Rua Francisca Maria de Jesus, 347 - Sala 212</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">Ed. Atrium Offices - Jd. Satélite - São José dos Campos/SP</td>
+            </tr>
+            <tr>
+              <td style="text-align: center;">(12) 3939 9111  -  (12) 3322 6942</td>
+            </tr>      
+            <tr>
+              <td style="text-align: center;"><a href="http://www.sjcvaleimoveis.com.br">www.sjcvaleimoveis.com.br</a></td>
+            </tr>
+            <tr>
+              <td style="text-align: center;padding-bottom:12px;"><small>Segunda a Sexta-feira: das 9:00 às 18:00 horas, Sábado das 9:00 às 13:00 horas</small></td>
+            </tr>
+          </tbody>
+        </table>       
+      </td>      
+    </tr>
+  </tbody>
+</table>
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody style="font-size:12px;font-weight:normal;color:#4d4d4d">
+    <tr>
+      <td style="padding:10px 10px 10px 10px;"><strong>ATENÇÃO:</strong> Enviamos este email a '{{email_cliente}}' porque você deixou uma mensagem em nosso site. Cumprimos rigorosamente com as políticas de privacidade e seu email/telefone estão guardados com todo cuidado.</td>
+    </tr>
+    <tr>
+      <td style="padding:0 10px 10px 10px; text-align:center;">
+        <a style="text-decoration: underline;" href="http://{{ domain }}/{{ interesse.get_cancelamento_url }}">Não quero receber mais emails | Cancelamento | Unsubscribe</a>
+      </td>
+    </tr>   
+    <tr>
+      <td><p><br/><br/></p></td>
+    </tr>      
+  </tbody>
+</table>
+{% endblock body %}

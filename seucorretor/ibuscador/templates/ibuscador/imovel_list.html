@@ -1,0 +1,78 @@
+{% extends 'ibuscador/base_ibuscador.html' %}
+
+{% load static %}
+
+{% block header_area %}
+{% endblock header_area %}
+
+{% block content %}
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+
+      <div class="col-md-10">
+
+        <h1><strong>Captações pendentes</strong></h1>
+
+        <table class="table table-condensed table-striped">
+          <tbody>
+            <tr>
+              <td>Ref.</td>
+              <td>Imóvel</td>
+              <td>Proprietário</td>
+              <td>Endereço</td>
+              <td>Valor</td>
+              <td>Fotos?</td>
+              <td></td>
+            </tr>
+            {% for imovel in imoveis_list %}
+            <tr class="{{ imovel.add_tipo_imovel_class }}">
+              <td>
+                <strong>{{ imovel.imovel_ref|default:"?"}}</strong>
+              </td>
+              <td>{{ imovel.titulo }}<br/><small>{{ imovel.data_cadastro|date:"d/b/y" }}</small>
+              </td>
+              <td><small>{{ imovel.proprietario|default:"Sem proprietário"}}</small></td>
+              <td>{{ imovel.logradouro|default:"Sem endereço" }}<br>
+                  {{ imovel.bairro|default:" " }}, {{ imovel.cidade|default:" " }}<br>
+                  <small>{{ imovel.condominio|default:"Sem condomínio" }}</small>
+              </td>
+              <td>Venda: R$<strong>{{ imovel.valor_venda }}</strong><br/>
+              Locação: R$<strong>{{ imovel.valor_locacao }}
+              </td>
+              <td></strong></td>
+              <td>
+                {% if imovel.fotos_list %}
+                SIM
+                {% else %}
+                NÃO
+                {% endif %}
+              </td>
+              <td>
+                <a href="{{ imovel.get_absolute_url }}?interesse={{ tipo_interesse }}">
+                  <i class="fa fa-home"></i>
+                </a>
+                <a href="{% url 'imoveis.imovel.update' imovel.id %}">
+                  <i class="fa fa-pencil"></i>
+                </a>
+              </td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+        <center>
+          <a class="btn btn-default" href="{% url 'ibuscador.home' %}">Voltar</a>
+        </center>
+
+      </div>
+                  
+    </div>
+
+
+
+
+{% endblock content %}
+

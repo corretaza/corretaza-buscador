@@ -1,0 +1,196 @@
+{% extends 'ibuscador/base_ibuscador.html' %}
+
+{% load static %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+  {{ block.super }}
+  {{ form.media }}
+{% endblock %}
+
+{% block navbar_area %}
+{% endblock navbar_area %}
+
+{% block content %} 
+
+      <section class="hero-original" id="hero-original">
+        <div class="container">
+
+          <!-- hamburguer menu -->
+          <div class="row">
+            <div class="col-md-12 text-right navicon">
+              <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+            </div>
+          </div>
+
+          <div class="row">
+
+            <div class="col-xs-8">
+              <h1>&nbsp</h1>
+            </div>
+
+            <div class="col-xs-8">
+
+              <span style="font-size: 42px; text-shadow: 2px -1px 2px #FFFFFF;" ><span>Seu imóvel está na SJC Vale Imóveis:</span></span>
+              
+              <div class="dark-bg-search-container dark-bg-greyed-box">
+                <div class="dark-bg-search_wrapper">
+
+                  <form action="{% url 'ibuscador.lista' %}" method="get" enctype="multipart/form-data">{% csrf_token %} 
+
+                    <div class="row">
+                      <div class="col-xs-2">
+                        <div class="busca_padrao">
+                          {% formrow busca_inicial_form.tipo_interesse %}
+                        </div>
+                      </div>
+                      <div class="col-xs-3">
+                        <div class="busca_padrao">
+                          {% formrow busca_inicial_form.tipo_imovel %}
+                        </div>
+                      </div>  
+                      <div class="col-xs-5">
+                        <div class="busca_padrao">
+                          {% formrow busca_inicial_form.cidade %}
+                        </div>
+                        <div class="imovel_ref">
+                          {% formrow busca_inicial_form.imovel_ref %}
+                        </div>
+                      </div>
+                      <div class="col-xs-2">
+                        <p>
+                          <label for="id_cidade"></label><br/>
+                          <input type="submit" class="btn btn-success btn-lg" value="Buscar" />
+                        </p>
+                      </div>
+                      <div class="col-xs-6">
+                        <div class="radio-inline residencial_comercial busca_padrao">
+                          {% formrow busca_inicial_form.residencial_comercial %}
+                        </div>
+                      </div>
+                      <div class="col-xs-4">
+                        <center style="padding-top: 14px;">
+                          <div class="busca_padrao">
+                            <a href="#" id="show_buscar_ref" class="busca_padrao" style="font-size: 16px; color: white;">Buscar por Referência</a>
+                          </div>
+                          <div class="imovel_ref">
+                            <a href="#" id="show_busca_padrao" style="font-size: 16px; color: white;">Busca Padrão</a>
+                          </div>
+                        </center>
+                      </div>
+                    </div>
+
+                  </form>
+
+                </div>
+              </div>
+
+
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+  <section class="content-intro content-padding" id="content-intro">
+    <div class="container container-padding">
+      <div class="row" style="padding: 40px 1px;">
+
+        <div class="col-md-3">
+          <div>
+              <a data-toggle="tooltip" data-placement="right" data-original-title="Início" href="{% url 'ibuscador.home' %}">
+                <img width="120" src="{% static 'themes/sydney/img/logo_sjc_sem_nome.png' %}">
+                <h3><strong>SJC Vale Imóveis</strong></h3>
+                <p>CRECI: <strong>26474-J</strong></p>
+              </a>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <center>
+            <p style="font-size: 26px; margin: 4px 0; color: #353535"><i class="fa fa-map-marker"></i></p>
+            <p style="font-size: 18px; color: #353535">LOCALIZAÇÃO</p>
+            <p style="line-height: 10px;">Rua Francisca Maria de Jesus, 347 - Sala 212</p>
+            <p style="line-height: 10px;">Ed. Atrium Offices - Jd. Satélite</p>
+            <p style="line-height: 10px;">São José dos Campos/SP</p>            
+          </center>
+        </div>
+
+        <div class="col-md-3">
+          <center>
+            <p style="font-size: 26px; margin: 4px 0; color: #353535"><i class="fa fa-mobile"></i></p>
+            <p style="font-size: 18px; color: #353535">CONTATO</p>
+            <p style="line-height: 10px;">(12) 3939 9111</p>
+            <p style="line-height: 10px;">(12) 3322 6942</p>
+            <p style="line-height: 10px;">contato@sjcvaleimoveis.com.br</p>            
+          </center>
+        </div>
+
+        <div class="col-md-2">
+          <center class="edit-popup">
+            <p style="font-size: 26px; margin: 4px 0; color: #353535"><i class="fa fa-envelope"></i></p>
+            <p style="font-size: 18px; color: #353535">
+              <a style="cursor: pointer;" id="open-faleconosco" href="{% url 'ibuscador.contatar.anunciante.passo1' 0 %}">FALE CONOSCO</a>
+            </p>
+            <p style="line-height: 10px;">
+              <a style="color: #8c9398; cursor: pointer;" href="{% url 'imobiliaria.colaboradores.list.site' %}">Conheça <strong>nossa equipe</a></strong>
+            </p>
+
+          </center>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="content-intro content-padding" style="background-color: #f9f9f9;">
+    <div class="container container-padding">
+      <div class="row" style="padding: 28px 1px;">
+        <div class="col-md-5">
+          <h3>
+            <a href="{% url 'imobiliaria.colaboradores.list.site' %}"><i class="fa fa-suitcase"></i> Fale com um de nossos corretores</a>
+          </h3>
+        </div>
+        <div class="col-md-7">
+          <p style="font-size: 1.17em; color: #353535">
+            Parceiros
+            {% if parceiros_list %}
+              {% for parceiro in parceiros_list %}
+                <a target="_new" href="{{ parceiro.link }}" style="cursor: pointer;">
+                  {% if parceiro.imagem %}
+                  <figure>
+                    <img src="{{ parceiro.imagem.url }}" alt="{{ parceiro.titulo }}" style="width: 160px;" />
+                  </figure>
+                  {% else %}
+                  <span style="font-size: 1em; color: #5a5a5a">{{ parceiro.titulo }}</span>
+                  {% endif %}
+                </a>
+              {% endfor %}
+            {% endif %}
+
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+  <script type="text/javascript">
+      $(document).ready(function(){
+        
+        $( ".imovel_ref" ).hide();
+        $( "label[for='id_residencial_comercial']" ).hide();
+        
+        $('#show_buscar_ref, #show_busca_padrao').click(function (e) {
+          e.preventDefault();
+          $(".imovel_ref, .busca_padrao").toggle();
+          $("#id_imovel_ref").val("");
+        });
+      });
+  </script>
+{% endblock extrajs_bottom %}

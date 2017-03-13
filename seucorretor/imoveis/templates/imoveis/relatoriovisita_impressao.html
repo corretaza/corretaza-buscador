@@ -1,0 +1,304 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load humanize %}
+
+<!--[if lt IE 9]>
+  <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+  "http://www.w3.org/TR/html4/strict.dtd">
+<![endif]-->
+<!--[if !IE]><!-->
+  <!DOCTYPE html>
+<!--<![endif]-->
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <!--[if lt IE 9]>
+        <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8">
+      <![endif]-->
+      <!--[if gt IE 8]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <![endif]-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>{% block title %}SJC Vale Imóveis - Sua melhor imobiliaria em São José dos Campos{% endblock %}</title>
+
+      <!-- Basic styles for this template::: SYDNEY -->
+      {% block css %}
+
+      <link href="{% static 'font-awesome-bower/css/font-awesome.css' %}" rel="stylesheet">
+      <link href="{% static 'themes/sydney/css/css-print.min.css?v=1.1.2' %}" rel="stylesheet">
+
+      <style>
+        .font-7 {
+          font-size: 0.7em;
+        }
+        .font-8 {
+          font-size: 0.8em;
+        }
+      </style>
+
+      {% endblock css %}
+
+        
+        <!--  USE THE extrajs_top BLOCK to add javascripts here -->
+      {% block extrajs_top %}
+ 
+      {% endblock %}        
+
+        
+    </head>
+
+    
+    <!--  USE THE body BLOCK to override all the body -->
+    {% block body %}
+  <body id="top" class="page font-8">
+
+        <!--  USE THE extrabody_top BLOCK to add content here -->
+        {% block extrabody_top %}
+        {% endblock extrabody_top %}
+
+        <!--  USE THE topheader_area BLOCK to add content here -->
+        {% block topheader_area %}
+        {% endblock topheader_area %}
+
+        <!--  USE THE navbar_area BLOCK to add content here -->
+        {% block navbar_area %}
+        {% endblock navbar_area %}
+
+
+        <!--  USE THE header_area BLOCK to add content here -->
+        {% block header_area %}    
+        {% endblock header_area %}
+
+
+
+        <!--  USE THE content_area BLOCK to add the MAIN CONTENT -->
+        {% block content_area %}
+
+            <!--  USE THE slide_area BLOCK to add content here -->
+            {% block slide_area %}
+            {% endblock slide_area %}
+
+
+
+            <!--  OR USE THE content BLOCK DIRECTLY -->
+            {% block content %}
+
+    <div class="page font-8">
+      <!--<div class="row well">
+        <h1 class="text-center font-12">SJC Vale Imóveis</h1><br>
+      </div>-->
+
+      <div class="row">
+        <div class="col-1">
+          <img width="72" alt="logo" src="{% static 'themes/sydney/img/logo_sjc_sem_nome.png' %}" style="width: 72px">
+        </div>
+        <div class="col-4">
+          <span class="text-center font-16" style="font-weight: bold;">SJC Vale Imóveis</span><br>
+          <span class="text-center font-12">CRECI: J26474</span>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-4">
+          <h3 class="font-10"><b>{{ imovel.titulo }}</b></h3>
+          <span>Ocupado: {{ imovel.ocupado }}</span>
+        </div>
+        <div class="col-2">
+          <h2 class="font-18">Ref: {{ imovel.imovel_ref }}</h2>
+        </div>
+      </div>
+
+      <div class="row" style="font-size: 0.9em;">
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;"><i class="fa fa-map-marker"></i>&nbsp;Localização</span><br>
+          {% if imovel.condominio %}
+            <b>{{ imovel.condominio }}</b><br>
+          {% endif %}
+          {{ imovel.logradouro}}, {{ imovel.numero }} {{ imovel.complemento }}<br>
+          {{ imovel.bairro }}, {{ imovel.cidade }}
+        </div>
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;">Proprietário</span><br>
+          {{ imovel.proprietario.nome }}<br>
+          Melhor forma de contato:<b> {{ imovel.proprietario.melhor_forma_contato }}</b><br>
+          WhatsApp: {{ imovel.proprietario.whatsapp }}<br>
+          Fones: {{ imovel.proprietario.fone }}, {{ imovel.proprietario.fone2 }}, {{ imovel.proprietario.fone3 }}, {{ imovel.proprietario.fone4 }}<br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;"><i class="fa fa-money"></i>&nbsp;Valor</span><br>
+          Locação: R$<b>{{ imovel.valor_locacao }}</b><br>
+          Venda: R$<b>{{ imovel.valor_venda }}</b><br>
+          Condominio: R$<b>{{ imovel.valor_condominio }}</b><br>
+          Pagamento: 
+          {% for forma in imovel.forma_de_pagamentos.all %}
+            {{ forma }}, 
+          {% endfor %}
+        </div>
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;"><i class="fa fa-key"></i>&nbsp;Chave</span><br>
+          {{ imovel.local_chave }}<br>
+          {{ imovel.local_chave_observacao }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;"><i class="fa fa-crop"></i>&nbsp;Tamanho</span><br>
+        Dormitórios: {{ imovel.dormitorios }}<br>
+        Banheiros: {{ imovel.banheiros }}<br>
+        Suítes: {{ imovel.suites }}<br>
+        Vagas: {{ imovel.vagas_garagem }}<br>
+        Área Construída: {{ imovel.area_construida }}<br>
+        Área Terreno: {{ imovel.area_terreno }} ({{ dimensoes_terreno }})<br>
+        </div>
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;"><i class="fa fa-square-o"></i>&nbsp;Condomínio</span><br>
+        Blocos: {{ imovel.condominio.blocos }}<br>    
+        Andares: {{ imovel.condominio.andares }}, Apto por andar: {{ imovel.condominio.apto_por_andar}}<br>
+        Elevador: 
+        {% if imovel.condominio.tem_elevador %}Sim{% else %}Não{% endif %}<br>
+        Construtora: {{ imovel.condominio.construtora }}<br>
+        Ano: {{ imovel.condominio.ano_construcao }}<br>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;">Desc. Imóvel</span><br>
+          {{ imovel.descricao_imovel }}
+        </div>
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;">Desc. Comodos</span><br>
+          {{ imovel.descricao_comodos }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;">Lazer Imóvel</span><br>
+          {% for lazer in imovel.areadelazer_imovel.all %}
+            {{ lazer }}, 
+          {% endfor %}
+        </div>
+        <div class="col-3 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;">Lazer Condomínio</span><br>
+          {% if imovel.condominio %}
+            {% for lazer in imovel.condominio.areadelazer_condominio.all %}
+              {{ lazer }}, 
+            {% endfor %}
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-6 border-top">
+          <span style="vertical-align: super; font-size: 0.7em;">Corretores</span><br>
+          {% for corretor in imovel.corretores.all %}
+            <span>{{ corretor.nome }} (Creci: {{ corretor.creci }}), </span>
+          {% endfor %}
+
+          {% if imovel.indicado_por %}
+          <p>Indicado por: {{ imovel.indicado_por }}</p>
+          {% endif %}
+        </div>
+      </div>
+
+      <div class="row">
+        <br><br>
+        <strong><h1 class="text-center font-12">Relatório de Visita</h1></strong>
+        <div class="col-6">
+          <br>
+          <p>Eu, __________________________________________________, portador(a) do RG/CPF: ___________________________, declaro para os devido fins de direito que conheci o imóvel acima relacionado, através da <strong>Imobiliária SJC Vale Imóveis Ltda</strong>, CRECI J26474.</p>
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <br>
+        <div class="col-1 border-top">
+          <br><br><br><br><br>
+          <strong><h1 class="font-14">Gostou?</h1></strong>
+        </div>
+        <div class="col-5 border-top">
+          <strong><h1 class="font-12">( ) NÃO</h1></strong>
+          <p><span class="font-7">Quanto mais informações tivermos sobre o que gostou/não gostou, melhor para acharmos mais opções de seu interesse!</small></p>
+          <div class="row">
+            <div class="col-1">Valor
+            </div>
+            <div class="col-2">
+              <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>
+          &nbsp;
+            </div>
+            <div class="col-3">Obs:
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-1">Localização
+            </div>
+            <div class="col-2">
+              <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>
+          &nbsp;
+            </div>
+            <div class="col-3">Obs:
+            </div>
+          </div>          
+          <div class="row">
+            <div class="col-1">Tamanho
+            </div>
+            <div class="col-2">
+              <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>&nbsp; <i class="fa fa-star-o"></i>
+          &nbsp;
+            </div>
+            <div class="col-3">Obs:
+            </div>
+          </div>
+          <br>
+          <strong><h1 class="font-12">( ) SIM </h1></strong>
+          <br><p>Valor da proposta R$:</p>
+          <br><p>Condições pagamento:</p><br>
+
+          <br><p class="text-right">São José dos Campos, {{ data_visita|date:"l, d F Y" }}</p>
+          <br>
+          <p>
+          Assinatura ____________________________________<br><br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Visitante/Comprador(a)/Locatário(a)<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Email/Fone para contato:
+        </div>
+      </div>
+
+      <!-- TODO: colocar a data e os dados da imobiliaria do banco -->
+
+    </div>
+            {% endblock %}
+
+        {% endblock %}
+
+    <!--  USE THE extra_content_area BLOCK to add content here -->
+    {% block extra_content_area %}      
+    {% endblock %}
+    
+
+        <!--  USE THE footer_area BLOCK to add content here -->
+        {% block footer_area %}
+        {% endblock footer_area %}
+
+        <!--  USE THE extrabody_bottom BLOCK to add content here -->
+        {% block extrabody_bottom %}
+        {% endblock extrabody_bottom %}
+
+        <!-- Basic JS for this template::: SYDNEY -->
+        {% block js %}
+        {% endblock js %}
+
+        <!--  USE THE extrajs_bottom BLOCK to add extra javascripts here -->
+        {% block extrajs_bottom %}
+        {% endblock %}        
+
+  </body>
+    {% endblock body %}
+
+</html>

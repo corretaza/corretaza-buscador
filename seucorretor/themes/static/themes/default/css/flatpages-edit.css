@@ -1,0 +1,24 @@
+/* FlatPages - edit area */
+.edit-block{position:relative;cursor:pointer}
+.edit-block:hover{}
+.edit-block:hover input{position:relative;z-index:6;opacity:.5}
+.edit-block:hover 
+.edit-block-controls{display:block;position:absolute;top:0;left:0;right:0;min-height:48px;background:rgba(38,38,38,0.8)}
+.edit-block-controls{display:none;position:absolute;top:0;left:0;width:100%;z-index:5}
+.edit-block-controls a{color:#e6e6e6;position:absolute;top:6px;display:block;line-height:36px;width:50px;min-height:36px;overflow:hidden;text-decoration:none;text-align:center;border-right:1px solid #8c8c8c}
+.edit-block-controls a:last-child{border-right:none}
+.edit-block-controls a:hover{color:#fff}
+.edit-block-controls a.edit-block-movedown{right:0}
+.edit-block-controls a.edit-block-delete{right:50px}
+.edit-block-controls a.edit-block-add{right:100px}
+.edit-block-controls a.edit-block-edit{right:150px}
+.edit-block-controls a.edit-block-area{right:200px}
+.edit-block-controls a.edit-block-style{right:250px}
+.edit-block-controls .edit-block-drag{position:absolute;top:12px;left:5px;color:#e6e6e6;cursor:move}
+
+.darkBorder .hover{background:#e3f3f5;color:#005664;outline:2px solid #00b4d2}
+.darkBorder:hover{outline:2px solid #444;cursor:pointer}
+.darkBorder.focus{outline:2px solid #666;position:relative;z-index:1}
+
+.editable-title{min-height:48px;}
+.editable-title h1,h2,h3{min-height:48px;}

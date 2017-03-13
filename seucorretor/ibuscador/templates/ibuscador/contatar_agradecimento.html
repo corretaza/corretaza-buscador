@@ -1,0 +1,48 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+
+
+{% block content %}
+
+  <section class="intro section-padding">
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-1">
+        </div>
+
+        <div class="col-sm-10">
+          <center>
+            <p style="font-size: 5em;">
+              <i class="fa fa-envelope"></i>
+            </p>
+            <h1>Sua mensagem foi enviada com sucesso</h1>
+            <p style="font-size: 1.6em;">Assim que possível nossa equipe entrará em contato</p>
+            <p>
+              <a href="#" class="btn-destaque-lg" id="btn-close" style="width: 140px;"> OK </a>
+            </p>
+          </center>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+{% endblock %}
+
+
+{% block extrajs_bottom %}
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+
+        $('#btn-close').click(function(evt) {
+          evt.preventDefault();
+          evt.stopPropagation();
+          window.parent.$.magnificPopup.close();
+        });
+
+      });
+  </script>
+{% endblock extrajs_bottom %} 

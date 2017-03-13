@@ -1,0 +1,389 @@
+{% extends 'ibuscador/base_ibuscador.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load cropping %}
+{% load permission_tags %}
+{% load floppyforms %}
+
+{% block extracss %}
+  <link href="{% static 'dw-bxslider-4/dist/jquery.bxslider.css' %}" rel="stylesheet">
+{% endblock extracss %}
+
+{% block js %}
+  
+  {{ block.super }}
+  <script src="{% static 'dw-bxslider-4/dist/jquery.bxslider.min.js' %}"></script>
+
+{% endblock js %}
+
+{% block navbar_area %}
+
+  <section style="padding: 16px 0 0 0;">
+
+    <div class="container">
+
+      <!-- hamburguer menu -->
+      <div class="row">
+        <div class="col-md-12 text-right navicon">
+          <a id="nav-toggle" class="nav_slide_button" href="#"><span></span></a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  {% if not para_avaliar %}
+    {{ block.super }}
+  {% endif %}
+
+{% endblock navbar_area %}
+
+{% block content %}
+
+  {% if messages %}
+    {% include "core/includes/messages-notifications.html" with messages=messages %}
+  {% endif %}
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-7">
+      <hr class="small">
+    </div>
+    {% if not para_avaliar %}
+    <div class="col-md-4">
+      <center>
+        <a class="btn btn-default" href="{% url 'ibuscador.lista' %}?tipo_interesse={{ tipo_interesse }}&tipo_imovel={{ imovel.tipo_imovel }}&cidade={{imovel.cidade.nome}}">Voltar para lista</a>
+        <a href="{% url 'ibuscador.home' %}" class="btn btn-default">Nova busca</a>
+      </center>
+    </div>
+    {% else %}
+    <div class="col-md-4">
+      <p><br><br></p>
+    </div>
+    {% endif %}
+  </div>
+
+  {% if user.is_authenticated %}
+    {% if imovel.status != 'publicado' %}
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-9">
+        <div class="panel panel-warning">
+          <div class="panel-heading edit-popup">
+            <h3><strong>ATENÇÃO!</strong> Este imóvel não esta publicado ainda (não visível para os clientes). Edite para atualizá-lo.</h3>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2"></div>
+    </div>
+    {% endif %}
+    <div class="row">
+      <div class="col-md-1"></div>
+      <div class="col-md-1">
+        <div class="icon-edit">
+          <a href="{% url 'imoveis.imovel.update' imovel.id %}"><i class="fa fa-pencil fa-2x"></i></a>
+        </div>      
+      </div>
+      <div class="col-md-1">
+        <div class="icon-edit edit-popup">
+          <a href="{% url 'imoveis.imovel.mostrarchave.update' imovel.id %}"><i class="fa fa-key fa-2x fa-flip-horizontal"></i></a>
+        </div>
+      </div>
+      <div class="col-md-1">
+        <div class="icon-edit">
+          <a target="_new" href="{% url 'imoveis.imovel.relatoriovisita.impressao' imovel.id %}"><i class="fa fa-print fa-2x fa-flip-horizontal"></i></a>
+        </div>
+      </div>
+
+    </div>
+  {% endif %}
+
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-9">
+      <span class="badge pull-right" style="font-size: 16px;">Ref: {{ imovel.imovel_ref }}</span> 
+      
+    </div>
+
+  </div>
+
+
+
+  <div class="row">
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      <ul class="bxslider">
+        {% for foto in imovel.fotos_list %}
+          <li><img src="{% cropped_thumbnail foto 'picture_cropping' scale=1 %}" style="min-height: 396px;" /></li>
+        {% empty %}
+          <li><img src="{% static 'themes/sydney/img/imovel_sem_foto.jpg' %}" style="min-height: 396px;" /></li>
+        {% endfor %}
+      </ul>
+      <div id="bx-pager">
+        {% for foto in imovel.fotos_list %}
+          <a data-slide-index="{{ forloop.counter0 }}" href="">
+            <img style="height: 54px;" class="img-thumbnail" src="{% cropped_thumbnail foto 'picture_cropping' scale=0.5 %}" />
+          </a>
+        {% endfor %}
+      </div>        
+    </div>
+
+    <div class="col-md-5">
+
+      <p>
+        <span><strong>{{ imovel.titulo }}
+        {% if imovel.esta_arquivado %}
+          <span class="badge" style="font-size: 0.8em;">Não disponível</span>
+        {% endif %}
+        </strong></span>
+      </p>
+      <p style="font-size: 1.3em;">
+        <span>
+          <i class="fa fa-map-marker"></i> {{ imovel.bairro.descricao }}, <small>{{ imovel.cidade }}</small>
+        </span>        
+      </p>
+      {% if user|has_role:'corretor, gerente' %}
+        <p>
+          {% if imovel.condominio %}
+            {{ imovel.condominio }}
+          {% else %}
+            {{ imovel.logradouro }}
+          {% endif %}
+          , {{ imovel.complemento }}
+        </p>
+      {% endif %}
+
+      {% if imovel.eh_para_venda %}
+        <h1><small>Venda:</small> R$<strong>{{ imovel.valor_venda|intcomma }}</strong></h1>
+      {% endif %}
+      {% if imovel.eh_para_locacao %}
+        <h1><small>Locação:</small> R$<strong>{{ imovel.valor_locacao_total|intcomma }} </strong>{% if imovel.valor_condominio %} com condomínio{% endif %}</h1>
+        {% if imovel.valor_condominio %}
+          <p style="font-size: 1.2em">(Valor: R${{ imovel.valor_locacao|intcomma }}
+            Condomínio: R${{ imovel.valor_condominio }})</p>
+        {% endif %}
+
+      {% endif %}
+
+      <table class="table">
+        <tbody>
+          <tr>
+            <td><i class="fa fa-crop"></i>&nbsp;&nbsp; Área <small>construída</small> </td>
+            <td>{{ imovel.area_construida }} m&sup2;
+              {% if imovel.valor_venda %}
+                <small>(R${{ imovel.media_metro_quadrado|intcomma }}/m&sup2;)</small>
+              {% endif %}
+            </td>
+          </tr>
+          {% if not imovel.tipo_imovel == 'apartamento' %}
+          <tr>
+            <td><i class="fa fa-expand"></i>&nbsp&nbsp Área <small>terreno</small> </td>
+            <td>{{ imovel.area_terreno }} m&sup2;</td>
+          </tr>
+          {% endif %}
+          <tr>
+            <td><i class="fa fa-home"></i>&nbsp&nbsp Quartos</td>
+            <td>{{ imovel.dormitorios }}</td>
+          </tr>
+          <tr>
+            <td><i class="fa fa-square-o"></i>&nbsp&nbsp Banheiros</td>
+            <td>{{ imovel.banheiros }}</td>
+          </tr>
+          {% if imovel.suites %}
+          <tr>
+            <td><i class="fa fa-square-o"></i>&nbsp&nbsp Suítes</td>
+            <td>{{ imovel.suites }}</td>
+          </tr>
+          {% endif %}
+          {% if imovel.vagas_garagem %}
+          <tr>
+            <td><i class="fa fa-car"></i>&nbsp&nbsp Vagas</td>
+            <td>{{ imovel.vagas_garagem }}</td>
+          </tr>
+          {% endif %}
+
+          {% if imovel.valor_condominio %}
+            <tr>
+              <td><i class="fa fa-square-o"></i>&nbsp&nbsp Condomínio</td>
+              <td>R${{ imovel.valor_condominio }}</td>
+            </tr>
+          {% endif %}
+
+
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-1"></div>
+
+    <div class="col-md-5"></div>
+
+    <div class="col-md-5">
+      <h1>Descrição do imóvel</h1>
+      <div class="line-distance-small">
+      {% for descricao in imovel.descricao_imovel_as_list %}
+        <p>{{ descricao }}</p>
+      {% endfor %}        
+      </div>
+      <hr class="small">
+      <div class="line-distance-small">
+      {% for comodo in imovel.descricao_comodos_as_list %}
+        <p>{{ comodo }}</p>
+      {% endfor %}
+      </div>
+      <!--<h3><strong>Descrição dos cômodos</strong></h3> -->
+
+    </div>
+
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-1"></div>
+    <div class="col-md-5">
+      {% if imovel.eh_para_venda and tipo_interesse != 'alugar' %}
+      <h3><strong>Formas de pagamentos</strong></h3>
+      <div class="row">
+        <div class="col-md-4 line-distance-small">
+          {% for forma_de_pagamento in imovel.forma_de_pagamentos.all %}
+            <p>{{ forma_de_pagamento }}</p>
+          {% empty %}
+            <p>Não informado</p>
+          {% endfor %}
+          <p>{{ imovel.outra_forma_de_pagamento }}</p>
+        </div>
+        <div class="col-md-4">
+        </div>
+      </div>
+      {% endif %}
+      <p style="font-size: 16px;">
+        <i class="fa fa-info-circle"></i>
+        <small> Anúncio sujeito a alteração e confirmação com o proprietário.</small>
+      </p>
+
+    </div>
+
+    <div class="col-md-5">
+
+      <h3><strong>Área de Lazer do imóvel</strong></h3>
+      <div class="row">
+        <div class="col-md-4 line-distance-small">
+          {% for areadelazer in imovel.areadelazer_imovel.all %}
+            <p>{{ areadelazer }}</p>
+          {% empty %}
+            <p>Não informado</p>
+          {% endfor %}
+        </div>
+      </div>
+
+      {% if imovel.condominio %}
+      <h3><strong>Área de Lazer condomínio</strong></h3>
+      <div class="row">
+        <div class="col-md-4 line-distance-small">
+        {% for areadelazer in imovel.condominio.areadelazer_condominio.all %}
+          <p>{{ areadelazer }}</p>
+        {% empty %}
+          <p>Não informado</p>
+        {% endfor %}
+        </div>
+        <div class="col-md-4">
+          <p></p>
+        </div>
+      </div>
+      {% endif %}
+
+    </div>
+
+    <div class="col-md-1"></div>
+  </div>
+
+  <div class="row"> <!-- nova linha -->
+    <div class="col-md-1"></div>
+    <div class="col-md-10">
+      <h1><i class="fa fa-map-marker"></i>&nbsp Localização</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <h3><strong>{{ imovel.bairro.descricao }}</strong> <small> ({{ imovel.regiao.nome }})</small></h3>
+          <p style="font-size: 1.4em;">{{ imovel.cidade }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  {% if not para_avaliar and not user.is_authenticated %}
+  <div class="site-faleconosco">
+    <h3>Interessou ?</h3>
+    <form>
+      <div class="form-group faleconosco-campos" style="display: none">
+        <p>
+          <input type="text" class="form-control" name="email" placeholder="Digite seu email" id="id_email">
+        </p>
+      </div>
+      <div class="form-group">
+        <a class="btn-destaque-lg" href="#"><i class="fa fa-envelope"></i> Contatar anunciante</a>
+      </div>
+    </form>
+    <div class="edit-popup">
+      <a id="open-faleconosco" href="{% url 'ibuscador.contatar.anunciante.passo1' imovel.imovel_ref %}"></a>
+      <input type="hidden" name="imovel_ref" id="id_imovel_ref" value="{{ imovel.imovel_ref }}">
+    </div>
+
+  </div>
+  {% endif %}
+
+{% endblock content %}
+
+{% block extrajs_bottom %}
+  <script type="text/javascript">
+
+      $(document).ready(function(){
+
+        $('.bxslider').bxSlider({
+          pagerCustom: '#bx-pager',
+          startSlide: 0,
+          adaptiveHeight: true,
+          auto: true,
+          autoStart: true,
+          pause: 8000,
+          slideMargin: 5
+        });
+
+        {% if not para_avaliar %}
+        $("label[for='id_email']").hide();
+        $("label[for='id_telefone']").hide();
+        $("label[for='id_nome']").hide();
+        $("label[for='id_mensagem']").hide();
+        $(".faleconosco-campos input").removeClass("input-lg");
+
+        $( ".site-faleconosco" ).hover(function() {
+          $( ".faleconosco-campos" ).show( 100 );
+        });
+
+        $('#id_email').keydown(function(event) {
+            if (event.keyCode == 13)  {
+              if ($("#id_email").val().length > 0) {
+                $( ".btn-destaque-lg" ).trigger( "click" );
+              } else {
+                $('#id_email').focus();
+              }
+              return false;
+            }
+        });  
+
+        $('.btn-destaque-lg').click(function(evt) {
+          evt.preventDefault();
+          evt.stopPropagation();
+          var url = $('#open-faleconosco').attr("href") + '?email=' + $('#id_email').val();
+          url = url.replace('/imovel/0', '/imovel/' + $('#id_imovel_ref').val());
+          $('#open-faleconosco').attr("href", url).click();
+        });
+        {% endif %}
+
+      });
+  </script>
+{% endblock extrajs_bottom %} 

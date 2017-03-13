@@ -1,0 +1,50 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load static %}
+{% load floppyforms %}
+{% load cropping %}
+
+{% block content %}
+
+  <div class="popup-content">
+
+    <h1>
+      <strong>{{ object.titulo|capfirst }}</strong> do(a) <strong>{{ object.proprietario }} </strong>
+      <span class="badge" style="font-size: 24px;" >Ref: {{ object.imovel_ref }}</span>
+    </h1>
+
+    <h3>{{ object.bairro.descricao }} <small>({{ object.regiao.nome }}) {{ object.cidade }}</small></h3>
+
+    <div class="row">
+
+      <div class="col-sm-10">
+
+        <br /><br /><br />
+        <p class="text-danger">ATENÇÃO: Este campo é muito importante, não altere se não tiver certeza de seu valor.</p>
+        <br />
+
+        <form method='post' enctype="multipart/form-data">{% csrf_token %}
+        
+          {{ form }}
+
+          <div class="bottom-fix-menu" align="center">
+            <button type="submit" class="btn btn-lg btn-success">
+              <i class="fa fa-check"></i> Alterar
+            </button>
+            <a href="{% url 'core.windows_close' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+          </div>
+
+        </form> 
+
+        <div class="clearfix"><br><br><br><br></div>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}
+

@@ -1,0 +1,90 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load humanize %}
+
+{% block content %}
+
+  <div class="popup-content">
+    <div class="row">
+
+      <div class="col-sm-7">
+        <h1>{{ imovel.titulo }} <span class="badge pull-left" style="font-size: 21px;">Ref: {{ imovel.imovel_ref }}</span></h1>
+        <h3>
+        Venda: R$<strong>{{ imovel.valor_venda|intcomma }}</strong>, 
+        Locação: R$<strong>{{ imovel.valor_locacao|intcomma }}</strong>, 
+        {% if imovel.condominio %}
+          Condomínio: R$<strong>{{ imovel.valor_condominio }}</strong>
+        {% endif %}
+        </h3>
+        {% if imovel.condominio %}
+          <h3>{{ imovel.condominio }}</h3>
+        {% endif %}
+        <h3>{{ imovel.logradouro }}, {{ imovel.numero }}, {{ imovel.complemento }}</h3>
+        <h3>{{ imovel.bairro.descricao }} <small>({{ imovel.regiao.nome }}) {{ imovel.cidade }}</small></h3>
+
+        <h3>Proprietário: {{ proprietario }}</h3>
+        <p>
+          Melhor forma de contato: <strong>{{ proprietario.melhor_forma_contato }}</strong><br/>
+          Email: <strong>{{ proprietario.email }}</strong><br/>
+          Fone: <strong>{{ proprietario.fone }}</strong>
+           {{ proprietario.fone_melhorhora }}<br/>
+          Fone 2: <strong>{{ proprietario.fone2 }}</strong>
+           {{ proprietario.fone2_melhorhora }}<br/>
+          Fone 3: <strong>{{ proprietario.fone3 }}</strong>
+           {{ proprietario.fone3_melhorhora }}<br/>
+          Fone 4: <strong>{{ proprietario.fone4 }}</strong><br>
+          WhatsApp: <strong>{{ proprietario.whatsapp }}</strong><br/>
+        </p>
+
+        <h3><strong>Chave:</strong></h3>
+        <p>Local: <strong>{{ imovel.local_chave }}</strong></p>
+        <p>Obs: <strong>{{ imovel.local_chave_observacao }}</strong></p>
+        <h3><strong>Obs Internas:</strong></h3>
+        <p><strong>{{ imovel.observacoes_internas }}</strong></p>
+
+        <div class="bottom-fix-menu" align="center">
+          <a href="{% url 'core.windows_close' %}" class="btn btn-lg btn-default" role="button" ><i class="fa fa-times"></i> Fechar</a>
+        </div>
+
+        <div class="clearfix"><br><br><br><br></div>
+
+      </div>
+
+      <div class="col-sm-5">
+        <h3><strong>Captação</strong></h3>
+        <table class="table table-condensed">
+          {% for corretor in imovel.corretores.all %}
+            <tr><td>{{ corretor }}</td></tr>
+          {% endfor %}
+        </table>
+        <h3><strong>Histórico</strong></h3>
+        <table class="table table-condensed">
+          {% for historico in imovel.historico_list %}
+            <tr>
+              <td><small>{{ historico.data|date:"d b y G:i" }}</small></td>
+              <td><small><span>{{ historico.usuario|capfirst }}</span></small></td>
+              <td><small>{{ historico.conteudo }}</small></td>
+            </tr>
+          {% endfor %}
+        </table>
+        <h3><strong>Últimas visitas agendadas</strong></h3>
+        <table class="table table-condensed">
+          {% for visita in historico_visitas_list %}
+            <tr>
+              <td><small>{{ visita.data_visita|date:"d b y G:i" }}</small></td>
+              <td><small><span>{{ visita.interesse.corretor|capfirst }}</span></small></td>
+              <td><small>{% if visita.visitado %}Visitado{% endif %}</small></td>
+            </tr>
+          {% endfor %}
+        </table>
+        
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}

@@ -1,0 +1,83 @@
+/* ---------------------------------------------------------
+ *	Caixa de dialogo
+ * --------------------------------------------------------- */
+.v-timeline {
+  padding: 0;
+  list-style: none;
+  position: relative;
+}
+
+
+/* Right content */
+.v-timeline > li .v-label {
+  /*margin: 0 0 15px 25%; */
+  padding: 20px 30px;
+  font-weight: 300;
+  line-height: 1.4;
+  position: relative;
+  background: #6F6E6E;
+}
+.v-timeline > li .v-label p {
+  font-size: 14px;
+  line-height: 24px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.v-timeline > li .v-label h3 {
+  line-height: 24px;
+  line-height: 1.7em;
+  color: white;
+}
+.v-timeline > li .v-label h4 {
+  line-height: 24px;
+  color: white;
+}
+
+/* The triangle */
+.v-timeline > li .v-label:after {
+  right: 100%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-right-color: #6F6E6E;
+  border-width: 18px;
+  top: 14px;
+}
+
+
+/* Example Media Queries */
+@media screen and (max-width: 65.375em) {
+  .v-timeline > li .v-time span {
+    font-size: 1.05em;
+  }
+}
+@media screen and (max-width: 47.2em) {
+  .v-timeline:before {
+    display: none;
+  }
+  .v-timeline > li .v-time {
+    width: 100%;
+    position: relative;
+    padding: 0 0 20px 0;
+  }
+  .v-timeline > li .v-time span {
+    text-align: left;
+  }
+  .v-timeline > li .v-label {
+    margin: 0 0 30px 0;
+    padding: 1.3em;
+  }
+  .v-timeline > li .v-label:after {
+    right: auto;
+    left: 20px;
+    border-right-color: transparent;
+    border-bottom-color: #869198;
+    top: -20px;
+  }
+  .v-timeline > li .v-icon {
+    display: none;
+  }
+}

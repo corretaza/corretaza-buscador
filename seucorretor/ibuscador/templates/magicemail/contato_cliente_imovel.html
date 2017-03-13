@@ -1,0 +1,29 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block css%}{% endblock css%}
+
+{% block body %}
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+    <tr>
+      <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
+        <h1 style="font-size:18px;font-weight:normal;color:#4d4d4d">
+            <span style="color:#4d4d4d">Novo contato recebido:</span>
+        </h1>
+        <h2 style="font-size:16px;letter-spacing:-1px;color:#4d4d4d">{{nome}} escreveu:</h2>
+        <h2 style="font-size:12px;font-weight:normal;color:#201F1F;">
+            <span style="color:#4d4d4d">{{ mensagem }}</span>
+        </h2>
+        <h2 style="font-size:14px;letter-spacing:-1px;color:#4d4d4d">
+            Contatos:
+        </h2>
+        <p><span style="color:#4d4d4d"> Nome: {{nome}}</span></p>
+        <p><span style="color:#4d4d4d"> Email: {{email}}</span></p>
+        <p><span style="color:#4d4d4d"> Telefone: {{telefone}}</span></p>
+        <p><span style="color:#4d4d4d"> Receber retorno via: {{receber_contato}}</span></p>
+        <p><span style="color:#4d4d4d"> Interessado em: <a href="http://{{ domain }}{{ url }}">Ref: {{imovel_ref}}</a></span></p>
+      </td>
+    </tr>      
+    </tbody>
+</table>
+{% endblock body %}

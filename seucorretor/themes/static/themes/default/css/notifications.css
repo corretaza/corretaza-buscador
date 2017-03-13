@@ -1,0 +1,132 @@
+/* Common, default styles for the notification box 
+ Based on http://tympanus.net/Development/NotificationStyles/bar-slidetop.html by Mary Lou
+ TODO: Check the license use out
+*/
+
+.ns-box {
+    position: fixed;
+    background: rgba(42,45,50,0.85);
+    padding: 22px;
+    line-height: 1.4;
+    z-index: 1000;
+    pointer-events: none;
+    color: rgba(250,251,255,0.95);
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.ns-box-success {
+    background: rgba(29,97,11,0.85);
+    color: #fff;
+}
+.ns-box-success p {
+    color: #fff;
+}
+.ns-box-warning {
+    background: rgba(210,60,60,0.85);
+    color: #fff;
+}
+.ns-box-warning p {
+    color: #fff;
+}
+
+.ns-box.ns-show {
+    pointer-events: auto;
+}
+
+.ns-box a {
+    color: inherit;
+    opacity: 0.7;
+    font-weight: 700;
+}
+
+.ns-box a:hover,
+.ns-box a:focus {
+    opacity: 1;
+}
+
+.ns-box p {
+    margin: 0;
+}
+
+.ns-box.ns-show,
+.ns-box.ns-visible {
+    pointer-events: auto;
+}
+
+/* To bar notifications */
+[class^="ns-effect-"].ns-box.ns-hide,
+[class*=" ns-effect-"].ns-box.ns-hide {
+    -webkit-animation-direction: reverse;
+    animation-direction: reverse;
+}
+
+/* Individual Effects */
+
+/* Slide on top */
+.ns-effect-slidetop {
+    box-shadow: inset 4.5em 0 rgba(0,0,0,0.6);
+}
+
+.ns-effect-slidetop .icon {
+    position: absolute;
+    display: block;
+    font-size: 109%;
+    top: 50%;
+    left: 1em;
+    -webkit-transform: translate3d(0,-50%,0);
+    transform: translate3d(0,-50%,0);
+}
+
+.ns-effect-slidetop p {
+    padding: 0 3.2em;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.ns-effect-slidetop.ns-show .icon,
+.ns-effect-slidetop.ns-show p {
+    -webkit-animation-name: animScaleUp;
+    animation-name: animScaleUp;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+    -webkit-animation-delay: 0.2s;
+    animation-delay: 0.2s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.ns-effect-slidetop.ns-show p {
+    -webkit-animation-name: animFade;
+    animation-name: animFade;
+}
+
+@-webkit-keyframes animScaleUp {
+    0% { opacity: 0; -webkit-transform: translate3d(0,-50%,0) scale3d(0,0,1); }
+    100% { opacity 1; -webkit-transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+}
+
+@keyframes animScaleUp {
+    0% { opacity: 0; -webkit-transform: translate3d(0,-50%,0) scale3d(0,0,1); transform: translate3d(0,-50%,0) scale3d(0,0,1); }
+    100% { opacity 1; -webkit-transform: translate3d(0,-50%,0) scale3d(1,1,1); transform: translate3d(0,-50%,0) scale3d(1,1,1); }
+}
+
+.ns-effect-slidetop.ns-show,
+.ns-effect-slidetop.ns-hide {
+    -webkit-animation-name: animSlideTop;
+    animation-name: animSlideTop;
+    -webkit-animation-duration: 0.3s;
+    animation-duration: 0.3s;
+}
+
+@-webkit-keyframes animSlideTop {
+    0% { -webkit-transform: translate3d(0,-100%,0); }
+    100% { -webkit-transform: translate3d(0,0,0); }
+}
+
+@keyframes animSlideTop {
+    0% { -webkit-transform: translate3d(0,-100%,0); transform: translate3d(0,-100%,0); }
+    100% { -webkit-transform: translate3d(0,0,0); transform: translate3d(0,0,0); }
+}
+

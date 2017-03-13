@@ -1,0 +1,12 @@
+  {% for message in messages %}
+    <div class="ns-box {% if message.tags %}ns-box-{{ message.tags }}{% endif %} ns-effect-slidetop animated slideInDown">
+      <p>{{ message }}</p>
+    </div>
+  {% endfor %}
+  <script type="text/javascript">
+    $(function() {
+      setTimeout(function() {
+        $('.ns-box').fadeOut('fast');
+      }, 5000);
+    });
+  </script>

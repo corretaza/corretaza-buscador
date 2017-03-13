@@ -1,0 +1,112 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+{% load permission_tags %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  {% if messages %}
+    {% include "core/includes/messages-notifications.html" with messages=messages %}
+  {% endif %}
+
+<div class="popup-content">
+
+    <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+        <h1><strong>Condomínio</strong></h1>
+        <h4><strong>Passo 3 de 5</strong></h4>
+        <div class="btn-group">
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-check"></i><b> Proprietário</b>
+          </a>
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-check"></i><b> Tipo Imóvel</b>
+          </a>
+          <a class="btn btn-xs btn-primary">
+            <i class="fa fa-angle-right"></i><b> Condomínio</b>
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Endereço
+          </a>
+          <a class="btn btn-xs btn-default">
+            <i class="fa fa-angle-right"></i> Cadastro
+          </a>
+        </div>
+        <p><br/></p>
+      </div>
+    </div>
+
+    <div class="row">
+
+      <div class="col-xs-2">
+      </div>
+
+        <div class="col-xs-8">
+
+          <span class="badge" style="font-size: 24px;" >Nova Ref: {{ imovel.imovel_ref }}</span>
+          <h1><strong>{{ object.tipo_imovel|capfirst }}</strong> do(a) <strong>{{ object.proprietario }}</strong></h1>
+
+            <form method='post' enctype="multipart/form-data">{% csrf_token %}
+
+
+              <div class="bg-warning" style="padding: 8px;">
+                <p><i class="fa fa-info-circle"></i> Escolha um condomínio existente
+
+                {% if user|has_role:'gerente' %}
+                  OU cadastre um <span class="edit-popup"><a href="{% url 'ibuscador.condominio.create' %}" class="btn btn-default" role="button" ><i class="fa fa-plus"></i> Novo Condomínio</a></span>
+                {% endif %}
+                </p>
+              </div>
+
+              <br>
+
+                <input type="hidden" name="id" id="id_id" value="">
+
+                {{ form }}
+
+                <br><br><br><br><br><br>
+
+                <div align="center">
+                  <button type="submit" class="btn btn-lg btn-success">
+                    <i class="fa fa-check"></i> Continuar
+                  </button>
+                  <a href="{% url 'imovel.lista.todos' %}" class="btn btn-lg btn-danger" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+                </div>
+
+
+            </form> 
+
+            <div class="clearfix"><br><br><br><br></div>
+
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block footer_area %}
+{% endblock footer_area %}
+
+
+{% block extrajs_bottom %}
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+
+      $condominio = $('#id_condominio').selectize({create: true});
+      condominio  = $condominio[0].selectize;
+      condominio.focus();
+
+    });
+  </script>
+
+{% endblock extrajs_bottom %}

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Carga xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configuracao>
+    <RetornoViaWebservice>0</RetornoViaWebservice>
+  </Configuracao>
+  <Imoveis>
+    {% for imovel in imoveis %}
+    <Imovel>
+      <CodigoCliente>47028562</CodigoCliente>
+      <CodigoImovel>{{ imovel.imovel_ref }}</CodigoImovel>
+      <TipoImovel>{{ imovel.tipo }}</TipoImovel>
+      <SubTipoImovel>{{ imovel.subtipo }}</SubTipoImovel>
+      <CategoriaImovel>{{ imovel.categoria }}</CategoriaImovel>
+      <Modelo>Especial</Modelo>
+      <UF>SP</UF>
+      <Cidade>{{ imovel.cidade }}</Cidade>
+      <Bairro>{{ imovel.bairro.descricao }}</Bairro>
+      <Endereco>{{ imovel.logradouro }}</Endereco>
+      <Numero></Numero>
+      <Complemento></Complemento>
+      <CEP>{{ imovel.cep }}</CEP>
+      <PrecoVenda>{{ imovel.valor_venda|floatformat:"0" }}</PrecoVenda>
+      <PrecoLocacao>{{ imovel.valor_locacao|floatformat:"0" }}</PrecoLocacao>
+      <PrecoCondominio>{{ imovel.valor_condominio|floatformat:"0" }}</PrecoCondominio>
+      <PrecoIptuImovel>0</PrecoIptuImovel>
+      <AreaUtil>{{ imovel.area_construida }}</AreaUtil>
+      {% if imovel.eh_apartamento %}
+      <AreaTotal>{{ imovel.area_construida }}</AreaTotal>
+      {% else %}
+      <AreaTotal>{{ imovel.area_terreno }}</AreaTotal>
+      {% endif %}
+      <UnidadeMetrica>m2</UnidadeMetrica>
+      <QtdDormitorios>{{ imovel.dormitorios }}</QtdDormitorios>
+      <QtdSuites>{{ imovel.suites }}</QtdSuites>
+      <QtdBanheiros>{{ imovel.banheiros }}</QtdBanheiros>
+      <QtdSalas>{{ imovel.dormitorios }}</QtdSalas>
+      <QtdVagas>{{ imovel.vagas_garagem }}</QtdVagas>
+      <QtdElevador></QtdElevador>
+      <QtdAndar></QtdAndar>
+      <Mobiliado>{% if imovel.esta_mobiliado %}1{% else %}0{% endif %}</Mobiliado>
+      <Geminada></Geminada>
+      <Cobertura>{% if imovel.eh_apto_cobertura %}1{% else %}0{% endif %}</Cobertura>
+      <Observacao><![CDATA[{{ imovel.descricao_imovel }}]]></Observacao>
+      <Churrasqueira></Churrasqueira>
+      <Copa></Copa>
+      <AreaServico></AreaServico>
+      <Despensa></Despensa>
+      <VisualizarMapa>0</VisualizarMapa>
+      <Fotos>{% for foto in imovel.fotos_list %}
+        <Foto>
+          <NomeArquivo></NomeArquivo>
+          <URLArquivo>http://{{ domain }}/media/{{foto.picture}}</URLArquivo>
+          {% if foto.eh_principal %}
+          <Principal>1</Principal>
+          {% endif %}
+        </Foto>{% endfor %}
+      </Fotos>
+      <Videos></Videos>
+      <UrlAtendimentoOnline>http://{{ domain }}{% url 'ibuscador.contatar.anunciante.passo1' imovel.imovel_ref %}</UrlAtendimentoOnline>
+      <DivulgarEndereco>0</DivulgarEndereco>
+    </Imovel>
+    {% endfor %}
+  </Imoveis>
+</Carga>

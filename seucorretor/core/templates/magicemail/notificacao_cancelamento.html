@@ -1,0 +1,24 @@
+{% extends 'magicemail/email_base.html' %}
+
+{% block css%}{% endblock css%}
+
+{% block body %}
+<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+    <tr>
+      <td>
+        <center>
+        <img alt="{{ domain }}" src="http://{{ domain }}/static/themes/sydney/img/logo_sjc_sem_nome.png" style="display:block" width="180" tabindex="0">
+        </center>
+      </td>      
+    </tr>
+    <tr>
+      <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
+        <h2>{{ corretor }},</h2>
+        <h2 style="font-size:21px;letter-spacing:-1px;color:#4d4d4d">{{ cliente.nome }} CANCELOU o atendimento.</h2>
+        <h3>Motivo: {{ cancelamento_motivo }}</h3>
+      </td>
+    </tr>      
+    </tbody>
+</table>
+{% endblock body %}

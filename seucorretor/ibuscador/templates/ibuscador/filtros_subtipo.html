@@ -1,0 +1,34 @@
+{% load floppyforms %}
+{% load permission_tags %}
+
+<div class="col-xs-2">
+    <p>
+      {% formrow form_filtro_valor.codigo_referencia %}
+    </p>
+</div>
+<div class="col-xs-3" id="show_hide_emcondominio">
+    <p>
+      {% formrow form_filtro_valor.em_condominio %}
+    </p>
+</div>
+<div class="col-xs-2">
+    <p>
+        {% formrow form_filtro_valor.mobiliado %}
+    </p>
+</div>
+
+{% if user|has_role:'corretor,gerente' %}
+
+  <div class="col-xs-2">
+      <p>
+        {% formrow form_filtro_valor.status %}
+      </p>
+  </div>
+
+  <div class="col-xs-12">
+    <p>
+      {% formrow form_filtro_valor.condominio %}
+    </p>
+  </div>
+
+{% endif %}

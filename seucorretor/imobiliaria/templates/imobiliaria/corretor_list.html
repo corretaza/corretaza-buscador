@@ -1,0 +1,41 @@
+{% extends 'core/base_core.html' %}
+
+{% block content %}
+
+    <div align="center">
+        <br/>
+        <h1>Corretores</h1>
+        <br/>
+    </div>
+
+    <section class="intro section-padding">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-md-12">
+            <div class="light-box spaced-box-sm">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>Corretor</th>
+                    <th>Ativo</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for corretor in object_list %}
+                    <tr class="edit-popup">
+                      <td><a href="/admin/core/corretor/{{ corretor.id }}/">{{ corretor.nome }}</a></td>
+                      <td>{% if corretor.is_ativo %}Sim{% endif %}</td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+{% endblock content %}

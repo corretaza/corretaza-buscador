@@ -1,0 +1,113 @@
+{% load humanize %}
+
+  <h1>
+    <small>Exibir/Esconder:</small>
+    <button id="show_1dorm" type="button" class="btn btn-sm btn-default btn-primary">1 <i class="fa fa-bed"></i>
+    </button>
+    <button id="show_2dorm" type="button" class="btn btn-sm btn-default btn-primary">2 <i class="fa fa-bed"></i>
+    </button>
+    <button id="show_3dorm" type="button" class="btn btn-sm btn-default btn-primary">3 <i class="fa fa-bed"></i>
+    </button>
+  </h1>
+  {% regroup imoveis_list by bairro as bairros %}
+  
+  {% for bairro in bairros %}
+
+    <h4 class="show_bairro" id="{{ bairro.grouper|slugify }}">
+      {% if bairro.grouper in interesse.bairros.all %}
+      <strong> <i class="fa fa-arrow-circle-right"></i> {{ bairro.grouper }}</strong>
+      {% else %}
+      <i class="fa fa-question"></i> {{ bairro.grouper }}
+      {% endif %}
+      ({{ bairro.list|length }} imóveis)
+    </h4>
+
+    <table class="table table-condensed table-hover {{ bairro.grouper|slugify }}" style="margin-left: 14px; display: none">
+      <tbody>
+        <tr>
+          <td></td>
+          <td>Venda</td>
+          <td>Locação</td>
+          <td>Condomínio</td>
+          <td><i class="fa fa-bed"></i></td>
+          <td><i class="fa fa-car"></i></td>
+          <td><i class="fa fa-crop"></i></td>
+          <td></td>
+          <td></td>
+        </tr>
+      {% for imovel in bairro.list %}
+        <tr class="{% if imovel.imovel_ref in interesse.todas_opcoes_para_visita_refs %}success{% endif %} {{ imovel.dormitorios }}dorm"
+        >
+          <td>
+            <small>
+            {% if imovel.condominio %}
+              {{ imovel.condominio }}<br>
+            {% endif %}
+            {{ imovel.logradouro }}
+            </small>
+          </td>
+          <td>
+            <small>R$</small><strong>{{ imovel.valor_venda|intcomma }}</strong>
+          </td>
+          <td>
+            <small>R$</small><strong>{{ imovel.valor_locacao|intcomma }}</strong>
+          </td>
+          <td>
+            <small>{{ imovel.valor_condominio|intcomma }}</small>
+          </td>
+          <td>{{ imovel.dormitorios }}</td>
+          <td>{{ imovel.vagas_garagem }}</td>
+          <td>
+            <small>{{ imovel.area_construida }}m&sup2;</small>
+            {% if not imovel.tipo_imovel == 'apartamento' %}
+            <br><small>Terreno: {{ imovel.area_terreno }} m&sup2;</small>
+            {% endif %}
+          </td>
+          <td>
+            <a class="btn btn-default btn-xs" target="_new" href="{{ imovel.get_absolute_url }}">Ref.{{ imovel.imovel_ref }}</a> 
+          </td>
+          <td>
+            <button id="{{ imovel.imovel_ref }}" type="button" class="btn btn-default btn-xs adiciona_ref"><i class="fa fa-plus"></i>
+            </button>
+          </td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  {% endfor %}
+
+<script type="text/javascript">
+  $(function() {
+
+    $( ".show_bairro" ).click(function() {
+      //$( "#imoveis_do_perfil" ).toggle("fast");
+      var texto = $(this).attr('id');
+      $( "." + texto ).toggle("fast");
+    });
+
+    $( ".adiciona_ref" ).click(function(){
+      var nova_ref = $(this).attr('id');
+      $( "#id_imovel_ref" ).val($( "#id_imovel_ref").val() + nova_ref + ",");      
+    });
+
+    $( "#show_1dorm").click(function(){
+      $( ".1dorm" ).toggle("fast");
+      $( "#show_1dorm" ).toggleClass( "btn-primary" );
+    });
+
+    $( "#show_2dorm").click(function(){
+      $( ".2dorm" ).toggle("fast");
+      $( "#show_2dorm" ).toggleClass( "btn-primary" );
+    });
+
+    $( "#show_3dorm").click(function(){
+      $( ".3dorm" ).toggle("fast");
+      $( "#show_3dorm" ).toggleClass( "btn-primary" );
+    });
+
+  });
+</script>
+     <!--
+    description
+    postal_code
+    new -->

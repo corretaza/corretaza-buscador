@@ -1,0 +1,48 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block footer_logo %}
+{% endblock footer_logo %}
+
+{% block content %}
+
+  <section class="dark-bg section-padding contact-wrap">
+    <div class="container">
+
+      <div class="row">
+        <p class="text-right">
+          <a href="{% url 'core.userpage' %}#atendimentos" class="btn btn-sm btn-success"><i class="fa fa-chevron-left"></i> Voltar</a>
+        </p>
+      </div>
+
+      <div class="row">
+
+        <div class="col-md-12">
+	      <h1><strong>Importar e atualizar imóveis vindo da VivaReal</strong></h1>
+          <h3>Selecione o arquivo XML exportado do sistema ASSIST:</h3>
+
+		  <form action="" method="post" enctype="multipart/form-data">
+		    {% csrf_token %}
+			
+			{{ form.as_p }}
+
+			<br/><br/>
+			<input class="btn btn-success btn-lg" type="submit" value="Importar arquivo VivaReal" />
+		  </form>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>	
+
+
+{% endblock %}

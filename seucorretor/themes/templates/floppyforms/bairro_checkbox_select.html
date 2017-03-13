@@ -1,0 +1,14 @@
+<div class="row">
+  {% for group_name, choices in optgroups %}
+    <div class="col-xs-3">
+      <h3><strong>{{ group_name }}</strong></h3>
+      {% for choice in choices %}
+        <div class="checkbox">
+          <small>
+          <label for="{{ attrs.id }}_{{ forloop.counter }}"><input {% if choice.0 in value %}checked="checked" {% endif %}type="checkbox" id="{{ attrs.id }}_{{ forloop.counter }}" name="{{ name }}" value="{{ choice.0 }}"> {{ choice.1 }}</label>
+          </small>
+        </div>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

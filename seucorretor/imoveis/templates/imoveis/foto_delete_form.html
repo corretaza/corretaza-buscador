@@ -1,0 +1,47 @@
+{% extends 'themes/sydney/base.html' %}
+
+{% load staticfiles %}
+{% load floppyforms %}
+{% load cropping %}
+
+{% block extrajs_top %}
+    {{ block.super }}
+    {{ form.media }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="popup-content">
+    <h1><strong>{{ object.descricao }}</strong></h1>
+    <div class="row">
+
+      <div class="col-sm-12">
+
+        <form method='post' enctype="multipart/form-data">{% csrf_token %}
+            
+            <figure>
+              <img width="440" src="{% cropped_thumbnail object 'picture_cropping' scale=0.5 %}" alt="{{ foto.descricao }}">
+            </figure>
+
+            {{ form }}
+          
+            <div class="bottom-fix-menu" align="center">
+              <button type="submit" class="btn btn-lg btn-danger">
+                <i class="fa fa-trash"></i> Delete
+              </button>
+              <a href="{% url 'core.windows_close' %}" class="btn btn-lg btn-default" role="button" ><i class="fa fa-times"></i> Cancelar</a>
+            </div>
+
+        </form> 
+
+        <div class="clearfix"><br><br><br><br></div>
+
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block footer_area %}
+{% endblock footer_area %}

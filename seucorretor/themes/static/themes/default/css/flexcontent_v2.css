@@ -1,0 +1,23 @@
+/* custom pop-up base style */
+
+.popup-content{
+  padding: 20px !important;
+  z-index:9999 !important;
+}
+
+.mfp-iframe-scaler iframe {
+  background: white; 
+}
+
+@media only screen and (min-width: 1024px) {
+	.mfp-content{
+	    max-width: 88% !important;
+	    height: 96% !important;
+	}
+}
+@media only screen and (min-width: 320px) and (max-width: 1024px) {
+	.mfp-content{
+	    height: 96% !important;
+	}
+}
+
