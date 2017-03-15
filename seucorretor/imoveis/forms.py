@@ -119,7 +119,8 @@ class ImovelForm(forms.ModelForm):
                   'condominio',
                   'proprietario',
                   'corretores',
-                  'indicado_por', )
+                  'indicado_por',
+                  'nao_exportar_para_portais', )
         widgets = {
             'imovel_ref': HiddenInput(),
             'areadelazer_imovel': CheckboxSelectMultiple(attrs={'size': 16, }),

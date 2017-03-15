@@ -84,6 +84,7 @@ class VivaRealXML(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
     content_type = "application/xml"
     # content_type = "text/plain"
     template_name = "vivareal/xml_base.xml"
+    arquivo_xml_query = None
 
     def test_func(self, user):
         return user.is_authenticated() and (user.userprofile.is_admin)
@@ -93,9 +94,10 @@ class VivaRealXML(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
         context['data'] = datetime.today()
         #context['imoveis'] = ImovelVivaReal.objects_geral.publicados().order_by('-id')
         # TODO: Passar isto para o manager!
-        arquivo_xml_query = ImovelVivaReal.objects_geral.publicados().order_by('-id').select_related(
+        self.arquivo_xml_query = ImovelVivaReal.objects_geral.publicados().exportar_para_portais().order_by(
+            '-atualizado_em').select_related(
             'cidade', 'bairro', 'regiao', 'foto_principal', 'foto' )
-        context['imoveis'] = arquivo_xml_query
+        context['imoveis'] = self.arquivo_xml_query
         context['domain'] = Site.objects.get_current()
         return context
 

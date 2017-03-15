@@ -1,0 +1,18 @@
+$ pip install suds
+$ pip install python-ntlm
+
+>>> from suds.client import Client
+>>> import base64
+
+>>> url = 'http://ws.zap.com.br/EnvArqSenha.asmx?wsdl'
+>>> client = Client(url)
+>>> print client
+
+>>> with open("/home/roger/Downloads/imoveis_para_zap.xml") as xmlfile:
+...   encodedxml = base64.b64encode(xmlfile.read())
+... 
+
+>>> client.service.AtualizarArquivo("user", "pass", encodedxml)
+OK
+>>> 
+

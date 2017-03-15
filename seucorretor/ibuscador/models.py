@@ -248,6 +248,9 @@ class Imovel(ComEndereco):
     foto_principal = models.ForeignKey(
         "Foto", verbose_name=_('Foto Principal'),
         related_name="fotos", null=True, blank=True, on_delete=models.SET_NULL)
+    # Nao envia imovel para Zap, Viva Real entre outros
+    nao_exportar_para_portais = models.BooleanField(_('Não exportar para portais imobiliarios'),
+        default=False)
 
     objects = models.Manager()
     objects_geral = ImovelManagerBase()

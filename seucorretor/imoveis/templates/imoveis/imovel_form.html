@@ -123,6 +123,10 @@
               <a href="#proprietario" role="tab" id="proprietario-tab" data-toggle="tab" aria-controls="proprietario" aria-expanded="false"><i class="fa fa-user"></i> Proprietário | <i class="fa fa-key"></i> Chave</a>
             </li>
 
+            <li role="presentation">
+              <a href="#integracao" role="tab" id="integracao-tab" data-toggle="tab" aria-controls="integracao" aria-expanded="false"><i class="fa fa-user"></i> Integração Portais</a>
+            </li>
+
           </ul>
 
           <div id="myTabContent" class="tab-content">
@@ -362,6 +366,14 @@
                 {% formrow form.indicado_por %}
 
                 </div>
+              </div>
+            </div>
+
+            <!-- integração portais -->
+            <div role="tabpanel" class="tab-pane fade in" id="integracao" aria-labelledby="integracao-tab">
+              <h1>Integração Portais (Zap, VivaReal e ImovelWeb)</h1>
+              <div class="row">
+                <div class="col-xs-8">{% formrow form.nao_exportar_para_portais %}</div>
               </div>
             </div>
 

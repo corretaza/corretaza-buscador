@@ -129,6 +129,13 @@ class ImovelQueryset(models.query.QuerySet):
                 Q(proprietario__nome_conjuge__icontains=palavras))
         return qs
 
+    def exportar_para_portais(self):
+        """
+        apenas os imoveis que devem ir para os portais Zap, Viva Real etc...
+        o default é enviar (nao_exportar_para_portais=False)
+        """
+        return self.filter(nao_exportar_para_portais=False)
+
 
 class ImovelQuerysetVenda(ImovelQueryset):
 
@@ -229,6 +236,9 @@ class ImovelManagerBase(models.Manager):
 
     def por_palavras(self, palavras):
         return self.get_queryset().por_palavras(palavras)
+
+    def exportar_para_portais(self):
+        return self.get_queryset().exportar_para_portais()
 
 
 class ImovelVendasManager(ImovelManagerBase):
