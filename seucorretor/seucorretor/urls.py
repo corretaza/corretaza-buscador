@@ -27,7 +27,6 @@ urlpatterns = patterns('',  # noqa
     url(r'^cidades/', include('cidades.urls')),
     url(r'^imoveis/', include('imoveis.urls')),
     url(r'^autoatendimento/', include('autoatendimento.urls')),
-    url(r'^djrill/', include('djrill.urls')),
 
 ) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 

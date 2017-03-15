@@ -266,11 +266,9 @@ SOUTH_MIGRATION_MODULES = {
 }
 
 # ######### EMAIL CONFIGURATION
-# djrill
+#Mailgun
 SERVER_EMAIL = 'SJC Vale Imoveis <contato@sjcvaleimoveis.com.br>'
 DEFAULT_FROM_EMAIL = SERVER_EMAIL
-
-#Mailgun
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
 MAILGUN_ACCESS_KEY = 'key-c7b5d21b0609770dbfede4c9c2018dc5'
 MAILGUN_SERVER_NAME = 'sjcvaleimoveis.com.br'
