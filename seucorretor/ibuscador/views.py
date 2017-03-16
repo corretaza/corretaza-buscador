@@ -110,6 +110,7 @@ class ListaImoveisParaComprarListView(ListaImoveisMixin, ListView):
         return context
 
     def get_queryset(self, **kwargs):
+        imoveis_ordenados_por = self.request.GET.get('ordenar_por', 'menor_valor')
         tipo_imovel = self.kwargs.get('tipo_imovel',
                                       Imovel.TIPO_IMOVEL.apartamento)
         if tipo_imovel in ['loja', 'sala', 'galpao', 'edificio', ]:
@@ -121,9 +122,8 @@ class ListaImoveisParaComprarListView(ListaImoveisMixin, ListView):
             queryset = queryset.comercial()
         else:
             queryset = queryset.residencial()
-        form = self._make_form(tipo_imovel,
-                               "comprar",
-                               cidade)
+        form = self._make_form(tipo_imovel, "comprar", cidade)
+
         if form.is_valid():
             queryset = monta_queryset_com_filtros_da_pesquisa(queryset,
                                                               self.request.GET,
@@ -131,11 +131,11 @@ class ListaImoveisParaComprarListView(ListaImoveisMixin, ListView):
             queryset = queryset.por_cidade(cidade).por_tipo_imovel(tipo_imovel)
             queryset = queryset.select_related(
                 'condominio', 'cidade', 'bairro', 'regiao', 'proprietario', 'foto_principal', )
-            return ordernar_query(queryset, self.request.GET.get('ordenar_por'))
+            return ordernar_query(queryset, imoveis_ordenados_por)
 
         queryset = queryset.por_cidade(cidade).por_tipo_imovel(tipo_imovel)
         queryset = queryset.select_related('condominio', 'cidade', 'bairro', 'regiao', 'proprietario', 'foto_principal', )
-        return queryset
+        return ordernar_query(queryset, imoveis_ordenados_por)
 
 
 class ListaImoveisParaAlugarListView(ListaImoveisMixin, ListView):
@@ -162,6 +162,7 @@ class ListaImoveisParaAlugarListView(ListaImoveisMixin, ListView):
         if tipo_imovel in ['loja', 'sala', 'galpao', 'edificio', ]:
             self.kwargs.update({'categoria': "comercial"})
 
+        imoveis_ordenados_por = self.request.GET.get('ordenar_por', 'menor_valor')
         queryset = validar_query_status_imovel(self.request, Imovel.para_locacao)
         cidade = self.kwargs.get('cidade', "")
         categoria = self.kwargs.get('categoria', "residencial")
@@ -170,15 +171,12 @@ class ListaImoveisParaAlugarListView(ListaImoveisMixin, ListView):
         else:
             queryset = queryset.residencial()
         queryset = queryset.por_cidade(cidade).por_tipo_imovel(tipo_imovel)
-        form = self._make_form(tipo_imovel,
-                               "comprar",
-                               cidade)
+        form = self._make_form(tipo_imovel, "alugar", cidade)
         if form.is_valid():
             queryset = monta_queryset_com_filtros_da_pesquisa(queryset,
                                                               self.request.GET,
                                                               tipo_imovel)
-            return ordernar_query(queryset, self.request.GET.get('ordenar_por'))
-        return queryset
+        return ordernar_query(queryset, imoveis_ordenados_por)
 
 
 class DetalheDoImoveisView(TemplateView):
