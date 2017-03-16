@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+Development (localhost)
+"""
 
 from .base import *
 
-DEBUG = True
+DEBUG = env.bool('DJANGO_CORRETAZA_DEBUG', True)
 
 TEMPLATE_DEBUG = DEBUG
 

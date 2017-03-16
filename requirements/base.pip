@@ -23,6 +23,9 @@ parsel==1.0.1
 model-mommy==1.2.6
 requests==2.9.1
 
+# Configuration
+django-environ==0.4.1
+
 # consumir webservice (zap imoveis)
 #suds==0.4
 #python-ntlm==1.1.0

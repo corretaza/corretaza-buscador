@@ -1,33 +1,17 @@
 # -*- coding: utf-8 -*-
-
 """
-Django settings for djenietemplate project.
-
-For more information on this file, see
-https://docs.djangoproject.com/en/1.6/topics/settings/
-
-For the full list of settings and their values, see
-https://docs.djangoproject.com/en/1.6/ref/settings/
+Django settings for corretaza-buscador
 """
-from os import environ
+from __future__ import absolute_import, unicode_literals
+
+import environ
 from os.path import basename, dirname, join, normpath
 from sys import path
 
 from easy_thumbnails.conf import Settings as thumbnail_settings
 
-from django.core.exceptions import ImproperlyConfigured
-
-
-error_message = "----> ERROR: Set the %s environment variable <----"
-
-
-def get_env_variable(var_name):
-    """ Returns an exception when the variable is not found """
-    try:
-        return environ[var_name]
-    except KeyError:
-        raise ImproperlyConfigured(error_message % var_name)
-
+# Load operating system environment variables
+env = environ.Env()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 # Absolute filesystem path to the Django project directory:
@@ -37,7 +21,6 @@ BASE_DIR = dirname(dirname(__file__))
 SITE_ROOT = dirname(BASE_DIR)
 
 SITE_NAME = basename(BASE_DIR)
-
 
 # Add our project to our pythonpath, this way we don't need to type our project
 # name in our dotted import paths:
@@ -49,21 +32,20 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = r"ll=&4)2zk&-2jy!o7j9#5dj+^b5=53vha1m-*o#x3rde%=@g=-"
+SECRET_KEY = env('DJANGO_SECRET_KEY', default=r"ll=&4)2zk&-2jy!o7j9#5dj+^b5=53vha1m-*o#x3rde%=@g=-")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = env.bool('DJANGO_CORRETAZA_DEBUG', False)
 
 TEMPLATE_DEBUG = DEBUG
 
 THUMBNAIL_DEBUG = DEBUG
 
-DEVELOPMENT = False
+DEVELOPMENT = env.bool('DJANGO_CORRETAZA_DEVELOPMENT', False)
 
 SEND_BROKEN_LINK_EMAILS = True
 
@@ -80,10 +62,10 @@ WSGI_APPLICATION = '%s.wsgi.application' % SITE_NAME
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': get_env_variable('SEUCORRETOR_DB_NAME'),
-        'USER': get_env_variable('SEUCORRETOR_DB_USER'),
-        'PASSWORD': get_env_variable('SEUCORRETOR_DB_PASSWORD'),
-        'HOST': get_env_variable('SEUCORRETOR_DB_HOST'),
+        'NAME': env('SEUCORRETOR_DB_NAME', default='seucorretor'),
+        'USER': env('SEUCORRETOR_DB_USER', default='seucorretor'),
+        'PASSWORD': env('SEUCORRETOR_DB_PASSWORD', default=''),
+        'HOST': env('SEUCORRETOR_DB_HOST', default='localhost'),
         'PORT': '3306',
         'OPTIONS': {
             'init_command': 'SET storage_engine=INNODB;SET foreign_key_checks=0;',
@@ -235,7 +217,6 @@ BOWER_INSTALLED_APPS = (
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
-
 # django-ckeditor-updated
 CKEDITOR_UPLOAD_PATH = normpath(join(MEDIA_ROOT, 'uploads'))
 CKEDITOR_RESTRICT_BY_USER = True
@@ -267,11 +248,12 @@ SOUTH_MIGRATION_MODULES = {
 
 # ######### EMAIL CONFIGURATION
 #Mailgun
-SERVER_EMAIL = 'SJC Vale Imoveis <contato@sjcvaleimoveis.com.br>'
+SERVER_EMAIL = env('DJANGO_CORRETAZA_SERVER_EMAIL',
+                   default='Corretaza Imoveis <contato@corretaza.com.br>')
 DEFAULT_FROM_EMAIL = SERVER_EMAIL
 EMAIL_BACKEND = 'django_mailgun.MailgunBackend'
-MAILGUN_ACCESS_KEY = 'key-c7b5d21b0609770dbfede4c9c2018dc5'
-MAILGUN_SERVER_NAME = 'sjcvaleimoveis.com.br'
+MAILGUN_ACCESS_KEY = env('DJANGO_CORRETAZA_MAILGUN_ACCESS_KEY', default='key-...')
+MAILGUN_SERVER_NAME = env('DJANGO_CORRETAZA_MAILGUN_SERVER_NAME', default='corretaza.com.br')
 
 # ######### PERMISSIONS
 # rolepermissions
@@ -282,9 +264,9 @@ ROLEPERMISSIONS_MODULE = 'seucorretor.roles'
 CRONTAB_DJANGO_SETTINGS_MODULE = 'seucorretor.settings.production'
 CRONJOBS = [
     ('0 6-22 * * *', 'django.core.management.call_command',
-                     ['importa_interesses_imovelweb'],
-                     {'file': 'autoatendimento/imovelweb.json'},
-                     '2>&1 > /tmp/django-crontab.log'),
+     ['importa_interesses_imovelweb'],
+     {'file': 'autoatendimento/imovelweb.json'},
+     '2>&1 > /tmp/django-crontab.log'),
 ]
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
