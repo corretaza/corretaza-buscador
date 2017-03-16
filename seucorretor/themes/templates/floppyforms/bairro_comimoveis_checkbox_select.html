@@ -6,7 +6,7 @@
         {% for choice in choices %}
           <li>
             <div class="checkbox">
-              <label style="min-width: 196px;" for="{{ attrs.id }}_{{ forloop.counter }}"><input {% if choice.0 in value %}checked="checked" {% endif %}type="checkbox" id="{{ attrs.id }}_{{ forloop.counter }}" name="{{ name }}" value="{{ choice.0 }}"> <span class="name">{{ choice.1.bairro.descricao }}</span>
+              <label style="min-width: 196px;" for="{{ attrs.id }}_{{ forloop.counter }}"><input {% if choice.0 in value %}checked="checked" {% endif %}type="checkbox" id="{{ attrs.id }}_{{ forloop.counter }}" name="{{ name }}" value="{{ choice.0 }}"> <span class="name">{{ choice.1.bairro.descricao }} <span style="display: none;">{{ choice.1.bairro.descricao_sem_acento }}</span> </span>
                 <small style="color: grey;">
                  {% if tipo_interesse == 'comprar' %}
                  <span class="para_venda">({{ choice.1.contador_venda }})</span>

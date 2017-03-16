@@ -2,8 +2,11 @@
 from __future__ import unicode_literals
 from __future__ import absolute_import
 
+from unicodedata import normalize
+
 from django.utils.translation import ugettext_lazy as _
 from django.db import models
+
 from .managers import ManagerBase
 
 
@@ -68,6 +71,16 @@ class Bairro(models.Model):
             return '{0} ({1})'.format(
               self.nome_popular, self.nome)
         return self.nome
+
+    @property
+    def descricao_sem_acento(self):
+        """ Retorna o valor da descricao sem acentos. """
+        try:
+            sem_acentos = normalize('NFKD', self.descricao.encode('utf-8').decode('utf-8')).encode(
+                            'ASCII', 'ignore')
+        except:
+            sem_acentos = self.descricao
+        return sem_acentos
 
 
 class ComEndereco(models.Model):
