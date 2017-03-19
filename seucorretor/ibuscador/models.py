@@ -214,6 +214,8 @@ class Imovel(ComEndereco):
         _('Valor venda'), max_digits=12, decimal_places=2, default=0.00)
     valor_condominio = models.DecimalField(
         _('Valor condomínio'), max_digits=12, decimal_places=2, default=0.00)
+    valor_iptu = models.DecimalField(
+        _('Valor IPTU'), max_digits=12, decimal_places=2, default=0.00)
     tipo_imovel = models.CharField(
         _('Tipo do imóvel'), max_length=16, choices=TIPO_IMOVEL)
     eh_apto_duplex = models.BooleanField(_('Duplex'), default=False)

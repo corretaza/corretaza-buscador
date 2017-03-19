@@ -1,0 +1,21 @@
+
+<!-- imovel-campos-pendentes.html -->
+
+{% if not imovel.tipo_varanda and imovel.eh_apartamento %}
+    <p class="text-danger">
+    <i class="fa fa-bullhorn"></i> Apartamento sem tipo de <b>Varanda</b>
+    </p>
+{% endif %}
+
+{% if imovel.condominio and not imovel.condominio.portaria %}
+    <p class="text-danger">
+    <i class="fa fa-bullhorn"></i> Condominio sem informação sobre <b>Portaria</b>
+    </p>
+{% endif %}
+
+
+{% if imovel.eh_para_locacao and not imovel.valor_iptu %}
+    <p class="text-danger">
+    <i class="fa fa-bullhorn"></i> Imóvel de locação sem <b>IPTU</b>
+    </p>
+{% endif %}

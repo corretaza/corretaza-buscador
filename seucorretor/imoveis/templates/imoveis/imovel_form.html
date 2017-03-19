@@ -81,17 +81,7 @@
             {% endfor %}
         {% endfor %}
 
-        {% if not imovel.tipo_varanda and imovel.eh_apartamento %}
-          <p class="text-danger">
-            <i class="fa fa-bullhorn"></i> Apartamento sem tipo de <b>Varanda</b>
-          </p>
-        {% endif %}
-
-        {% if imovel.condominio and not imovel.condominio.portaria %}
-          <p class="text-danger">
-            <i class="fa fa-bullhorn"></i> Condominio sem informação sobre <b>Portaria</b>
-          </p>
-        {% endif %}
+        {% include "imoveis/includes/imovel-campos-pendentes.html" with imovel=imovel %}
 
         <form id="imovelform" method='post' enctype="multipart/form-data" >{% csrf_token %}
 
@@ -169,6 +159,10 @@
               <div class="row">
                 <div class="col-xs-2"></div>
                 <div class="col-xs-4">{% formrow form.valor_condominio %}</div>
+              </div>
+              <div class="row">
+                <div class="col-xs-2"></div>
+                <div class="col-xs-4">{% formrow form.valor_iptu %}</div>
               </div>
               <div class="row">
                 <div class="col-xs-12">

@@ -80,6 +80,12 @@
     {% endif %}
     <div class="row">
       <div class="col-md-1"></div>
+      <div class="col-md-6">
+        {% include "imoveis/includes/imovel-campos-pendentes.html" with imovel=imovel %}
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-1"></div>
       <div class="col-md-1">
         <div class="icon-edit">
           <a href="{% url 'imoveis.imovel.update' imovel.id %}"><i class="fa fa-pencil fa-2x"></i></a>

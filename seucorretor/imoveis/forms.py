@@ -95,6 +95,7 @@ class ImovelForm(forms.ModelForm):
                   'eh_para_venda',
                   'valor_venda',
                   'valor_condominio',
+                  'valor_iptu',
                   'dormitorios',
                   'banheiros',
                   'suites',

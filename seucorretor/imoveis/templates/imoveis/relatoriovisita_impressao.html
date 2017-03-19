@@ -133,6 +133,7 @@
           Locação: R$<b>{{ imovel.valor_locacao }}</b><br>
           Venda: R$<b>{{ imovel.valor_venda }}</b><br>
           Condominio: R$<b>{{ imovel.valor_condominio }}</b><br>
+          IPTU: {{ imovel.valor_iptu|default:"CORRETOR, atualizar aqui" }}<br>
           Pagamento: 
           {% for forma in imovel.forma_de_pagamentos.all %}
             {{ forma }}, 
