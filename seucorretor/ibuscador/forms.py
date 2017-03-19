@@ -117,17 +117,18 @@ class NovoCondominioForm(forms.ModelForm):
     class Meta:
         model = Condominio
         fields = ('nome',
-            'cep', 'cidade', 'logradouro', 'numero',
-            'bairro', 'regiao',
-            'blocos', 'andares',
-            'apto_por_andar',
-            'tem_elevador',
-            'construtora', 'ano_construcao',
-            'contato_portaria',
-            'contato_zelador',
-            'contato_administradora',
-            'regras_mudanca',
-            'areadelazer_condominio', )
+                  'cep', 'cidade', 'logradouro', 'numero',
+                  'bairro', 'regiao',
+                  'blocos', 'andares',
+                  'apto_por_andar',
+                  'tem_elevador',
+                  'construtora', 'ano_construcao',
+                  'contato_portaria',
+                  'contato_zelador',
+                  'contato_administradora',
+                  'regras_mudanca',
+                  'areadelazer_condominio',
+                  'portaria', )
         widgets = {
             'areadelazer_condominio': CheckboxSelectMultiple(attrs={'size': 16, }),
         }

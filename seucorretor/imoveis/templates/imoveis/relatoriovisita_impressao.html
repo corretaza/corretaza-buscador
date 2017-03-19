@@ -153,11 +153,13 @@
         Suítes: {{ imovel.suites }}<br>
         Vagas: {{ imovel.vagas_garagem }}<br>
         Área Construída: {{ imovel.area_construida }}<br>
+        Varanda: {{ imovel.tipo_varanda|default:"CORRETOR, atualizar aqui" }}<br>
         Área Terreno: {{ imovel.area_terreno }} ({{ dimensoes_terreno }})<br>
         </div>
         <div class="col-3 border-top">
           <span style="vertical-align: super; font-size: 0.7em;"><i class="fa fa-square-o"></i>&nbsp;Condomínio</span><br>
-        Blocos: {{ imovel.condominio.blocos }}<br>    
+        Portaria: {{ imovel.condominio.portaria|default:"CORRETOR, atualizar aqui" }}<br>
+        Nro Blocos: {{ imovel.condominio.blocos }}<br>
         Andares: {{ imovel.condominio.andares }}, Apto por andar: {{ imovel.condominio.apto_por_andar}}<br>
         Elevador: 
         {% if imovel.condominio.tem_elevador %}Sim{% else %}Não{% endif %}<br>

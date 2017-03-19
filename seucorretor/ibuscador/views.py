@@ -220,6 +220,14 @@ class CondominioUpdateView(EhCorretorMixin, UpdateView):
     def get_success_url(self):
         return reverse("core.windows_close")
 
+    def form_valid(self, form):
+        condominio = get_object_or_404(Condominio, pk=form.instance.pk)
+        if form.cleaned_data['portaria'] != condominio.portaria:
+            condominio = form.save(commit=False)
+            condominio.portaria_atualizada_em = timezone.now()
+            condominio.save()
+        return super(CondominioUpdateView, self).form_valid(form)
+
 
 class ImoveisNovosListView(EhCorretorMixin, ListView):
 

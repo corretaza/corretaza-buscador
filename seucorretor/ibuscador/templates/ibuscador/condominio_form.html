@@ -52,17 +52,24 @@
             </div>
 
             <div class="row">
-              <div class="col-xs-3">
-                {% formrow form.blocos %}
-              </div>
-              <div class="col-xs-3">
-                {% formrow form.andares %}
-              </div>
-              <div class="col-xs-3">
-                {% formrow form.apto_por_andar %}
+              <div class="col-xs-6">
+                {% formrow form.portaria %}
+                <span>Última atualização: {{ object.portaria_atualizada_em|timesince }}</span>
               </div>
               <div class="col-xs-3">
                 {% formrow form.tem_elevador %}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-xs-4">
+                {% formrow form.blocos %}
+              </div>
+              <div class="col-xs-4">
+                {% formrow form.andares %}
+              </div>
+              <div class="col-xs-4">
+                {% formrow form.apto_por_andar %}
               </div>
             </div>
 

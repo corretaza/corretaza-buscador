@@ -81,6 +81,18 @@
             {% endfor %}
         {% endfor %}
 
+        {% if not imovel.tipo_varanda and imovel.eh_apartamento %}
+          <p class="text-danger">
+            <i class="fa fa-bullhorn"></i> Apartamento sem tipo de <b>Varanda</b>
+          </p>
+        {% endif %}
+
+        {% if imovel.condominio and not imovel.condominio.portaria %}
+          <p class="text-danger">
+            <i class="fa fa-bullhorn"></i> Condominio sem informação sobre <b>Portaria</b>
+          </p>
+        {% endif %}
+
         <form id="imovelform" method='post' enctype="multipart/form-data" >{% csrf_token %}
 
           {% if imovel.eh_apartamento %}
@@ -192,6 +204,13 @@
                 <div class="col-xs-3">{% formrow form.eh_kitnet %}</div>
                 {% endif %}
               </div>
+              <div>
+              <div class="row">
+                <div class="col-xs-5">
+                  {% formrow form.tipo_varanda %}
+                </div>
+              </div>
+              </div>
               <div class="row">
                 <div class="col-xs-3">
                   <p>Adicionar descrição</p>
@@ -280,10 +299,11 @@
                   {% endif %}
                   <p>
                     <label for="id_condominio">Detalhes:</label><br/>
+                    Portaria: <strong>{{ object.condominio.portaria|default:"NÃO INFORMADO" }}</strong>&nbsp;&nbsp;
+                    Elevador: <strong>{{ object.condominio.elevador }}</strong>&nbsp;&nbsp;<br/>
                     Nro Blocos: <strong>{{ object.condominio.blocos }}</strong>&nbsp;&nbsp; 
                     Andares: <strong>{{ object.condominio.andares }}</strong>&nbsp;&nbsp;
-                    Apto por andar: <strong>{{ object.condominio.apto_por_andar }}</strong>&nbsp;&nbsp;
-                    Elevador: <strong>{{ object.condominio.elevador }}</strong>&nbsp;&nbsp;<br/>
+                    Apto por andar: <strong>{{ object.condominio.apto_por_andar }}</strong>&nbsp;&nbsp;<br/>
                     Construtora: <strong>{{ object.condominio.construtora }}</strong>&nbsp;&nbsp; ({{ object.condominio.ano_construcao }})
                   </p>
                 </div>

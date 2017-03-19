@@ -120,7 +120,8 @@ class ImovelForm(forms.ModelForm):
                   'proprietario',
                   'corretores',
                   'indicado_por',
-                  'nao_exportar_para_portais', )
+                  'nao_exportar_para_portais',
+                  'tipo_varanda', )
         widgets = {
             'imovel_ref': HiddenInput(),
             'areadelazer_imovel': CheckboxSelectMultiple(attrs={'size': 16, }),

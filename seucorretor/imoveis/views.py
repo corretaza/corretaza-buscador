@@ -195,8 +195,7 @@ class NovoImovelUpdateView(EhCorretorMixin, UpdateView):
                 usuario=self.request.user,
                 conteudo=historico,
                 data=timezone.now())
-        messages.success(
-               self.request, 'Informações salvas!')
+        messages.success(self.request, 'Informações salvas!')
         return super(NovoImovelUpdateView, self).form_valid(form)
 
 

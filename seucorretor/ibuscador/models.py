@@ -117,6 +117,14 @@ class AreaDeLazer(models.Model):
 
 @python_2_unicode_compatible
 class Condominio(ComEndereco):
+    TIPO_PORTARIA = Choices(('', _('-')),
+                            ('semportaria', _('Sem Portaria')),
+                            ('semporteiro', _('Sem Porteiro')),
+                            ('24h', _('Portaria 24h')),
+                            ('eletronica', _('Eletrônica')),
+                            ('hcomercial', _('Em Horário Comercial')),
+                            ('cameras', _('Com Cameras')), )
+
     data_cadastro = models.DateTimeField(_('data cadastro'), auto_now_add=True)
     atualizado_em = models.DateTimeField(_('atualizado em'), auto_now=True)
     nome = models.CharField(
@@ -141,6 +149,14 @@ class Condominio(ComEndereco):
         _('Contato Administradora'), blank=True, max_length=128, default='')
     regras_mudanca = models.CharField(
         _('Regras para mudanças'), blank=True, max_length=128, default='')
+    portaria = models.CharField(
+        choices=TIPO_PORTARIA, max_length=16,
+        default='', blank=True)
+    # Portaria mudam com o passar do tempo,
+    # É importante saber quando este campo foi atualizado
+    portaria_atualizada_em = models.DateTimeField(
+        'Data da atualização da portaria',
+        null=True, blank=True)
 
     objects = ManagerBase()
 
@@ -175,6 +191,13 @@ class Imovel(ComEndereco):
                           ('portaria', _('Portaria')),
                           ('proprietario', _('Proprietário')),
                           ('outro', _('Outro')), )
+    TIPO_VARANDA = Choices(('', _('-')),
+                           ('sem', _('Sem Varanda/Sacada')),
+                           ('varanda', _('Com Varanda')),
+                           ('varandaG', _('Com Varanda Gourmet')),
+                           ('sacada', _('Com Sacada')),
+                           ('terraco', _('Com Terraço')),
+                           ('terracoG', _('Com Terraço Gourmet')), )
 
     slug = models.SlugField(max_length=128, blank=True, default='')
     data_cadastro = models.DateTimeField(_('data cadastro'), auto_now_add=True)
@@ -249,8 +272,12 @@ class Imovel(ComEndereco):
         "Foto", verbose_name=_('Foto Principal'),
         related_name="fotos", null=True, blank=True, on_delete=models.SET_NULL)
     # Nao envia imovel para Zap, Viva Real entre outros
-    nao_exportar_para_portais = models.BooleanField(_('Não exportar para portais imobiliarios'),
+    nao_exportar_para_portais = models.BooleanField(
+        _('Não exportar para portais imobiliarios'),
         default=False)
+    tipo_varanda = models.CharField(
+        choices=TIPO_VARANDA, max_length=16,
+        default='', blank=True)
 
     objects = models.Manager()
     objects_geral = ImovelManagerBase()
