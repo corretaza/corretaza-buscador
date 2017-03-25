@@ -7,13 +7,13 @@
 {% load floppyforms %}
 
 {% block extracss %}
-  <link href="{% static 'dw-bxslider-4/dist/jquery.bxslider.css' %}" rel="stylesheet">
+  <link href="{% static 'bxslider-4/dist/jquery.bxslider.css' %}" rel="stylesheet">
 {% endblock extracss %}
 
 {% block js %}
   
   {{ block.super }}
-  <script src="{% static 'dw-bxslider-4/dist/jquery.bxslider.min.js' %}"></script>
+  <script src="{% static 'bxslider-4/dist/jquery.bxslider.min.js' %}"></script>
 
 {% endblock js %}
 
@@ -345,6 +345,9 @@
 {% endblock content %}
 
 {% block extrajs_bottom %}
+  <script src="{% static 'store.js/dist/store.legacy.min.js?v=2.0.4' %}"></script>
+  <script src="{% static 'themes/sydney/js/localstorage.js?v=0.0.1' %}"></script>
+
   <script type="text/javascript">
 
       $(document).ready(function(){
@@ -358,6 +361,15 @@
           pause: 8000,
           slideMargin: 5
         });
+
+        // Salva email #localstorage
+        const formIDs = ['#id_email'];
+        var userStorage = new UserStorage('corretaza_listadeimoveisFiltros');
+        var userData = userStorage.show();
+
+        if ( userData ) {
+          userStorage.fromForm('form_contato').restoreToIDs(formIDs);
+        }
 
         {% if not para_avaliar %}
         $("label[for='id_email']").hide();
@@ -386,6 +398,8 @@
           evt.stopPropagation();
           var url = $('#open-faleconosco').attr("href") + '?email=' + $('#id_email').val();
           url = url.replace('/imovel/0', '/imovel/' + $('#id_imovel_ref').val());
+          userStorage.fromForm('form_contato').readbyIDs(formIDs).save();
+          userData = userStorage.show();
           $('#open-faleconosco').attr("href", url).click();
         });
         {% endif %}
