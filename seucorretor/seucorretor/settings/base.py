@@ -211,6 +211,7 @@ BOWER_INSTALLED_APPS = (
     'selectize#0.12.1',
     'pdfviewer#^0.3.2',
     'list.js',
+    'store.js#2.0.4',
 #    'css-print#1.1.2'
 )
 
