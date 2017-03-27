@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('core', '__first__'),
+        ('autoatendimento', '0002_auto_20170203_1003'),
     ]
 
     operations = [
@@ -20,7 +20,7 @@ class Migration(migrations.Migration):
                 ('objeto', models.CharField(default='', max_length=64, verbose_name='Objeto', blank=True)),
                 ('detalhe', models.TextField(default='', max_length=1024, verbose_name='Detalhe', blank=True)),
                 ('data', models.DateTimeField(auto_now_add=True, verbose_name='Data')),
-                ('interesse', models.ForeignKey(verbose_name='interesse', to='core.Interesse')),
+                ('interesse', models.ForeignKey(verbose_name='interesse', to='autoatendimento.Interesse')),
             ],
             options={
                 'ordering': ['data'],

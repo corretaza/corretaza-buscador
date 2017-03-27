@@ -174,8 +174,9 @@ THIRD_PARTY_APPS = (
 )
 
 LOCAL_APPS = (
-    'pcorretor',
     'core',
+    'autoatendimento',
+    'pcorretor',
     'pclientes',
     'themes',
     'signup',
@@ -189,7 +190,6 @@ LOCAL_APPS = (
     'crm',
     'imobiliaria',
     'imoveis',
-    'autoatendimento',
     'buscacep',
     'parceiros',
 )
