@@ -37,17 +37,23 @@
             </div>
             <div class="col-md-3">
               <select class="form-control input-lg" name="mes">
-                <option value="Dec" {% if mes == 'Dec' %}selected="selected"{% endif %}>Dezembro</option>
-                <option value="Nov" {% if mes == 'Nov' %}selected="selected"{% endif %}>Novembro</option>
-                <option value="Oct" {% if mes == 'Oct' %}selected="selected"{% endif %}>Outubro</option>
-                <option value="Sep" {% if mes == 'Sep' %}selected="selected"{% endif %}>Setembro</option>
-                <option value="Aug" {% if mes == 'Aug' %}selected="selected"{% endif %}>Agosto</option>
-                <option value="Jul" {% if mes == 'Jul' %}selected="selected"{% endif %}>Julho</option>
+                <option value="Jun" {% if mes == 'Jan' %}selected="selected"{% endif %}>Janeiro</option>
+                <option value="Jun" {% if mes == 'Feb' %}selected="selected"{% endif %}>Fevereiro</option>
+                <option value="Jun" {% if mes == 'Mar' %}selected="selected"{% endif %}>Março</option>
+                <option value="Jun" {% if mes == 'Apr' %}selected="selected"{% endif %}>Abril</option>
+                <option value="Jun" {% if mes == 'May' %}selected="selected"{% endif %}>Maio</option>
                 <option value="Jun" {% if mes == 'Jun' %}selected="selected"{% endif %}>Junho</option>
+                <option value="Jul" {% if mes == 'Jul' %}selected="selected"{% endif %}>Julho</option>
+                <option value="Aug" {% if mes == 'Aug' %}selected="selected"{% endif %}>Agosto</option>
+                <option value="Sep" {% if mes == 'Sep' %}selected="selected"{% endif %}>Setembro</option>
+                <option value="Oct" {% if mes == 'Oct' %}selected="selected"{% endif %}>Outubro</option>
+                <option value="Nov" {% if mes == 'Nov' %}selected="selected"{% endif %}>Novembro</option>
+                <option value="Dec" {% if mes == 'Dec' %}selected="selected"{% endif %}>Dezembro</option>
               </select>
             </div>
             <div class="col-md-2">
               <select class="form-control input-lg" name="ano">
+                <option value="2016" selected="selected">2017</option>
                 <option value="2016" selected="selected">2016</option>
               </select>
             </div>

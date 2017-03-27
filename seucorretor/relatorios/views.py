@@ -292,7 +292,7 @@ class RelatorioIndicadoresListView(LoginRequiredMixin, UserPassesTestMixin, List
 
     def get_queryset(self):
         mes = self.request.GET.get('mes') or 'Nov'
-        ano = self.request.GET.get('ano') or '2016'
+        ano = self.request.GET.get('ano') or '2017'
         return HitDataCount.objects.filter(period=mes, year=ano).order_by('data', 'user')
 
 
