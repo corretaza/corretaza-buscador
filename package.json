@@ -1,9 +1,19 @@
 {
-  "name": "seucorretor",
+  "name": "corretaza-buscador",
   "version": "0.0.1",
   "description": "frontend dependencies",
   "repository": "seucorretor",
+  "scripts": {
+    "test": "gulp"
+  },
   "dependencies": {
     "phantomjs": "^2.1.7"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jshint": "^2.0.1",
+    "gulp-util": "^3.0.7",
+    "jshint": "^2.9.3"
+
   }
 }
