@@ -26,7 +26,7 @@ function ajax_cep(cidade){
             dataType: "json",
             async: false,
             success: function(data, textStatus, jqXHR) {
-              if ((data.rua != null) && (normalizar_string(data.cidade) == normalizar_string(cidade))){
+              if ((data.rua !== null) && (normalizar_string(data.cidade) == normalizar_string(cidade))){
                   $("#id_logradouro").val(data.rua);
                   div_cep.removeClass("has-error");
                   div_cep.find("span.text-danger").remove();
@@ -48,8 +48,8 @@ function ajax_cep(cidade){
 function normalizar_string(palavra){
     var com_acento = 'áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÖÔÚÙÛÜÇ´`^¨~';
     var sem_acento = 'aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC     ';
-    for (caracter in palavra){
-        for (letra in com_acento){
+    for (var caracter in palavra){
+        for (var letra in com_acento){
             if (palavra[caracter] == com_acento[letra]){
                 palavra=palavra.replace(palavra[caracter],sem_acento[letra]);
             }

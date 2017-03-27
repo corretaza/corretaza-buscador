@@ -68,7 +68,7 @@ function show_div_filtro(div){
 function get_url_parameter(parameter){
     var page_url = window.location.search.substring(1);
     var url_variables = page_url.split('&');
-    var url_values = []
+    var url_values = [];
     for (var i = 0; i < url_variables.length; i++) {
         var parameter_name = url_variables[i].split('=');
         if (parameter_name[0] == parameter) {
@@ -109,6 +109,6 @@ function show_div_with_error(){
     if (divs){
         $.each(divs, function(index){
             $(divs[index]).parents("div.panel-collapse").show();
-        })
+        });
     }
 }
