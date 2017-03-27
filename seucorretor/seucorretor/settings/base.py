@@ -101,7 +101,7 @@ STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'static')),
 )
 
-# django-bower
+# django-bower (find the bower folder)
 BOWER_COMPONENTS_ROOT = normpath(join(SITE_ROOT, 'components'))
 
 STATICFILES_FINDERS = (
@@ -192,27 +192,6 @@ LOCAL_APPS = (
     'imoveis',
     'buscacep',
     'parceiros',
-)
-
-BOWER_INSTALLED_APPS = (
-    'bootstrap#3.2.0',
-    'jquery#1.11.3',
-    'magnific-popup',
-    'font-awesome-bower#~4.3.0',
-    'pickadate#~3.5.5',
-    'chartkick#~1.3.0',
-    'dw-bxslider-4#~4.2.3',
-    'frontend-guide-utils',
-    'reset-css',
-    'modernizr#~2.8.3',
-    'waypoints#3.0.1',
-    'dropzone#~4.2.0',
-    'jQuery.XDomainRequest',
-    'selectize#0.12.1',
-    'pdfviewer#^0.3.2',
-    'list.js',
-    'store.js#2.0.4',
-#    'css-print#1.1.2'
 )
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
