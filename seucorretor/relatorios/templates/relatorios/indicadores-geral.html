@@ -37,24 +37,24 @@
             </div>
             <div class="col-md-3">
               <select class="form-control input-lg" name="mes">
-                <option value="Jun" {% if mes == 'Jan' %}selected="selected"{% endif %}>Janeiro</option>
-                <option value="Jun" {% if mes == 'Feb' %}selected="selected"{% endif %}>Fevereiro</option>
-                <option value="Jun" {% if mes == 'Mar' %}selected="selected"{% endif %}>Março</option>
-                <option value="Jun" {% if mes == 'Apr' %}selected="selected"{% endif %}>Abril</option>
-                <option value="Jun" {% if mes == 'May' %}selected="selected"{% endif %}>Maio</option>
-                <option value="Jun" {% if mes == 'Jun' %}selected="selected"{% endif %}>Junho</option>
-                <option value="Jul" {% if mes == 'Jul' %}selected="selected"{% endif %}>Julho</option>
-                <option value="Aug" {% if mes == 'Aug' %}selected="selected"{% endif %}>Agosto</option>
-                <option value="Sep" {% if mes == 'Sep' %}selected="selected"{% endif %}>Setembro</option>
-                <option value="Oct" {% if mes == 'Oct' %}selected="selected"{% endif %}>Outubro</option>
-                <option value="Nov" {% if mes == 'Nov' %}selected="selected"{% endif %}>Novembro</option>
-                <option value="Dec" {% if mes == 'Dec' %}selected="selected"{% endif %}>Dezembro</option>
+                <option value="1" {% if mes == '1' %}selected="selected"{% endif %}>Janeiro</option>
+                <option value="2" {% if mes == '2' %}selected="selected"{% endif %}>Fevereiro</option>
+                <option value="3" {% if mes == '3' %}selected="selected"{% endif %}>Março</option>
+                <option value="4" {% if mes == '4' %}selected="selected"{% endif %}>Abril</option>
+                <option value="5" {% if mes == '5' %}selected="selected"{% endif %}>Maio</option>
+                <option value="6" {% if mes == '6' %}selected="selected"{% endif %}>Junho</option>
+                <option value="7" {% if mes == '7' %}selected="selected"{% endif %}>Julho</option>
+                <option value="8" {% if mes == '8' %}selected="selected"{% endif %}>Agosto</option>
+                <option value="9" {% if mes == '9' %}selected="selected"{% endif %}>Setembro</option>
+                <option value="10" {% if mes == '10' %}selected="selected"{% endif %}>Outubro</option>
+                <option value="11" {% if mes == '11' %}selected="selected"{% endif %}>Novembro</option>
+                <option value="12" {% if mes == '12' %}selected="selected"{% endif %}>Dezembro</option>
               </select>
             </div>
             <div class="col-md-2">
               <select class="form-control input-lg" name="ano">
-                <option value="2016" selected="selected">2017</option>
-                <option value="2016" selected="selected">2016</option>
+                <option value="2017" selected="selected">2017</option>
+                <option value="2016">2016</option>
               </select>
             </div>
             <div class="col-md-2">
@@ -63,10 +63,10 @@
           </form>
         </div>
 
-        {% if mes_int %}
+        {% if mes %}
         <div class="col-md-12">
           <p>
-            <a class="btn btn-default" href="{% url 'relatorios.indicadores.novosatendimentos' mes_int 2016 %}">Novos atendimentos</a>
+            <a class="btn btn-default" href="{% url 'relatorios.indicadores.novosatendimentos' mes ano %}">Novos atendimentos</a>
 
             <a class="btn btn-default" href="#">Resposta dos atendimentos</a>
 
