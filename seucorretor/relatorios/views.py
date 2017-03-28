@@ -268,31 +268,16 @@ class RelatorioIndicadoresListView(LoginRequiredMixin, UserPassesTestMixin, List
 
     def get_context_data(self, **kwargs):
         context = super(RelatorioIndicadoresListView, self).get_context_data(**kwargs)
-        mes = self.request.GET.get('mes') or 'Nov'
+        mes = self.request.GET.get('mes') or '1'
         context['ano'] = self.request.GET.get('ano') or '2016'
         context['mes'] = mes
-        # TODO: Remove this crap code
-        mes_int = 0
-        if mes == 'Jun':
-            mes_int = 6
-        elif mes == 'Jul':
-            mes_int = 7
-        elif mes == 'Aug':
-            mes_int = 8
-        elif mes == 'Sep':
-            mes_int = 9
-        elif mes == 'Oct':
-            mes_int = 10
-        elif mes == 'Nov':
-            mes_int = 11
-        elif mes == 'Dec':
-            mes_int = 12
-        context['mes_int'] = mes_int
         return context
 
     def get_queryset(self):
-        mes = self.request.GET.get('mes') or 'Nov'
-        ano = self.request.GET.get('ano') or '2016'
+        mes = self.request.GET.get('mes') or '1'
+        ano = self.request.GET.get('ano') or '2017'
+        mes_str = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        mes = mes_str[int(mes)-1]
         return HitDataCount.objects.filter(period=mes, year=ano).order_by('data', 'user')
 
 
