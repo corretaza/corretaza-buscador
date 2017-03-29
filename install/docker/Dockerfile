@@ -67,10 +67,13 @@ RUN ln -s /root/ corretaza-buscador
 RUN chown -R root: /home/root
 RUN touch .bashrc
 RUN echo "alias ll='ls -alF'" >> .bashrc
+RUN echo -n "PS1='\[\033[01;32m\]\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" >> .bashrc && \
+    echo -n '$(__git_ps1 " (%s)")' >> .bashrc && \
+    echo -n " $ '" >> .bashrc
 
 ADD requirements/development.pip /
 ADD requirements/base.pip /
-RUN pip install -r development.pip
+RUN cd / && pip install -r base.pip
 RUN rm -rf /var/lib/apt/lists/*
 
 # Env do BD
