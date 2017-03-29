@@ -1,0 +1,83 @@
+
+modo D O C K E R
+     ===========
+                          ##        .
+                    ## ## ##       ==
+                 ## ## ## ##      ===
+             /""""""""""""""""___/ ===
+        ~~~ {~~ ~~~~ ~~~ ~~~~ ~~ ~ /  ===- ~~~
+             \______ o          __/
+              \    \        __/
+                \____\______/
+
+## Instalar o Docker e Docker Machine
+Que permite que voce rode os comandos abaixo acesse 
+
+1) Instalar o Docker conforme seu SO
+https://www.docker.com/community-edition#/download
+https://docs.docker.com/mac/step_one/
+
+
+2) Clonar o projeto
+cd ~
+mkdir workspacepy
+cd workspacepy
+git clone -b development https://github.com/corretaza/corretaza-buscador.git
+
+## Criar imagem docker
+cd corretaza-buscador
+docker build -f $(pwd)/install/docker/Dockerfile -t seucorretor .
+
+## Executar docker (na pasta do projeto: corretaza-buscador)
+
+### Criar e acessar o terminal da imagem
+$ docker run -ti -v $(pwd)/:/root -p 8000:8000 seucorretor bash
+cd root/seucorretor
+./manage.py runserver 0.0.0.0:8000
+
+### Executar o build + runserver
+$ docker run -ti -v $(pwd)/:/root -p 8000:8000 seucorretor build
+
+### Executar o build + runserver
+$ docker run -ti -v $(pwd)/:/root -p 8000:8000 seucorretor runserver
+
+
+
+
+
+
+modo M A N U A L
+     ===========
+
+# Instale os pré requisitos do seu SO (linux debian/ubuntu/elementary OS)
+  (veja o arquivo install/Requirements_SO)
+
+# Estrutura de pastas sujeridas:
+
+~/workspacepy/
+~/workspacepy/myapps
+
+# Crie/Ative o ambiente
+cd ~/workspacepy/myprojects
+virtualenv seucorretor_development
+source seucorretor_development/bin/active
+
+Nota: pode-se utilizar virtualwrapper como alternativa ;)
+TODO: criar doc de como utilizar o virtualwrapper
+
+# Clonar o projeto e instalar dependencias
+
+OBS: como ainda não existe a branch de development, utiliar a de staging
+TODO: Criar branch remota de development
+
+cd seucorretor_development
+git clone -b development https://github.com/corretaza/corretaza-buscador.git
+cd corretaza-buscador
+pip install -r requirements/development.pip
+
+# Baixar assets
+bower install --allow-root
+
+# Criar as tabelas
+cd seucorretor
+./manage.py migrate

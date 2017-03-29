@@ -1,0 +1,86 @@
+Preparando ambiente de desenvolvimento
+======================================
+
+SO (Optional)
+--
+sudo apt-get install openssh-server
+sudo apt-get install vim
+
+
+ZSH shell (Optional - deixa o shell do linux mais malandro)
+---------
+sudo apt-get install zsh
+chsh -s /usr/bin/zsh
+
+
+GIT
+---
+sudo apt-get install git-core gitk
+
+Configure seu ambiente para mostrar a branch, mostrar cores
+--> (Como usar branch local) http://blog.billcode.com.br/search/label/Git
+--> (Dicas de comandos) http://billcode-labs.github.io/git-cheat-sheet-en.html
+
+
+
+MYSQL (Para desenvolvimento, pode-se utilizar SQLITE para melhor desempenho)
+-----
+## Defina no seu ~/.bashrc ou ~/.zshrc as seguintes variavies de ambiente:
+# de forma que toda vez q abrir um shell as mesmas estejam disponiveis via $SEUCORRETOR_DB_NAME etc..
+
+export SEUCORRETOR_DB_NAME='seucorretor'
+export SEUCORRETOR_DB_USER='root'
+export SEUCORRETOR_DB_PASSWORD='SUA_SENHA_DE_ROOT_DO_MYSQL'
+export SEUCORRETOR_DB_HOST='localhost'
+
+sudo apt-get install mysql-server
+sudo apt-get install libmysqlclient-dev
+
+mysql -uroot --password=SUA_SENHA_DE_ROOT_DO_MYSQL -v
+CREATE DATABASE seucorretor CHARACTER SET utf8;
+CREATE USER 'seucorretor'@'localhost' IDENTIFIED BY 'senha*';
+GRANT ALL ON seucorretor.* TO 'seucorretor'@'localhost';
+
+
+Virtualenv
+----------
+sudo apt-get install python-pip
+sudo pip install virtualenv
+
+
+Pillow
+-------
+sudo apt-get install python-dev python-setuptools
+sudo apt-get install libtiff4-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.5-dev tk8.5-dev python-tk libjpeg-dev
+sudo apt-get python-imaging
+
+
+Beautiful Soup
+-----------------------------------------
+apt-get install python-bs4  ## no Ubuntu, Elementary-OS ou qualquer Debian
+
+
+NODE and NPM
+-------------
+curl -sL https://deb.nodesource.com/setup | sudo bash -
+sudo apt-get install nodejs
+sudo npm install npm -g
+npm install -g bower
+
+
+Sources Links
+-------------
+# Pillow
+http://pillow.readthedocs.org/en/latest/installation.html
+http://unix.stackexchange.com/questions/105265/install-pil-pillow-via-pip-in-debian-testing-jessie
+http://askubuntu.com/questions/156484/how-do-i-install-python-imaging-library-pil
+
+# node, npm
+http://blog.izs.me/post/87525128203/how-to-install-node-js-and-npm-on-ubuntu-14-04
+https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-an-ubuntu-14-04-server
+https://github.com/joyent/node/wiki/installing-node.js-via-package-manager
+
+sudo add-apt-repository \
+       "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
+       Xenial \
+       stable"
