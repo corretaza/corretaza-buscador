@@ -10,39 +10,90 @@
 
 {% block content %}
     <form action="" method="POST">
-        <div class="popup-content">
-            <h1><i class="fa fa-envelope"></i> Contatar anunciante</h1>
+        <div class="popup-content step1">
+            <h1><i class="fa fa-heart"></i> Gostou deste imóvel, certo?</h1>
+            <p style="font-size: 1.2em;"><small>Informe seu nome e email para tirarmos suas dúvidas. Assim que possível um corretor entrará em contato contigo.</small></p>
+            
             <div class="row">
                 <div class="col-xs-12 col-sm-12 faleconosco-campos">
                     <form method='post' enctype="multipart/form-data">
                       {% csrf_token %}
-
+                      
+                      <div class="row">
+                        <div class="col-sm-6">
+                          {% formrow form.nome %}
+                        </div>
+                        <div class="col-sm-6">
+                          {% formrow form.sobrenome %}
+                        </div>
+                      </div>
                       <div class="row">
                         <div class="col-sm-6">
                           {% formrow form.email %}
                         </div>
+                      </div>
+
+                      <div class="row">
+                     
+                        <div class="col-sm-12">
+                          {% formrow form.mensagem %}
+                        </div>
+                        
+                        {% formrow form.imovel_ref %}
+                        
+                      </div>
+                      
+                      <div class="row">
+                     
+                        <div class="col-sm-6">
+                          <button type="button" id="btn_pressa" class="btn-destaque-lg">
+                            <i class="fa fa-envelope"></i> Tenho pressa!
+                          </button> 
+                        </div>
+                        
+                        <div class="col-sm-6">
+                          <button type="button" id="btn_pesquisar" class="btn-destaque-lg">
+                            <i class="fa fa-envelope"></i> Estou apenas pesquisando
+                          </button> 
+                        </div>
+                      </div>
+
+                      <p style="font-size: 1.2em;"><small>Ao enviar, você concorda com os Termos de Uso e Política de Privacidade</small></p>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <div class="popup-content step2">
+            <h1><i class="fa fa-user"></i> Obrigado! Já estamos buscando um corretor para lhe atender.</h1>
+            <p style="font-size: 1.2em;"><small>Se preferir pode deixar seu telefone.</small></p>
+            
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 faleconosco-campos">
+                    <form method='post' enctype="multipart/form-data">
+                      {% csrf_token %}
+                      
+                      <div class="row">
                         <div class="col-sm-6">
                           {% formrow form.telefone %}
                         </div>
                       </div>
-
-                      <div class="row">
-                        <div class="col-sm-12">
-                          {% formrow form.nome %}
-                        </div>
-                        <div class="col-sm-12">
-                          {% formrow form.mensagem %}
-                        </div>
-                        <div class="col-sm-12">
-                          {% formrow form.receber_contato %}
-                        </div>
-                        {% formrow form.imovel_ref %}
-                        
-                      </div>
                     
-                      <button type="submit" class="btn-destaque-lg">
-                        <i class="fa fa-envelope"></i> Enviar mensagem
-                      </button> 
+                      <div class="row">
+                     
+                        <div class="col-sm-6">
+                          <button type="submit" class="btn-destaque-lg">
+                            <i class="fa fa-phone"></i> Enviar telefone
+                          </button> 
+                        </div>
+                        
+                        <div class="col-sm-6">
+                          <button type="submit" class="btn-destaque-lg">
+                            <i class="fa fa-search"></i> Continuar pesquisando
+                          </button> 
+                        </div>
+                      </div>
 
                       <p style="font-size: 1.2em;"><small>Ao enviar, você concorda com os Termos de Uso e Política de Privacidade</small></p>
 

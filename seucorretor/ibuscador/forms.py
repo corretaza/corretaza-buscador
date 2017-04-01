@@ -140,17 +140,23 @@ class ContatarAnuncianteForm(forms.Form):
                            ('whatsapp', _('WhatsApp')), )
     imovel_ref = forms.CharField(widget=forms.HiddenInput())
     email = forms.EmailField(
-      widget=forms.TextInput(attrs={'placeholder': 'Digite seu email'}))
+      widget=forms.TextInput(attrs={'placeholder': 'Digite seu email'}),
+      label='E-mail')
     telefone = forms.CharField(
       widget=forms.TextInput(attrs={'placeholder': 'Digite seu telefone'}))
     nome = forms.CharField(
-      widget=forms.TextInput(attrs={'placeholder': 'Digite seu nome e sobrenome'}),
-      label='Nome e Sobrenome')
+      widget=forms.TextInput(attrs={'placeholder': 'Digite seu nome'}),
+      label='Nome')
+    sobrenome = forms.CharField(
+      widget=forms.TextInput(attrs={'placeholder': 'Digite seu sobrenome'}),
+      label='Sobrenome')
     mensagem = forms.CharField(
       widget=forms.Textarea(attrs={'rows': 3,
                                    'cols': 35,
-                                   'placeholder': 'Opcionalmente, você pode deixar uma mensagem'}),
-      required=False)
+                                   'placeholder': 'Opcionalmente, você pode deixar uma mensagem'}, 
+                                   ),
+                            label='Mensagem',
+                            required=False)
     receber_contato = forms.CharField(
       label='Desejo receber contato por',
       widget=forms.CheckboxSelectMultiple(choices=CONTATOS_VIA),
@@ -158,6 +164,7 @@ class ContatarAnuncianteForm(forms.Form):
 
     def __init__(self, *args, **kwargs):
         super(ContatarAnuncianteForm, self).__init__(*args, **kwargs)
+        
 
     def clean_telefone(self):
         telefone = self.cleaned_data['telefone']
