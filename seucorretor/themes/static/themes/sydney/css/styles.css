@@ -853,6 +853,7 @@ Modules - reusable parts of our design
 	border: 0px solid #fff;
 }
 
+
 /** listagem de imoveis */
 .listagem-imoveis.atendimento.em-andamento {
     position: fixed;
