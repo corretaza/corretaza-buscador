@@ -70,6 +70,13 @@ class Atendimento(Contato):
         ('tarde', 'A tarde'),
         ('noite', 'A noite'),
     )
+    TIPOS_URGENCIA = (
+        ('0', _('Muito urgente, preciso achar um imóvel em menos de 1 semana/mes')),
+        ('1', _('Urgente, preciso achar um imóvel dentro 3 meses')),
+        ('2', _('Não urgente, estou pesquisando para comprar daqui 6 meses ou 1 ano')),
+        ('3', _('Investidor, quero o melhor custo/benefício')),
+        ('9', _('Não informado')),
+    )
     data_criacao = models.DateTimeField(auto_now_add=True, editable=False)
     nome = models.CharField(_('Nome Completo'), max_length=128)
     nome_conjuge = models.CharField(_('Nome Cônjuge'), max_length=128,
@@ -99,6 +106,9 @@ class Atendimento(Contato):
         'Melhores horários', max_length=128, blank=True, default='')
     observacoes = models.TextField(
         _('Observações'), blank=True, default='')
+    urgencia = models.CharField(
+        _('Urgencia'), max_length=2,
+        choices=TIPOS_URGENCIA, default='9')
 
     objects = AtendimentoManager()
 

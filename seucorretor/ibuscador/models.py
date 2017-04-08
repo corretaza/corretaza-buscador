@@ -34,6 +34,7 @@ class InteresseBase(models.Model):
         ('0', 'Muito urgente'),
         ('1', 'Urgente'),
         ('2', 'Não urgente'),
+        ('3', 'Investidor'),
         ('9', ' --- '),
     )
     TIPOS_IMOVEL = (
