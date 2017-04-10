@@ -6,8 +6,8 @@
 .ns-box {
     position: fixed;
     background: rgba(42,45,50,0.85);
-    padding: 22px;
-    line-height: 1.4;
+    padding: 28px;
+    line-height: 5;
     z-index: 1000;
     pointer-events: none;
     color: rgba(250,251,255,0.95);
