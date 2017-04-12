@@ -5,12 +5,12 @@
   padding: 0;
   list-style: none;
   position: relative;
+  margin: 0;
 }
 
 
 /* Right content */
 .v-timeline > li .v-label {
-  /*margin: 0 0 15px 25%; */
   padding: 20px 30px;
   font-weight: 300;
   line-height: 1.4;
@@ -67,15 +67,15 @@
     text-align: left;
   }
   .v-timeline > li .v-label {
-    margin: 0 0 30px 0;
-    padding: 1.3em;
+    /*margin: 0 0 30px 0;*/
+    padding: 8px 10px;
   }
   .v-timeline > li .v-label:after {
-    right: auto;
-    left: 20px;
-    border-right-color: transparent;
-    border-bottom-color: #869198;
-    top: -20px;
+    border-width: 10px;
+  }
+  .v-timeline > li .v-label h3 {
+    line-height: 1.5em;
+    font-size: 14px;
   }
   .v-timeline > li .v-icon {
     display: none;
