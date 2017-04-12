@@ -852,3 +852,29 @@ Modules - reusable parts of our design
     transform: translate3d(0,150%,0);
 	border: 0px solid #fff;
 }
+
+/** listagem de imoveis */
+.listagem-imoveis.atendimento.em-andamento {
+    position: fixed;
+    background-color: #5cb85c;
+    bottom: 16px;
+    right: 220px;
+    color: #fff;
+    padding: 2px 12px;
+    border-radius: 8px;
+    z-index: 600;
+    opacity: .9;
+}
+.listagem-imoveis.atendimento.em-andamento:hover {
+    opacity: 1;
+}
+
+.listagem-imoveis.atendimento.em-andamento > p {
+  line-height: 2px;
+  color: #fff;
+  font-size: 1.2em;
+}
+
+.listagem-imoveis.atendimento.em-andamento a {
+  cursor: pointer;
+}
