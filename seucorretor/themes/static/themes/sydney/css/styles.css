@@ -853,7 +853,10 @@ Modules - reusable parts of our design
 	border: 0px solid #fff;
 }
 
+<<<<<<< efb8792d0e5707b53c652c5f78fce027ee3a4568
 
+=======
+>>>>>>> #UX Salva o painel no localstorage, assim do buscador é possível voltar para o painel.
 /** listagem de imoveis */
 .listagem-imoveis.atendimento.em-andamento {
     position: fixed;
