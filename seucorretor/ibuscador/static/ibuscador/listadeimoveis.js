@@ -53,6 +53,19 @@ $(document).ready(function() {
     $("#btn-filtrar").click();
   });
 
+  var interesseEmAndamento = localStorage.getItem('pcliente.corretaza-interesse-url');
+  if (interesseEmAndamento) {
+      var cliente = localStorage.getItem('pcliente.corretaza-interesse-cliente');
+      var tipoImovel = localStorage.getItem('pcliente.corretaza-interesse-tipo-imovel');
+      $( "#atendimento-em-andamento-div" ).find("#id_atendimento_cliente").text(cliente);
+      $( "#atendimento-em-andamento-div" ).find("#id_atendimento_tipo_imovel").text(tipoImovel);
+      $( "#atendimento-em-andamento-div" ).find("#id_atendimento_url").attr("href", interesseEmAndamento);
+      setTimeout(function() {
+        $( "#atendimento-em-andamento-div" ).show('slow');
+      }, 1400);
+  }
+
+
   //buscador de bairros
   var bairroList = new List('bairros_count', {valueNames: [ 'name' ]});
 
