@@ -72,7 +72,7 @@ class Atendimento(Contato):
     )
     TIPOS_URGENCIA = (
         ('0', _('Muito urgente, preciso achar um imóvel em menos de 1 semana/mes')),
-        ('1', _('Urgente, preciso achar um imóvel dentro 3 meses')),
+        ('1', _('Urgente, preciso achar um imóvel dentro de 3 meses')),
         ('2', _('Não urgente, estou pesquisando para comprar daqui 6 meses ou 1 ano')),
         ('3', _('Investidor, quero o melhor custo/benefício')),
         ('9', _('Não informado')),
@@ -145,6 +145,12 @@ class Atendimento(Contato):
             melhor_hora_contato += " (ou entre {0} e {1})".format(
                 self.melhor_hora_inicio, self.melhor_hora_fim) if self.melhor_hora_inicio else ''
         return melhor_hora_contato
+
+    @property
+    def urgencia_verbose(self):
+        if self.urgencia:
+            return dict(self.TIPOS_URGENCIA)[self.urgencia]
+        return None
 
     def atualiza_fone(self, novo_fone):
         if not self.fone2:
