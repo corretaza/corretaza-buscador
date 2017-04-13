@@ -17,6 +17,10 @@
 	transition: all 1s;
 }
 
+.bottom-fix-menu-white {
+	background-color: rgba(255, 255, 255, .65);
+}
+
 .bottom-fix-menu h1 {	
 	color: #fff;
 }
