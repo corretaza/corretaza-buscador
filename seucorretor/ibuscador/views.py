@@ -6,6 +6,8 @@ from django.views.generic.edit import CreateView, UpdateView, FormView
 from django.shortcuts import get_object_or_404, redirect, render
 from django.core.urlresolvers import reverse
 from django.utils import timezone
+from django.contrib import messages
+from django.http import HttpResponseRedirect
 
 from imobiliaria.mixins import EhCorretorMixin
 from autoatendimento.atendimento import Atendimento, Contatos
@@ -261,9 +263,14 @@ class ContatarAnunciantePasso1(FormView):
             form.cleaned_data['email'],
             form.cleaned_data['telefone'],
             form.cleaned_data['imovel_ref'],
-            form.cleaned_data['mensagem'] )
+            form.cleaned_data['mensagem'], )
+
         form.envia_email()
-        return super(ContatarAnunciantePasso1, self).form_valid(form)
+
+        messages.success(
+            self.request, 'Sua mensagem foi enviada com sucesso!')
+        return HttpResponseRedirect(
+            novo_contato.interesse_do_contato().get_informacoes_atendimento_url())
 
 
 class ImovelHistoricoCreateView(EhCorretorMixin, CreateView):
