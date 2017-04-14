@@ -74,12 +74,14 @@ function validaCampos() {
 
 function validaFone() {
   var fone = $('#id_telefone');
+  var foneValue = fone.val().replace(/ /g, '');
+
   var validado = true;
-  if (fone.val().replace(/\s+/, "") == "" || isNaN(fone.val()) ) {
+  if (foneValue == "" || isNaN(foneValue) ) {
     validado = false;
   }
 
-  if (fone.val().replace(/\s+/, "").length < 10 ) {
+  if (foneValue.length < 10 ) {
     validado = false;
   }
   if (!validado) {
