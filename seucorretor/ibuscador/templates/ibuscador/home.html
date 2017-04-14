@@ -25,13 +25,9 @@
 
           <div class="row">
 
-            <div class="col-xs-8">
-              <h1>&nbsp</h1>
-            </div>
+            <div class="col-xs-11 buscador">
 
-            <div class="col-xs-8">
-
-              <span style="font-size: 42px; text-shadow: 2px -1px 2px #FFFFFF;" ><span>Seu imóvel está na SJC Vale Imóveis:</span></span>
+              <span class="titulo principal" ><span>Seu imóvel está na SJC Vale Imóveis:</span></span>
               
               <div class="dark-bg-search-container dark-bg-greyed-box">
                 <div class="dark-bg-search_wrapper">
@@ -39,17 +35,17 @@
                   <form action="{% url 'ibuscador.lista' %}" method="get" enctype="multipart/form-data">{% csrf_token %} 
 
                     <div class="row">
-                      <div class="col-xs-2">
+                      <div class="col-md-2">
                         <div class="busca_padrao">
                           {% formrow busca_inicial_form.tipo_interesse %}
                         </div>
                       </div>
-                      <div class="col-xs-3">
+                      <div class="col-md-3">
                         <div class="busca_padrao">
                           {% formrow busca_inicial_form.tipo_imovel %}
                         </div>
                       </div>  
-                      <div class="col-xs-5">
+                      <div class="col-md-5">
                         <div class="busca_padrao">
                           {% formrow busca_inicial_form.cidade %}
                         </div>
@@ -57,13 +53,13 @@
                           {% formrow busca_inicial_form.imovel_ref %}
                         </div>
                       </div>
-                      <div class="col-xs-2">
-                        <p>
-                          <label for="id_cidade"></label><br/>
+                      <div class="col-md-2">
+                        <p class="btn-buscar">
+                          <label for="id_cidade"></label>
                           <input type="submit" class="btn btn-success btn-lg" value="Buscar" />
                         </p>
                       </div>
-                      <div class="col-xs-6">
+                      <div class="col-md-6">
                         <div class="radio-inline residencial_comercial busca_padrao">
                           {% formrow busca_inicial_form.residencial_comercial %}
                         </div>
