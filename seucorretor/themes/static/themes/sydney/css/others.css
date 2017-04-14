@@ -71,7 +71,9 @@
     padding: 8px 10px;
   }
   .v-timeline > li .v-label:after {
+    right: 100%;
     border-width: 10px;
+    top: 14px;
   }
   .v-timeline > li .v-label h3 {
     line-height: 1.5em;
