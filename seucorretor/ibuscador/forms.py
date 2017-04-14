@@ -135,9 +135,6 @@ class NovoCondominioForm(forms.ModelForm):
 
 
 class ContatarAnuncianteForm(forms.Form):
-    CONTATOS_VIA = Choices(('email', _('Email')),
-                           ('fone', _('Fone')),
-                           ('whatsapp', _('WhatsApp')), )
     imovel_ref = forms.CharField(widget=forms.HiddenInput())
     email = forms.EmailField(
       widget=forms.TextInput(attrs={'placeholder': 'Digite seu email'}),
@@ -152,15 +149,11 @@ class ContatarAnuncianteForm(forms.Form):
       label='Sobrenome')
     mensagem = forms.CharField(
       widget=forms.Textarea(attrs={'rows': 3,
-                                   'cols': 35,
+                                   'cols': 45,
                                    'placeholder': 'Opcionalmente, você pode deixar uma mensagem'}, 
                                    ),
                             label='Mensagem',
                             required=False)
-    receber_contato = forms.CharField(
-      label='Desejo receber contato por',
-      widget=forms.CheckboxSelectMultiple(choices=CONTATOS_VIA),
-      required=False)
 
     def __init__(self, *args, **kwargs):
         super(ContatarAnuncianteForm, self).__init__(*args, **kwargs)
@@ -185,8 +178,8 @@ class ContatarAnuncianteForm(forms.Form):
                 'email': self.cleaned_data['email'],
                 'telefone': self.cleaned_data['telefone'],
                 'nome': self.cleaned_data['nome'],
+                'sobrenome': self.cleaned_data['sobrenome'],
                 'mensagem': self.cleaned_data['mensagem'],
-                'receber_contato': self.cleaned_data['receber_contato'],
                 'url': reverse('buscador.lista.imovel_referencia',
                                args=[self.cleaned_data['imovel_ref'], ]), }
 

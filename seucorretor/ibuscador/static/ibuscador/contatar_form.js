@@ -1,11 +1,19 @@
 // contatar_form.js
 $(document).ready(function() {
 
-  $(".step2").hide();
-  $("#btn_pressa").click(avancarTelefone);
-  $("#btn_pesquisar").click(avancarTelefone);
+  $("#btn_continuar").click(avancarTelefone);
   $("label[for='id_imovel_ref']").hide();
-  $(".faleconosco-campos input").removeClass("input-lg");
+
+  $( "#btn-voltar-step1" ).click( function() {
+    $(".step2").hide();
+    $(".step1").show();
+  });
+
+  $( "#btn-enviar" ).click( function() {
+    if ( validaFone() ) {
+      $("#form-mensagem").submit();
+    }
+  });
 
   ids = ['id_nome', 'id_sobrenome', 'id_email', 'id_telefone'];
   focusSequence(ids);
@@ -25,7 +33,61 @@ function focusSequence(ids) {
   }
 }
 
-function avancarTelefone(){
-  $(".step2").show();
-  $(".step1").hide();
+function avancarTelefone() {
+  if (validaCampos()) {
+    $(".step2").show();
+    $(".step1").hide();
+  }
+}
+
+function validaCampos() {
+  var nome = $('#id_nome');
+  var validado = true;
+  if (nome.val().replace(/\s+/, "") == "" ) {
+    validado = false;
+    nome.attr("data-toggle", "tooltip");
+    nome.attr("data-placement", "top");
+    nome.attr("title", "Informe seu nome");
+    nome.tooltip('show');
+  }
+  
+  var sobrenome = $('#id_sobrenome');
+  if (sobrenome.val().replace(/\s+/, "") == "" ) {
+    validado = false;
+    sobrenome.attr("data-toggle", "tooltip");
+    sobrenome.attr("data-placement", "top");
+    sobrenome.attr("title", "Informe um sobrenome");
+    sobrenome.tooltip('show');
+  }
+
+  var email = $('#id_email');
+  var emailre = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  if (!emailre.test(email.val())) {
+    validado = false;
+    email.attr("data-toggle", "tooltip");
+    email.attr("data-placement", "top");
+    email.attr("title", "Informe um email válido");
+    email.tooltip('show');
+  }
+  return validado;
+}
+
+function validaFone() {
+  var fone = $('#id_telefone');
+  var validado = true;
+  if (fone.val().replace(/\s+/, "") == "" || isNaN(fone.val()) ) {
+    validado = false;
+  }
+
+  if (fone.val().replace(/\s+/, "").length < 10 ) {
+    validado = false;
+  }
+  if (!validado) {
+    fone.attr("data-toggle", "tooltip");
+    fone.attr("data-placement", "top");
+    fone.removeAttr("title");
+    fone.attr("title", "Informe um fone válido (ex: 12 986271200)");
+    fone.tooltip('show');
+  }
+  return validado;
 }

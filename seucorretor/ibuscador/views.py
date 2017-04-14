@@ -258,8 +258,9 @@ class ContatarAnunciantePasso1(FormView):
         return reverse('ibuscador.contatar.agradecimento')
 
     def form_valid(self, form):
+        nome = "{0} {1}".format(form.cleaned_data['nome'], form.cleaned_data['sobrenome'])
         novo_contato = Contatos.novo().contato(
-            form.cleaned_data['nome'],
+            nome,
             form.cleaned_data['email'],
             form.cleaned_data['telefone'],
             form.cleaned_data['imovel_ref'],

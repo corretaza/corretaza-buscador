@@ -9,17 +9,32 @@
 {% endblock %}
 
 {% block content %}
-    <form action="" method="POST">
-        <div class="popup-content step1">
-            <h1><i class="fa fa-heart"></i> Gostou deste imóvel, certo?</h1>
-            <p style="font-size: 1.2em;"><small>Informe seu nome e email para tirarmos suas dúvidas. Assim que possível um corretor entrará em contato contigo.</small></p>
-            
+
+        <div class="popup-content">
+            <p>{{ form.field.errors }}</p>
             <div class="row">
-                <div class="col-xs-12 col-sm-12 faleconosco-campos">
-                    <form method='post' enctype="multipart/form-data">
-                      {% csrf_token %}
+              <div class="col-xs-3">
+                <figure>
+                  <img width="220" src="{% static 'themes/sydney/img/logo-casa.jpg' %}" />
+                </figure>
+              </div>
+              <div class="col-xs-9">
+                <h1><i class="fa fa-heart"></i> Gostou deste imóvel, certo?</h1>
+              </div>
+            </div>
+            
+            <form id="form-mensagem" method='post' enctype="multipart/form-data">{% csrf_token %}
+              
+              {% formrow form.imovel_ref %}
+              <div class="row step1">
+                  <div class="col-xs-12 col-sm-12 faleconosco-campos">
                       
                       <div class="row">
+
+                        <div class="col-sm-12">
+                          <h3>Informe seu contato e podemos te enviar mais detalhes sobre ele.</h3>
+                        </div>
+
                         <div class="col-sm-6">
                           {% formrow form.nome %}
                         </div>
@@ -32,76 +47,65 @@
                           {% formrow form.email %}
                         </div>
                       </div>
-
+                      
                       <div class="row">
                      
                         <div class="col-sm-12">
-                          {% formrow form.mensagem %}
-                        </div>
-                        
-                        {% formrow form.imovel_ref %}
-                        
-                      </div>
-                      
-                      <div class="row">
-                     
-                        <div class="col-sm-6">
-                          <button type="button" id="btn_pressa" class="btn-destaque-lg">
-                            <i class="fa fa-envelope"></i> Tenho pressa!
+                          <button type="button" id="btn_continuar" class="btn-destaque-lg">
+                             Continuar <i class="fa fa-arrow-right"></i>
                           </button> 
                         </div>
-                        
-                        <div class="col-sm-6">
-                          <button type="button" id="btn_pesquisar" class="btn-destaque-lg">
-                            <i class="fa fa-envelope"></i> Estou apenas pesquisando
-                          </button> 
-                        </div>
+
                       </div>
 
-                      <p style="font-size: 1.2em;"><small>Ao enviar, você concorda com os Termos de Uso e Política de Privacidade</small></p>
+                  </div>
+              </div>
 
-                    </form>
-                </div>
-            </div>
-        </div>
-        
-        <div class="popup-content step2">
-            <h1><i class="fa fa-user"></i> Obrigado! Já estamos buscando um corretor para lhe atender.</h1>
-            <p style="font-size: 1.2em;"><small>Se preferir pode deixar seu telefone.</small></p>
-            
-            <div class="row">
-                <div class="col-xs-12 col-sm-12 faleconosco-campos">
-                    <form method='post' enctype="multipart/form-data">
-                      {% csrf_token %}
-                      
+              <div class="row step2" style="display: none;">
+                  <div class="col-xs-12 col-sm-12 faleconosco-campos">
+
                       <div class="row">
+                        <div class="col-sm-12">
+                          <h3>Com seu fone ou WhatsApp, podemos te enviar nosso contato, garantindo assim que você receberá os detalhes do imóvel.</h3>
+                        </div>
+                        <div class="col-sm-3"></div>
                         <div class="col-sm-6">
                           {% formrow form.telefone %}
                         </div>
                       </div>
-                    
+
                       <div class="row">
-                     
+                        <div class="col-sm-3"></div>
                         <div class="col-sm-6">
-                          <button type="submit" class="btn-destaque-lg">
-                            <i class="fa fa-phone"></i> Enviar telefone
-                          </button> 
-                        </div>
-                        
-                        <div class="col-sm-6">
-                          <button type="submit" class="btn-destaque-lg">
-                            <i class="fa fa-search"></i> Continuar pesquisando
-                          </button> 
+                          {% formrow form.mensagem %}
                         </div>
                       </div>
+                    
+                      <div class="row">
+                        <div class="col-sm-3"></div>
+                        <div class="col-sm-6">
+                          <button id="btn-enviar" type="button" class="btn-destaque-lg">
+                            Enviar mensagem <i class="fa fa-envelope"></i>
+                          </button> 
+                        </div>
 
-                      <p style="font-size: 1.2em;"><small>Ao enviar, você concorda com os Termos de Uso e Política de Privacidade</small></p>
+                      </div>
 
-                    </form>
-                </div>
-            </div>
+                  </div>
+
+                  <div align="center">
+                    <h3>
+                      <a id="btn-voltar-step1" href="#" class="btn btn-lg" role="button" style="padding: 30px;"><i class="fa fa-chevron-circle-left"></i> Voltar</a>
+                    </h3>
+                  </div>
+
+              </div>
+
+            </form>
+
         </div>
-    </form>
+
+
 {% endblock %}
 
 {% block footer_area %}
@@ -109,6 +113,6 @@
 
 {% block extrajs_bottom %}
 
-  <script src="{% static 'ibuscador/contatar_form.js' %}?v=0.0.1"></script>
+  <script src="{% static 'ibuscador/contatar_form.js' %}?v=0.0.2"></script>
 
 {% endblock extrajs_bottom %} 
