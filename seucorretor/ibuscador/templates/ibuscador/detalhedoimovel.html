@@ -8,6 +8,7 @@
 
 {% block extracss %}
   <link href="{% static 'dw-bxslider-4/dist/jquery.bxslider.css' %}" rel="stylesheet">
+  <link href="{% static 'ibuscador/css/listadeimoveis.css' %}" rel="stylesheet">
 {% endblock extracss %}
 
 {% block js %}
@@ -44,6 +45,8 @@
   {% if messages %}
     {% include "core/includes/messages-notifications.html" with messages=messages %}
   {% endif %}
+
+<div class="container container-padding">
 
   <div class="row">
     <div class="col-md-1"></div>
@@ -118,8 +121,7 @@
 
 
   <div class="row">
-    <div class="col-md-1"></div>
-    <div class="col-md-5">
+    <div class="col-sm-6">
       <ul class="bxslider">
         {% for foto in imovel.fotos_list %}
           <li><img src="{% cropped_thumbnail foto 'picture_cropping' scale=1 %}" style="min-height: 396px;" /></li>
@@ -136,7 +138,7 @@
       </div>        
     </div>
 
-    <div class="col-md-5">
+    <div class="col-sm-6">
 
       <p>
         <span><strong>{{ imovel.titulo }}
@@ -224,19 +226,17 @@
   </div>
 
   <div class="row">
-    <div class="col-md-1"></div>
+    <div class="col-sm-6"></div>
 
-    <div class="col-md-5"></div>
-
-    <div class="col-md-5">
+    <div class="col-sm-6">
       <h1>Descrição do imóvel</h1>
-      <div class="line-distance-small">
+      <div class="descricao-imovel">
       {% for descricao in imovel.descricao_imovel_as_list %}
         <p>{{ descricao }}</p>
       {% endfor %}        
       </div>
       <hr class="small">
-      <div class="line-distance-small">
+      <div class="descricao-imovel">
       {% for comodo in imovel.descricao_comodos_as_list %}
         <p>{{ comodo }}</p>
       {% endfor %}
@@ -249,12 +249,10 @@
 
   <div class="row">
 
-    <div class="col-md-1"></div>
-    <div class="col-md-5">
+    <div class="col-sm-6">
       {% if imovel.eh_para_venda and tipo_interesse != 'alugar' %}
       <h3><strong>Formas de pagamentos</strong></h3>
-      <div class="row">
-        <div class="col-md-4 line-distance-small">
+        <div class="forma-pagamento">
           {% for forma_de_pagamento in imovel.forma_de_pagamentos.all %}
             <p>{{ forma_de_pagamento }}</p>
           {% empty %}
@@ -262,9 +260,6 @@
           {% endfor %}
           <p>{{ imovel.outra_forma_de_pagamento }}</p>
         </div>
-        <div class="col-md-4">
-        </div>
-      </div>
       {% endif %}
       <p style="font-size: 16px;">
         <i class="fa fa-info-circle"></i>
@@ -273,50 +268,42 @@
 
     </div>
 
-    <div class="col-md-5">
+    <div class="col-sm-6">
 
       <h3><strong>Área de Lazer do imóvel</strong></h3>
-      <div class="row">
-        <div class="col-md-4 line-distance-small">
-          {% for areadelazer in imovel.areadelazer_imovel.all %}
-            <p>{{ areadelazer }}</p>
-          {% empty %}
-            <p>Não informado</p>
-          {% endfor %}
-        </div>
+      <div class="area-lazer">
+        {% for areadelazer in imovel.areadelazer_imovel.all %}
+          <p>{{ areadelazer }}</p>
+        {% empty %}
+          <p>Não informado</p>
+        {% endfor %}
       </div>
 
       {% if imovel.condominio %}
       <h3><strong>Área de Lazer condomínio</strong></h3>
-      <div class="row">
-        <div class="col-md-4 line-distance-small">
+        <div class="area-lazer">
         {% for areadelazer in imovel.condominio.areadelazer_condominio.all %}
           <p>{{ areadelazer }}</p>
         {% empty %}
           <p>Não informado</p>
         {% endfor %}
         </div>
-        <div class="col-md-4">
-          <p></p>
-        </div>
-      </div>
+
       {% endif %}
 
     </div>
 
-    <div class="col-md-1"></div>
   </div>
 
   <div class="row"> <!-- nova linha -->
-    <div class="col-md-1"></div>
     <div class="col-md-10">
       <h1><i class="fa fa-map-marker"></i>&nbsp Localização</h1>
-      <div class="row">
-        <div class="col-md-4">
+      
+        <div class="localizacao">
           <h3><strong>{{ imovel.bairro.descricao }}</strong> <small> ({{ imovel.regiao.nome }})</small></h3>
           <p style="font-size: 1.4em;">{{ imovel.cidade }}</p>
         </div>
-      </div>
+      
     </div>
 
   </div>
@@ -341,6 +328,8 @@
 
   </div>
   {% endif %}
+
+</div>
 
 {% endblock content %}
 

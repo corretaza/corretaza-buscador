@@ -1,0 +1,13 @@
+.container .bx-wrapper {
+    margin-bottom: 20px;
+}
+
+.forma-pagamento p,
+.area-lazer p,
+.descricao-imovel p {
+    line-height: 12px;
+}
+
+@media only screen and (max-width: 768px) {
+
+}
