@@ -879,3 +879,38 @@ Modules - reusable parts of our design
 .listagem-imoveis.atendimento.em-andamento a {
   cursor: pointer;
 }
+
+.content-center {
+  display: table;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.circle-area {
+  border-radius: 50%;
+  width: 140px;
+  height: 140px;
+  font-size: 5em;
+  color: #fff;
+  background-color: #5cb85c;
+  padding: 20px;
+  text-align: center;
+}
+
+.ftcolor1 {
+  color: #333;
+}
+
+.ftsize-md {
+  font-size: 1.4em;
+}
+
+/* padding horizontas */
+.ph20 {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.ph40 {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
