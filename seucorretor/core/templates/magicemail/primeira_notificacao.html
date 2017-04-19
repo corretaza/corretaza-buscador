@@ -1,16 +1,19 @@
 {% extends 'magicemail/email_base.html' %}
 
+{% load cropping %}
+
 {% block css%}{% endblock css%}
 
 {% block body %}
     
-<p style="text-align: right; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab">Responder</a></p>
+<p style="text-align: right; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p>
 
+{% if interesse.corretor and interesse.corretor.foto %}
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
   <tbody>
     <tr style="font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;">
       <td valign="top" style="padding:0 15px 0 15px;width:64px">
-        <img alt="{{ interesse.corretor.nome }}" height="64" src="data:image/png;base64,{{ interesse.corretor.foto_text64 }}" style="min-height:auto;line-height:100%;outline:none;text-decoration:none;border-radius:10px" class="CrrtZ">
+        <img alt="{{ interesse.corretor.nome }}" height="64" src="{% cropped_thumbnail interesse.corretor 'foto_cropping' scale=0.5 %}" style="min-height:auto;line-height:100%;outline:none;text-decoration:none;border-radius:10px" class="CrrtZ">
       </td>
       <td width="100%" style="padding:0;margin:0" valign="top">
         <p style="font-size:15px;line-height:10px;padding:0;margin-top: 6px;color:#3c3b3b">
@@ -22,6 +25,7 @@
     </tr>
   </tbody>
 </table>
+{% endif %}
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
   <tbody>
@@ -35,15 +39,15 @@
         </h2>
         <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Para melhor te atender, por favor, <strong> nos informe qual é a sua urgência.</strong>
         </h2>
-        <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_alterarurgencia_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar urgência</a>
+        <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_alterarurgencia_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar urgência</a><br>
 
         <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Também não queremos entrar em contato em horários ou formas indesejáveis, desta forma, por favor:</h2>
-        <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhorhorario_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar melhor horário</a>
+        <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhorhorario_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar o melhor horário</a>
 
-        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Caso você já tenha certeza que quer visitar o imóvel, nos <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhoragendaparavisita_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">informe os dias/horários para fazer a visita</a>.</h2>        
+        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Caso você já tenha certeza que quer visitar o imóvel, nos <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhoragendaparavisita_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">informe dia / horário para fazer a visita</a>.</h2><br>
 
         <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Enfim, sou o {{ interesse.corretor }} da SJC Vale Imóveis, fique à vontade para entrar em contato!</h2>
-        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Utilize <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab"> nosso chat</a>, assim irei responder mais rápido do que este email.</h2><br>
+        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Utilize <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}"> nosso chat</a>, assim irei responder mais rápido do que este email.</h2><br>
 
         <h2 style="font-size:16px;font-weight:normal; color:#4d4d4d">Abraço.</h2>
         
@@ -52,7 +56,7 @@
     </tbody>
 </table>
 
-<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab">Responder</a></p><br>
+<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p><br>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
   <tbody style="font-size:12px;font-weight:normal; color:#4d4d4d">
