@@ -17,6 +17,12 @@
 	transition: all 1s;
 }
 
+@media only screen and (max-width: 768px) {
+  .bottom-fix-menu {
+    height: 64px;
+  }
+}
+
 .bottom-fix-menu-white {
 	background-color: rgba(255, 255, 255, .65);
 }
@@ -127,6 +133,23 @@ height: 212px;
 
   .dark-bg-search_wrapper {
     height: 542px;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .hero-original {
+      padding: 25px 0;
+      height: 680px;
+  }
+  .buscador {
+    padding-top: 20px;
+  }
+  .dark-bg-search-container {
+      width: 322px;
+  }
+  .buscador .titulo.principal {
+    font-size: 16px;
+    padding-left: 10px;
   }
 }
 

@@ -88,6 +88,9 @@ dl, menu, ol, ul { margin: 1em 0; }
 dd { margin: 0 0 0 40px; }
 /* * Addresses paddings set differently in IE 6/7. */
 menu, ol, ul { padding: 0 0 0 40px; list-style-type: none}
+@media only screen and (max-width: 768px) {
+  menu, ol, ul { padding: 0 0 0 4px; list-style-type: none}
+}
 /* * Corrects list images handled incorrectly in IE 7. */
 nav ul, nav ol { list-style: none; list-style-image: none; }
 /* ==========================================================================
@@ -452,6 +455,14 @@ Waypoints
   text-decoration: none;
   background: #568E0D
 }
+
+
+@media only screen and (max-width: 768px) {
+  .btn-lg, .btn-group-lg>.btn {
+    font-size: 1em;
+  }
+}
+
 
 /* ==================== TIMELINE ==================== 
 
@@ -910,7 +921,11 @@ Modules - reusable parts of our design
   padding-top: 20px;
   padding-bottom: 20px;
 }
-.ph40 {
+.ph40, .py40 {
   padding-top: 40px;
   padding-bottom: 40px;
+}
+.pv40, .px40 {
+  padding-right: 40px;
+  padding-left: 40px;
 }

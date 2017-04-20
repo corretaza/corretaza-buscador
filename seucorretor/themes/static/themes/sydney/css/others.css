@@ -69,6 +69,7 @@
   .v-timeline > li .v-label {
     /*margin: 0 0 30px 0;*/
     padding: 8px 10px;
+    margin-left: 18px;
   }
   .v-timeline > li .v-label:after {
     right: 100%;

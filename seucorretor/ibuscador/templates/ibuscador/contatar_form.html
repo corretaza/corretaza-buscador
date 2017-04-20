@@ -13,12 +13,12 @@
         <div class="popup-content">
             <p>{{ form.field.errors }}</p>
             <div class="row">
-              <div class="col-xs-3">
+              <div class="col-sm-3 content-center">
                 <figure>
-                  <img src="{% static 'themes/sydney/img/logo-casa.jpg' %}" style="width: 100%; max-width: 200px;" />
+                  <img src="{% static 'themes/sydney/img/logo-casa.jpg' %}" style="width: 100%; max-width: 168px;" />
                 </figure>
               </div>
-              <div class="col-xs-9">
+              <div class="col-sm-9 content-center">
                 <h1><i class="fa fa-heart"></i> Gostou deste imóvel, certo?</h1>
               </div>
             </div>
@@ -27,14 +27,12 @@
               
               {% formrow form.imovel_ref %}
               <div class="row step1">
-                  <div class="col-xs-12 col-sm-12 faleconosco-campos">
+                  <div class="col-xs-12 faleconosco-campos">
                       
                       <div class="row">
-
                         <div class="col-sm-12">
                           <h3>Informe seu contato e podemos te enviar mais detalhes sobre ele.</h3>
                         </div>
-
                         <div class="col-sm-6">
                           {% formrow form.nome %}
                         </div>
@@ -42,6 +40,7 @@
                           {% formrow form.sobrenome %}
                         </div>
                       </div>
+
                       <div class="row">
                         <div class="col-sm-6">
                           {% formrow form.email %}
@@ -49,46 +48,43 @@
                       </div>
                       
                       <div class="row">
-                     
                         <div class="col-sm-12">
                           <button type="button" id="btn_continuar" class="btn-destaque-lg">
                              Continuar <i class="fa fa-arrow-right"></i>
                           </button> 
                         </div>
-
                       </div>
 
                   </div>
               </div>
 
               <div class="row step2" style="display: none;">
-                  <div class="col-xs-12 col-sm-12 faleconosco-campos">
+                  <div class="col-xs-12 faleconosco-campos">
 
                       <div class="row">
                         <div class="col-sm-12">
                           <h3>Com seu fone ou WhatsApp, podemos te enviar nosso contato, garantindo assim que você receberá os detalhes do imóvel.</h3>
                         </div>
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
                           {% formrow form.telefone %}
                         </div>
                       </div>
 
                       <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
                           {% formrow form.mensagem %}
                         </div>
                       </div>
                     
                       <div class="row">
-                        <div class="col-sm-3"></div>
-                        <div class="col-sm-6">
+                        <div class="col-sm-2"></div>
+                        <div class="col-sm-8">
                           <button id="btn-enviar" type="button" class="btn-destaque-lg">
                             Enviar mensagem <i class="fa fa-envelope"></i>
                           </button> 
                         </div>
-
                       </div>
 
                   </div>
