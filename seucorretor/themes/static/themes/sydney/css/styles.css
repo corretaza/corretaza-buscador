@@ -908,6 +908,14 @@ Modules - reusable parts of our design
   text-align: center;
 }
 
+@media only screen and (max-width: 360px) {
+  .circle-area {
+    width: 100px;
+    height: 100px;
+    font-size: 3.3em;
+  }
+}
+
 .ftcolor1 {
   color: #333;
 }
