@@ -150,7 +150,7 @@ class ContatarAnuncianteForm(forms.Form):
     mensagem = forms.CharField(
       widget=forms.Textarea(attrs={'rows': 3,
                                    'cols': 45,
-                                   'placeholder': 'Opcionalmente, você pode deixar uma mensagem'}, 
+                                   'placeholder': 'Precisa mais informações do imóvel ou gostaria de agendar uma visita?'}, 
                                    ),
                             label='Mensagem',
                             required=False)
