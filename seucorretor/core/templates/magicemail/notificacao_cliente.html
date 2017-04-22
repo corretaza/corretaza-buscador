@@ -1,54 +1,120 @@
 {% extends 'magicemail/email_base.html' %}
 
+{% load cropping %}
+
 {% block css%}{% endblock css%}
 
 {% block body %}
-<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+<p style="text-align: right; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p>
+
+{% if interesse.corretor and interesse.corretor.foto %}
+<table width="100%" cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+    <tr style="font-family:'Lucida Grande','Lucida Sans Unicode','Lucida Sans',Verdana,Tahoma,sans-serif;">
+      <td valign="top" style="padding:0 15px 0 15px;width:64px">
+        <img alt="{{ interesse.corretor.nome }}" height="64" src="http://{{ domain }}{% cropped_thumbnail interesse.corretor 'foto_cropping' scale=0.5 %}" style="min-height:auto;line-height:100%;outline:none;text-decoration:none;border-radius:10px" class="CrrtZ">
+      </td>
+      <td width="100%" style="padding:0;margin:0" valign="top">
+        <p style="font-size:15px;line-height:10px;padding:0;margin-top: 6px;color:#3c3b3b">
+          <strong>{{ interesse.corretor.nome }}</strong>
+        </p>
+        <p style="font-size:13px;line-height:6px;padding:0;color:#504d4d">{{ interesse.corretor.fone }}
+        </p>        
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endif %}
+
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
   <tbody>
     <tr>
-      <td>
-        <div style="text-align:center;">
-          <img alt="SJC Vale Imóveis (clique em exibir imagens para visualizar o logotipo)" src="http://{{ domain }}/tracking/email/opened/?id={{ mensagem_id }}" style="display:block;margin-left: auto;margin-right: auto;" width="100" tabindex="0">
-          <h1 style="font-size: 18px;color: #4d4d4d;font-weight: normal;">SJC Vale Imóveis</h1>
-        </div>
-      </td>      
+      <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
+        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">{{ mensagem|safe }}</h2><br>
+        
+      </td>
     </tr>
     <tr>
       <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
-        <h1 style="font-size:22px;font-weight:normal;color:#4d4d4d"><span style="color:#4d4d4d">Olá {{ nome }},</span></h1>
-        <h2 style="font-size:21px;font-weight:normal;color:#201F1F;">
-          <span style="color:#4d4d4d">{{ mensagem|safe }}</span>
-        </h2>
-        <h2 style="font-size:22px;font-weight:normal;color:#201F1F;">Utilize os botões abaixo:</h2>
-        <div style="text-align:center;">
-
-        <p style="padding: 0 0px 20px 0px; margin-bottom: 12px;">
-          <a href="http://{{ domain }}{{ painel_url }}?msg={{ mensagem_id }}" style="color: #fff;background: #4BBB3B;margin: 0;padding: 10px 15px;border-bottom: 3px solid #1F7713;border-radius: 4px;text-decoration: none;font-size: 18px;">Ver Imóveis</a>          
-        </p>
-
-        <p style="padding: 0 0px 20px 0px; margin-bottom: 12px;">
-          <a href="http://{{ domain }}{{ painel_url }}?msg={{ mensagem_id }}#replymsg" style="color: #fff;background: #4BBB3B;margin: 0;padding: 10px 15px;border-bottom: 3px solid #1F7713;border-radius: 4px;text-decoration: none;font-size: 18px;">Responder</a>
-        </p>  
-
-        {% if interesse.cliente.ja_definiu_dias_para_visita %}
-        <p style="text-align:center;">Seus melhores dias/horários para agendar visita são:</p>
-        <p style="text-align:center;">
-          <strong>{{ interesse.cliente.melhor_hora_para_visita_verbose }}</strong>
-          <a href="http://{{ domain }}/{{ interesse.get_melhoragendaparavisita_url }}?msg={{ mensagem_id }}"> Alterar</a>
-        </p>
-        {% else %}
-        <p style="padding: 0 0px 20px 0px; margin-bottom: 12px;">
-          <a href="http://{{ domain }}/{{ interesse.get_melhoragendaparavisita_url }}?msg={{ mensagem_id }}" style="color: #fff;background: #4BBB3B;margin: 0;padding: 10px 15px;border-bottom: 3px solid #1F7713;border-radius: 4px;text-decoration: none;font-size: 18px;">Agendar Visita</a>
-        </p>
-        {% endif %}
-
-        </div>
+        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Utilize <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}"> nosso chat</a>, assim irei responder mais rápido do que este email.</h2><br>
       </td>
     </tr>
-    </tbody>
+  </tbody>
 </table>
-<table width="590" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
-  <tbody style="font-size:16px;font-weight:normal;">
+
+<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder via chat</a></p>
+
+<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ painel_url }}?msg={{ mensagem_id }}">Visualizar todos imóveis</a></p><br>
+
+
+{% if interesse.opcoes_para_visita_naoavaliado %}
+
+<br>
+<h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Para sua avaliação:</h2>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+   {% for opcao in interesse.opcoes_para_visita_naoavaliado %}
+    <tr>
+      <td>
+        <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?ref={{ opcao.imovel_ref }}&msg={{ mensagem_id }}">
+          <span style="font-size: 1.17em;"><strong>Ref. {{ opcao.imovel_ref }}</strong>
+          </span><br/>
+          {% if opcao.imovel_foto_principal %}
+            <figure>
+              <img width="120" src="http://{{ domain }}{% cropped_thumbnail opcao.imovel_foto_principal 'picture_cropping' scale=0.5 %}">
+            </figure>
+          {% endif %}
+          </a>
+      </td>
+      <td>
+        <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?ref={{ opcao.imovel_ref }}&msg={{ mensagem_id }}">
+          <span style="font-size: 1.17em;">Visualizar <strong>Ref. {{ opcao.imovel_ref }}</strong></span>
+        </a>
+      </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+{% if interesse.opcoes_para_visita_nao_visitado %}
+
+<br>
+<h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Aguardando agendar visita:</h2>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody>
+   {% for opcao in interesse.opcoes_para_visita_nao_visitado %}
+    <tr>
+      <td>
+        <a href="#">
+          <span style="font-size: 1.17em;"><strong>Ref. {{ opcao.imovel_ref }}</strong>
+          </span><br/>
+          {% if opcao.imovel_foto_principal %}
+            <figure>
+              <img width="120" src="http://{{ domain }}{% cropped_thumbnail opcao.imovel_foto_principal 'picture_cropping' scale=0.5 %}">
+            </figure>
+          {% endif %}
+          </a>
+      </td>
+      <td>
+        <p style="padding: 0 0px 20px 0px; margin-bottom: 12px;">
+          <a href="http://{{ domain }}{{ interesse.get_melhoragendaparavisita_url }}?msg={{ mensagem_id }}?next={{ painel_url }}?msg={{ mensagem_id }}" style="color: #fff;background: #4BBB3B;margin: 0;padding: 10px 15px;border-bottom: 3px solid #1F7713;border-radius: 4px;text-decoration: none;font-size: 14px;">Agendar Visita</a>
+        </p>
+
+      </td>
+    </tr>
+   {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+
+<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p><br>
+
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
+  <tbody style="font-size:12px;font-weight:normal; color:#4d4d4d">
     <tr>
       <td style="padding:0 0 0 35px;"><strong>{{ nome_corretor }}</strong></td>
     </tr>
@@ -76,14 +142,17 @@
     <tr>
       <td style="padding:0 0 0 35px;">email {{ email_corretor }}</td>
     </tr>
+
     <tr><td><p><br></p></td></tr>
     <tr>
       <td>
-        <p style="text-align:center;">
-          <small style="color:#4D4B4B;">Nossa plataforma é melhor visualizada com os navegadores Firefox, Chrome ou Safari</small>
-        </p>
-      </td>
+        <div style="text-align:center;">
+          <img alt="SJC Vale Imóveis (clique em exibir imagens para visualizar o logotipo)" src="http://{{ domain }}/tracking/email/opened/?id={{ mensagem_id }}" style="display:block;margin-left: auto;margin-right: auto;" width="100" tabindex="0">
+          <h1 style="font-size: 18px;color: #4d4d4d;font-weight: normal;">SJC Vale Imóveis</h1>
+        </div>
+      </td> 
     </tr>
+
     <tr>
       <td>
         <table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #EDEAEA; font-family:helvetica,arial;padding: 20px 0 20px 0;">
