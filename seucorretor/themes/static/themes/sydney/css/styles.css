@@ -177,8 +177,9 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ==========================================================================
 Global Styles
 ========================================================================== */
-a { color: #353535; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; }
-a:hover, a:focus { color: #34BE21; text-decoration: none; }
+a { color: #353535; -webkit-transition: all 0.5s; -moz-transition: all 0.5s; -o-transition: all 0.5s; transition: all 0.5s; text-decoration: underline; }
+a:hover {text-decoration: underline; }
+a:hover, a:focus { color: #34BE21; text-decoration: underline; }
 p { color: #8c9398; word-spacing: 1px; line-height: 25px; font-size: 14px; }
 h2 { font-size: 15px; color: #353535; text-transform: uppercase; font-weight: bold; }
 h2::after { content: " "; border: solid 2px #34BE21; display: block; width: 35px; margin: 25px auto; }
@@ -832,13 +833,14 @@ Modules - reusable parts of our design
     border-left: 1px solid #e7ecea;
     -webkit-transition: color 0.2s;
     transition: color 0.2s;
-	color: #8e8f90;
+	  color: #8e8f90;
     position: relative;
     display: block;
     text-overflow: ellipsis;
     white-space: nowrap;
     line-height: 2.5;
-	font-size: 1.25em;
+  	font-size: 1.25em;
+    text-decoration: none;
 }
 
 .nav-tabs.underline-tabs > li a::after {
