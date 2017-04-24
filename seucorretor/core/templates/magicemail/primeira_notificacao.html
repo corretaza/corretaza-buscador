@@ -6,7 +6,7 @@
 
 {% block body %}
     
-<p style="text-align: right; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p>
+<p style="text-align: right; font-size: 14px;text-decoration: underline;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder ↶</a></p>
 
 {% if interesse.corretor and interesse.corretor.foto %}
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -39,15 +39,15 @@
         </h2>
         <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Para melhor te atender, por favor, <strong> nos informe qual é a sua urgência.</strong>
         </h2>
-        <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_alterarurgencia_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar urgência</a><br>
+        <a style="font-size:16px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_alterarurgencia_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar urgência</a><br>
 
         <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Também não queremos entrar em contato em horários ou formas indesejáveis, desta forma, por favor:</h2>
-        <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhorhorario_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar o melhor horário</a>
+        <a style="font-size:16px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhorhorario_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">Informar o melhor horário</a>
 
-        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Caso você já tenha certeza que quer visitar o imóvel, nos <a style="font-size:14px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhoragendaparavisita_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">informe dia / horário para fazer a visita</a>.</h2><br>
+        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Caso você já tenha certeza que quer visitar o imóvel, nos <a style="font-size:16px; text-decoration: underline;" href="http://{{ domain }}{{ interesse.get_melhoragendaparavisita_url }}?next={{ interesse.get_informacoes_atendimento_url }}?samepage=yes">informe dia / horário para fazer a visita</a>.</h2><br>
 
         <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Enfim, sou o {{ interesse.corretor }} da SJC Vale Imóveis, fique à vontade para entrar em contato!</h2>
-        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Utilize <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}"> nosso chat</a>, assim irei responder mais rápido do que este email.</h2><br>
+        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Utilize <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}" style="text-decoration: underline;"> nosso chat</a>, assim irei responder mais rápido do que este email.</h2><br>
 
         <h2 style="font-size:16px;font-weight:normal; color:#4d4d4d">Abraço.</h2>
         
@@ -56,7 +56,7 @@
     </tbody>
 </table>
 
-<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p><br>
+<p style="text-align: center; font-size: 14px; text-decoration: underline;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder via chat ↶</a></p><br>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
   <tbody style="font-size:12px;font-weight:normal; color:#4d4d4d">
@@ -93,11 +93,11 @@
         <p><br></p>
         {% if tipo_interesse == 'comprar' %}
           <h2 style="font-weight:normal;color:#4d4d4d;line-height:24px;font-size:16px">
-          <span style="color:#4d4d4d"><a target="_blank" href="http://sjcvaleimoveis.com.br/buscador/comprar/{{ interesse.tipo_imovel }}/cidade/{{ interesse.cidade }}/residencial/">Fique à vontade para visitar o nosso <strong>incrível buscador de imóveis</strong></a></span>
+          <span style="color:#4d4d4d">Fique à vontade para visitar o nosso <a style="text-decoration: underline;" target="_blank" href="http://sjcvaleimoveis.com.br/buscador/comprar/{{ interesse.tipo_imovel }}/cidade/{{ interesse.cidade }}/residencial/"><strong>🔍 Incrível buscador de imóveis</strong></a></span>
           </h2>
         {% else %}
           <h2 style="font-weight:normal;color:#4d4d4d;line-height:24px;font-size:16px">
-          <span style="color:#4d4d4d"><a target="_blank" href="http://sjcvaleimoveis.com.br/buscador/alugar/{{ interesse.tipo_imovel }}/cidade/{{ interesse.cidade }}/residencial/">Fique à vontade para visitar o nosso <strong>incrível buscador de imóveis</strong></a></span>
+          <span style="color:#4d4d4d">Fique à vontade para visitar o nosso <a style="text-decoration: underline;" target="_blank" href="http://sjcvaleimoveis.com.br/buscador/alugar/{{ interesse.tipo_imovel }}/cidade/{{ interesse.cidade }}/residencial/"><strong>🔍 Incrível buscador de imóveis</strong></a></span>
           </h2>
         {% endif %}
         <p><br></p>

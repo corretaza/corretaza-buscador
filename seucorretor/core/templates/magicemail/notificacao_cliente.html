@@ -5,7 +5,7 @@
 {% block css%}{% endblock css%}
 
 {% block body %}
-<p style="text-align: right; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p>
+<p style="text-align: right; font-size: 14px;text-decoration: underline;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder ↶</a></p>
 
 {% if interesse.corretor and interesse.corretor.foto %}
 <table width="100%" cellpadding="0" cellspacing="0" border="0">
@@ -37,15 +37,15 @@
     </tr>
     <tr>
       <td style="padding:0 35px 30px 35px;color:#4d4d4d;">
-        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Utilize <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}"> nosso chat</a>, assim irei responder mais rápido do que este email.</h2><br>
+        <h2 style="font-size:16px;font-weight:normal;color:#4d4d4d">Utilize <a href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}" style="text-decoration: underline;"> nosso chat</a>, assim irei responder mais rápido do que este email.</h2><br>
       </td>
     </tr>
   </tbody>
 </table>
 
-<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder via chat</a></p>
+<p style="text-align: center; font-size: 14px; text-decoration: underline;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder via chat ↶</a></p>
 
-<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ painel_url }}?msg={{ mensagem_id }}">Visualizar todos imóveis</a></p><br>
+<p style="text-align: center; font-size: 14px; text-decoration: underline;"><a style="color: gray;" href="http://{{ domain }}{{ painel_url }}?msg={{ mensagem_id }}">Visualizar todos imóveis 🏠</a></p><br>
 
 
 {% if interesse.opcoes_para_visita_naoavaliado %}
@@ -111,7 +111,7 @@
 </table>
 {% endif %}
 
-<p style="text-align: center; font-size: 14px;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p><br>
+<p style="text-align: center; font-size: 14px; text-decoration: underline;"><a style="color: gray;" href="http://{{ domain }}{{ interesse.get_absolute_url }}?show_tab=mensagens-tab&msg={{ mensagem_id }}">Responder</a></p><br>
 
 <table width="100%" cellpadding="0" cellspacing="0" border="0" style="font-family:helvetica,arial;">
   <tbody style="font-size:12px;font-weight:normal; color:#4d4d4d">
