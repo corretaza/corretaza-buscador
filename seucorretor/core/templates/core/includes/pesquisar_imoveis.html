@@ -30,6 +30,8 @@
           <td>Locação</td>
           <td>Condomínio</td>
           <td><i class="fa fa-bed"></i></td>
+          <td>Banh.</td>
+          <td>Suítes</td>
           <td><i class="fa fa-car"></i></td>
           <td><i class="fa fa-crop"></i></td>
           <td></td>
@@ -44,6 +46,9 @@
               {{ imovel.condominio }}<br>
             {% endif %}
             {{ imovel.logradouro }}
+            {% if imovel.complemento %}
+              <br>{{ imovel.complemento }}
+            {% endif %}
             </small>
           </td>
           <td>
@@ -56,6 +61,8 @@
             <small>{{ imovel.valor_condominio|intcomma }}</small>
           </td>
           <td>{{ imovel.dormitorios }}</td>
+          <td>{{ imovel.banheiros }}</td>
+          <td>{{ imovel.suites }}</td>
           <td>{{ imovel.vagas_garagem }}</td>
           <td>
             <small>{{ imovel.area_construida }}m&sup2;</small>
