@@ -12,9 +12,9 @@ from django.db.models import Count
 Corretor = models.get_model('imobiliaria', 'Corretor')
 UserProfile = models.get_model('signup', 'UserProfile')
 
-Mensagem = models.get_model('core', 'Mensagem')
-Interesse = models.get_model('core', 'Interesse')
-OpcaoParaVisita = models.get_model('core', 'OpcaoParaVisita')
+Mensagem = models.get_model('autoatendimento', 'Mensagem')
+Interesse = models.get_model('autoatendimento', 'Interesse')
+OpcaoParaVisita = models.get_model('autoatendimento', 'OpcaoParaVisita')
 Atividade = models.get_model('atividades', 'Atividade')
 Imovel = models.get_model('ibuscador', 'Imovel')
 PageViewCount = models.get_model('tracking', 'PageViewCount')
