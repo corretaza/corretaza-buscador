@@ -66,9 +66,9 @@ class FiltroPorValorForm(forms.Form):
                       ("arquivado", "Arquivado"))
     valor_min = CustomInteger()
     valor_max = CustomInteger()
-    min_quarto = CustomInteger()
-    min_vaga = CustomInteger()
-    area_min = CustomInteger()
+    min_quarto = CustomInteger(initial=3)
+    min_vaga = CustomInteger(initial=2)
+    area_min = CustomInteger(initial=180)
     codigo_referencia = MultipleInteger(label="Código Referência", required=False)
     bairros = forms.MultipleChoiceField(required=False)
     em_condominio = forms.ChoiceField(choices=CHOICES_EM_CONDOMINIO,
@@ -96,7 +96,11 @@ class FiltroPorValorForm(forms.Form):
             tipo_imovel=tipo_imovel, cidade__nome=cidade).select_related('cidade', 'bairro' )
         if tipo_interesse == 'comprar':
             qs = qs.filter(contador_venda__gt=0)
+            self.fields["valor_min"].initial = 160000
+            self.fields["valor_max"].initial = 600000
         else:
+            self.fields["valor_min"].initial = 700
+            self.fields["valor_max"].initial = 2500
             qs = qs.filter(contador_locacao__gt=0)
 
         bairro_list = [(bairro.bairro.id, bairro) for bairro in qs]

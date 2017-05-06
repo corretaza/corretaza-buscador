@@ -5,22 +5,22 @@
 {% load floppyforms %}
 {% load permission_tags %}
 
-            <tr class="{{ imovel.add_tipo_imovel_class }} grid-item">
+            <tr class="{{ imovel.add_tipo_imovel_class }} grid-item imovel-listagem foto">
               <td>
                 <a href="{{ imovel.get_absolute_url }}">
                   <figure class="imagem-caption">
                     {% if imovel.foto_principal %}
-                      <img data-toggle="tooltip" data-placement="right" data-original-title="Clique para mais informações" width="320" src="{% cropped_thumbnail imovel.foto_principal 'picture_cropping' scale=0.5 %}">
+                      <img data-toggle="tooltip" data-placement="right" data-original-title="Clique para mais informações"  src="{% cropped_thumbnail imovel.foto_principal 'picture_cropping' scale=0.5 %}">
                       
                     {% else %}
-                      <img data-toggle="tooltip" data-placement="right" data-original-title="Clique para mais informações" height="240" src="{% static 'themes/sydney/img/imovel_sem_foto.jpg' %}" alt="Sem Foto, clique para detalhes">
+                      <img data-toggle="tooltip" data-placement="right" data-original-title="Clique para mais informações"  src="{% static 'themes/sydney/img/imovel_sem_foto.jpg' %}" alt="Sem Foto, clique para detalhes">
                     {% endif %}
                     {% if tipo_interesse == 'comprar' %}
-                      <figcaption style="width: 320px;">R$
+                      <figcaption>R$
                         {{ imovel.valor_venda|intcomma }}
                       </figcaption>
                     {% elif tipo_interesse == 'alugar' %}
-                      <figcaption style="width: 320px;">R$
+                      <figcaption>R$
                         {{ imovel.valor_locacao_total|intcomma }}
                         {% if imovel.valor_condominio %} Com condomínio {% endif %}
                       </figcaption>

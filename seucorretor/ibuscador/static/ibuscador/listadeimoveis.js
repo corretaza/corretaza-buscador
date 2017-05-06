@@ -53,6 +53,10 @@ $(document).ready(function() {
     $("#btn-filtrar").click();
   });
 
+  setTimeout(function() {
+    $( '#filtrar-por-valor' ).show('slow');
+  }, 1000);
+
   var interesseEmAndamento = localStorage.getItem('pcliente.corretaza-interesse-url');
   if (interesseEmAndamento) {
       var cliente = localStorage.getItem('pcliente.corretaza-interesse-cliente');

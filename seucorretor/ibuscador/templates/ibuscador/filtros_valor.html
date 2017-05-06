@@ -1,52 +1,55 @@
 {% load floppyforms %}
 
-    <div class="col-md-1">
-      <center style="color: #777777;">
-        <p><i class="fa fa-dollar" style="font-size: 40px;" ></i></p>
-        <h3>Valor</h3>
-      </center>
-    </div>
-
-    <div class="col-md-4">
+    <div class="col-sm-5">
       <div class="row">
-        <div class="col-md-6">
+
+        <div class="col-xs-5">
           <p>
             {% formrow form_filtro_valor.valor_min %}
           </p>
         </div>
-        <div class="col-md-6">
+        <div class="col-xs-5">
           <p>
             {% formrow form_filtro_valor.valor_max %}  
           </p>
         </div>
+        <div class="col-xs-1">
+          <p>
+            <a style="margin-top: 30px;" href="#" class="btn btn-success btn-filtrar-copy btn-md"><i class="fa fa-search"></i></a>
+          </p>
+        </div>
+
       </div>
     </div>
 
-    <div class="col-md-1">
-      <center style="color: #777777;">
-        <p><i class="fa fa-crop" style="font-size: 40px;" ></i></p>
-        <h3>Tamanho</h3>
-      </center>
+    <div class="col-sm-1">
+      
     </div>
 
     {% block filtro_tamanho %}
-    <div class="col-md-6">
+    <div class="col-sm-6">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-xs-3">
           <p>
             {% formrow form_filtro_valor.min_quarto %}   
           </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-3">
           <p>
             {% formrow form_filtro_valor.min_vaga %}   
           </p>
         </div>
-        <div class="col-md-4">
+        <div class="col-xs-4">
           <p>
             {% formrow form_filtro_valor.area_min %}  
           </p>
-        </div>                
+        </div>
+        <div class="col-xs-1">
+          <p>
+            <a style="margin-top: 30px;" href="#" class="btn btn-success btn-filtrar-copy btn-md"><i class="fa fa-search"></i></a>
+          </p>
+        </div>
+
       </div>
     </div>
     {% endblock filtro_tamanho %}

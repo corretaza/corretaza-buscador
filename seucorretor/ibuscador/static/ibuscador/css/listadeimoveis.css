@@ -8,6 +8,59 @@
     line-height: 12px;
 }
 
-@media only screen and (max-width: 768px) {
 
+
+.form-listagem-filtros .form-control.input-lg {
+    height: 32px;
+    padding: 4px 8px;
+    font-size: 16px;
+    line-height: 1.2;
 }
+
+.imovel-listagem.foto .imagem-caption {
+    max-height: 280px;
+    max-width: 310px;
+}
+
+.imovel-listagem.foto .imagem-caption img {
+    max-height: 280px;
+    max-width: 310px;
+}
+
+.imovel-listagem.foto .imagem-caption figcaption {
+    width: 310px;
+}
+
+@media only screen and (max-width: 768px) {
+    .imovel-listagem.foto .imagem-caption {
+        max-height: 200px;
+        max-width: 220px;
+    }
+
+    .imovel-listagem.foto .imagem-caption img {
+        max-height: 200px;
+        max-width: 220px;
+    }
+
+    .imovel-listagem.foto .imagem-caption figcaption {
+        width: 220px;
+    }
+}
+
+
+@media only screen and (max-width: 360px) {
+    .imovel-listagem.foto .imagem-caption {
+        max-height: 110px;
+        max-width: 120px;
+    }
+
+    .imovel-listagem.foto .imagem-caption img {
+        max-height: 110px;
+        max-width: 120px;
+    }
+
+    .imovel-listagem.foto .imagem-caption figcaption {
+        width: 120px;
+    }
+}
+
