@@ -181,7 +181,7 @@
       <CasaAlvenaria />
       <CasaMadeira />
       <Terraco />
-      <TipoOferta>2</TipoOferta>
+      <TipoOferta>{{ imovel.tipo_oferta }}</TipoOferta>
       <ValorEntrada>0</ValorEntrada>
       <ValorMensal>0</ValorMensal>
       <InformacoesComplementares />

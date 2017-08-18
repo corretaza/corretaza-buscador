@@ -17,13 +17,19 @@ class ImovelZapImovel(Imovel):
         proxy = True
 
     @property
-    def destaque(self):
-        """ Hoje o padrão é não ser destaque
-        ver ticket: #75
+    def tipo_oferta(self):
         """
-        # TODO: Retornar a qtd certa de 
-        # <TipoOferta>2</TipoOferta>
-        return False
+        Conforme o manual de carga do Zap Imoveis:
+        1 = Sem destaque
+        2 = Destaque
+        3 = Super Destaque
+        """
+        # TODO: Semanalmente definir os X (do plano) em Destaque
+        # TODO: Semanalmente desmarcar imoveis super destaque vendidos/nao publicado
+        if self.super_destaque_para_portais:
+            return 3
+        else:
+            return 2
 
     @property
     def tipo_zap(self):
