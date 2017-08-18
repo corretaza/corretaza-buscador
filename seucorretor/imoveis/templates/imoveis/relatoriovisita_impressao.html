@@ -116,13 +116,13 @@
             <b>{{ imovel.condominio }}</b><br>
           {% endif %}
           {{ imovel.logradouro}}, {{ imovel.numero }} {{ imovel.complemento }}<br>
-          {{ imovel.bairro }}, {{ imovel.cidade }}
+          {{ imovel.bairro }}, {{ imovel.cidade }}, CEP:{{ imovel.cep }}
         </div>
         <div class="col-3 border-top">
           <span style="vertical-align: super; font-size: 0.7em;">Proprietário</span><br>
           {{ imovel.proprietario.nome }}<br>
           Melhor forma de contato:<b> {{ imovel.proprietario.melhor_forma_contato }}</b><br>
-          WhatsApp: {{ imovel.proprietario.whatsapp }}<br>
+          WhatsApp: {{ imovel.proprietario.whatsapp }}, email: {{ imovel.proprietario.email }}<br>
           Fones: {{ imovel.proprietario.fone }}, {{ imovel.proprietario.fone2 }}, {{ imovel.proprietario.fone3 }}, {{ imovel.proprietario.fone4 }}<br>
         </div>
       </div>
