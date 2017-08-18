@@ -122,6 +122,8 @@ class ImovelForm(forms.ModelForm):
                   'corretores',
                   'indicado_por',
                   'nao_exportar_para_portais',
+                  'destaque_para_portais',
+                  'super_destaque_para_portais',
                   'tipo_varanda', )
         widgets = {
             'imovel_ref': HiddenInput(),

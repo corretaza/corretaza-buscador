@@ -278,6 +278,12 @@ class Imovel(ComEndereco):
     nao_exportar_para_portais = models.BooleanField(
         _('Não exportar para portais imobiliarios'),
         default=False)
+    destaque_para_portais = models.BooleanField(
+        _('Marca imovel como destaque'),
+        default=False)
+    super_destaque_para_portais = models.BooleanField(
+        _('Marca imovel como super destaque'),
+        default=False)
     tipo_varanda = models.CharField(
         choices=TIPO_VARANDA, max_length=16,
         default='', blank=True)
