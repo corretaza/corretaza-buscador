@@ -3,15 +3,50 @@
 {% load permission_tags %}
 
   <header class="cd-main-header">
-    
+
     <div class="cd-search is-hidden">
 
-      <form method='get' action="{% url 'ibuscador.lista.imovel_por_palavra' %}">
-        <input type="search" name="palavras" placeholder="Buscar imóvel..." id="id_palavras" maxlength="32">
-      </form>
-    </div> <!-- cd-search -->
+      <div class="col-md-4">
+        <form method='get' action="{% url 'ibuscador.lista.imovel_por_palavra' %}">
 
-    <nav class="cd-nav" style="min-width: 290px;">
+          <input type="search" name="palavras" placeholder="Buscar imóvel..." id="id_palavras" maxlength="32">
+
+        </form>
+      </div>
+
+      <div class="col-md-4">
+        <form method='get' action="{% url 'ibuscador.lista.imovel_por_palavra' %}">
+
+          <input type="search" name="buscacliente" placeholder="Buscar cliente..." id="id_buscacliente" maxlength="32">
+
+        </form>
+
+      </div>
+
+
+    </div>
+
+    <!-- cd-search -->
+
+
+      <!--
+      <div class="row">
+        <div class="col-sm-6">
+          <form method='get' action="{% url 'ibuscador.lista.imovel_por_palavra' %}">
+
+          <div class="row">
+            <div class="col-sm-6">
+              <i class="fa fa-search"></i> <input type="search" name="palavras" placeholder="Buscar imóvel..." id="id_palavras" maxlength="32" style="width:50%">
+            </div>
+            <div class="col-sm-6">
+              <i class="fa fa-search"></i> <input type="search" name="buscacliente" placeholder="Buscar Cliente..." id="id_buscacliente" maxlength="32" style="width:50%">
+            </div>
+          </div>
+          </form>
+        </div>
+      </div>  -->
+
+    <nav class="cd-nav">
       <ul class="cd-top-nav">
         <!-- 
         TODO: mostrar as pendencias do corretor
@@ -21,18 +56,18 @@
           </a>
         </li> -->
         {% if user|has_role:'gerente' %}
-        <li><a href="{% url 'core.paineldocorretor.admin' %}">Admin</a></li>
+        <li><a href="{% url 'core.paineldocorretor.admin' %}"><i class="fa fa-gear nav-icon"></i> <span>Admin</span></a></li>
         {% endif %}
         {% if userprofile and userprofile.has_corretor %}
-        <li><a href="{% url 'core.userpage' %}">Meu Painel</a></li>
+        <li><a href="{% url 'core.userpage' %}"><i class="fa fa-users nav-icon"></i> <span>Meu Painel</span></a></li>
         {% endif %}
-        <li><a href="{% url 'ibuscador.home' %}">Buscador</a></li>
+        <li><a href="{% url 'ibuscador.home' %}"><i class="fa fa-home nav-icon"></i> <span>Buscador</span></a></li>
         <li>
           <div class="dropdown">
 
             <a class="dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true" style="color: white;">
-              <i class="fa fa-user"></i>
-                {{ user.first_name|capfirst }}<span class="caret"></span>
+              <i class="fa fa-suitcase"></i>
+                <span>{{ user.first_name|capfirst }}</span> <span class="caret"></span>
             </a>
 
             <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
