@@ -11,7 +11,7 @@ from django.db.models import Q
 from imobiliaria.mixins import EhCorretorMixin
 
 from .forms import (ProprietarioForm, )
-from .models import Proprietario
+from .models import Atendimento, Proprietario
 
 
 class ProprietarioMixin(object):
@@ -56,5 +56,24 @@ class ListaProprietariosListView(EhCorretorMixin, ListView):
             Q(fone2__contains=palavras) |
             Q(fone3__contains=palavras) |
             Q(fone4__contains=palavras) |
+            Q(whatsapp__contains=palavras) |
+            Q(email_alternativo__contains=palavras) |
             Q(nome__icontains=palavras) |
             Q(email__icontains=palavras))
+
+
+class BuscarAtendimentoPorPalavraListView(ListView):
+    model = Atendimento
+    paginate_by = '200'
+    context_object_name = 'atendimento_list'
+    template_name = "crm/listaatendimento_por_palavra.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(BuscarAtendimentoPorPalavraListView, self).get_context_data(**kwargs)
+        buscacliente = self.request.GET.get('buscacliente')
+        context['buscacliente'] = buscacliente
+        return context
+
+    def get_queryset(self):
+        buscacliente = self.request.GET.get('buscacliente')
+        return Atendimento.objects.por_palavras(buscacliente)

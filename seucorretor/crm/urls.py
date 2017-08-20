@@ -5,7 +5,8 @@ from django.conf.urls import patterns, url
 
 from .views import (NovoProprietarioCreateView,
                     ProprietarioUpdateView,
-                    ListaProprietariosListView, )
+                    ListaProprietariosListView,
+                    BuscarAtendimentoPorPalavraListView, )
 
 
 urlpatterns = patterns('',  # noqa
@@ -21,5 +22,10 @@ urlpatterns = patterns('',  # noqa
     url(r'^proprietario/lista/$',
         ListaProprietariosListView.as_view(),
         name='crm.proprietario.lista'),
+
+    #Others
+    url(r'^lista/porpalavras/$',
+        BuscarAtendimentoPorPalavraListView.as_view(),
+        name='crm.lista.atendimento_por_palavra'),
 
 )

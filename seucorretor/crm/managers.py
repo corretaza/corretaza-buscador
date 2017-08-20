@@ -22,9 +22,12 @@ class AtendimentoQueryset(models.query.QuerySet):
             Q(fone2__contains=palavras) |
             Q(fone3__contains=palavras) |
             Q(fone4__contains=palavras) |
+            Q(whatsapp__contains=palavras) |
             Q(nome__icontains=palavras) |
+            Q(nome_conjuge__icontains=palavras) |
+            Q(email_alternativo__icontains=palavras) |
             Q(email__icontains=palavras))
-        return qs.order_by('-id')
+        return qs.order_by('-data_criacao')
 
     def por_email(self, email):
         qs = self.filter(email__icontains=email)
