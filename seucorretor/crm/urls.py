@@ -6,7 +6,8 @@ from django.conf.urls import patterns, url
 from .views import (NovoProprietarioCreateView,
                     ProprietarioUpdateView,
                     ListaProprietariosListView,
-                    BuscarAtendimentoPorPalavraListView, )
+                    BuscarAtendimentoPorPalavraListView,
+                    DetalheDoAtendimento, )
 
 
 urlpatterns = patterns('',  # noqa
@@ -27,5 +28,9 @@ urlpatterns = patterns('',  # noqa
     url(r'^lista/porpalavras/$',
         BuscarAtendimentoPorPalavraListView.as_view(),
         name='crm.lista.atendimento_por_palavra'),
+
+    url(r'^lista/atendimento/detalhe/(?P<pk>\d+)/$',
+        DetalheDoAtendimento.as_view(),
+        name='crm.lista.atendimento.detalhe'),
 
 )

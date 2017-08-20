@@ -1,0 +1,54 @@
+{% extends 'ibuscador/base_ibuscador.html' %}
+
+{% load static %}
+{% load humanize %}
+{% load cropping %}
+{% load permission_tags %}
+{% load floppyforms %}
+
+{% block content %}
+
+    <div class="row">
+
+      <div class="col-md-1"></div>
+
+      <div class="col-md-10">
+        <p>Cliente: {{atendimento.nome}}</p>
+        <p>Fones: <small>
+                  {{ atendimento.fone }}, {{ atendimento.fone2 }}, {{ atendimento.fone3 }}, {{ atendimento.fone4 }}, WhatsApp: {{ atendimento.whatsapp }}
+                </small>
+        </p>
+
+        <table class="table table-condensed table-striped table-hover">
+          <tbody>
+            <tr>
+              <td>#</td>
+              <td>Data</td>
+              <td>Status</td>
+              <td>Interesse</td>
+              <td>Corretor</td>
+            </tr>
+
+            {% for interesse in interesse_list %}
+            <tr>
+              <td><small>{{ interesse.id }}</small></td>
+              <td>{{ interesse.data_contato }}</td>
+              <td><strong>{{ interesse.status_verbose }}</strong></td>
+              <td>
+                <i class="fa fa-home"></i> {{ interesse.tipo_interesse }} {{ interesse.tipo_imovel }}</td>
+              <td>{{ interesse.corretor|default:'Corretor nao atribuido ainda' }}</td>
+            </tr>
+            {% endfor %}
+
+          </tbody>
+        </table>
+
+        <center>
+          <a class="btn btn-default" href="{% url 'ibuscador.home' %}">Voltar</a>
+        </center>
+
+      </div>
+
+    </div>
+
+{% endblock content %}

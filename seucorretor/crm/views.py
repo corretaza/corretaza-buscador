@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.views.generic.edit import CreateView, UpdateView
-from django.views.generic import ListView
+from django.views.generic import ListView, TemplateView
 from django.core.urlresolvers import reverse
 from django.shortcuts import get_object_or_404
 from django.http import HttpResponseRedirect
@@ -12,6 +12,7 @@ from imobiliaria.mixins import EhCorretorMixin
 
 from .forms import (ProprietarioForm, )
 from .models import Atendimento, Proprietario
+from autoatendimento.models import Interesse
 
 
 class ProprietarioMixin(object):
@@ -77,3 +78,16 @@ class BuscarAtendimentoPorPalavraListView(ListView):
     def get_queryset(self):
         buscacliente = self.request.GET.get('buscacliente')
         return Atendimento.objects.por_palavras(buscacliente)
+
+
+class DetalheDoAtendimento(TemplateView):
+
+    template_name = "crm/atendimento_detalhe.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(DetalheDoAtendimento, self).get_context_data(**kwargs)
+        atendimento = get_object_or_404(
+            Atendimento, pk=self.kwargs['pk'])
+        context['atendimento'] = atendimento
+        context['interesse_list'] = Interesse.objects.por_cliente(atendimento)
+        return context

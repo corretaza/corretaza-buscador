@@ -54,7 +54,7 @@
 
             <tr class="semborda">
               <td>
-                <a href="">
+                <a href="{% url 'crm.lista.atendimento.detalhe' atendimento.id %}">
                 {{ atendimento.nome }} / {{ atendimento.nome_conjuge }}<br>
                 <small>
                     {{ atendimento.email }}
