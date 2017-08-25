@@ -74,3 +74,28 @@ $(document).ready(function() {
   var bairroList = new List('bairros_count', {valueNames: [ 'name' ]});
 
 });
+
+/*** infinite scroll (ajax pagination) ***/
+$(function(){
+    var grid = $('#paginationGrid');
+
+    // all attrs are $jquery selectors, so you can use "#value" or ".value" in data-props
+    var selector = grid.attr('data-pag-selector');
+    var nextSelector = grid.attr('data-pag-next');
+    var itemSelector = grid.attr('data-item-selector');
+
+    grid.infinitescroll({
+        navSelector: selector,
+        nextSelector: nextSelector,
+        itemSelector: itemSelector,
+        loadingText: 'Carregando mais resultados...',
+        donetext: ''
+    },
+
+    function(new_elts) {
+        var elts = $(new_elts).css('opacity', 0);
+        elts.animate({opacity: 1});
+
+        grid.append(elts);
+    });
+});
