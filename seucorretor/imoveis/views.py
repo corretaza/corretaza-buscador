@@ -51,25 +51,19 @@ class NovoImovelPasso1CreateView(EhCorretorMixin, CreateView):
             kwargs={'proprietario_pk': self.object.proprietario.id})
         return HttpResponseRedirect(passo1_confirmacao_url)
 
-
-class NovoImovelPasso1ConfirmacaoCreateView(EhCorretorMixin, CreateView):
-    model = Imovel
-    form_class = NovoImovelPasso1ConfirmacaoForm
-    template_name = 'imoveis/novoimovel_passo1confirmacao_form.html'
-
-    def get_initial(self):
-        self.proprietario = get_object_or_404(
-            Proprietario, pk=self.kwargs['proprietario_pk'])
-        initial = {
-            'proprietario': self.proprietario,
-        }
-        return initial
+class NovoImovelPasso1ConfirmacaoMixin(object):
 
     def get_context_data(self, **kwargs):
-        context = super(NovoImovelPasso1ConfirmacaoCreateView,
+        context = super(NovoImovelPasso1ConfirmacaoMixin,
                         self).get_context_data(**kwargs)
-        context['proprietario'] = self.proprietario
-        context['imovel_list'] = Imovel.objects.filter(
+        if self.object is not None:
+            context['proprietario'] = self.object.proprietario
+            context['imovel_list'] = Imovel.objects.filter(
+            proprietario=self.object.proprietario)
+
+        else:
+            context['proprietario'] = self.proprietario
+            context['imovel_list'] = Imovel.objects.filter(
             proprietario=self.proprietario)
         return context
 
@@ -102,6 +96,26 @@ class NovoImovelPasso1ConfirmacaoCreateView(EhCorretorMixin, CreateView):
             "imoveis.novo.imovel.passo2",
             kwargs={'pk': self.object.id})
         return HttpResponseRedirect(passo2_url)
+
+
+class NovoImovelPasso1ConfirmacaoCreateView(EhCorretorMixin, NovoImovelPasso1ConfirmacaoMixin, CreateView):
+    model = Imovel
+    form_class = NovoImovelPasso1ConfirmacaoForm
+    template_name = 'imoveis/novoimovel_passo1confirmacao_form.html'
+
+    def get_initial(self):
+        self.proprietario = get_object_or_404(
+            Proprietario, pk=self.kwargs['proprietario_pk'])
+        initial = {
+            'proprietario': self.proprietario,
+        }
+        return initial
+
+
+class NovoImovelPasso1ConfirmacaoUpdateView(EhCorretorMixin, NovoImovelPasso1ConfirmacaoMixin, UpdateView):
+    model = Imovel
+    form_class = NovoImovelPasso1ConfirmacaoForm
+    template_name = 'imoveis/novoimovel_passo1confirmacao_form.html'
 
 
 class NovoImovelPasso2UpdateView(EhCorretorMixin, UpdateView):

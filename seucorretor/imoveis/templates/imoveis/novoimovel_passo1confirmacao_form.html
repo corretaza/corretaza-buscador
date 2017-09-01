@@ -80,6 +80,9 @@
                   {% for imovel in imovel_list %}
                   <tr>
                     <td>
+                      {% if object and  object.id == imovel.id %}
+                      <i class="fa fa-arrow-right"></i>
+                      {% endif %}
                       <a target="_new" href="{{ imovel.get_absolute_url }}"><span>Ref. <i class="fa fa-home"></i> {{ imovel.imovel_ref }}</span></a>
                     </td>
                     <td>{{ imovel.status }}</td>
@@ -100,7 +103,7 @@
             {% formrow form.tipo_imovel %}
             {% formrow form.valor_venda %}
             {% formrow form.cidade %}
-          
+
             <div align="center">
               <button type="submit" class="btn btn-lg btn-success">
                 <i class="fa fa-check"></i> Continuar

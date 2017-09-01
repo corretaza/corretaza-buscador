@@ -18,6 +18,7 @@ from .views import (NovoImovelPasso1CreateView,
                     ImovelMostrarChaveView,
                     ImovelRelatorioVisitaImpressaoView,
                     NovoImovelPasso1ConfirmacaoCreateView,
+                    NovoImovelPasso1ConfirmacaoUpdateView,
                     BairrosPorCidade,
                     RegioesPorCidade,
                     CondominiosPorCidade,
@@ -35,6 +36,10 @@ urlpatterns = patterns('',  # noqa
     url(r'^novo/imovel/passo1/confirmacao/(?P<proprietario_pk>[0-9]+)/$',
         NovoImovelPasso1ConfirmacaoCreateView.as_view(),
         name='imoveis.novo.imovel.passo1.confirmacao'),
+
+    url(r'^novo/imovel/passo1/confirmacao/update/(?P<pk>[0-9]+)/$',
+        NovoImovelPasso1ConfirmacaoUpdateView.as_view(),
+        name='imoveis.novo.imovel.passo1.confirmacao.update'),
 
     url(r'^novo/imovel/passo2/update/(?P<pk>[0-9]+)/$',
         NovoImovelPasso2UpdateView.as_view(),
