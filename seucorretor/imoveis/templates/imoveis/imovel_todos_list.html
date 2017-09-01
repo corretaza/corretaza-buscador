@@ -30,7 +30,7 @@
         <form method='get' action="{% url 'ibuscador.lista.imovel_por_palavra' %}">
 
           <p>
-            <input type="search" class="form-control" name="palavras" id="id_palavras"  maxlength="64" placeholder="Buscar por rua, bairro, condomínio, cep, numero ou proprietario">            
+            <input type="search" class="form-control" name="palavras" id="id_palavras"  maxlength="64" placeholder="Buscar por rua, bairro, condomínio, cep, numero ou proprietario">
           </p>
           <p>
             <button type="submit" class="btn btn-lg btn-success">
@@ -46,24 +46,40 @@
 
         <br><br><br>
         <h1><i class="fa fa-paw"></i> Histórico de imóveis</h1>
+
+        <p>
+          <small><span style="font-size: 115%;">Exibir/Esconder:</span></small>
+          <button id="show_hide_publicados" type="button" class="btn btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Últimas Publicaçõe"><i class="fa fa-globe"></i> </button>
+
+          <button id="show_hide_arquivados" type="button" class="btn btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Últimos imóveis arquivados"><i class="fa fa-archive"></i>
+          </button>
+
+          <button id="show_hide_valores" type="button" class="btn btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Últimas alterações de valor"><i class="fa fa-usd"></i>
+          </button>
+
+          <button id="show_hide_novascaptacoes" type="button" class="btn btn-default btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="" data-original-title="Últimas captacões"><i class="fa fa-plus"></i>
+          </button>
+
+        </p>
+
         <table class="table">
           <tbody>
           {% for historico in imovelhistorico_list %}
-            <tr>
+            <tr class="tipohistorico tipo-{{ historico.tipo_historico }}">
               <td style="width: 110px;">
                 <span>{{ historico.usuario|capfirst }}</span><br>
                 <small style="color: #797676;">{{ historico.data|date:"d b y G:i" }}</small>
               </td>
               <td>
-                {% if "Valor " in historico.conteudo %}
+                {% if "Valor" == historico.tipo_historico %}
                   <span class="badge" style="background-color: #4cae4c"><i class="fa fa-usd"></i></span>
-                {% elif "Publicou " in historico.conteudo %}
-                  <span class="badge" style="background-color: #4cae4c"><i class="fa fa-bullhorn"></i></span>
-                {% elif "Arquivou " in historico.conteudo %}
+                {% elif "Publicou" == historico.tipo_historico %}
+                  <span class="badge" style="background-color: #4cae4c"><i class="fa fa-globe"></i></span>
+                {% elif "Arquivou" == historico.tipo_historico %}
                   <span class="badge"><i class="fa fa-archive"></i>
-                {% elif "Incluiu cap" in historico.conteudo %}
+                {% elif "NovaCaptacao" == historico.tipo_historico %}
                   <span class="badge" style="background-color: #eea236"><i class="fa fa-plus"></i></span>
-                {% elif "Endereço atualizado" in historico.conteudo %}
+                {% elif "EnderecoAlterado" == historico.tipo_historico %}
                   <span class="badge"><i class="fa fa-map-marker"></i></span>
                 {% endif %}
               </td>
@@ -76,7 +92,6 @@
 
       </div>
 
-                  
     </div>
   </div>
 
@@ -90,3 +105,36 @@
 
 {% block footer_area %}
 {% endblock footer_area %}
+
+
+
+{% block extrajs_bottom %}
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+          $( "#show_hide_publicados" ).click(function() {
+            $( ".tipohistorico" ).hide();
+            $( ".tipo-Publicou" ).show();
+          });
+
+          $( "#show_hide_arquivados" ).click(function() {
+            $( ".tipohistorico" ).hide();
+            $( ".tipo-Arquivou" ).show();
+          });
+
+          $( "#show_hide_valores" ).click(function() {
+            $( ".tipohistorico" ).hide();
+            $( ".tipo-Valor" ).show();
+          });
+
+          $( "#show_hide_novascaptacoes" ).click(function() {
+            $( ".tipohistorico" ).hide();
+            $( ".tipo-NovaCaptacao" ).show();
+          });
+
+          $('[data-toggle="tooltip"]').tooltip();
+
+        });
+    </script>
+{% endblock extrajs_bottom %}

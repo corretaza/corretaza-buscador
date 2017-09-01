@@ -603,5 +603,19 @@ class HistoricoDeImovel(models.Model):
         return '{0}: {1}'.format(
             self.usuario, self.conteudo)
 
+    @property
+    def tipo_historico(self):
+        tipo_historico = "Outro"
+        if "Valor " in self.conteudo:
+            tipo_historico = "Valor"
+        elif "Publicou " in self.conteudo:
+            tipo_historico = "Publicou"
+        elif "Arquivou" in self.conteudo:
+            tipo_historico = "Arquivou"
+        elif "Incluiu cap" in self.conteudo:
+            tipo_historico = "NovaCaptacao"
+        elif "Endereço atualizado" in self.conteudo:
+            tipo_historico = "EnderecoAlterado"
+        return tipo_historico
 
 from .signals import organizar_fotos
