@@ -150,6 +150,10 @@ class Corretor(Colaborador):
         return reverse('core.paineladm.corretor',
                        kwargs={'pk': self.id, 'slug': self.slug})
 
+    def get_painel_atendimentos(self):
+        return reverse('core.paineladm.corretor.atendimentos',
+                       kwargs={'pk': self.id, 'slug': self.slug})
+
     @property
     def interesse_list(self):
         # .sem_atendimento_ou_em_andamento()
