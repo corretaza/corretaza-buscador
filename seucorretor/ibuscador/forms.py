@@ -68,6 +68,8 @@ class FiltroPorValorForm(forms.Form):
     valor_max = CustomInteger()
     min_quarto = CustomInteger(initial=3)
     min_vaga = CustomInteger(initial=2)
+    min_banheiro = CustomInteger(initial=1)
+    min_suite = CustomInteger(initial=1)
     area_min = CustomInteger(initial=180)
     codigo_referencia = MultipleInteger(label="Código Referência", required=False)
     bairros = forms.MultipleChoiceField(required=False)

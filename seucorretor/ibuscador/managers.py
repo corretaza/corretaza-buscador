@@ -43,6 +43,12 @@ class ImovelQueryset(models.query.QuerySet):
             referencia = [referencia]
         return self.filter(imovel_ref__in=referencia)
 
+    def por_min_banheiros(self, min):
+        return self.filter(banheiros__gte=min)
+
+    def por_min_suites(self, min):
+        return self.filter(suites__gte=min)
+
     def eh(self, subtipo, value=True):
         key = "eh_{}".format(subtipo)
         condicao = {key:value}

@@ -46,6 +46,14 @@ def monta_queryset_com_filtros_da_pesquisa(queryset, fields, tipo_imovel):
     if area_min and int(float(area_min)) > 0:
         queryset = queryset.por_min_area_construida(area_min)
 
+    min_banheiro = fields.get('min_banheiro')
+    if min_banheiro and int(float(min_banheiro)) > 1:
+        queryset = queryset.por_min_banheiros(min_banheiro)
+
+    min_suite = fields.get('min_suite')
+    if min_suite and int(float(min_suite)) > 1:
+        queryset = queryset.por_min_suites(min_suite)
+
     bairros = fields.getlist('bairros')
     if bairros:
         bairros_ids = [int(id) for id in bairros]

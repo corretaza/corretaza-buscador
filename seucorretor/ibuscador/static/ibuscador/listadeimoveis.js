@@ -37,6 +37,7 @@ $(document).ready(function() {
     $( '#filtrar-por-localizacao' ).hide();
     $( '#btn-filtro-padrao' ).hide();
     $( '#filtrar-por-tipo' ).show('fast');
+    $( ".js_maisFiltrosExtras" ).show('fast');
   });
 
   $( '#btn-filtrar-por-localizacao-fechar' ).click( function() {
