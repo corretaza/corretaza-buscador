@@ -58,12 +58,13 @@
                 <div id="filtrar-por-valor" style="display: none;">
                   <!--<div class="panel-body">-->
                     <div class="row">
-                      
+
                       {% include 'ibuscador/filtros_valor.html' %}
 
                       <p id="btn-filtro-padrao">
                         <a style="display: none;" href="#" class="btn btn-success btn-filtrar-copy btn-lg"><i class="fa fa-search"></i> Filtrar</a>
                         <a href="#" class="btn btn-warning btn-lg" id="btn-filtrar-por-localizacao" style="padding: 8px; margin: 12px;"><i class="fa fa-map-marker"></i> Filtrar por bairro</a>
+
                         <a href="#" class="btn btn-warning btn-lg" id="btn-filtrar-por-tipo" style="padding: 8px; margin: 12px;"><i class="fa fa-building"></i> Mais filtros</a>
                       </p>
                     </div>
@@ -189,8 +190,8 @@
 
       <div class="col-xs-12">
 
-       <div> 
-        <table class="table">
+       <div>
+        <table class="table lista-imoveis">
           <tbody id="paginationGrid" data-pag-selector='.pagination' data-pag-next='.pagination a' data-item-selector=".grid-item">
             {% for imovel in imoveis_list %}
               {% include 'ibuscador/_item_da_lista.html' %}
@@ -226,9 +227,9 @@
 {% block extrajs_bottom %}
 
   <script src="{% static 'store.js/dist/store.legacy.min.js' %}?v=2.0.4"></script>
-  <script src="{% static 'themes/sydney/js/filtro.js' %}?v=0.0.2"></script>
+  <script src="{% static 'themes/sydney/js/filtro.js' %}?v=0.0.3"></script>
   <script src="{% static 'themes/sydney/js/localstorage.js' %}?v=0.0.1"></script>
 
-  <script src="{% static 'ibuscador/listadeimoveis.js' %}?v=0.0.3"></script>
+  <script src="{% static 'ibuscador/listadeimoveis.js' %}?v=0.0.4"></script>
 
 {% endblock extrajs_bottom %} 

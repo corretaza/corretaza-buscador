@@ -50,6 +50,35 @@ $(document).ready(function() {
     $( '#btn-filtro-padrao' ).show('fast');
   });
 
+  $( '#btn-show-hide-comsacada' ).click( function(evt) {
+    evt.preventDefault();
+    var sacada = $(this);
+    if (sacada.hasClass('btn-primary')) {
+      sacada.removeClass('btn-primary');
+      $(".lista-imoveis").find(".js-sacada").show();
+
+    } else {
+      sacada.addClass('btn-primary');
+      $(".lista-imoveis").find(".js-sacada").hide();
+      $(".lista-imoveis").find(".js-com-sacada").show();
+    }
+  });
+
+
+  $( '#btn-show-hide-comelevador' ).click( function(evt) {
+    evt.preventDefault();
+    var comelevado = $(this);
+    if (comelevado.hasClass('btn-primary')) {
+      comelevado.removeClass('btn-primary');
+      $(".lista-imoveis").find(".js-elevador").show();
+
+    } else {
+      comelevado.addClass('btn-primary');
+      $(".lista-imoveis").find(".js-elevador").hide();
+      $(".lista-imoveis").find(".js-com-elevador").show();
+    }
+  });
+
   $('#id_ordenar_por').on('change', function() {
     $("#btn-filtrar").click();
   });

@@ -483,6 +483,26 @@ class Imovel(ComEndereco):
             return ''
 
     @property
+    def tem_sacada_varanda(self):
+        if self.tipo_varanda and self.tipo_varanda != 'sem':
+            return True
+
+        tipos_sacadas = ['sacada', 'varanda']
+        tem_sacada = [item for item in tipos_sacadas if item in self.descricao_imovel.lower()]
+        if tem_sacada:
+            return True
+        return False
+
+    @property
+    def com_elevador(self):
+        if 'sem elevador' in self.descricao_imovel.lower():
+            return False
+
+        if 'com elevador' in self.descricao_imovel.lower() or self.condominio.tem_elevador:
+            return True
+        return False
+
+    @property
     def fotos_list(self):
         return Foto.objects.filter(imovel=self).order_by("ordem")
 
