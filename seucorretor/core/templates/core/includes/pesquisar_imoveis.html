@@ -1,4 +1,4 @@
-{% load humanize %}
+{% load humanize cropping %}
 
   <h1>
     <small>Exibir/Esconder:</small>
@@ -8,6 +8,19 @@
     </button>
     <button id="show_3dorm" type="button" class="btn btn-sm btn-default btn-primary">3 <i class="fa fa-bed"></i>
     </button>
+
+    <button id="show_elevador" type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Mostra apenas com elevador"><i class="fa fa-dashboard"></i>
+    </button>
+    <button id="show_varanda" type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Mostra apenas com Varanda/Sacada"><i class="fa fa-tree"></i>
+    </button>
+    <button id="show_nao_ocupado" type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Mostra apenas NÃO ocupado"><i class="fa fa-circle-o"></i>
+    </button>
+    <button id="show_mobiliado" type="button" class="btn btn-sm btn-default" data-toggle="tooltip" data-placement="top" data-original-title="Mostra apenas mobiliado"><i class="fa fa-desktop"></i>
+    </button>
+
+    <button id="show_todos" type="button" class="btn btn-sm btn-default btn-primary" data-toggle="tooltip" data-placement="top" data-original-title="Mostra todos"><i class="fa fa-asterisk"></i> Todos
+    </button>
+
   </h1>
   {% regroup imoveis_list by bairro as bairros %}
   
@@ -26,21 +39,37 @@
       <tbody>
         <tr>
           <td></td>
-          <td>Venda</td>
-          <td>Locação</td>
-          <td>Condomínio</td>
+          <td></td>
+          <td>Valores</td>
+
           <td><i class="fa fa-bed"></i></td>
           <td>Banh.</td>
           <td>Suítes</td>
           <td><i class="fa fa-car"></i></td>
           <td><i class="fa fa-crop"></i></td>
+
+          <td><i class="fa fa-dashboard" data-toggle="tooltip" data-placement="top" data-original-title="Com elevador"></i></td>
+          <td><i class="fa fa-tree" data-toggle="tooltip" data-placement="top" data-original-title="Com sacada/varanda"></i></td>
+          <td><i class="fa fa-circle" data-toggle="tooltip" data-placement="top" data-original-title="Ocupado"></i></td>
+          <td><i class="fa fa-desktop" data-toggle="tooltip" data-placement="top" data-original-title="Mobiliado"></i></td>
+
           <td></td>
           <td></td>
         </tr>
       {% for imovel in bairro.list %}
-        <tr class="{% if imovel.imovel_ref in interesse.todas_opcoes_para_visita_refs %}success{% endif %} {{ imovel.dormitorios }}dorm"
-        >
+        <tr class="{% if imovel.imovel_ref in interesse.todas_opcoes_para_visita_refs %}success{% endif %} {{ imovel.dormitorios }}dorm 
+        {% if not imovel.com_elevador %}sem_elevador {% endif %}
+        {% if not imovel.tem_sacada_varanda %}sem_varanda {% endif %}
+        {% if imovel.esta_ocupado %}ocupado {% endif %}
+        {% if not imovel.esta_mobiliado %}nao_mobiliado {% endif %}
+        imovel">
           <td>
+            {% if imovel.foto_principal %}
+              <img style="max-height: 74px;" src="{% cropped_thumbnail imovel.foto_principal 'picture_cropping' scale=0.5 %}" data-toggle="tooltip" data-placement="top" data-original-title="{{ imovel.titulo }}">
+            {% endif %}            
+          </td>
+          <td>
+            <a class="btn btn-default btn-xs" target="_new" href="{{ imovel.get_absolute_url }}" data-toggle="tooltip" data-placement="top" data-original-title="{{ imovel.descricao_imovel }}">Ref.{{ imovel.imovel_ref }}</a>
             <small>
             {% if imovel.condominio %}
               {{ imovel.condominio }}<br>
@@ -52,14 +81,11 @@
             </small>
           </td>
           <td>
-            <small>R$</small><strong>{{ imovel.valor_venda|intcomma }}</strong>
+            <small>Venda R$</small><strong>{{ imovel.valor_venda|intcomma }}</strong><br>
+            <small>Locação R$</small><strong>{{ imovel.valor_locacao|intcomma }}</strong><br>
+            <small>Cond. R${{ imovel.valor_condominio|intcomma }}</small>
           </td>
-          <td>
-            <small>R$</small><strong>{{ imovel.valor_locacao|intcomma }}</strong>
-          </td>
-          <td>
-            <small>{{ imovel.valor_condominio|intcomma }}</small>
-          </td>
+
           <td>{{ imovel.dormitorios }}</td>
           <td>{{ imovel.banheiros }}</td>
           <td>{{ imovel.suites }}</td>
@@ -70,11 +96,22 @@
             <br><small>Terreno: {{ imovel.area_terreno }} m&sup2;</small>
             {% endif %}
           </td>
+
           <td>
-            <a class="btn btn-default btn-xs" target="_new" href="{{ imovel.get_absolute_url }}">Ref.{{ imovel.imovel_ref }}</a> 
+            {% if imovel.com_elevador %}<i class="fa fa-check"></i>{% endif %}
           </td>
           <td>
-            <button id="{{ imovel.imovel_ref }}" type="button" class="btn btn-default btn-xs adiciona_ref"><i class="fa fa-plus"></i>
+            {% if imovel.tem_sacada_varanda %}<i class="fa fa-check"></i>{% endif %}
+          </td>
+          <td>
+            {% if imovel.esta_ocupado %}<i class="fa fa-check"></i>{% endif %}
+          </td>
+          <td>
+            {% if imovel.esta_mobiliado %}<i class="fa fa-check"></i>{% endif %}
+          </td>
+
+          <td>
+             <button id="{{ imovel.imovel_ref }}" type="button" class="btn btn-warning btn-xs adiciona_ref"><i class="fa fa-plus"></i>
             </button>
           </td>
         </tr>
@@ -100,16 +137,86 @@
     $( "#show_1dorm").click(function(){
       $( ".1dorm" ).toggle("fast");
       $( "#show_1dorm" ).toggleClass( "btn-primary" );
+      $( "#show_todos").removeClass( "btn-primary" );
     });
 
     $( "#show_2dorm").click(function(){
       $( ".2dorm" ).toggle("fast");
       $( "#show_2dorm" ).toggleClass( "btn-primary" );
+      $( "#show_todos").removeClass( "btn-primary" );
     });
 
     $( "#show_3dorm").click(function(){
       $( ".3dorm" ).toggle("fast");
       $( "#show_3dorm" ).toggleClass( "btn-primary" );
+      $( "#show_todos").removeClass( "btn-primary" );
+    });
+
+    $( "#show_elevador").click(function() {
+      var el = $(this);
+      if ( el.hasClass( "btn-primary" ) ) {
+        $( ".sem_elevador" ).show();
+      } else {
+        $( ".sem_elevador" ).hide("fast");
+      }      
+      el.toggleClass( "btn-primary" );
+      $( "#show_todos").removeClass( "btn-primary" );
+    });
+
+    $( "#show_varanda").click(function() {
+      var el = $(this);
+      if ( el.hasClass( "btn-primary" ) ) {
+        $( ".sem_varanda" ).show();
+      } else {
+        $( ".sem_varanda" ).hide("fast");
+      }      
+      el.toggleClass( "btn-primary" );
+      $( "#show_todos").removeClass( "btn-primary" );
+    });
+
+    $( "#show_nao_ocupado").click(function() {
+      var el = $(this);
+      el.toggleClass( "btn-primary" );
+      if ( el.hasClass( "btn-primary" ) ) {
+        $( ".ocupado" ).hide("fast");
+      } else {
+        $( ".ocupado" ).show();
+      }
+      $( "#show_todos").removeClass( "btn-primary" );
+    });
+
+    $( "#show_mobiliado").click(function() {
+      var el = $(this);
+      if ( el.hasClass( "btn-primary" ) ) {
+        $( ".nao_mobiliado" ).show();
+      } else {
+        $( ".nao_mobiliado" ).hide("fast");
+      }      
+      el.toggleClass( "btn-primary" );
+      $( "#show_todos").removeClass( "btn-primary" );
+    });
+
+    $( "#show_todos").click(function() {
+      var el = $(this);
+      if ( !el.hasClass( "btn-primary" ) ) {
+        el.addClass( "btn-primary" );
+      }
+      $( ".imovel" ).show("fast");
+
+      ["show_1dorm", "show_2dorm", "show_3dorm"].forEach( function(button) {
+        var el = $("#" + button);
+        if ( !el.hasClass( "btn-primary" ) ) {
+          el.addClass( "btn-primary" );
+        }
+      });
+
+      ["show_elevador", "show_varanda", "show_nao_ocupado", "show_mobiliado" ].forEach( function(button) {
+        var el = $("#" + button);
+        if ( el.hasClass( "btn-primary" ) ) {
+          el.removeClass( "btn-primary" );
+        }
+      });
+
     });
 
   });
