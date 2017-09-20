@@ -88,7 +88,8 @@ def filtrar_tipo_apartamento(queryset, tipo):
         'TRIPLEX': queryset.eh('apto_triplex'),
         'CONVENCIONAL': queryset.eh('apto_triplex', False).eh('apto_duplex', False),
         'MOBILIADO': queryset.esta_mobiliado(),
-        'NAO_MOBILIADO': queryset.nao_mobiliado()
+        'NAO_MOBILIADO': queryset.nao_mobiliado(),
+        'APARTAMENTO_KITNET': queryset.eh('kitnet'),
     }
     return tipo_apartamento.get(str(tipo).upper(), queryset)
 
@@ -99,8 +100,10 @@ def filtrar_tipo_casa(queryset, tipo):
         'EDICULA': queryset.eh('casa_edicula'),
         'SOBRELOJA': queryset.eh('casa_sobreloja'),
         'SOBRADO': queryset.eh('casa_sobrado'),
+        'GEMINADA': queryset.eh('casa_geminada'),
         'MOBILIADO': queryset.esta_mobiliado(),
-        'NAO_MOBILIADO': queryset.nao_mobiliado()
+        'NAO_MOBILIADO': queryset.nao_mobiliado(),
+        'CASA_KITNET': queryset.eh('kitnet'),
     }
     return tipo_casa.get(str(tipo).upper(), queryset)
 

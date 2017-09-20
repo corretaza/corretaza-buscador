@@ -250,6 +250,15 @@ class BuscarCasaTest(TestCase):
         self.casa_sobrado = self.casa.make(status=Imovel.STATUS.publicado,
                                            eh_para_locacao=True,
                                            eh_casa_sobrado=True)
+        self.casa_geminada = self.casa.make(status=Imovel.STATUS.publicado,
+                                           eh_para_locacao=True,
+                                           eh_casa_geminada=True)
+        self.casa_kitnet = self.casa.make(status=Imovel.STATUS.publicado,
+                                           eh_para_locacao=True,
+                                           eh_kitnet=True)
+
+        self.total_imoveis = 6
+
         self.url_base = '/buscador/alugar/casa/cidade/Sao Jose dos Campos/residencial/'
         self.parameter_get = "?valor_min=0&valor_max=0&min_quarto=0&min_vaga=0" \
                              "&area_min=0&mobiliado=&status=publicado&codigo_referencia="
@@ -290,6 +299,24 @@ class BuscarCasaTest(TestCase):
         self.assertNotIn(self.casa_edicula and self.casa_sobreloja and self.casa_terrea,
                          view.get_queryset())
 
+    def test_busca_por_geminada(self):
+        self.response = self.client.get('{}{}&mais_filtros=geminada'.format(self.url_base,
+                                                                           self.parameter_get))
+        view = self.response.context_data['view']
+        self.assertEquals(len(view.get_queryset()), 1)
+        self.assertIn(self.casa_geminada, view.get_queryset())
+        self.assertNotIn(self.casa_edicula and self.casa_sobreloja and self.casa_terrea,
+                         view.get_queryset())
+        self.assertNotIn(self.casa_sobrado, view.get_queryset())
+
+    def test_busca_por_kitnet(self):
+        self.response = self.client.get('{}{}&mais_filtros=casa_kitnet'.format(self.url_base,
+                                                                           self.parameter_get))
+        view = self.response.context_data['view']
+        self.assertEquals(len(view.get_queryset()), 1)
+        self.assertIn(self.casa_kitnet, view.get_queryset())
+        self.assertEquals(len(view.get_queryset()), 1)
+
     def test_busca_por_terrea_e_sobrado(self):
         casa_terrea_sobrado = self.casa.make(status=Imovel.STATUS.publicado,
                                                   eh_para_locacao=True,
@@ -317,13 +344,14 @@ class BuscarCasaTest(TestCase):
         self.assertNotIn(self.casa_edicula, query)
         self.assertNotIn(self.casa_sobrado, query)
 
-    def test_busca_por_casa_mobiliada(self):
+    def test_busca_por_casa_nao_mobiliada(self):
         self.response = self.client.get('{}{}&mais_filtros=nao_mobiliado'.format(self.url_base,
                                                                                  self.parameter_get))
         query = self.response.context_data['view'].get_queryset()
         self.assertNotIn(self.casa_terrea, query)
         self.assertNotIn(self.casa_sobreloja, query)
-        self.assertEquals(len(query), 2)
+        terrea_e_sobreloja = 2
+        self.assertEquals(len(query), self.total_imoveis-terrea_e_sobreloja)
         self.assertIn(self.casa_edicula, query)
         self.assertIn(self.casa_sobrado, query)
 
@@ -335,4 +363,4 @@ class BuscarCasaTest(TestCase):
         self.assertIn(self.casa_sobreloja, query)
         self.assertIn(self.casa_edicula, query)
         self.assertIn(self.casa_sobrado, query)
-        self.assertEquals(len(query), 4)
+        self.assertEquals(len(query), self.total_imoveis)
