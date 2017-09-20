@@ -1,1 +1,10 @@
 {% extends view.listadeimoveis_base_template %}
+
+{% block extrajs_bottom %}
+
+  {{ block.super }}
+
+  <script>
+    $( ".filtro-casa-apartamento" ).hide();
+  </script>
+{% endblock extrajs_bottom %} 
