@@ -143,7 +143,10 @@ def _install_project_dependencies(projectdir):
     with cd(projectdir):
         with prefix('source ../../bin/activate'):
             run('pip install -r ../requirements/%(environment)s.pip' % env)
-            run('./manage.py bower_install --settings=%s.settings.%s' % (PROJECT_NAME, env.environment))
+        with prefix('cd ../'):
+            run('pwd')
+            run('bower install')
+
 
 def _prepare_database(projectdir):
     print(green("**** Preparing Database"))
