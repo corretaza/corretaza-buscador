@@ -26,14 +26,17 @@
   
   {% for bairro in bairros %}
 
-    <h4 class="show_bairro" id="{{ bairro.grouper|slugify }}">
-      {% if bairro.grouper in interesse.bairros.all %}
-      <strong> <i class="fa fa-arrow-circle-right"></i> {{ bairro.grouper }}</strong>
-      {% else %}
-      <i class="fa fa-question"></i> {{ bairro.grouper }}
-      {% endif %}
-      ({{ bairro.list|length }} imóveis)
-    </h4>
+    <p style="color: #353535;">
+      <span class="show_bairro" id="{{ bairro.grouper|slugify }}">
+        {% if bairro.grouper in interesse.bairros.all %}
+        <strong> <i class="fa fa-arrow-circle-right"></i> {{ bairro.grouper }}</strong>
+        {% else %}
+        <i class="fa fa-question"></i> {{ bairro.grouper }}
+        {% endif %}
+        ({{ bairro.list|length }} imóveis)
+      </span>
+      <span><i class="fa fa-eye esconde-bairro"></i></span>
+    <p/>
 
     <table class="table table-condensed table-hover {{ bairro.grouper|slugify }}" style="margin-left: 14px; display: none">
       <tbody>
@@ -62,7 +65,9 @@
         {% if not imovel.tem_sacada_varanda %}sem_varanda {% endif %}
         {% if imovel.esta_ocupado %}ocupado {% endif %}
         {% if not imovel.esta_mobiliado %}nao_mobiliado {% endif %}
-        imovel">
+        {% if imovel.dormitorios < interesse.numero_dormitorios or imovel.vagas_garagem < interesse.numero_vagas %}imovel-incompativel {% endif %} imovel">
+
+        <!-- or imovel.area_total < interesse.area_construida  -->
           <td>
             {% if imovel.foto_principal %}
               <img style="max-height: 74px;" src="{% cropped_thumbnail imovel.foto_principal 'picture_cropping' scale=0.5 %}" data-toggle="tooltip" data-placement="top" data-original-title="{{ imovel.titulo }}">
@@ -217,6 +222,10 @@
         }
       });
 
+    });
+
+    $( ".esconde-bairro").click(function() {
+      $(this).parent().parent().hide();
     });
 
   });
