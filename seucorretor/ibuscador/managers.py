@@ -30,7 +30,9 @@ class ImovelQueryset(models.query.QuerySet):
         return self.filter(vagas_garagem__gte=min)
 
     def por_min_area_construida(self, min):
-        return self.filter(area_construida__gte=min)
+        return self.filter(
+            Q(area_terreno__gte=min) |
+            Q(area_construida__gte=min))
 
     def por_bairro(self, bairro):
         return self.filter(bairro=bairro)
