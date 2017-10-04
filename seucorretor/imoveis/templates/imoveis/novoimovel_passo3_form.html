@@ -125,13 +125,13 @@
 
         $( '#id_valor_condominio' ).prop('readonly', true);
         $( "#id_cep" ).focus();
-        $( "#id_cep" ).focusout(function(){ajax_cep($("#id_cidade").text())});
-        $("form").submit(function(event) {
-          if (!ajax_cep($("#id_cidade").text())){
-              event.preventDefault();
-              return false;
-          }
-      });
+        //$( "#id_cep" ).focusout(function(){ajax_cep($("#id_cidade").text())});
+        //$("form").submit(function(event) {
+          //if (!ajax_cep($("#id_cidade").text())){
+          //    event.preventDefault();
+          //    return false;
+          //}
+        //});
       }
 
     });
