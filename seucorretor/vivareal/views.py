@@ -80,7 +80,7 @@ class VivaRealUploadCompletoListView(LoginRequiredMixin, UserPassesTestMixin, Li
         return PropertyList.objects.all()
 
 
-class VivaRealXML(LoginRequiredMixin, UserPassesTestMixin, TemplateView):
+class VivaRealXML(TemplateView):
     content_type = "application/xml"
     # content_type = "text/plain"
     template_name = "vivareal/xml_base.xml"
