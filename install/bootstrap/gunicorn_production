@@ -1,0 +1,26 @@
+description "Gunicorn server for seucorretor_production"
+
+start on net-device-up
+stop on shutdown
+
+respawn
+setuid mechanics
+env DJANGO_SETTINGS_MODULE=seucorretor.settings.production
+
+env SEUCORRETOR_DB_NAME='seucorretor'
+env SEUCORRETOR_DB_USER='seucorretor'
+env SEUCORRETOR_DB_PASSWORD=''
+env SEUCORRETOR_DB_HOST='localhost'
+env DJANGO_CORRETAZA_SERVER_EMAIL='SJC Vale Imoveis <contato@sjcvaleimoveis.com.br>'
+env DJANGO_CORRETAZA_MAILGUN_ACCESS_KEY=''
+env DJANGO_CORRETAZA_MAILGUN_SERVER_NAME='sjcvaleimoveis.com.br'
+env DJANGO_CORRETAZA_ALLOWED_HOSTS='valeimoveissjc.com.br,www.valeimoveissjc.com.br,sjcvaleimoveis.com.br,www.sjcvaleimoveis.com.br,127.0.0.1'
+
+chdir /home/mechanics/envs/seucorretor_production/seucorretor_repo/seucorretor
+exec ../../bin/gunicorn seucorretor.wsgi:application \
+  --name "seucorretor_production" \
+  --workers 2 \
+  --timeout 1200 \
+  --bind unix:/tmp/seucorretor_production.socket \
+  --log-level=warning \
+  --log-file=/home/mechanics/envs/seucorretor_production/logs/seucorretor_production-gunicorn.log 2>>/home/mechanics/envs/seucorretor_production/logs/seucorretor_production-gunicorn.log

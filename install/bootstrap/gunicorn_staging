@@ -1,0 +1,30 @@
+# /etc/init/gunicorn-seucorretor_staging.conf
+description "Gunicorn server for seucorretor_staging"
+
+start on net-device-up
+stop on shutdown
+
+respawn
+setuid mechanics
+env DJANGO_SETTINGS_MODULE=seucorretor.settings.staging
+
+env SEUCORRETOR_DB_NAME='seucorretor'
+env SEUCORRETOR_DB_USER='seucorretor'
+env SEUCORRETOR_DB_PASSWORD=''
+env SEUCORRETOR_DB_HOST='localhost'
+
+env DJANGO_CORRETAZA_SERVER_EMAIL=''
+env DJANGO_CORRETAZA_MAILGUN_ACCESS_KEY=''
+env DJANGO_CORRETAZA_MAILGUN_SERVER_NAME=''
+
+env DJANGO_CORRETAZA_ALLOWED_HOSTS='seucorretor.na-inter.net,127.0.0.1'
+
+chdir /home/mechanics/envs/seucorretor_staging/seucorretor_repo/seucorretor
+
+exec ../../bin/gunicorn seucorretor.wsgi:application \
+  --name "seucorretor_staging" \
+  --workers 1 \
+  --timeout 1000 \
+  --bind unix:/tmp/seucorretor_staging.socket \
+  --log-level=warning \
+  --log-file=/home/mechanics/envs/seucorretor_staging/logs/seucorretor_staging-gunicorn.log 2>>/home/mechanics/envs/seucorretor_staging/logs/seucorretor_staging-gunicorn.log

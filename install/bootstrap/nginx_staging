@@ -1,0 +1,26 @@
+upstream seucorretor_server {
+    server unix:/tmp/seucorretor_staging.socket;
+}
+
+server {
+    listen 80;
+    server_name seucorretor.na-inter.net;
+    access_log /var/log/nginx/seucorretor.access.log;
+    client_max_body_size 12M;
+
+    location /static {
+        alias /home/mechanics/envs/seucorretor_staging/seucorretor_repo/seucorretor/assets;
+    }
+
+    location /media {
+        alias /home/mechanics/envs/seucorretor_staging/seucorretor_repo/seucorretor/media;
+        expires 10m;
+        autoindex off;
+    }
+
+    location / {
+        proxy_set_header Host $host;
+        proxy_pass http://seucorretor_server;
+    }
+
+}
