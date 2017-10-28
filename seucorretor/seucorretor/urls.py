@@ -33,8 +33,8 @@ urlpatterns = patterns('',  # noqa
 urlpatterns += staticfiles_urlpatterns()
 
 # django-debug-toolbar
-#if settings.DEBUG:
-#    import debug_toolbar
-#    urlpatterns += patterns('',  # noqa
-#        url(r'^__debug__/', include(debug_toolbar.urls)),
-#    )
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns += patterns('',  # noqa
+        url(r'^__debug__/', include(debug_toolbar.urls)),
+    )
