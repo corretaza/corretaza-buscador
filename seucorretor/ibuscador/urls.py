@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
 from django.views.generic import TemplateView
+from django.views.decorators.cache import cache_page
 
 from .views import (BuscadorHomeView, ListaDeImoveisRedirectView,
                     ListaImoveisParaComprarListView,
@@ -20,11 +21,11 @@ from .views import (BuscadorHomeView, ListaDeImoveisRedirectView,
 urlpatterns = patterns('',  # noqa
 
     url(r'^$',
-        BuscadorHomeView.as_view(),
+        cache_page(60 * 60)(BuscadorHomeView.as_view()),
         name='ibuscador.home'),
 
     url(r'^lista$',
-        ListaDeImoveisRedirectView.as_view(),
+        cache_page(60 * 15)(ListaDeImoveisRedirectView.as_view()),
         name='ibuscador.lista'),
 
     url(r'^lista/imovel_referencia/(?P<imovel_ref>[\w-]+)$',

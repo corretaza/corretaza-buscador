@@ -44,7 +44,8 @@ class BuscaInicialForm(forms.Form):
         self.fields['tipo_imovel'] = forms.ChoiceField(
             choices=tuple(Imovel.TIPO_IMOVEL))
         self.fields['tipo_imovel'].label = "Tipo do imóvel"
-        cidade_list = [(cidade.nome, cidade.nome) for cidade in Cidade.objects.all()]
+        cidades_qs = Cidade.objects.all()
+        cidade_list = [(cidade.nome, cidade.nome) for cidade in cidades_qs]
         self.fields['cidade'] = forms.ChoiceField(
             choices=cidade_list)
         opcoes_list = (('residencial', 'Residencial'),

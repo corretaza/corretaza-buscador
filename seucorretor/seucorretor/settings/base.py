@@ -137,6 +137,7 @@ TEMPLATE_DIRS = (
 )
 
 MIDDLEWARE_CLASSES = (
+    'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -144,6 +145,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'tracking.middleware.PageViewsMiddleware',
+    'django.middleware.cache.FetchFromCacheMiddleware',
 )
 
 # Application definition
@@ -250,6 +252,14 @@ CRONJOBS = [
 ]
 
 TEST_RUNNER = 'django.test.runner.DiscoverRunner'
+
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/var/tmp/django_seucorretor_cache',
+        'TIMEOUT': 300,
+    }
+}
 
 LOGGING = {
     'version': 1,
