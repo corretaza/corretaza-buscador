@@ -67,7 +67,6 @@ DATABASES = {
         'PASSWORD': env('SEUCORRETOR_DB_PASSWORD', default=''),
         'HOST': env('SEUCORRETOR_DB_HOST', default='localhost'),
         'PORT': '3306',
-        'CONN_MAX_AGE': 600,
         'OPTIONS': {
             'init_command': 'SET storage_engine=INNODB;SET foreign_key_checks=0;',
         }
