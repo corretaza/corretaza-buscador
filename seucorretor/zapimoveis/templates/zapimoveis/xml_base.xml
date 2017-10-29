@@ -1,3 +1,6 @@
+{% load cache %}
+
+{% cache 18000 imoveis %}
 <?xml version="1.0" encoding="UTF-8"?>
 <Carga xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Imoveis>
@@ -200,3 +203,4 @@
     {% endfor %}
   </Imoveis>
 </Carga>
+{% endcache %}

@@ -52,7 +52,7 @@ class ImovelWebXML(TemplateView):
         # TODO: Passar isto para o manager!
         arquivo_xml_query = ImovelWeb.objects_geral.publicados().exportar_para_portais().order_by(
             '-atualizado_em').select_related(
-            'cidade', 'bairro', 'regiao', 'foto_principal', 'foto' )
+            'cidade', 'bairro', 'regiao', 'foto_principal') # , 'foto'
         context['imoveis'] = arquivo_xml_query
         context['domain'] = Site.objects.get_current()
         return context

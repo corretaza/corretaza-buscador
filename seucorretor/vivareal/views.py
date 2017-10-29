@@ -96,7 +96,7 @@ class VivaRealXML(TemplateView):
         # TODO: Passar isto para o manager!
         self.arquivo_xml_query = ImovelVivaReal.objects_geral.publicados().exportar_para_portais().order_by(
             '-atualizado_em').select_related(
-            'cidade', 'bairro', 'regiao', 'foto_principal', 'foto' )
+            'cidade', 'bairro', 'regiao', 'foto_principal') # , 'foto'
         context['imoveis'] = self.arquivo_xml_query
         context['domain'] = Site.objects.get_current()
         return context
