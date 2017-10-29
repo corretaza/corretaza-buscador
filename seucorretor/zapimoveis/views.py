@@ -28,7 +28,7 @@ class ZapImoveisXML(TemplateView):
         # TODO: Passar isto para o manager!
         arquivo_xml_query = ImovelZapImovel.objects_geral.publicados().exportar_para_portais().order_by(
             '-atualizado_em').select_related(
-            'cidade', 'bairro', 'regiao', 'foto_principal', 'foto' )
+            'cidade', 'bairro', 'regiao', 'foto_principal') # , 'foto'
         limite = preferences.ZapPreferences.qtd_imoveis_para_exportacao
         context['imoveis'] = arquivo_xml_query[:limite]
         context['domain'] = Site.objects.get_current()
