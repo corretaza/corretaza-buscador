@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 
 from django.conf.urls import patterns, url
+from django.views.decorators.cache import cache_page
 
 from .views import (VivaRealFileUploadFormView,
                     VivaRealUploadCompletoListView,
@@ -19,7 +20,7 @@ urlpatterns = patterns('',  # noqa
         name='vivareal.upload'),
 
     url(r'^xml/$',
-        VivaRealXML.as_view(),
+        cache_page(60 * 60 * 6)(VivaRealXML.as_view()),
         name="vivareal.xml"),
 
 )

@@ -14,7 +14,7 @@ urlpatterns = patterns('',  # noqa
         name="imovelweb.xml"),
 
     url(r'^xml/$',
-        cache_page(60 * 60)(ZapImoveisXML.as_view()),
+        cache_page(60 * 60 * 6)(ZapImoveisXML.as_view()),
         name="zapimoveis.xml"),
 
 )
