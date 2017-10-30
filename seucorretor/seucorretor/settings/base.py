@@ -257,9 +257,11 @@ CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': '/var/tmp/django_seucorretor_cache',
-        'TIMEOUT': 150,
+        'TIMEOUT': 30,
     }
 }
+
+CACHE_MIDDLEWARE_SECONDS = 30
 
 LOGGING = {
     'version': 1,

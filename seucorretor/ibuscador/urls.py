@@ -21,11 +21,11 @@ from .views import (BuscadorHomeView, ListaDeImoveisRedirectView,
 urlpatterns = patterns('',  # noqa
 
     url(r'^$',
-        cache_page(60 * 60)(BuscadorHomeView.as_view()),
+        cache_page(60 * 60 * 3)(BuscadorHomeView.as_view()),
         name='ibuscador.home'),
 
     url(r'^lista$',
-        cache_page(60 * 15)(ListaDeImoveisRedirectView.as_view()),
+        cache_page(60 * 30)(ListaDeImoveisRedirectView.as_view()),
         name='ibuscador.lista'),
 
     url(r'^lista/imovel_referencia/(?P<imovel_ref>[\w-]+)$',
