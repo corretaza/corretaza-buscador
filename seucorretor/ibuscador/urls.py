@@ -25,7 +25,7 @@ urlpatterns = patterns('',  # noqa
         name='ibuscador.home'),
 
     url(r'^lista$',
-        cache_page(60 * 30)(ListaDeImoveisRedirectView.as_view()),
+        ListaDeImoveisRedirectView.as_view(),
         name='ibuscador.lista'),
 
     url(r'^lista/imovel_referencia/(?P<imovel_ref>[\w-]+)$',
