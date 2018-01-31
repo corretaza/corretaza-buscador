@@ -63,4 +63,10 @@ urlpatterns = patterns('',  # noqa
         RedirectView.as_view(url='/zapimoveis/xml/imovelweb/'),
         name='core.redirect.para.xml.da.imovelweb'),
 
+    #XML Para ImovelWeb
+    url(r'^integracao/olx/imoveis.xml',
+        RedirectView.as_view(url='/zapimoveis/xml/olx/'),
+        name='core.redirect.para.xml.da.olx'),
+
+
 )

@@ -14,7 +14,7 @@ from django.shortcuts import render
 from braces.views import LoginRequiredMixin, UserPassesTestMixin
 
 from imobiliaria import preferences
-from .models import ImovelZapImovel, ImovelWeb
+from .models import ImovelZapImovel, ImovelWeb, ImovelOlx
 
 
 
@@ -59,5 +59,26 @@ class ImovelWebXML(TemplateView):
 
     def render_to_response(self, context, **response_kwargs):
         xml = super(ImovelWebXML, self).render_to_response(context, **response_kwargs)
+        response = HttpResponse(xml.rendered_content, content_type='application/xml')
+        return response
+
+
+class ImovelOLXXML(TemplateView):
+    content_type = "application/xml"
+    template_name = "zapimoveis/xml_olx.xml"
+
+    def get_context_data(self, **kwargs):
+        context = super(ImovelOLXXML, self).get_context_data(**kwargs)
+        context['data'] = datetime.today()
+        # TODO: Passar isto para o manager!
+        arquivo_xml_query = ImovelOlx.objects_geral.publicados().exportar_para_portais().order_by(
+            '-atualizado_em').select_related(
+            'cidade', 'bairro', 'regiao', 'foto_principal') # , 'foto'
+        context['imoveis'] = arquivo_xml_query
+        context['domain'] = Site.objects.get_current()
+        return context
+
+    def render_to_response(self, context, **response_kwargs):
+        xml = super(ImovelOLXXML, self).render_to_response(context, **response_kwargs)
         response = HttpResponse(xml.rendered_content, content_type='application/xml')
         return response

@@ -213,6 +213,101 @@ class ImovelWeb(Imovel):
             return 'Padrão'
 
 
+class ImovelOlx(Imovel):
+    """
+    Usado para gerar arquivo XML para OLX
+    """
+    class Meta:
+        proxy = True
+
+    @property
+    def tipo_olx(self):
+        if self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.apartamento:
+            return 'Apartamento'
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.casa:
+            return 'Casa'
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.terreno:
+            return 'Terreno'
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.areaurbana:
+            return 'Terreno'
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.chacara:
+            return 'Chácara'
+        elif self.eh_comercial:
+            if self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.edificio:
+                return 'Comercial/Industrial'
+            elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.loja:
+                return 'Comercial/Industrial'
+            elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.galpao:
+                return 'Comercial/Industrial'
+            elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.sala:
+                return 'Comercial/Industrial'
+            else:
+                return 'Comercial'
+
+    @property
+    def subtipo_olx(self):
+
+        if self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.apartamento:
+            #Loft, Kitchenette/Conjugados, Flat, Kitnet Residencial
+            return 'Apartamento Padrão'
+
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.casa:
+            #Casa de Condomínio, Casa de Vila, Casa Padrão
+            if self.condominio:
+                return 'Casa de Condomínio'
+            else:
+                return 'Casa Padrão'
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.terreno:
+            #Terreno Padrão, Loteamento/Condomínio
+            if self.condominio:
+                return 'Loteamento/Condomínio'
+            else:
+                return 'Terreno Padrão'
+
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.areaurbana:
+            if self.condominio:
+                return 'Loteamento/Condomínio'
+            else:
+                return 'Terreno Padrão'
+
+        elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.chacara:
+            # Sítio​ ​ Rural
+            return 'Chácara Rural'
+
+        elif self.eh_comercial:
+            # Hotel, Conjunto Comercial/sala, Box/Garagem
+            if self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.edificio:
+                return 'Prédio Inteiro'
+            elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.casa:
+                return 'Casa Comercial'
+            elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.loja:
+                return 'Loja/Salão'
+            elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.galpao:
+                return 'Galpão/Depósito/Armazém'
+            elif self.tipo_imovel == ImovelOlx.TIPO_IMOVEL.sala:
+                return 'Conjunto Comercial/sala'
+
+    @property
+    def categoria_olx(self):
+        if self.eh_apto_cobertura and self.eh_apto_duplex:
+            return 'Cobertura Duplex'
+        elif self.eh_apto_cobertura and self.eh_apto_triplex:
+            return 'Cobertura Triplex'
+        elif self.eh_apto_duplex:
+            return 'Duplex'
+        elif self.eh_apto_triplex:
+            return 'Triplex'
+        elif self.eh_apto_cobertura:
+            return 'Cobertura'
+        elif self.eh_casa_terrea:
+            return 'Térrea'
+        elif self.eh_casa_sobrado:
+            return 'Sobrado/Duplex'
+        else:
+            return 'Padrão'
+
+
+
 class ZapPreferences(Preferences):
     """ @see behaviours.Preferences """
     qtd_imoveis_para_exportacao = models.PositiveIntegerField(

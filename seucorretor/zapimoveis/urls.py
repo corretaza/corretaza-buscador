@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 from django.conf.urls import patterns, url
 from django.views.decorators.cache import cache_page
 
-from .views import ZapImoveisXML, ImovelWebXML
+from .views import ZapImoveisXML, ImovelWebXML, ImovelOLXXML
 
 
 urlpatterns = patterns('',  # noqa
@@ -12,6 +12,10 @@ urlpatterns = patterns('',  # noqa
     url(r'^xml/imovelweb/$',
         ImovelWebXML.as_view(),
         name="imovelweb.xml"),
+
+    url(r'^xml/olx/$',
+        ImovelOLXXML.as_view(),
+        name="imovelolx.xml"),
 
     url(r'^xml/$',
         cache_page(60 * 60 * 6)(ZapImoveisXML.as_view()),

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Carga xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Imoveis>
+    {% for imovel in imoveis %}
+    <Imovel>
+      <CodigoCliente></CodigoCliente>
+      <CodigoImovel>{{ imovel.imovel_ref }}</CodigoImovel>
+      <TipoImovel>{{ imovel.tipo_olx }}</TipoImovel>
+      <SubTipoImovel>{{ imovel.subtipo_olx }}</SubTipoImovel >
+      <CategoriaImovel>{{ imovel.categoria_olx }}</CategoriaImovel>
+      <Cidade>{{ imovel.cidade }}</Cidade>
+      <Bairro>{{ imovel.bairro.descricao }}</Bairro>
+      <Endereco>{{ imovel.logradouro }}</Endereco>
+      <Numero>{{ imovel.numero }}</Numero>
+      <CEP>{{ imovel.cep }}</CEP>
+      <PrecoVenda>{{ imovel.valor_venda|floatformat:"0" }}</PrecoVenda>
+      <PrecoLocacao>{{ imovel.valor_locacao|floatformat:"0" }}</PrecoLocacao>
+      <PrecoCondominio>{{ imovel.valor_condominio|floatformat:"0" }}</PrecoCondominio>
+      <QtdVagas>{{ imovel.vagas_garagem }}</QtdVagas>
+      {% if imovel.eh_terreno %}
+      <AreaUtil>{{ imovel.area_terreno }}</AreaUtil>
+      {% else %}
+      <AreaUtil>{{ imovel.area_construida }}</AreaUtil>
+      {% endif %}
+      <QtdDormitorios>{{ imovel.dormitorios }}</QtdDormitorios>
+      <Observacao>{{ imovel.descricao_imovel }} {{ imovel.descricao_comodos }}</Observacao>
+      <QtdSuites>{{ imovel.suites }}</QtdSuites>
+      <QtdBanheiros>{{ imovel.banheiros }}</QtdBanheiros>
+      <QtdSalas>{{ imovel.dormitorios }}</QtdSalas>
+      <Fotos>{% for foto in imovel.fotos_list %}
+        <Foto>
+          <NomeArquivo></NomeArquivo>
+          <URLArquivo>http://{{ domain }}/media/{{foto.picture}}</URLArquivo>
+          {% if foto.eh_principal %}
+          <Principal>1</Principal>
+          {% endif %}
+        </Foto>{% endfor %}
+      </Fotos>
+    </Imovel>
+    {% endfor %}
+  </Imoveis>
+</Carga>
