@@ -1,0 +1,1258 @@
+[
+{
+  "pk": 1, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Apartamento Com Sacada"
+  }
+},
+{
+  "pk": 2, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Apartamento Com Sacada Gourmet"
+  }
+},
+{
+  "pk": 8, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sanca Com Ilumina\u00e7\u00e3o"
+  }
+},
+{
+  "pk": 9, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Lazer Completo"
+  }
+},
+{
+  "pk": 10, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Im\u00f3vel Para Investidor"
+  }
+},
+{
+  "pk": 11, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Com Elevador"
+  }
+},
+{
+  "pk": 13, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "\u00c1rea De Servi\u00e7o"
+  }
+},
+{
+  "pk": 14, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "chacara", 
+    "descricao": "Piscina"
+  }
+},
+{
+  "pk": 15, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso Da Sala: Frio"
+  }
+},
+{
+  "pk": 16, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Vaga De Garagem: 1"
+  }
+},
+{
+  "pk": 19, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "01 \u00c1rea De Serv\u00e7o"
+  }
+},
+{
+  "pk": 20, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Em Condom\u00ednio Fechado"
+  }
+},
+{
+  "pk": 21, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso Da Sala: Porcelanato"
+  }
+},
+{
+  "pk": 22, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Residencial"
+  }
+},
+{
+  "pk": 23, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "chacara", 
+    "descricao": "01 Dormit\u00f3rio, Sala, Cozinha E Wc."
+  }
+},
+{
+  "pk": 25, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Com Ed\u00edcula Nos Fundos (1 Dormit\u00f3rio, Cozinha E Wc)."
+  }
+},
+{
+  "pk": 26, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Condom\u00ednio Fechado"
+  }
+},
+{
+  "pk": 27, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Com Audit\u00f3rio E Heliporto"
+  }
+},
+{
+  "pk": 28, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "3 Lotes (Vende Separado)"
+  }
+},
+{
+  "pk": 30, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Lareira"
+  }
+},
+{
+  "pk": 31, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Cond. Alto Padr\u00e3o"
+  }
+},
+{
+  "pk": 32, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Piso: Paviflex"
+  }
+},
+{
+  "pk": 33, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "2 Vagas De Garagem Cobertas"
+  }
+},
+{
+  "pk": 34, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Residencial Em Jacare\u00ed"
+  }
+},
+{
+  "pk": 36, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Em Condom\u00ednio De Alto Padr\u00e3o"
+  }
+},
+{
+  "pk": 37, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Vaga De Garagem: 1 Coberta"
+  }
+},
+{
+  "pk": 39, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Vaga De Garagem: 03 (Sendo 02 Cobertas)"
+  }
+},
+{
+  "pk": 40, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Piso: Porcelanato"
+  }
+},
+{
+  "pk": 41, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Port\u00e3o Eletr\u00f4nico"
+  }
+},
+{
+  "pk": 43, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Churrasqueira"
+  }
+},
+{
+  "pk": 44, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Com Textura Externa"
+  }
+},
+{
+  "pk": 47, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "2 Vagas De Garagem"
+  }
+},
+{
+  "pk": 52, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Plano / Meio De Quadra"
+  }
+},
+{
+  "pk": 53, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Pia"
+  }
+},
+{
+  "pk": 54, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Sal\u00e3o Comercial Com 2 Wcs Com A.C.: 123 M\u00b2"
+  }
+},
+{
+  "pk": 55, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Closet Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 57, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Ar Condicionado"
+  }
+},
+{
+  "pk": 59, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso: Madeira"
+  }
+},
+{
+  "pk": 60, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Nos Fundos: + 2 Dormit\u00f3rios, Sendo 1 Su\u00edte E Lavanderia"
+  }
+},
+{
+  "pk": 62, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Vaga De Garagem: 03 Cobertas"
+  }
+},
+{
+  "pk": 63, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Com Vista Definitiva, Em Frente \u00c0 \u00c1rea De Preserva\u00e7\u00e3o."
+  }
+},
+{
+  "pk": 64, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Vaga De Garagem: 04"
+  }
+},
+{
+  "pk": 65, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Nova - Previs\u00e3o Para Conclus\u00e3o Da Obra Em Setembro De 2013"
+  }
+},
+{
+  "pk": 66, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Vaga De Garagem: 06"
+  }
+},
+{
+  "pk": 67, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Vaga De Garagem: 03"
+  }
+},
+{
+  "pk": 68, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Vaga De Garagem: 02"
+  }
+},
+{
+  "pk": 69, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Piso: T\u00e1bua Corrida"
+  }
+},
+{
+  "pk": 70, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Quintal Com Grama"
+  }
+},
+{
+  "pk": 73, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Ponto Mais Alto Do Condom\u00ednio"
+  }
+},
+{
+  "pk": 74, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Em Constru\u00e7\u00e3o"
+  }
+},
+{
+  "pk": 75, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Wc Social"
+  }
+},
+{
+  "pk": 76, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "areaurbana", 
+    "descricao": "Comercial Ou Residencial"
+  }
+},
+{
+  "pk": 78, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Box Blindex"
+  }
+},
+{
+  "pk": 80, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Port\u00e3o Autom\u00e1tico"
+  }
+},
+{
+  "pk": 81, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Pr\u00e9dio Com Quatro Apartamentos E Dois Pontos De Com\u00e9rcio"
+  }
+},
+{
+  "pk": 82, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Escada Em Granito"
+  }
+},
+{
+  "pk": 83, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Piso: Frio"
+  }
+},
+{
+  "pk": 84, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno"
+  }
+},
+{
+  "pk": 86, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Loteamento Em Fase Final"
+  }
+},
+{
+  "pk": 88, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Panejada Com Mesa, Fog\u00e3o E Coifa"
+  }
+},
+{
+  "pk": 89, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Bom Para Escola, Cl\u00ednica E Empresas"
+  }
+},
+{
+  "pk": 90, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Aquecedor Solar E El\u00e9trico"
+  }
+},
+{
+  "pk": 92, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "areaurbana", 
+    "descricao": "\u00c1rea Urbana"
+  }
+},
+{
+  "pk": 93, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Dormit\u00f3rios Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 96, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Calha Embutida"
+  }
+},
+{
+  "pk": 97, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "\u00c1rea Residencial E Comercial"
+  }
+},
+{
+  "pk": 98, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "1 Copa/Cozinha"
+  }
+},
+{
+  "pk": 99, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Com Ed\u00edcula Nos Fundos"
+  }
+},
+{
+  "pk": 100, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "galpao", 
+    "descricao": "Escrit\u00f3rios / Banheiros / Copa"
+  }
+},
+{
+  "pk": 101, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Com Elevador "
+  }
+},
+{
+  "pk": 103, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Plano Em Condom\u00ednio Fechado Em Sjcampos"
+  }
+},
+{
+  "pk": 104, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Comercial "
+  }
+},
+{
+  "pk": 105, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Em Condom\u00ednio Fechado"
+  }
+},
+{
+  "pk": 106, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "1 Vaga De Garagem Coberta"
+  }
+},
+{
+  "pk": 107, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Piso: Laminado"
+  }
+},
+{
+  "pk": 108, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Vaga De Garagem: 12 Cobertas"
+  }
+},
+{
+  "pk": 109, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Arm\u00e1rios Em 02 Dormit\u00f3rios"
+  }
+},
+{
+  "pk": 110, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "chacara", 
+    "descricao": "Com Fog\u00e3o \u00c1 Lenha  "
+  }
+},
+{
+  "pk": 111, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Vaga De Garagem Rotativa: 01 Coberta"
+  }
+},
+{
+  "pk": 112, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Jardim"
+  }
+},
+{
+  "pk": 114, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Sem Quintal"
+  }
+},
+{
+  "pk": 115, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Closet"
+  }
+},
+{
+  "pk": 116, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Quintal Com Piso Frio"
+  }
+},
+{
+  "pk": 117, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Residencial Plano"
+  }
+},
+{
+  "pk": 118, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Aquecedor Solar"
+  }
+},
+{
+  "pk": 119, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso: Durafloor"
+  }
+},
+{
+  "pk": 121, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Aclive"
+  }
+},
+{
+  "pk": 123, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Entrega Prevista Para Maio De 2014"
+  }
+},
+{
+  "pk": 124, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Janelas E Portas De Alum\u00ednio"
+  }
+},
+{
+  "pk": 125, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso Da Sala: Granito"
+  }
+},
+{
+  "pk": 126, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Aquecedor \u00c0 G\u00e1s"
+  }
+},
+{
+  "pk": 127, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Pomar"
+  }
+},
+{
+  "pk": 128, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Quintal"
+  }
+},
+{
+  "pk": 129, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Portaria 24 Horas"
+  }
+},
+{
+  "pk": 130, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Residencial"
+  }
+},
+{
+  "pk": 132, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "G\u00e1s Na Rua"
+  }
+},
+{
+  "pk": 134, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Plano Em Sjcampos"
+  }
+},
+{
+  "pk": 135, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Residencial Plano"
+  }
+},
+{
+  "pk": 136, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Declive Leve"
+  }
+},
+{
+  "pk": 137, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "galpao", 
+    "descricao": "No Contra Piso"
+  }
+},
+{
+  "pk": 138, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "\u00c1rea: Comercial Ou Residencial"
+  }
+},
+{
+  "pk": 139, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "01 Cozinha"
+  }
+},
+{
+  "pk": 142, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Pr\u00e9dio Sem Elevador"
+  }
+},
+{
+  "pk": 143, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Comercial / Residencial"
+  }
+},
+{
+  "pk": 144, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Piso Dos Dormit\u00f3rios: Durafloor"
+  }
+},
+{
+  "pk": 145, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso Dos Dormit\u00f3rios: Paviflex"
+  }
+},
+{
+  "pk": 146, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Esquina"
+  }
+},
+{
+  "pk": 148, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Com Encanamento Para \u00c1gua Quente E Fria"
+  }
+},
+{
+  "pk": 149, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Piso Frio"
+  }
+},
+{
+  "pk": 150, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "areaurbana", 
+    "descricao": "Residencial Ou Comercial"
+  }
+},
+{
+  "pk": 151, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "G\u00e1s Encanado"
+  }
+},
+{
+  "pk": 152, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Hoby-Box"
+  }
+},
+{
+  "pk": 153, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Ao Lado Do Supermercado Piratininga"
+  }
+},
+{
+  "pk": 154, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Estacionamento Rotativo"
+  }
+},
+{
+  "pk": 155, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Ar Condicionado - Arm\u00e1rios"
+  }
+},
+{
+  "pk": 156, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso Porcelanato E Frio"
+  }
+},
+{
+  "pk": 157, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Murado"
+  }
+},
+{
+  "pk": 158, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Quarto Nos Fundos Com Wc"
+  }
+},
+{
+  "pk": 159, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Sol Da Tarde"
+  }
+},
+{
+  "pk": 160, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Vaga De Garagem: 8 (Sendo 02 Cobertas)"
+  }
+},
+{
+  "pk": 162, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso Dos Dormit\u00f3rios: Frio"
+  }
+},
+{
+  "pk": 163, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso: Cer\u00e2mico"
+  }
+},
+{
+  "pk": 164, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno - Comercial E Residencial"
+  }
+},
+{
+  "pk": 165, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Piso: Contra-Piso"
+  }
+},
+{
+  "pk": 166, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Residencial Com Declive "
+  }
+},
+{
+  "pk": 167, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sem Elevador"
+  }
+},
+{
+  "pk": 168, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "areaurbana", 
+    "descricao": "Comercial / Residencial / Industrial"
+  }
+},
+{
+  "pk": 169, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "G\u00e1s Encanado Na Rua"
+  }
+},
+{
+  "pk": 170, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "galpao", 
+    "descricao": "Galp\u00e3o Comercial"
+  }
+},
+{
+  "pk": 171, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Com Constru\u00e7\u00e3o Antiga (Para Demolir)"
+  }
+},
+{
+  "pk": 172, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Piso: Frio "
+  }
+},
+{
+  "pk": 173, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Sala Comercial"
+  }
+},
+{
+  "pk": 174, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Em \u00c1rea Residencial"
+  }
+},
+{
+  "pk": 175, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "areaurbana", 
+    "descricao": "170,00/M\u00b2"
+  }
+},
+{
+  "pk": 177, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Poss\u00edvel Venda De Fra\u00e7\u00e3o"
+  }
+},
+{
+  "pk": 178, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Com Ventilador De Teto"
+  }
+},
+{
+  "pk": 179, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Plano"
+  }
+},
+{
+  "pk": 180, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Documentos: Ok"
+  }
+},
+{
+  "pk": 181, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Com Sacada"
+  }
+},
+{
+  "pk": 182, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Residencial Com Pouco Aclive"
+  }
+},
+{
+  "pk": 183, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Plano"
+  }
+},
+{
+  "pk": 184, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Declive"
+  }
+},
+{
+  "pk": 185, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Com Quintal"
+  }
+},
+{
+  "pk": 188, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Wc Social: 02"
+  }
+},
+{
+  "pk": 189, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "\u00c1rea Livre Nos Fundos"
+  }
+},
+{
+  "pk": 190, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Teto Em Gesso Com Sanca"
+  }
+},
+{
+  "pk": 192, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Canil"
+  }
+},
+{
+  "pk": 193, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Nos Fundos: 1 Dormit\u00f3rio Com Wc"
+  }
+},
+{
+  "pk": 194, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Mesanino Com 3 Salas, 3 Wcs E Piso Frio"
+  }
+},
+{
+  "pk": 195, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Aterrado"
+  }
+},
+{
+  "pk": 196, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Piso: Paviflex Emborrachado"
+  }
+},
+{
+  "pk": 197, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "sala", 
+    "descricao": "Vaga De Garagem: 01 Coberta"
+  }
+},
+{
+  "pk": 198, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Vaga De Garagem: 02 Cobertas"
+  }
+},
+{
+  "pk": 199, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Edicula Completa"
+  }
+},
+{
+  "pk": 201, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "casa", 
+    "descricao": "Quartinho + Lavanderia Nos Fundos"
+  }
+},
+{
+  "pk": 202, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Com Uma Casa Para Demoli\u00e7\u00e0o"
+  }
+},
+{
+  "pk": 203, 
+  "model": "ibuscador.descricaoimovel", 
+  "fields": {
+    "tipo_imovel": "terreno", 
+    "descricao": "Terreno Comercial"
+  }
+}
+]

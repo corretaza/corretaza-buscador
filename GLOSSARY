@@ -1,0 +1,22 @@
+G L O S S A R Y
+===============
+
+Corretor = The Agent that helps people by houses
+Seu Corretor = Your Agent
+Cliente = Client or Customers looking for houses
+Contato = Contact (phone, email)
+Atendimento = The verb when the Agent assist the customer
+Proprietario = The houser owner
+Cidade = City
+Regiao = North, South ..
+Bairro = Neighbourhood
+ComEndereco = Address
+InteresseBase == Atendimento
+FormaDePagamento = Allowed payments for customer pay the house
+AreaDeLazer = What the house offers (such as barbecue, swing pool ..)
+Condominio = When the house is inside a private area
+Imovel = Is the general word for House, Apartments
+Foto = Photo
+DescricaoImovel = General Description
+DescricaoComodo = Room Description
+HistoricoDeImovel = History of actions (such as price changed, rented, sold out ...)

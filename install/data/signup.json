@@ -1,0 +1,1471 @@
+[
+  {
+    "fields": {
+      "data_admissao": null,
+      "fone3_detalhe": "",
+      "fone": "+55 12 991 088 222",
+      "data_nascimento": null,
+      "creci": "",
+      "pausado": false,
+      "alugar_contador": 1,
+      "data_rescisao": null,
+      "fone3": "",
+      "fone2": "",
+      "complemento": "",
+      "pode_alterar_imovel": true,
+      "nome": "Corretor",
+      "is_ativo": true,
+      "fone2_detalhe": "",
+      "rg": "",
+      "whatsapp": "",
+      "email": "email@corretaza.na-inter.net",
+      "email_particular": "",
+      "banco_ag_cc": "",
+      "foto": "",
+      "bairro": null,
+      "logradouro": "",
+      "numero": "",
+      "foto_cropping": "",
+      "cep": "",
+      "slug": "corretor",
+      "fone_detalhe": "",
+      "regiao": null,
+      "fone_particular": "",
+      "cidade": null,
+      "cpf": "",
+      "comprar_contador": 1
+    },
+    "model": "imobiliaria.colaborador",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "codename": "add_logentry",
+      "name": "Can add log entry",
+      "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "codename": "change_logentry",
+      "name": "Can change log entry",
+      "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "codename": "delete_logentry",
+      "name": "Can delete log entry",
+      "content_type": 1
+    },
+    "model": "auth.permission",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "codename": "add_permission",
+      "name": "Can add permission",
+      "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 4
+  },
+  {
+    "fields": {
+      "codename": "change_permission",
+      "name": "Can change permission",
+      "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 5
+  },
+  {
+    "fields": {
+      "codename": "delete_permission",
+      "name": "Can delete permission",
+      "content_type": 2
+    },
+    "model": "auth.permission",
+    "pk": 6
+  },
+  {
+    "fields": {
+      "codename": "add_group",
+      "name": "Can add group",
+      "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 7
+  },
+  {
+    "fields": {
+      "codename": "change_group",
+      "name": "Can change group",
+      "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 8
+  },
+  {
+    "fields": {
+      "codename": "delete_group",
+      "name": "Can delete group",
+      "content_type": 3
+    },
+    "model": "auth.permission",
+    "pk": 9
+  },
+  {
+    "fields": {
+      "codename": "add_user",
+      "name": "Can add user",
+      "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 10
+  },
+  {
+    "fields": {
+      "codename": "change_user",
+      "name": "Can change user",
+      "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 11
+  },
+  {
+    "fields": {
+      "codename": "delete_user",
+      "name": "Can delete user",
+      "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 12
+  },
+  {
+    "fields": {
+      "codename": "add_contenttype",
+      "name": "Can add content type",
+      "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 13
+  },
+  {
+    "fields": {
+      "codename": "change_contenttype",
+      "name": "Can change content type",
+      "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 14
+  },
+  {
+    "fields": {
+      "codename": "delete_contenttype",
+      "name": "Can delete content type",
+      "content_type": 5
+    },
+    "model": "auth.permission",
+    "pk": 15
+  },
+  {
+    "fields": {
+      "codename": "add_session",
+      "name": "Can add session",
+      "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 16
+  },
+  {
+    "fields": {
+      "codename": "change_session",
+      "name": "Can change session",
+      "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 17
+  },
+  {
+    "fields": {
+      "codename": "delete_session",
+      "name": "Can delete session",
+      "content_type": 6
+    },
+    "model": "auth.permission",
+    "pk": 18
+  },
+  {
+    "fields": {
+      "codename": "add_site",
+      "name": "Can add site",
+      "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 19
+  },
+  {
+    "fields": {
+      "codename": "change_site",
+      "name": "Can change site",
+      "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 20
+  },
+  {
+    "fields": {
+      "codename": "delete_site",
+      "name": "Can delete site",
+      "content_type": 7
+    },
+    "model": "auth.permission",
+    "pk": 21
+  },
+  {
+    "fields": {
+      "codename": "add_source",
+      "name": "Can add source",
+      "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 22
+  },
+  {
+    "fields": {
+      "codename": "change_source",
+      "name": "Can change source",
+      "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 23
+  },
+  {
+    "fields": {
+      "codename": "delete_source",
+      "name": "Can delete source",
+      "content_type": 8
+    },
+    "model": "auth.permission",
+    "pk": 24
+  },
+  {
+    "fields": {
+      "codename": "add_thumbnail",
+      "name": "Can add thumbnail",
+      "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 25
+  },
+  {
+    "fields": {
+      "codename": "change_thumbnail",
+      "name": "Can change thumbnail",
+      "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 26
+  },
+  {
+    "fields": {
+      "codename": "delete_thumbnail",
+      "name": "Can delete thumbnail",
+      "content_type": 9
+    },
+    "model": "auth.permission",
+    "pk": 27
+  },
+  {
+    "fields": {
+      "codename": "add_thumbnaildimensions",
+      "name": "Can add thumbnail dimensions",
+      "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 28
+  },
+  {
+    "fields": {
+      "codename": "change_thumbnaildimensions",
+      "name": "Can change thumbnail dimensions",
+      "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 29
+  },
+  {
+    "fields": {
+      "codename": "delete_thumbnaildimensions",
+      "name": "Can delete thumbnail dimensions",
+      "content_type": 10
+    },
+    "model": "auth.permission",
+    "pk": 30
+  },
+  {
+    "fields": {
+      "codename": "add_inbound",
+      "name": "Can add Atendimento Inbound",
+      "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 31
+  },
+  {
+    "fields": {
+      "codename": "change_inbound",
+      "name": "Can change Atendimento Inbound",
+      "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 32
+  },
+  {
+    "fields": {
+      "codename": "delete_inbound",
+      "name": "Can delete Atendimento Inbound",
+      "content_type": 11
+    },
+    "model": "auth.permission",
+    "pk": 33
+  },
+  {
+    "fields": {
+      "codename": "add_regra",
+      "name": "Can add Regra",
+      "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 34
+  },
+  {
+    "fields": {
+      "codename": "change_regra",
+      "name": "Can change Regra",
+      "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 35
+  },
+  {
+    "fields": {
+      "codename": "delete_regra",
+      "name": "Can delete Regra",
+      "content_type": 12
+    },
+    "model": "auth.permission",
+    "pk": 36
+  },
+  {
+    "fields": {
+      "codename": "add_integracaointeresse",
+      "name": "Can add Interesse Portais",
+      "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 37
+  },
+  {
+    "fields": {
+      "codename": "change_integracaointeresse",
+      "name": "Can change Interesse Portais",
+      "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 38
+  },
+  {
+    "fields": {
+      "codename": "delete_integracaointeresse",
+      "name": "Can delete Interesse Portais",
+      "content_type": 13
+    },
+    "model": "auth.permission",
+    "pk": 39
+  },
+  {
+    "fields": {
+      "codename": "add_contato",
+      "name": "Can add Contato",
+      "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 40
+  },
+  {
+    "fields": {
+      "codename": "change_contato",
+      "name": "Can change Contato",
+      "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 41
+  },
+  {
+    "fields": {
+      "codename": "delete_contato",
+      "name": "Can delete Contato",
+      "content_type": 14
+    },
+    "model": "auth.permission",
+    "pk": 42
+  },
+  {
+    "fields": {
+      "codename": "add_solicitation",
+      "name": "Can add solicita\u00e7\u00e3o",
+      "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 43
+  },
+  {
+    "fields": {
+      "codename": "change_solicitation",
+      "name": "Can change solicita\u00e7\u00e3o",
+      "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 44
+  },
+  {
+    "fields": {
+      "codename": "delete_solicitation",
+      "name": "Can delete solicita\u00e7\u00e3o",
+      "content_type": 15
+    },
+    "model": "auth.permission",
+    "pk": 45
+  },
+  {
+    "fields": {
+      "codename": "add_cliente",
+      "name": "Can add cliente",
+      "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 46
+  },
+  {
+    "fields": {
+      "codename": "change_cliente",
+      "name": "Can change cliente",
+      "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 47
+  },
+  {
+    "fields": {
+      "codename": "delete_cliente",
+      "name": "Can delete cliente",
+      "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 48
+  },
+  {
+    "fields": {
+      "codename": "add_interesse",
+      "name": "Can add interesse",
+      "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 49
+  },
+  {
+    "fields": {
+      "codename": "change_interesse",
+      "name": "Can change interesse",
+      "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 50
+  },
+  {
+    "fields": {
+      "codename": "delete_interesse",
+      "name": "Can delete interesse",
+      "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 51
+  },
+  {
+    "fields": {
+      "codename": "add_opcaoparavisita",
+      "name": "Can add opcao para visita",
+      "content_type": 18
+    },
+    "model": "auth.permission",
+    "pk": 52
+  },
+  {
+    "fields": {
+      "codename": "change_opcaoparavisita",
+      "name": "Can change opcao para visita",
+      "content_type": 18
+    },
+    "model": "auth.permission",
+    "pk": 53
+  },
+  {
+    "fields": {
+      "codename": "delete_opcaoparavisita",
+      "name": "Can delete opcao para visita",
+      "content_type": 18
+    },
+    "model": "auth.permission",
+    "pk": 54
+  },
+  {
+    "fields": {
+      "codename": "add_mensagem",
+      "name": "Can add mensagem",
+      "content_type": 19
+    },
+    "model": "auth.permission",
+    "pk": 55
+  },
+  {
+    "fields": {
+      "codename": "change_mensagem",
+      "name": "Can change mensagem",
+      "content_type": 19
+    },
+    "model": "auth.permission",
+    "pk": 56
+  },
+  {
+    "fields": {
+      "codename": "delete_mensagem",
+      "name": "Can delete mensagem",
+      "content_type": 19
+    },
+    "model": "auth.permission",
+    "pk": 57
+  },
+  {
+    "fields": {
+      "codename": "add_userprofile",
+      "name": "Can add user profile",
+      "content_type": 21
+    },
+    "model": "auth.permission",
+    "pk": 58
+  },
+  {
+    "fields": {
+      "codename": "change_userprofile",
+      "name": "Can change user profile",
+      "content_type": 21
+    },
+    "model": "auth.permission",
+    "pk": 59
+  },
+  {
+    "fields": {
+      "codename": "delete_userprofile",
+      "name": "Can delete user profile",
+      "content_type": 21
+    },
+    "model": "auth.permission",
+    "pk": 60
+  },
+  {
+    "fields": {
+      "codename": "add_atividade",
+      "name": "Can add atividade",
+      "content_type": 22
+    },
+    "model": "auth.permission",
+    "pk": 61
+  },
+  {
+    "fields": {
+      "codename": "change_atividade",
+      "name": "Can change atividade",
+      "content_type": 22
+    },
+    "model": "auth.permission",
+    "pk": 62
+  },
+  {
+    "fields": {
+      "codename": "delete_atividade",
+      "name": "Can delete atividade",
+      "content_type": 22
+    },
+    "model": "auth.permission",
+    "pk": 63
+  },
+  {
+    "fields": {
+      "codename": "add_propertylist",
+      "name": "Can add property list",
+      "content_type": 23
+    },
+    "model": "auth.permission",
+    "pk": 64
+  },
+  {
+    "fields": {
+      "codename": "change_propertylist",
+      "name": "Can change property list",
+      "content_type": 23
+    },
+    "model": "auth.permission",
+    "pk": 65
+  },
+  {
+    "fields": {
+      "codename": "delete_propertylist",
+      "name": "Can delete property list",
+      "content_type": 23
+    },
+    "model": "auth.permission",
+    "pk": 66
+  },
+  {
+    "fields": {
+      "codename": "add_media",
+      "name": "Can add media",
+      "content_type": 24
+    },
+    "model": "auth.permission",
+    "pk": 67
+  },
+  {
+    "fields": {
+      "codename": "change_media",
+      "name": "Can change media",
+      "content_type": 24
+    },
+    "model": "auth.permission",
+    "pk": 68
+  },
+  {
+    "fields": {
+      "codename": "delete_media",
+      "name": "Can delete media",
+      "content_type": 24
+    },
+    "model": "auth.permission",
+    "pk": 69
+  },
+  {
+    "fields": {
+      "codename": "add_imovelvivareal",
+      "name": "Can add imovel viva real",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 70
+  },
+  {
+    "fields": {
+      "codename": "change_imovelvivareal",
+      "name": "Can change imovel viva real",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 71
+  },
+  {
+    "fields": {
+      "codename": "delete_imovelvivareal",
+      "name": "Can delete imovel viva real",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 72
+  },
+  {
+    "fields": {
+      "codename": "add_imovelzapimovel",
+      "name": "Can add imovel zap imovel",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 73
+  },
+  {
+    "fields": {
+      "codename": "change_imovelzapimovel",
+      "name": "Can change imovel zap imovel",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 74
+  },
+  {
+    "fields": {
+      "codename": "delete_imovelzapimovel",
+      "name": "Can delete imovel zap imovel",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 75
+  },
+  {
+    "fields": {
+      "codename": "add_imovelweb",
+      "name": "Can add imovel web",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 76
+  },
+  {
+    "fields": {
+      "codename": "change_imovelweb",
+      "name": "Can change imovel web",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 77
+  },
+  {
+    "fields": {
+      "codename": "delete_imovelweb",
+      "name": "Can delete imovel web",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 78
+  },
+  {
+    "fields": {
+      "codename": "add_zappreferences",
+      "name": "Can add ZapPreferences",
+      "content_type": 27
+    },
+    "model": "auth.permission",
+    "pk": 79
+  },
+  {
+    "fields": {
+      "codename": "change_zappreferences",
+      "name": "Can change ZapPreferences",
+      "content_type": 27
+    },
+    "model": "auth.permission",
+    "pk": 80
+  },
+  {
+    "fields": {
+      "codename": "delete_zappreferences",
+      "name": "Can delete ZapPreferences",
+      "content_type": 27
+    },
+    "model": "auth.permission",
+    "pk": 81
+  },
+  {
+    "fields": {
+      "codename": "add_hitcount",
+      "name": "Can add hit count",
+      "content_type": 30
+    },
+    "model": "auth.permission",
+    "pk": 82
+  },
+  {
+    "fields": {
+      "codename": "change_hitcount",
+      "name": "Can change hit count",
+      "content_type": 30
+    },
+    "model": "auth.permission",
+    "pk": 83
+  },
+  {
+    "fields": {
+      "codename": "delete_hitcount",
+      "name": "Can delete hit count",
+      "content_type": 30
+    },
+    "model": "auth.permission",
+    "pk": 84
+  },
+  {
+    "fields": {
+      "codename": "add_pageviewcount",
+      "name": "Can add page view count",
+      "content_type": 31
+    },
+    "model": "auth.permission",
+    "pk": 85
+  },
+  {
+    "fields": {
+      "codename": "change_pageviewcount",
+      "name": "Can change page view count",
+      "content_type": 31
+    },
+    "model": "auth.permission",
+    "pk": 86
+  },
+  {
+    "fields": {
+      "codename": "delete_pageviewcount",
+      "name": "Can delete page view count",
+      "content_type": 31
+    },
+    "model": "auth.permission",
+    "pk": 87
+  },
+  {
+    "fields": {
+      "codename": "add_hitdatacount",
+      "name": "Can add hit data count",
+      "content_type": 32
+    },
+    "model": "auth.permission",
+    "pk": 88
+  },
+  {
+    "fields": {
+      "codename": "change_hitdatacount",
+      "name": "Can change hit data count",
+      "content_type": 32
+    },
+    "model": "auth.permission",
+    "pk": 89
+  },
+  {
+    "fields": {
+      "codename": "delete_hitdatacount",
+      "name": "Can delete hit data count",
+      "content_type": 32
+    },
+    "model": "auth.permission",
+    "pk": 90
+  },
+  {
+    "fields": {
+      "codename": "add_interesseestatistica",
+      "name": "Can add interesse estatistica",
+      "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 91
+  },
+  {
+    "fields": {
+      "codename": "change_interesseestatistica",
+      "name": "Can change interesse estatistica",
+      "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 92
+  },
+  {
+    "fields": {
+      "codename": "delete_interesseestatistica",
+      "name": "Can delete interesse estatistica",
+      "content_type": 17
+    },
+    "model": "auth.permission",
+    "pk": 93
+  },
+  {
+    "fields": {
+      "codename": "add_cidade",
+      "name": "Can add Cidade",
+      "content_type": 34
+    },
+    "model": "auth.permission",
+    "pk": 94
+  },
+  {
+    "fields": {
+      "codename": "change_cidade",
+      "name": "Can change Cidade",
+      "content_type": 34
+    },
+    "model": "auth.permission",
+    "pk": 95
+  },
+  {
+    "fields": {
+      "codename": "delete_cidade",
+      "name": "Can delete Cidade",
+      "content_type": 34
+    },
+    "model": "auth.permission",
+    "pk": 96
+  },
+  {
+    "fields": {
+      "codename": "add_regiao",
+      "name": "Can add Regi\u00e3o",
+      "content_type": 35
+    },
+    "model": "auth.permission",
+    "pk": 97
+  },
+  {
+    "fields": {
+      "codename": "change_regiao",
+      "name": "Can change Regi\u00e3o",
+      "content_type": 35
+    },
+    "model": "auth.permission",
+    "pk": 98
+  },
+  {
+    "fields": {
+      "codename": "delete_regiao",
+      "name": "Can delete Regi\u00e3o",
+      "content_type": 35
+    },
+    "model": "auth.permission",
+    "pk": 99
+  },
+  {
+    "fields": {
+      "codename": "add_bairro",
+      "name": "Can add Bairro",
+      "content_type": 36
+    },
+    "model": "auth.permission",
+    "pk": 100
+  },
+  {
+    "fields": {
+      "codename": "change_bairro",
+      "name": "Can change Bairro",
+      "content_type": 36
+    },
+    "model": "auth.permission",
+    "pk": 101
+  },
+  {
+    "fields": {
+      "codename": "delete_bairro",
+      "name": "Can delete Bairro",
+      "content_type": 36
+    },
+    "model": "auth.permission",
+    "pk": 102
+  },
+  {
+    "fields": {
+      "codename": "add_formadepagamento",
+      "name": "Can add Forma de Pagamento",
+      "content_type": 37
+    },
+    "model": "auth.permission",
+    "pk": 103
+  },
+  {
+    "fields": {
+      "codename": "change_formadepagamento",
+      "name": "Can change Forma de Pagamento",
+      "content_type": 37
+    },
+    "model": "auth.permission",
+    "pk": 104
+  },
+  {
+    "fields": {
+      "codename": "delete_formadepagamento",
+      "name": "Can delete Forma de Pagamento",
+      "content_type": 37
+    },
+    "model": "auth.permission",
+    "pk": 105
+  },
+  {
+    "fields": {
+      "codename": "add_areadelazer",
+      "name": "Can add \u00c1rea de lazer",
+      "content_type": 38
+    },
+    "model": "auth.permission",
+    "pk": 106
+  },
+  {
+    "fields": {
+      "codename": "change_areadelazer",
+      "name": "Can change \u00c1rea de lazer",
+      "content_type": 38
+    },
+    "model": "auth.permission",
+    "pk": 107
+  },
+  {
+    "fields": {
+      "codename": "delete_areadelazer",
+      "name": "Can delete \u00c1rea de lazer",
+      "content_type": 38
+    },
+    "model": "auth.permission",
+    "pk": 108
+  },
+  {
+    "fields": {
+      "codename": "add_condominio",
+      "name": "Can add Condom\u00ednio",
+      "content_type": 39
+    },
+    "model": "auth.permission",
+    "pk": 109
+  },
+  {
+    "fields": {
+      "codename": "change_condominio",
+      "name": "Can change Condom\u00ednio",
+      "content_type": 39
+    },
+    "model": "auth.permission",
+    "pk": 110
+  },
+  {
+    "fields": {
+      "codename": "delete_condominio",
+      "name": "Can delete Condom\u00ednio",
+      "content_type": 39
+    },
+    "model": "auth.permission",
+    "pk": 111
+  },
+  {
+    "fields": {
+      "codename": "add_imovel",
+      "name": "Can add Im\u00f3vel",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 112
+  },
+  {
+    "fields": {
+      "codename": "change_imovel",
+      "name": "Can change Im\u00f3vel",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 113
+  },
+  {
+    "fields": {
+      "codename": "delete_imovel",
+      "name": "Can delete Im\u00f3vel",
+      "content_type": 25
+    },
+    "model": "auth.permission",
+    "pk": 114
+  },
+  {
+    "fields": {
+      "codename": "add_bairrocomimoveis",
+      "name": "Can add Bairro com im\u00f3veis",
+      "content_type": 40
+    },
+    "model": "auth.permission",
+    "pk": 115
+  },
+  {
+    "fields": {
+      "codename": "change_bairrocomimoveis",
+      "name": "Can change Bairro com im\u00f3veis",
+      "content_type": 40
+    },
+    "model": "auth.permission",
+    "pk": 116
+  },
+  {
+    "fields": {
+      "codename": "delete_bairrocomimoveis",
+      "name": "Can delete Bairro com im\u00f3veis",
+      "content_type": 40
+    },
+    "model": "auth.permission",
+    "pk": 117
+  },
+  {
+    "fields": {
+      "codename": "add_foto",
+      "name": "Can add foto",
+      "content_type": 41
+    },
+    "model": "auth.permission",
+    "pk": 118
+  },
+  {
+    "fields": {
+      "codename": "change_foto",
+      "name": "Can change foto",
+      "content_type": 41
+    },
+    "model": "auth.permission",
+    "pk": 119
+  },
+  {
+    "fields": {
+      "codename": "delete_foto",
+      "name": "Can delete foto",
+      "content_type": 41
+    },
+    "model": "auth.permission",
+    "pk": 120
+  },
+  {
+    "fields": {
+      "codename": "add_descricaoimovel",
+      "name": "Can add descricao imovel",
+      "content_type": 42
+    },
+    "model": "auth.permission",
+    "pk": 121
+  },
+  {
+    "fields": {
+      "codename": "change_descricaoimovel",
+      "name": "Can change descricao imovel",
+      "content_type": 42
+    },
+    "model": "auth.permission",
+    "pk": 122
+  },
+  {
+    "fields": {
+      "codename": "delete_descricaoimovel",
+      "name": "Can delete descricao imovel",
+      "content_type": 42
+    },
+    "model": "auth.permission",
+    "pk": 123
+  },
+  {
+    "fields": {
+      "codename": "add_descricaocomodo",
+      "name": "Can add descricao comodo",
+      "content_type": 43
+    },
+    "model": "auth.permission",
+    "pk": 124
+  },
+  {
+    "fields": {
+      "codename": "change_descricaocomodo",
+      "name": "Can change descricao comodo",
+      "content_type": 43
+    },
+    "model": "auth.permission",
+    "pk": 125
+  },
+  {
+    "fields": {
+      "codename": "delete_descricaocomodo",
+      "name": "Can delete descricao comodo",
+      "content_type": 43
+    },
+    "model": "auth.permission",
+    "pk": 126
+  },
+  {
+    "fields": {
+      "codename": "add_historicodeimovel",
+      "name": "Can add historico",
+      "content_type": 44
+    },
+    "model": "auth.permission",
+    "pk": 127
+  },
+  {
+    "fields": {
+      "codename": "change_historicodeimovel",
+      "name": "Can change historico",
+      "content_type": 44
+    },
+    "model": "auth.permission",
+    "pk": 128
+  },
+  {
+    "fields": {
+      "codename": "delete_historicodeimovel",
+      "name": "Can delete historico",
+      "content_type": 44
+    },
+    "model": "auth.permission",
+    "pk": 129
+  },
+  {
+    "fields": {
+      "codename": "add_atendimento",
+      "name": "Can add Atendimento",
+      "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 130
+  },
+  {
+    "fields": {
+      "codename": "change_atendimento",
+      "name": "Can change Atendimento",
+      "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 131
+  },
+  {
+    "fields": {
+      "codename": "delete_atendimento",
+      "name": "Can delete Atendimento",
+      "content_type": 16
+    },
+    "model": "auth.permission",
+    "pk": 132
+  },
+  {
+    "fields": {
+      "codename": "add_proprietario",
+      "name": "Can add Proprietario",
+      "content_type": 45
+    },
+    "model": "auth.permission",
+    "pk": 133
+  },
+  {
+    "fields": {
+      "codename": "change_proprietario",
+      "name": "Can change Proprietario",
+      "content_type": 45
+    },
+    "model": "auth.permission",
+    "pk": 134
+  },
+  {
+    "fields": {
+      "codename": "delete_proprietario",
+      "name": "Can delete Proprietario",
+      "content_type": 45
+    },
+    "model": "auth.permission",
+    "pk": 135
+  },
+  {
+    "fields": {
+      "codename": "add_imobiliariapreferences",
+      "name": "Can add Prefer\u00eancia",
+      "content_type": 46
+    },
+    "model": "auth.permission",
+    "pk": 136
+  },
+  {
+    "fields": {
+      "codename": "change_imobiliariapreferences",
+      "name": "Can change Prefer\u00eancia",
+      "content_type": 46
+    },
+    "model": "auth.permission",
+    "pk": 137
+  },
+  {
+    "fields": {
+      "codename": "delete_imobiliariapreferences",
+      "name": "Can delete Prefer\u00eancia",
+      "content_type": 46
+    },
+    "model": "auth.permission",
+    "pk": 138
+  },
+  {
+    "fields": {
+      "codename": "add_colaborador",
+      "name": "Can add colaborador",
+      "content_type": 47
+    },
+    "model": "auth.permission",
+    "pk": 139
+  },
+  {
+    "fields": {
+      "codename": "change_colaborador",
+      "name": "Can change colaborador",
+      "content_type": 47
+    },
+    "model": "auth.permission",
+    "pk": 140
+  },
+  {
+    "fields": {
+      "codename": "delete_colaborador",
+      "name": "Can delete colaborador",
+      "content_type": 47
+    },
+    "model": "auth.permission",
+    "pk": 141
+  },
+  {
+    "fields": {
+      "codename": "add_corretor",
+      "name": "Can add corretor",
+      "content_type": 47
+    },
+    "model": "auth.permission",
+    "pk": 142
+  },
+  {
+    "fields": {
+      "codename": "change_corretor",
+      "name": "Can change corretor",
+      "content_type": 47
+    },
+    "model": "auth.permission",
+    "pk": 143
+  },
+  {
+    "fields": {
+      "codename": "delete_corretor",
+      "name": "Can delete corretor",
+      "content_type": 47
+    },
+    "model": "auth.permission",
+    "pk": 144
+  },
+  {
+    "fields": {
+      "codename": "add_parceiro",
+      "name": "Can add Parceiro",
+      "content_type": 49
+    },
+    "model": "auth.permission",
+    "pk": 145
+  },
+  {
+    "fields": {
+      "codename": "change_parceiro",
+      "name": "Can change Parceiro",
+      "content_type": 49
+    },
+    "model": "auth.permission",
+    "pk": 146
+  },
+  {
+    "fields": {
+      "codename": "delete_parceiro",
+      "name": "Can delete Parceiro",
+      "content_type": 49
+    },
+    "model": "auth.permission",
+    "pk": 147
+  },
+  {
+    "fields": {
+      "codename": "alterar_imovel",
+      "name": "",
+      "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 148
+  },
+  {
+    "fields": {
+      "codename": "acesso_completo",
+      "name": "",
+      "content_type": 4
+    },
+    "model": "auth.permission",
+    "pk": 149
+  },
+  {
+    "fields": {
+      "name": "estagiario",
+      "permissions": []
+    },
+    "model": "auth.group",
+    "pk": 1
+  },
+  {
+    "fields": {
+      "name": "gerente",
+      "permissions": []
+    },
+    "model": "auth.group",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "name": "corretor",
+      "permissions": []
+    },
+    "model": "auth.group",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "username": "gerente",
+      "first_name": "gerente",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2018-04-16T00:18:38.145Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": [
+        149,
+        148
+      ],
+      "password": "pbkdf2_sha256$20000$uYd8uwrPGk4X$cjq1Hz6srMAhE0CmculmUmKCbmonTNaJM90W/TN+l50=",
+      "email": "",
+      "date_joined": "2016-01-21T00:13:15Z"
+    },
+    "model": "auth.user",
+    "pk": 2
+  },
+  {
+    "fields": {
+      "username": "corretor",
+      "first_name": "Bill",
+      "last_name": "Corretor",
+      "is_active": true,
+      "is_superuser": false,
+      "is_staff": true,
+      "last_login": "2018-04-16T00:19:40.121Z",
+      "groups": [
+        3
+      ],
+      "user_permissions": [
+        148
+      ],
+      "password": "pbkdf2_sha256$20000$TYVpXQ9cwlP6$FbOingkdHlM9Ic10xOYIvHt2g1a1d78cAzTmQZRFEu4=",
+      "email": "bill@corretaza.com",
+      "date_joined": "2016-01-21T00:15:39Z"
+    },
+    "model": "auth.user",
+    "pk": 3
+  },
+  {
+    "fields": {
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "is_active": true,
+      "is_superuser": true,
+      "is_staff": true,
+      "last_login": "2018-04-16T00:17:22.011Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": [],
+      "password": "pbkdf2_sha256$20000$nj0xN177juEg$qvybjMF7wojPhKlzcaA2YRgrjYWONuCegCZWbSvLAVQ=",
+      "email": "admin@na-inter.net",
+      "date_joined": "2018-04-16T00:14:13.379Z"
+    },
+    "model": "auth.user",
+    "pk": 4
+  }
+]

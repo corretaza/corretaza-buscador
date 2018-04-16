@@ -1,0 +1,1977 @@
+[
+{
+  "pk": 1, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "S\u00e3o Jos\u00e9 dos Campos"
+  }
+},
+{
+  "pk": 2, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Ilha Bela"
+  }
+},
+{
+  "pk": 3, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Jacare\u00ed"
+  }
+},
+{
+  "pk": 4, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Jambeiro"
+  }
+},
+{
+  "pk": 5, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Ubatuba"
+  }
+},
+{
+  "pk": 6, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Ca\u00e7apava"
+  }
+},
+{
+  "pk": 7, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "S\u00e3o Paulo"
+  }
+},
+{
+  "pk": 8, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Para\u00edbuna"
+  }
+},
+{
+  "pk": 9, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Taubat\u00e9"
+  }
+},
+{
+  "pk": 10, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "S\u00e3o Francisco Xavier"
+  }
+},
+{
+  "pk": 11, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Itatiba"
+  }
+},
+{
+  "pk": 12, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Parais\u00f3polis"
+  }
+},
+{
+  "pk": 13, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Caraguatatuba"
+  }
+},
+{
+  "pk": 14, 
+  "model": "cidades.cidade", 
+  "fields": {
+    "nome": "Araruama"
+  }
+},
+
+
+{
+  "pk": 1, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 1, 
+    "nome": "Sul"
+  }
+},
+{
+  "pk": 2, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 1, 
+    "nome": "Norte"
+  }
+},
+{
+  "pk": 3, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 1, 
+    "nome": "Leste"
+  }
+},
+{
+  "pk": 4, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 1, 
+    "nome": "Oeste"
+  }
+},
+{
+  "pk": 5, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 1, 
+    "nome": "Sudeste"
+  }
+},
+{
+  "pk": 6, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 1, 
+    "nome": "Central"
+  }
+},
+{
+  "pk": 7, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 3, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 9, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 8, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 10, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 6, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 11, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 10, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 12, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 4, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 13, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 12, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 14, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 13, 
+    "nome": "Urbana"
+  }
+},
+{
+  "pk": 15, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 5, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 16, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 9, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 17, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 11, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 18, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 2, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 19, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 7, 
+    "nome": "Todas"
+  }
+},
+{
+  "pk": 20, 
+  "model": "cidades.regiao", 
+  "fields": {
+    "cidade": 14, 
+    "nome": "Urbana"
+  }
+},
+
+
+
+{
+  "pk": 1, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 4, 
+    "cidade": 1, 
+    "nome_popular": "Jardim \u00c1qu\u00e1rius", 
+    "nome": "Parque Res. Aquarius"
+  }
+},
+{
+  "pk": 2, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Bosque Dos Eucaliptos"
+  }
+},
+{
+  "pk": 3, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 4, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Urbanova"
+  }
+},
+{
+  "pk": 4, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Reserva do Bosque"
+  }
+},
+{
+  "pk": 5, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "Jardim Morumbi", 
+    "nome": "Conj. Res. Morumbi"
+  }
+},
+{
+  "pk": 6, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Sat\u00e9lite"
+  }
+},
+{
+  "pk": 7, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Bosque Dos Ipes"
+  }
+},
+{
+  "pk": 8, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Boa Vista"
+  }
+},
+{
+  "pk": 9, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Sul"
+  }
+},
+{
+  "pk": 11, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 4, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Das Industrias"
+  }
+},
+{
+  "pk": 12, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Ema"
+  }
+},
+{
+  "pk": 13, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Maringa"
+  }
+},
+{
+  "pk": 14, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Santana"
+  }
+},
+{
+  "pk": 15, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 4, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Alvorada"
+  }
+},
+{
+  "pk": 16, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Esplanada"
+  }
+},
+{
+  "pk": 17, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Parque Industrial"
+  }
+},
+{
+  "pk": 18, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Del Rey"
+  }
+},
+{
+  "pk": 19, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Estoril"
+  }
+},
+{
+  "pk": 20, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim America"
+  }
+},
+{
+  "pk": 21, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa Julia"
+  }
+},
+{
+  "pk": 22, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "S\u00e3o Judas Tadeu"
+  }
+},
+{
+  "pk": 23, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Oriente"
+  }
+},
+{
+  "pk": 24, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Vila Zez\u00e9"
+  }
+},
+{
+  "pk": 25, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Vila Branca"
+  }
+},
+{
+  "pk": 26, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Augusta"
+  }
+},
+{
+  "pk": 27, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Residencial Jatoba"
+  }
+},
+{
+  "pk": 28, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santo Onofre"
+  }
+},
+{
+  "pk": 29, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "Vila Adyana", 
+    "nome": "Vila Ady'Ana"
+  }
+},
+{
+  "pk": 30, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Centro"
+  }
+},
+{
+  "pk": 32, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Residencial Gazzo"
+  }
+},
+{
+  "pk": 33, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Paulista"
+  }
+},
+{
+  "pk": 34, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Bela Vista"
+  }
+},
+{
+  "pk": 35, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Vista Verde", 
+    "nome": "Cidade Vista Verde"
+  }
+},
+{
+  "pk": 36, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa Edwiges"
+  }
+},
+{
+  "pk": 37, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Eugenio De Melo"
+  }
+},
+{
+  "pk": 38, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Maria"
+  }
+},
+{
+  "pk": 39, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Residencial S\u00e3o Francisco"
+  }
+},
+{
+  "pk": 40, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Industrial"
+  }
+},
+{
+  "pk": 42, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Parque Interlagos"
+  }
+},
+{
+  "pk": 44, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Parque dos Sinos"
+  }
+},
+{
+  "pk": 45, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Jardim do Marques"
+  }
+},
+{
+  "pk": 46, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Castanheiras"
+  }
+},
+{
+  "pk": 47, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Alto Santa Helena"
+  }
+},
+{
+  "pk": 48, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Cristal Park"
+  }
+},
+{
+  "pk": 49, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa Ines"
+  }
+},
+{
+  "pk": 50, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Capuava"
+  }
+},
+{
+  "pk": 51, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Galo Branco", 
+    "nome": "Residencial Galo Branco"
+  }
+},
+{
+  "pk": 52, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Mirante Do Vale"
+  }
+},
+{
+  "pk": 53, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Monte Castelo"
+  }
+},
+{
+  "pk": 54, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Uira"
+  }
+},
+{
+  "pk": 55, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Dos Bandeirantes"
+  }
+},
+{
+  "pk": 56, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "Altos de Santana", 
+    "nome": "Jardim Altos De Santana"
+  }
+},
+{
+  "pk": 57, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Cerejeiras"
+  }
+},
+{
+  "pk": 58, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Portugal"
+  }
+},
+{
+  "pk": 59, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Beth\u00e2nia"
+  }
+},
+{
+  "pk": 60, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 13, 
+    "cidade": 12, 
+    "nome_popular": "", 
+    "nome": "Regiao Rural"
+  }
+},
+{
+  "pk": 61, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa Rosa"
+  }
+},
+{
+  "pk": 62, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 19, 
+    "cidade": 7,  
+    "nome_popular": "", 
+    "nome": "Santo Antonio"
+  }
+},
+{
+  "pk": 63, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Oriental"
+  }
+},
+{
+  "pk": 64, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Lagoinha"
+  }
+},
+{
+  "pk": 65, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 14, 
+    "cidade": 13, 
+    "nome_popular": "", 
+    "nome": "Barranco Alto"
+  }
+},
+{
+  "pk": 66, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 14, 
+    "cidade": 13, 
+    "nome_popular": "", 
+    "nome": "Martins de S\u00e1"
+  }
+},
+{
+  "pk": 67, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 4, 
+    "cidade": 1, 
+    "nome_popular": "Jardim das Colinas", 
+    "nome": "Jardim Colinas"
+  }
+},
+{
+  "pk": 68, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Parque California"
+  }
+},
+{
+  "pk": 69, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Das Flores"
+  }
+},
+{
+  "pk": 70, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Da Granja"
+  }
+},
+{
+  "pk": 71, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 9, 
+    "cidade": 8, 
+    "nome_popular": "", 
+    "nome": "Recanto Santa Barbara"
+  }
+},
+{
+  "pk": 72, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "31 de Mar\u00e7o", 
+    "nome": "Conj.Res.31 De Mar\u00e7o"
+  }
+},
+{
+  "pk": 73, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Residencial Santa Paula"
+  }
+},
+{
+  "pk": 74, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Nova Republica"
+  }
+},
+{
+  "pk": 75, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Paraiso"
+  }
+},
+{
+  "pk": 76, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Jardim California"
+  }
+},
+{
+  "pk": 77, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "Vale do Sol", 
+    "nome": "Jardim Vale Do Sol"
+  }
+},
+{
+  "pk": 78, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 10, 
+    "cidade": 6, 
+    "nome_popular": "", 
+    "nome": "Roseirinha"
+  }
+},
+{
+  "pk": 79, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Bom Retiro"
+  }
+},
+{
+  "pk": 80, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Putim"
+  }
+},
+{
+  "pk": 81, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Pousada do Vale", 
+    "nome": "Ch\u00e1cara Pousada Do Vale"
+  }
+},
+{
+  "pk": 83, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 15, 
+    "cidade": 5, 
+    "nome_popular": "", 
+    "nome": "Centro"
+  }
+},
+{
+  "pk": 84, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 10, 
+    "cidade": 6, 
+    "nome_popular": "", 
+    "nome": "Ca\u00e7apava Velha"
+  }
+},
+{
+  "pk": 85, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa Ines I"
+  }
+},
+{
+  "pk": 86, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Candida"
+  }
+},
+{
+  "pk": 87, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Cruzeiro Do Sul"
+  }
+},
+{
+  "pk": 88, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Petropolis"
+  }
+},
+{
+  "pk": 89, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Souto"
+  }
+},
+{
+  "pk": 91, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Sol Nascente"
+  }
+},
+{
+  "pk": 92, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Anhembi"
+  }
+},
+{
+  "pk": 93, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Oswaldo Cruz"
+  }
+},
+{
+  "pk": 94, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Parque Martim Cerer\u00ea"
+  }
+},
+{
+  "pk": 95, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Ch\u00e1caras Reunidas"
+  }
+},
+{
+  "pk": 96, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila S\u00e3o Bento"
+  }
+},
+{
+  "pk": 97, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Nova Esperan\u00e7a", 
+    "nome": "Parque Nova Esperan\u00e7a"
+  }
+},
+{
+  "pk": 98, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Jardim das Flores", 
+    "nome": "Conj.Res.Jardim Das Flores"
+  }
+},
+{
+  "pk": 99, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 11, 
+    "cidade": 10, 
+    "nome_popular": "", 
+    "nome": "Centro"
+  }
+},
+{
+  "pk": 100, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 9, 
+    "cidade": 8, 
+    "nome_popular": "", 
+    "nome": "Fazenda da Comadre"
+  }
+},
+{
+  "pk": 101, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 11, 
+    "cidade": 10, 
+    "nome_popular": "", 
+    "nome": "Santa Cruz"
+  }
+},
+{
+  "pk": 102, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim S\u00e3o Dimas"
+  }
+},
+{
+  "pk": 103, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Tatetuba"
+  }
+},
+{
+  "pk": 104, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Jardim Florida"
+  }
+},
+{
+  "pk": 105, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Veneza"
+  }
+},
+{
+  "pk": 106, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 12, 
+    "cidade": 4, 
+    "nome_popular": "", 
+    "nome": "Recanto Santa Barbara"
+  }
+},
+{
+  "pk": 107, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Torr\u00e3o De Ouro II"
+  }
+},
+{
+  "pk": 108, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Parque Dos Ip\u00eas"
+  }
+},
+{
+  "pk": 109, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 16, 
+    "cidade": 9, 
+    "nome_popular": "", 
+    "nome": "Catagua"
+  }
+},
+{
+  "pk": 110, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Colorado"
+  }
+},
+{
+  "pk": 111, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Colonial"
+  }
+},
+{
+  "pk": 112, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Adriana"
+  }
+},
+{
+  "pk": 113, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "Jardim Apolo", 
+    "nome": "Jardim Apolo I"
+  }
+},
+{
+  "pk": 114, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Alto Da Ponte"
+  }
+},
+{
+  "pk": 115, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "Esplanada do Sol", 
+    "nome": "Residencial Esplanada Do Sol"
+  }
+},
+{
+  "pk": 116, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Terras Do Sul"
+  }
+},
+{
+  "pk": 117, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Parque Residencial Uni\u00e3o"
+  }
+},
+{
+  "pk": 118, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "S\u00e3o Jo\u00e3o"
+  }
+},
+{
+  "pk": 119, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "D. Pedro"
+  }
+},
+{
+  "pk": 120, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Bairrinho"
+  }
+},
+{
+  "pk": 121, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa In\u00eas III"
+  }
+},
+{
+  "pk": 122, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Residencial Alto Do Bosque"
+  }
+},
+{
+  "pk": 123, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Freitas"
+  }
+},
+{
+  "pk": 124, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Torr\u00e3o De Ouro"
+  }
+},
+{
+  "pk": 125, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 12, 
+    "cidade": 4, 
+    "nome_popular": "", 
+    "nome": "Cana\u00e3"
+  }
+},
+{
+  "pk": 126, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Vista Linda", 
+    "nome": "Residencial Vista Linda"
+  }
+},
+{
+  "pk": 127, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "Ch\u00e1cara S\u00e3o Jos\u00e9", 
+    "nome": "Ch\u00e1caras S\u00e3o Jos\u00e9"
+  }
+},
+{
+  "pk": 128, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Let\u00f4nia"
+  }
+},
+{
+  "pk": 129, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Rubi"
+  }
+},
+{
+  "pk": 130, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "Jardim Flamboyant", 
+    "nome": "Residencial Flamboyant"
+  }
+},
+{
+  "pk": 131, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "Jardim San Marino", 
+    "nome": "Res. San Marino"
+  }
+},
+{
+  "pk": 132, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Espelho D'\u00c1gua"
+  }
+},
+{
+  "pk": 133, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 4, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Limoeiro"
+  }
+},
+{
+  "pk": 134, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 6, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Apolo II"
+  }
+},
+{
+  "pk": 135, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 12, 
+    "cidade": 4, 
+    "nome_popular": "", 
+    "nome": "Tapanh\u00e3o"
+  }
+},
+{
+  "pk": 136, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Imperial"
+  }
+},
+{
+  "pk": 137, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 12, 
+    "cidade": 4, 
+    "nome_popular": "", 
+    "nome": "Reserva S\u00e3o Francisco"
+  }
+},
+{
+  "pk": 138, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Rep\u00fablica"
+  }
+},
+{
+  "pk": 139, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Mariana II"
+  }
+},
+{
+  "pk": 140, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim S\u00e3o Vicente"
+  }
+},
+{
+  "pk": 141, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 17, 
+    "cidade": 11, 
+    "nome_popular": "", 
+    "nome": "Moenda"
+  }
+},
+{
+  "pk": 142, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Ism\u00eania"
+  }
+},
+{
+  "pk": 143, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Residencial De Ville"
+  }
+},
+{
+  "pk": 144, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Morada Do Sol"
+  }
+},
+{
+  "pk": 145, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Nair"
+  }
+},
+{
+  "pk": 146, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 12, 
+    "cidade": 4, 
+    "nome_popular": "", 
+    "nome": "Jambeiro"
+  }
+},
+{
+  "pk": 147, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 18, 
+    "cidade": 2, 
+    "nome_popular": "", 
+    "nome": "Siriuba I"
+  }
+},
+{
+  "pk": 148, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Jardim S\u00e3o Paulo"
+  }
+},
+{
+  "pk": 149, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Parque Meia Lua"
+  }
+},
+{
+  "pk": 150, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Palmeiras De S\u00e3o Jos\u00e9"
+  }
+},
+{
+  "pk": 151, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Jardim Luiza"
+  }
+},
+{
+  "pk": 152, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Boa Esperan\u00e7a", 
+    "nome": "Ch. Boa Esperan\u00e7a"
+  }
+},
+{
+  "pk": 153, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "Novo Horizonte", 
+    "nome": "Parque Novo Horizonte"
+  }
+},
+{
+  "pk": 154, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 9, 
+    "cidade": 8, 
+    "nome_popular": "", 
+    "nome": "Lagoa Azul"
+  }
+},
+{
+  "pk": 155, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa Maria"
+  }
+},
+{
+  "pk": 156, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 19, 
+    "cidade": 7, 
+    "nome_popular": "", 
+    "nome": "Mandaqui"
+  }
+},
+{
+  "pk": 157, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 5, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Santa Luzia"
+  }
+},
+{
+  "pk": 158, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Ester"
+  }
+},
+{
+  "pk": 159, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila Tesouro"
+  }
+},
+{
+  "pk": 160, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Americano"
+  }
+},
+{
+  "pk": 161, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 10, 
+    "cidade": 6, 
+    "nome_popular": "", 
+    "nome": "Vila Paraiso"
+  }
+},
+{
+  "pk": 162, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Pararangaba"
+  }
+},
+{
+  "pk": 163, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Bairro do Pedregulho"
+  }
+},
+{
+  "pk": 164, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 1, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Madureira"
+  }
+},
+{
+  "pk": 165, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Campos de S\u00e3o Jos\u00e9"
+  }
+},
+{
+  "pk": 166, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 15, 
+    "cidade": 5, 
+    "nome_popular": "", 
+    "nome": "Lazaro"
+  }
+},
+{
+  "pk": 167, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Residencial Armando Moreira Righi"
+  }
+},
+{
+  "pk": 168, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 9, 
+    "cidade": 8, 
+    "nome_popular": "", 
+    "nome": "Quinta dos Lagos"
+  }
+},
+{
+  "pk": 169, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 14, 
+    "cidade": 13, 
+    "nome_popular": "", 
+    "nome": "Massaguacu"
+  }
+},
+{
+  "pk": 170, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 7, 
+    "cidade": 3, 
+    "nome_popular": "", 
+    "nome": "Parque Itamarati"
+  }
+},
+{
+  "pk": 171, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 2, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Vila S\u00e3o Geraldo"
+  }
+},
+{
+  "pk": 172, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 9, 
+    "cidade": 8, 
+    "nome_popular": "", 
+    "nome": "Vargem Grande"
+  }
+},
+{
+  "pk": 173, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 19, 
+    "cidade": 7, 
+    "nome_popular": "", 
+    "nome": "Cidade Ademar"
+  }
+},
+{
+  "pk": 174, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Valparaiba"
+  }
+},
+{
+  "pk": 175, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Campo dos Alem\u00e3es"
+  }
+},
+{
+  "pk": 176, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 20, 
+    "cidade": 14, 
+    "nome_popular": "", 
+    "nome": "Iguabinha"
+  }
+},
+{
+  "pk": 177, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim Ouro Preto"
+  }
+},
+{
+  "pk": 178, 
+  "model": "cidades.bairro", 
+  "fields": {
+    "regiao": 3, 
+    "cidade": 1, 
+    "nome_popular": "", 
+    "nome": "Jardim S\u00e3o Leopoldo"
+  }
+}
+]

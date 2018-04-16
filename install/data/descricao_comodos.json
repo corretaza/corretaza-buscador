@@ -1,0 +1,1074 @@
+[
+{
+  "pk": 1, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala"
+  }
+},
+{
+  "pk": 2, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala De Tv"
+  }
+},
+{
+  "pk": 3, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Dormit\u00f3rio"
+  }
+},
+{
+  "pk": 4, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala Para 2 Ambientes"
+  }
+},
+{
+  "pk": 5, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Planejada"
+  }
+},
+{
+  "pk": 6, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Americana"
+  }
+},
+{
+  "pk": 7, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Escrit\u00f3rio"
+  }
+},
+{
+  "pk": 8, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Lavabo"
+  }
+},
+{
+  "pk": 9, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Wc Social"
+  }
+},
+{
+  "pk": 10, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Despensa"
+  }
+},
+{
+  "pk": 11, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Despensa Com Prateleiras"
+  }
+},
+{
+  "pk": 12, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "\u00c1rea De Servi\u00e7o"
+  }
+},
+{
+  "pk": 13, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "\u00c1rea De Servi\u00e7o Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 19, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Depend\u00eancia De Empregada"
+  }
+},
+{
+  "pk": 20, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Wc Empregada"
+  }
+},
+{
+  "pk": 23, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Hoby Box"
+  }
+},
+{
+  "pk": 31, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 Suite"
+  }
+},
+{
+  "pk": 32, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites"
+  }
+},
+{
+  "pk": 33, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites (Uma Suite Master)"
+  }
+},
+{
+  "pk": 34, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha"
+  }
+},
+{
+  "pk": 35, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala Para 3 Ambientes"
+  }
+},
+{
+  "pk": 36, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 37, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites"
+  }
+},
+{
+  "pk": 38, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites (Uma Suite Master)"
+  }
+},
+{
+  "pk": 39, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 4 Suites (1 Master)"
+  }
+},
+{
+  "pk": 40, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Dormit\u00f3rios"
+  }
+},
+{
+  "pk": 41, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Dormit\u00f3rios"
+  }
+},
+{
+  "pk": 42, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Dormit\u00f3rios"
+  }
+},
+{
+  "pk": 43, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Dormit\u00f3rios"
+  }
+},
+{
+  "pk": 44, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "1 Dormit\u00f3rio"
+  }
+},
+{
+  "pk": 45, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites (Uma Suite Com Hidromassagem)"
+  }
+},
+{
+  "pk": 46, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "6 Dormit\u00f3rios"
+  }
+},
+{
+  "pk": 47, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 Suite Master"
+  }
+},
+{
+  "pk": 48, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 Suite Master Com Closet E Hidro"
+  }
+},
+{
+  "pk": 49, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "1 Dormit\u00f3rio Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 50, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Dormit\u00f3rios Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 51, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Dormit\u00f3rios Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 52, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Dormit\u00f3rios Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 53, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Dormit\u00f3rios Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 54, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Copa"
+  }
+},
+{
+  "pk": 55, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 4 Suites"
+  }
+},
+{
+  "pk": 56, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 Suite Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 57, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala Para 4 Ambientes"
+  }
+},
+{
+  "pk": 58, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 Suite Com Hidromassagem"
+  }
+},
+{
+  "pk": 59, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala De Jantar"
+  }
+},
+{
+  "pk": 60, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Dormit\u00f3rios (3 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 61, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala De Estar"
+  }
+},
+{
+  "pk": 62, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Escrit\u00f3rio Planejado"
+  }
+},
+{
+  "pk": 63, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Dormit\u00f3rios (2 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 64, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Dormit\u00f3rios (1 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 65, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 Suite Com Closet"
+  }
+},
+{
+  "pk": 66, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites (Uma Suite Master Com Closet E Hidro)"
+  }
+},
+{
+  "pk": 67, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites (Uma Suite Com Closet)"
+  }
+},
+{
+  "pk": 68, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 4 Suites (Duas Master Com Closet E Hidro)"
+  }
+},
+{
+  "pk": 69, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 4 Suites E (2 Suites Americana)"
+  }
+},
+{
+  "pk": 70, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 Suite Com Sacada"
+  }
+},
+{
+  "pk": 71, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Dormit\u00f3rios (1 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 72, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Dormit\u00f3rios (2 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 73, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites (Uma Com Sacada E Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 74, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites (Uma Suite Master Com Hidromassagem)"
+  }
+},
+{
+  "pk": 75, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Lavanderia"
+  }
+},
+{
+  "pk": 76, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Wc Social (01 Com Hidro E Aquecedor)"
+  }
+},
+{
+  "pk": 77, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites (Uma Com Closet)"
+  }
+},
+{
+  "pk": 78, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Wc Social Com Box"
+  }
+},
+{
+  "pk": 79, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Wc Social Com Gabinete"
+  }
+},
+{
+  "pk": 80, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Wc Social Com Box E Gabinete"
+  }
+},
+{
+  "pk": 81, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Americana Com Churrasqueira"
+  }
+},
+{
+  "pk": 82, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Americana Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 83, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites (Uma Com Closet E Sacada)"
+  }
+},
+{
+  "pk": 84, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites Com Closet (Uma Master)"
+  }
+},
+{
+  "pk": 85, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Dormit\u00f3rios Com Sacada (4 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 86, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Com Arm\u00e1rios, Fog\u00e3o E Coifa"
+  }
+},
+{
+  "pk": 87, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 5 Suites, 2 Com Sacada (1 Suite Master) "
+  }
+},
+{
+  "pk": 88, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Dormit\u00f3rios (3 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 89, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites Com Sacada"
+  }
+},
+{
+  "pk": 90, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala \u00cdntima"
+  }
+},
+{
+  "pk": 91, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Dormit\u00f3rios Mobiliados"
+  }
+},
+{
+  "pk": 92, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Dormit\u00f3rios (1 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 93, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 5 Suites Com Sacada"
+  }
+},
+{
+  "pk": 94, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites Com Closet (Uma Com Hidro)"
+  }
+},
+{
+  "pk": 95, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 5 Suites"
+  }
+},
+{
+  "pk": 96, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala Comercial"
+  }
+},
+{
+  "pk": 97, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Americana Planejada"
+  }
+},
+{
+  "pk": 98, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 4 Suites Com Sacada"
+  }
+},
+{
+  "pk": 99, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "7 Dormit\u00f3rios (6 Com Arm\u00e1rios E 2 Com Ar Condicionado)"
+  }
+},
+{
+  "pk": 100, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala De Tv Com Bar E Ar Condicionado"
+  }
+},
+{
+  "pk": 101, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Depend\u00eancia De Empregada Completa"
+  }
+},
+{
+  "pk": 102, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites Master"
+  }
+},
+{
+  "pk": 103, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Dormit\u00f3rios (4 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 104, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Dormit\u00f3rios (2 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 105, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "1 Suite"
+  }
+},
+{
+  "pk": 106, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "1 Suite Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 107, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Suites"
+  }
+},
+{
+  "pk": 108, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Suites Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 109, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites"
+  }
+},
+{
+  "pk": 110, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 111, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Suites"
+  }
+},
+{
+  "pk": 112, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Suites Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 113, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Suites Com Arm\u00e1rios (Sendo 1 Suite Master)"
+  }
+},
+{
+  "pk": 114, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Planejada Com Fog\u00e3o"
+  }
+},
+{
+  "pk": 115, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites (1 Com Hidromassagem)"
+  }
+},
+{
+  "pk": 116, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Su\u00edtes Com Closet"
+  }
+},
+{
+  "pk": 117, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Suites (Sendo1 Master) E 2 Suites Americanas"
+  }
+},
+{
+  "pk": 118, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sal\u00e3o"
+  }
+},
+{
+  "pk": 119, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Suites Americanas (1 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 120, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Suites Americanas Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 121, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Suites (2 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 122, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites Com Hidro"
+  }
+},
+{
+  "pk": 123, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites (1 Com Hidro)"
+  }
+},
+{
+  "pk": 124, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites (1 Master E 1 Com Hidro)"
+  }
+},
+{
+  "pk": 125, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites ( Sendo 2 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 126, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites Com Arm\u00e1rios (Sendo Uma Master)"
+  }
+},
+{
+  "pk": 127, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Dormit\u00f3rios (Um Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 128, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites Com Sacada (Uma Master)"
+  }
+},
+{
+  "pk": 129, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Planejada Com Cooktop E Forno"
+  }
+},
+{
+  "pk": 130, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites (Sendo Uma Master Com Hidro)"
+  }
+},
+{
+  "pk": 131, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites (Sendo 1 Master E 1 Com Closet)"
+  }
+},
+{
+  "pk": 132, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Su\u00edtes Master"
+  }
+},
+{
+  "pk": 133, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Suites Com Arm\u00e1rios (Sendo 1 Com Hidro E Closet)"
+  }
+},
+{
+  "pk": 134, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 3 Suites (2 Suites Americanas)"
+  }
+},
+{
+  "pk": 135, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 2 Suites Americana Com Hidro E Closet"
+  }
+},
+{
+  "pk": 136, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites (Sendo 1 Revers\u00edvel)"
+  }
+},
+{
+  "pk": 137, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Planejada Com Forno, Forg\u00e3o E Coifa"
+  }
+},
+{
+  "pk": 138, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Suites (Sendo1 Master)"
+  }
+},
+{
+  "pk": 139, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "13 Dormit\u00f3rios Com Arm\u00e1rios"
+  }
+},
+{
+  "pk": 140, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "4 Suites (Sendo 1 Suite Master)"
+  }
+},
+{
+  "pk": 141, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "5 Suites Com Arm\u00e1rios E Ar Condicionado"
+  }
+},
+{
+  "pk": 142, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Su\u00edtes Americanas"
+  }
+},
+{
+  "pk": 143, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "2 Suites (1 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 144, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "3 Suites (sendo 1 Com Arm\u00e1rios)"
+  }
+},
+{
+  "pk": 145, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha Americana com Ilha"
+  }
+},
+{
+  "pk": 146, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Cozinha com Ilha"
+  }
+},
+{
+  "pk": 147, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sendo 1 suite com hidro e closet"
+  }
+},
+{
+  "pk": 148, 
+  "model": "ibuscador.descricaocomodo", 
+  "fields": {
+    "tipo_imovel": "apartamento", 
+    "descricao": "Sala de home theater"
+  }
+}
+]

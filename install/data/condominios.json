@@ -1,0 +1,3819 @@
+[
+{
+  "pk": 2, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 25, 
+    "ano_construcao": 0, 
+    "nome": "Ed. P\u00e1tio Condom\u00ednio Clube", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Jesus Garcia", 
+    "numero": "112", 
+    "cep": "12246875", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+        "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      18, 
+      11, 
+      28, 
+      12, 
+      19, 
+      20, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      13, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Gafisa"
+  }
+},
+{
+  "pk": 3, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Colorato", 
+    "blocos": 0, 
+    "bairro": 5, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Dr. Jo\u00e3o Batista De Souza Soares", 
+    "numero": "2589", 
+    "cep": "12236660", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      7, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 4, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 2, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Residencial Mantiqueira", 
+    "blocos": 0, 
+    "bairro": 8, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA SANTO ANTONIO DO PINHAL", 
+    "numero": "0", 
+    "cep": "12213647", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      21, 
+      9, 
+      22
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 5, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 2, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Du Parque", 
+    "blocos": 0, 
+    "bairro": 14, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Rui Barbosa", 
+    "numero": "1077", 
+    "cep": "12235835", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 7, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. San Marino", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA LEANDRO FERNANDES DOS SANTOS", 
+    "numero": "266", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      7, 
+      11, 
+      20, 
+      14
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 8, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Floradas Do Paratehy", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA LEANDRO FERNANDES DOS SANTOS", 
+    "numero": "266", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      23, 
+      8, 
+      9, 
+      14
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 9, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Urbanova Vi", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA IPATINGA", 
+    "numero": "410", 
+    "cep": "12233370", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 10, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 4, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Do Bosque I", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Ipatinga", 
+    "numero": "410", 
+    "cep": "12230082", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 11, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Paloma", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Matias Peres", 
+    "numero": "183", 
+    "cep": "12244576", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 12, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Altos Da Serra Iv", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA PROF. ROBERVAL FROES", 
+    "numero": "390", 
+    "cep": "12242460", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 13, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Mediterr\u00e2neo", 
+    "blocos": 0, 
+    "bairro": 16, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Prof. Roberval Froes", 
+    "numero": "390", 
+    "cep": "12242460", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      11, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Dado"
+  }
+},
+{
+  "pk": 14, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Solana", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Pedro Tursi", 
+    "numero": "321", 
+    "cep": "12232380", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 15, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 4, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Primavera", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Lamartini Maia Silva Torres", 
+    "numero": "177", 
+    "cep": "12232380", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 16, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 4, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Campos Altos", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Jo\u00e3o Fonseca Dos Santos", 
+    "numero": "59", 
+    "cep": "12230088", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 17, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Coleginho", 
+    "blocos": 0, 
+    "bairro": 24, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA AN\u00cdBAL", 
+    "numero": "184", 
+    "cep": "12310780", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      7, 
+      20
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 18, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 14, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Bell\u00e1gio", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Dos Dourados", 
+    "numero": "81", 
+    "cep": "  ", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      20, 
+      2, 
+      3, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Garlic"
+  }
+},
+{
+  "pk": 19, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 31, 
+    "ano_construcao": 0, 
+    "nome": "Ed. The View", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Cassiano Ricardo", 
+    "numero": "1411", 
+    "cep": "12240540", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      11, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Montante"
+  }
+},
+{
+  "pk": 20, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Varandas Bouganville", 
+    "blocos": 0, 
+    "bairro": 11, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Dos Girassois", 
+    "numero": "380", 
+    "cep": "12246870", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Primon Engenharia"
+  }
+},
+{
+  "pk": 21, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. The One Office Tower", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Cassiano Ricardo", 
+    "numero": "601", 
+    "cep": "12236495", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Santa Isabel / Montante"
+  }
+},
+{
+  "pk": 22, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Jardinatti", 
+    "blocos": 0, 
+    "bairro": 9, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Mauricio Cardoso", 
+    "numero": "55", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      20, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Rossi"
+  }
+},
+{
+  "pk": 23, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Side Vale Office", 
+    "blocos": 0, 
+    "bairro": 93, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Rep\u00fablica Do Iraque", 
+    "numero": "40", 
+    "cep": "12216540", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Ditolvo"
+  }
+},
+{
+  "pk": 24, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Amadeus Boulevard", 
+    "blocos": 0, 
+    "bairro": 67, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Jorge Cury", 
+    "numero": "350", 
+    "cep": "12243081", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      7, 
+      2, 
+      3, 
+      9, 
+      4, 
+      5
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 25, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Solar Dos Pinheiros", 
+    "blocos": 0, 
+    "bairro": 16, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. S\u00e3o Jo\u00e3o", 
+    "numero": "323", 
+    "cep": "12242840", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      20, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 26, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 12, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Solar Do Vale", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Adolpho Castanho", 
+    "numero": "100", 
+    "cep": "12231730", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      16, 
+      1, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 27, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Brisas Do Vale", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Castor", 
+    "numero": "25", 
+    "cep": "12230320", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 28, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Solar Dos Eucaliptos", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Ouro Fino", 
+    "numero": "220", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 29, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Pontal Da Fortaleza", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Da Alegria", 
+    "numero": "0", 
+    "cep": "12230086", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 30, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Rio Jaguari", 
+    "blocos": 0, 
+    "bairro": 30, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Luiz Jacinto", 
+    "numero": "265", 
+    "cep": "12245710", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 31, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Philladelphia", 
+    "blocos": 0, 
+    "bairro": 12, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Madre De Paula De S\u00e3o Jos\u00e9", 
+    "numero": "354", 
+    "cep": "  ", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Terra Sim\u00e3o"
+  }
+},
+{
+  "pk": 32, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. San Giusepe", 
+    "blocos": 0, 
+    "bairro": 30, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Major Antonio Domingues", 
+    "numero": "285", 
+    "cep": "12245750", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 33, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Villa Cambu\u00ed", 
+    "blocos": 0, 
+    "bairro": 33, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA ANA GON\u00c7ALVES DA CUNHA", 
+    "numero": "751", 
+    "cep": "12215390", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      14, 
+      4
+    ], 
+    "construtora": "Tadeu Rossi"
+  }
+},
+{
+  "pk": 34, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Golden Park", 
+    "blocos": 0, 
+    "bairro": 33, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Itoror\u00f3", 
+    "numero": "571", 
+    "cep": "12216440", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 35, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Bristol", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Dos Atuns", 
+    "numero": "54", 
+    "cep": "12237010", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 36, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 13, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Spazio Campo De Savoya", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Icatu", 
+    "numero": "390", 
+    "cep": "12237010", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      12, 
+      20, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Mrv"
+  }
+},
+{
+  "pk": 37, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 5, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Vila Inglesa", 
+    "blocos": 0, 
+    "bairro": 21, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA L\u00c1ZARO IN\u00c1CIO RIBEIRO", 
+    "numero": "219", 
+    "cep": "12228286", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      9
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 38, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Pontal Do Sau\u00edpe", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Jo\u00e3o Fonseca Dos Santos", 
+    "numero": "60", 
+    "cep": "12230088", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 39, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Varandas Do Parque", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Terezina", 
+    "numero": "54", 
+    "cep": "12235610", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      11, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 40, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Monte Verde", 
+    "blocos": 0, 
+    "bairro": 34, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Jos\u00e9 Leite Da Silva", 
+    "numero": "250", 
+    "cep": "12209110", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 41, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Isabela", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Polar", 
+    "numero": "240", 
+    "cep": "12235831", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 42, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Vilma", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Kiyashi Onomoto", 
+    "numero": "78", 
+    "cep": "12230088", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      4, 
+      6
+    ], 
+    "construtora": "M Torres"
+  }
+},
+{
+  "pk": 43, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 15, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Pontal Do Maragogi", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Jo\u00e3o Fonseca Dos Santos", 
+    "numero": "100", 
+    "cep": "12231820", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Marcondes Cesar"
+  }
+},
+{
+  "pk": 44, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Matheus", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Leia Maria Brand\u00e3o Russo", 
+    "numero": "419", 
+    "cep": "12230240", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 45, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 19, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Mariana", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Polar", 
+    "numero": "280", 
+    "cep": "12230240", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      2, 
+      3, 
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 46, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Radock Lobo", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Cidade Jardim", 
+    "numero": "3700", 
+    "cep": "12235830", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 47, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 7, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Rio Jord\u00e3o", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Olinda", 
+    "numero": "1454", 
+    "cep": "12230060", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      4
+    ], 
+    "construtora": "Esdras"
+  }
+},
+{
+  "pk": 48, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Jatiuca", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Porto Novo", 
+    "numero": "40", 
+    "cep": "12230075", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": "Marcondes Cesar"
+  }
+},
+{
+  "pk": 49, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Pontal Da Barra", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Pedro Tursi", 
+    "numero": "301", 
+    "cep": "12230081", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 50, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. New Ports", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Jos\u00e9 Alves Dos Santos", 
+    "numero": "281", 
+    "cep": "12230087", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 51, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 15, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Lorena", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Moises Trist\u00e3o Dos Santos", 
+    "numero": "65", 
+    "cep": "12230087", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      7, 
+      11, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": "Hs Tressoldi"
+  }
+},
+{
+  "pk": 52, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Porto Do Sol", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Porto Novo", 
+    "numero": "0", 
+    "cep": "12241040", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 53, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 25, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Grand Splendor", 
+    "blocos": 0, 
+    "bairro": 11, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Corifeu De Azevedo Marques", 
+    "numero": "3202", 
+    "cep": "12241040", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      18, 
+      11, 
+      12, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      13, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Terra Sim\u00e3o"
+  }
+},
+{
+  "pk": 54, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 25, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Splendor Blue", 
+    "blocos": 0, 
+    "bairro": 11, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Corifeu De Azevedo Marques", 
+    "numero": "3213", 
+    "cep": "12241010", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      11, 
+      12, 
+      19, 
+      20, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      13, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Terra Sim\u00e3o"
+  }
+},
+{
+  "pk": 55, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 9, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Atrium Offices", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Francisca Maria De Jesus", 
+    "numero": "347", 
+    "cep": "12246120", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Marcondes Cesar"
+  }
+},
+{
+  "pk": 56, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Tahiti Residence", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Benedito Alvarenga Carvalho", 
+    "numero": "91", 
+    "cep": "12246120", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      7, 
+      11, 
+      20, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Santa Isabel"
+  }
+},
+{
+  "pk": 57, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 4, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Do Bosque Ii", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Ipatinga", 
+    "numero": "0", 
+    "cep": "12233370", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 58, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Vila Almada", 
+    "blocos": 0, 
+    "bairro": 5, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Gisele Martins", 
+    "numero": "291", 
+    "cep": "12236500", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 59, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 3, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Terra Nova", 
+    "blocos": 0, 
+    "bairro": 37, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "", 
+    "numero": "0", 
+    "cep": "", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 60, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Jangada", 
+    "blocos": 0, 
+    "bairro": 53, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Juscelino Kubistchek", 
+    "numero": "5400", 
+    "cep": "12220000", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 61, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Village Marie", 
+    "blocos": 0, 
+    "bairro": 38, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua S\u00e3o Pedro", 
+    "numero": "107", 
+    "cep": "12209280", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 62, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 15, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Ibiza", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Salm\u00e3o", 
+    "numero": "150", 
+    "cep": "12243000", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      20, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Simis"
+  }
+},
+{
+  "pk": 63, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Michelangelo", 
+    "blocos": 0, 
+    "bairro": 29, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Santa Clara", 
+    "numero": "314", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 64, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Alphaville", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "QUADRA P2 LOTE 5", 
+    "numero": "0", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      21, 
+      2, 
+      10, 
+      3, 
+      9, 
+      15, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Alphaville"
+  }
+},
+{
+  "pk": 65, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Reserva Do Paratehy", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "QUADRA Y LOTE 02", 
+    "numero": "0", 
+    "cep": "12244893", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      21, 
+      9, 
+      15, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 66, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Parque Dos Sinos", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "AV. SALINAS", 
+    "numero": "3544", 
+    "cep": "12233593", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 67, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Das Flores", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Salinas", 
+    "numero": "3554", 
+    "cep": "12233593", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 68, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Vila Am\u00e9rica", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "", 
+    "numero": "0", 
+    "cep": "", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 69, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Alice", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Francisca Maria De Jesus", 
+    "numero": "0", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 70, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 7, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Cristal Park", 
+    "blocos": 0, 
+    "bairro": 48, 
+    "cidade": 3, 
+    "tem_elevador": false, 
+    "logradouro": "AV. CRISTAL PARK", 
+    "numero": "0", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 71, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Sport Center", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Antares", 
+    "numero": "40", 
+    "cep": "12230250", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 72, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Oliveira", 
+    "blocos": 0, 
+    "bairro": 7, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Jos\u00e9 Antonio Monteiro Santos", 
+    "numero": "71", 
+    "cep": "12236874", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 73, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Village River Side", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Jos\u00e9 Cobra", 
+    "numero": "610", 
+    "cep": "12237401", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 74, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Londres", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua L\u00e9a Brand\u00e3o Russo", 
+    "numero": "145", 
+    "cep": "12231820", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 75, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Touri", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Terezina", 
+    "numero": "0", 
+    "cep": "12235610", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 76, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 7, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Mirante Do Vale", 
+    "blocos": 0, 
+    "bairro": 52, 
+    "cidade": 3, 
+    "tem_elevador": false, 
+    "logradouro": "RUA DAS MELISSAS", 
+    "numero": "0", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      7, 
+      20, 
+      15, 
+      14, 
+      4, 
+      5
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 77, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 4, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Campos Altos", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Matias Peres", 
+    "numero": "46", 
+    "cep": "12230082", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 78, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Campo Verde", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Jo\u00e3o Fonseca Dos Santos", 
+    "numero": "109", 
+    "cep": "12236500", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Mrv"
+  }
+},
+{
+  "pk": 79, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Villagio Laguna Hills", 
+    "blocos": 0, 
+    "bairro": 5, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Gisele Martins", 
+    "numero": "700", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 80, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 20, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Clarice", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Mathias Peres", 
+    "numero": "364", 
+    "cep": "12231720", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Hs Tressoldi"
+  }
+},
+{
+  "pk": 81, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Bilbao", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Osvaldo Faria", 
+    "numero": "171", 
+    "cep": "12231720", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 82, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Arabesque", 
+    "blocos": 0, 
+    "bairro": 26, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Rep\u00fablica Do L\u00edbano", 
+    "numero": "230", 
+    "cep": "12244854", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 83, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Floradas Da Serra", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA ANTONIO WIDMER", 
+    "numero": "340", 
+    "cep": "12244873", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      23, 
+      1, 
+      7, 
+      11, 
+      28, 
+      24, 
+      9
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 84, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Mont Blanc", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Orlando Feira Filho", 
+    "numero": "51", 
+    "cep": "12244884", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 85, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Altos Da Serra Vi", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA JOS\u00c9 LOPES", 
+    "numero": "108", 
+    "cep": "12229030", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      23, 
+      1, 
+      7, 
+      9, 
+      14
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 86, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Cidade Jardim", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Cidade Jardim", 
+    "numero": "2269", 
+    "cep": "12233900", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 87, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Quinta Das Flores", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "AV. CIDADE JARDIM", 
+    "numero": "0", 
+    "cep": "12233900", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      21, 
+      1, 
+      7, 
+      28, 
+      20, 
+      9, 
+      14, 
+      13, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 88, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Das Oliveiras", 
+    "blocos": 0, 
+    "bairro": 7, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Jos\u00e9 Antonio Monteiro Santos", 
+    "numero": "85", 
+    "cep": "12236874", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 89, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Varandas Quinta Das Flores", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Cidade Jardim", 
+    "numero": "3200", 
+    "cep": "12233002", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      7, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 90, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Sport Center", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Antares", 
+    "numero": "165", 
+    "cep": "12230250", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 91, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Altos Da Serra Ii", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA PAULO RENATO DA CUNHA SANTOS", 
+    "numero": "54", 
+    "cep": "12244515", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 92, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Betania", 
+    "blocos": 0, 
+    "bairro": 59, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. T\u00edvoli", 
+    "numero": "345", 
+    "cep": "12233350", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      7, 
+      11, 
+      20, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Tressoldi"
+  }
+},
+{
+  "pk": 93, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 8, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Condom\u00ednio Varandas", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Lagoa Da Prata", 
+    "numero": "202", 
+    "cep": "12233350", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 94, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Campo Das Oliveiras", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Francisca Maria De Jesus", 
+    "numero": "68", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      9, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 95, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Marina", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Francisca Maria De Jesus", 
+    "numero": "148", 
+    "cep": "12231710", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 96, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Absoluto", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Jo\u00e3o Paulo I", 
+    "numero": "421", 
+    "cep": "12231710", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      11, 
+      20, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": "Rdc"
+  }
+},
+{
+  "pk": 97, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 13, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Liege", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua S\u00e3o Paulo", 
+    "numero": "865", 
+    "cep": "9530211", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 98, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Amap\u00e1", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Comocim", 
+    "numero": "270", 
+    "cep": "12235520", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 99, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Rio Negro", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Ruivo", 
+    "numero": "143", 
+    "cep": "12246130", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 100, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Recanto Da Serra", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA KOISHI MATSUMURA", 
+    "numero": "103", 
+    "cep": "12244400", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      20
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 101, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Athenas", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Koichi Matsumura", 
+    "numero": "171", 
+    "cep": "12235180", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      2, 
+      3, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 102, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 3, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Residencial Terra Nova", 
+    "blocos": 0, 
+    "bairro": 37, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "ROD. PROF. EDMIR VIANNA DE MOURA", 
+    "numero": "103", 
+    "cep": "12200001", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 103, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Dunas", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Guadalupe", 
+    "numero": "10", 
+    "cep": "12235000", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      2, 
+      3, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 104, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 7, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Lagoinha", 
+    "blocos": 0, 
+    "bairro": 64, 
+    "cidade": 3, 
+    "tem_elevador": false, 
+    "logradouro": "RUA CAMINHO DA GRANJA", 
+    "numero": "21", 
+    "cep": "12334040", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      15, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 105, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Aquarius Home Concept", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Ruivo", 
+    "numero": "142", 
+    "cep": "12230240", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      7, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Cisa"
+  }
+},
+{
+  "pk": 106, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Sport Ville", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Polar", 
+    "numero": "40", 
+    "cep": "12233002", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      2, 
+      3, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 107, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. California", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Cidade Jardim", 
+    "numero": "2740", 
+    "cep": "  ", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      20, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Terra Sim\u00e3o"
+  }
+},
+{
+  "pk": 108, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. New York", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Das Piabas", 
+    "numero": "37", 
+    "cep": "12246030", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      2, 
+      3, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 109, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Reserva Da Barra", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "AV. FLORESTAN FERNANDES", 
+    "numero": "0", 
+    "cep": "12242012", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 110, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Murano", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Benedito Oswaldo Lecques", 
+    "numero": "200", 
+    "cep": "12246021", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 111, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Isadora", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Jos\u00e9 Alves Dos Santos", 
+    "numero": "391", 
+    "cep": "12233593", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 112, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Spazio Campo Lazio", 
+    "blocos": 0, 
+    "bairro": 2, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Salinas", 
+    "numero": "2445", 
+    "cep": "12246020", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      7, 
+      12, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Mrv"
+  }
+},
+{
+  "pk": 113, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 10, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Altos Do Esplanada I", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Dos Piqueiroes", 
+    "numero": "360", 
+    "cep": "12246870", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      6
+    ], 
+    "construtora": "Castor Engenharia"
+  }
+},
+{
+  "pk": 114, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Yatch Club Flat Martins De S\u00e1", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Jacarand\u00e1", 
+    "numero": "164", 
+    "cep": "12230000", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 115, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 6, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Independence", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Andr\u00f4meda", 
+    "numero": "433", 
+    "cep": "12242000", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 116, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Helbor Offices", 
+    "blocos": 0, 
+    "bairro": 67, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. S\u00e3o Jo\u00e3o", 
+    "numero": "2375", 
+    "cep": "12242000", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Helbor"
+  }
+},
+{
+  "pk": 117, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Residencial San Marino", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA HAITI", 
+    "numero": "331", 
+    "cep": "12235070", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 118, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Alameda Dos P\u00e1ssaros", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Haiti", 
+    "numero": "331", 
+    "cep": "12231820", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      20, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 119, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Porto Sul", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua L\u00e9a Maria Brand\u00e3o Russo", 
+    "numero": "291", 
+    "cep": "12230083", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 120, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Altos Da Serra I", 
+    "blocos": 0, 
+    "bairro": 3, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA ELVIRA PEREIRA DE CAMARGO", 
+    "numero": "961", 
+    "cep": "12246120", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      7, 
+      20, 
+      9, 
+      14
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 121, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Ilha Bela", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Icat\u00fa", 
+    "numero": "330", 
+    "cep": "12246130", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Trevilla"
+  }
+},
+{
+  "pk": 122, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Santorini", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Ruivo", 
+    "numero": "33", 
+    "cep": "12228845", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      7, 
+      11, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 123, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Recanto Santa Barbara", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rodovia Dos Tamoios Km 22,5", 
+    "numero": "0", 
+    "cep": "12246001", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      7, 
+      2, 
+      3, 
+      24, 
+      9, 
+      15, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 124, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residenziale Illuminato", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Tertuliano Delfim Junior", 
+    "numero": "621", 
+    "cep": "12231901", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      16, 
+      1, 
+      7, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": "Simis"
+  }
+},
+{
+  "pk": 125, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Floradas De S\u00e3o Jos\u00e9", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Cidade Jardim", 
+    "numero": "714", 
+    "cep": "12231901", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      11, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 127, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Tatiana", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Raimundo Barbosa Nogueira", 
+    "numero": "271", 
+    "cep": "", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 128, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Monte Sinai", 
+    "blocos": 0, 
+    "bairro": 17, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Jos\u00e9 Cobra", 
+    "numero": "421", 
+    "cep": "12237061", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 129, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 20, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Boulevard Park Aquarius", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Tubar\u00e3o", 
+    "numero": "181", 
+    "cep": "12246140", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      11, 
+      20, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6, 
+      5, 
+      17
+    ], 
+    "construtora": "Costa Norte"
+  }
+},
+{
+  "pk": 130, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 7, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Eco Vita Residencial", 
+    "blocos": 0, 
+    "bairro": 76, 
+    "cidade": 3, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Santa Cruz", 
+    "numero": "113", 
+    "cep": "12305600", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      7, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      4, 
+      5
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 131, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 16, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Belle Air", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Celio Jos\u00e9 Dos Santos", 
+    "numero": "71", 
+    "cep": "12246023", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      11, 
+      2, 
+      3, 
+      9, 
+      4
+    ], 
+    "construtora": "Cordoba"
+  }
+},
+{
+  "pk": 132, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Sabrina", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Mathias Peres", 
+    "numero": "285", 
+    "cep": "12230082", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [], 
+    "construtora": "Mrv"
+  }
+},
+{
+  "pk": 133, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Cond. Residencial Santa Paula", 
+    "blocos": 0, 
+    "bairro": 73, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "RUA FRANCISCO VICHI", 
+    "numero": "331", 
+    "cep": "12302244", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      28, 
+      9, 
+      14
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 134, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Colorato", 
+    "blocos": 0, 
+    "bairro": 5, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Av. Jo\u00e3o Batista De Souza Soares", 
+    "numero": "2589", 
+    "cep": "12236660", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      1, 
+      7, 
+      9, 
+      14, 
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 135, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 20, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Bella Citt\u00e1", 
+    "blocos": 0, 
+    "bairro": 59, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Aboli\u00e7\u00e3o", 
+    "numero": "87", 
+    "cep": "12245500", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      11, 
+      12, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      13, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Gold Farbs"
+  }
+},
+{
+  "pk": 136, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Residencial Yasmim", 
+    "blocos": 0, 
+    "bairro": 20, 
+    "cidade": 1, 
+    "tem_elevador": false, 
+    "logradouro": "Rua Medina", 
+    "numero": "209", 
+    "cep": "12235400", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      4
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 137, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Paloma", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Aruan\u00e3", 
+    "numero": "67", 
+    "cep": "12246250", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      11, 
+      12, 
+      2, 
+      10, 
+      3, 
+      9, 
+      14, 
+      13, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 138, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 6, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Maison Mont Clair", 
+    "blocos": 0, 
+    "bairro": 12, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua B\u00e1rbara K. Loureiro", 
+    "numero": "200", 
+    "cep": "12243040", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      11, 
+      2, 
+      3, 
+      14, 
+      4, 
+      5
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 139, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 19, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Fontana Di Trevi", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua Do Aruan\u00e3", 
+    "numero": "157", 
+    "cep": "12246250", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      2, 
+      3, 
+      14, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": "Cabana"
+  }
+},
+{
+  "pk": 140, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 1, 
+    "complemento": "", 
+    "andares": 0, 
+    "ano_construcao": 0, 
+    "nome": "Ed. Barcelona", 
+    "blocos": 0, 
+    "bairro": 6, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Av. Cidade Jardim", 
+    "numero": "1953", 
+    "cep": "12231675", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      16, 
+      1, 
+      7, 
+      2, 
+      3, 
+      9, 
+      14, 
+      4, 
+      6
+    ], 
+    "construtora": ""
+  }
+},
+{
+  "pk": 141, 
+  "model": "ibuscador.condominio", 
+  "fields": {
+    "regiao": 4, 
+    "complemento": "", 
+    "andares": 16, 
+    "ano_construcao": 0, 
+    "nome": "Ed. New Life Tower", 
+    "blocos": 0, 
+    "bairro": 1, 
+    "cidade": 1, 
+    "tem_elevador": true, 
+    "logradouro": "Rua C\u00e9lio Jos\u00e9 Dos Santos", 
+    "numero": "72", 
+    "cep": "12246023", 
+    "data_cadastro": "2018-05-11",
+    "atualizado_em": "2018-05-11",
+    "areadelazer_condominio": [
+      8, 
+      1, 
+      11, 
+      2, 
+      3, 
+      9, 
+      4, 
+      6, 
+      5
+    ], 
+    "construtora": ""
+  }
+}
+]

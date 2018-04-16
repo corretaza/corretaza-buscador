@@ -1,0 +1,37 @@
+[
+{
+  "pk": 1, 
+  "model": "ibuscador.formadepagamento", 
+  "fields": {
+    "descricao": "FGTS"
+  }
+},
+{
+  "pk": 4, 
+  "model": "ibuscador.formadepagamento", 
+  "fields": {
+    "descricao": "Ve\u00edculo"
+  }
+},
+{
+  "pk": 5, 
+  "model": "ibuscador.formadepagamento", 
+  "fields": {
+    "descricao": "Financiamento"
+  }
+},
+{
+  "pk": 6, 
+  "model": "ibuscador.formadepagamento", 
+  "fields": {
+    "descricao": "Estuda proposta"
+  }
+},
+{
+  "pk": 7, 
+  "model": "ibuscador.formadepagamento", 
+  "fields": {
+    "descricao": "Im\u00f3vel menor valor"
+  }
+}
+]

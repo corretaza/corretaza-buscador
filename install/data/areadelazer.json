@@ -1,0 +1,554 @@
+[
+{
+  "pk": 1, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Churrasqueira", 
+    "tag_vivareal": "BBQ"
+  }
+},
+{
+  "pk": 2, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Piscina Adulto", 
+    "tag_vivareal": "Swimming Pool"
+  }
+},
+{
+  "pk": 3, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Piscina Infantil", 
+    "tag_vivareal": "Wading Pool"
+  }
+},
+{
+  "pk": 4, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sal\u00e3o De Festas", 
+    "tag_vivareal": "Party Room"
+  }
+},
+{
+  "pk": 5, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sauna", 
+    "tag_vivareal": "Sauna"
+  }
+},
+{
+  "pk": 6, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sal\u00e3o de Jogos", 
+    "tag_vivareal": "Game room"
+  }
+},
+{
+  "pk": 7, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Espa\u00e7o Gourmet", 
+    "tag_vivareal": "Gourmet Area"
+  }
+},
+{
+  "pk": 8, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Academia De Gin\u00e1stica", 
+    "tag_vivareal": "Gym"
+  }
+},
+{
+  "pk": 9, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Playground", 
+    "tag_vivareal": "Playground"
+  }
+},
+{
+  "pk": 10, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Piscina com Raia", 
+    "tag_vivareal": "Swimming Pool"
+  }
+},
+{
+  "pk": 11, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Forno Para Pizza", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 12, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Lan House", 
+    "tag_vivareal": "Cybercafe"
+  }
+},
+{
+  "pk": 13, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sala de Cinema", 
+    "tag_vivareal": "Media Room"
+  }
+},
+{
+  "pk": 14, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Quadra Poliesportiva", 
+    "tag_vivareal": "Sports Court"
+  }
+},
+{
+  "pk": 15, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Quadra de Tenis", 
+    "tag_vivareal": "Tennis court"
+  }
+},
+{
+  "pk": 16, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Brinquedoteca", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 17, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Spa", 
+    "tag_vivareal": "Spa"
+  }
+},
+{
+  "pk": 18, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Espa\u00e7o Juvenil/Mulher", 
+    "tag_vivareal": "Juvenile Area"
+  }
+},
+{
+  "pk": 19, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Pet Care", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 20, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Piscina", 
+    "tag_vivareal": "Pool"
+  }
+},
+{
+  "pk": 21, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Campo De Futebol", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 22, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Quadra De Volei", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 23, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Academia Ao Ar Livre", 
+    "tag_vivareal": "Gym"
+  }
+},
+{
+  "pk": 24, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Pista De Caminhada", 
+    "tag_vivareal": "Jogging track"
+  }
+},
+{
+  "pk": 25, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Cachoeira", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 26, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Casa De Bonecas", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 27, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Solarium", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 28, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Jardim", 
+    "tag_vivareal": "Garden"
+  }
+},
+{
+  "pk": 29, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Piscina com Cascata", 
+    "tag_vivareal": "Swimming Pool"
+  }
+},
+{
+  "pk": 30, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sala de Reuni\u00f5es/Escrit\u00f3rio", 
+    "tag_vivareal": "Home Office"
+  }
+},
+{
+  "pk": 31, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Pista De Skate", 
+    "tag_vivareal": ""
+  }
+},
+{
+  "pk": 32, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Aquecimento", 
+    "tag_vivareal": "Heating"
+  }
+},
+{
+  "pk": 33, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Ar condicionado", 
+    "tag_vivareal": "Air Conditioning"
+  }
+},
+{
+  "pk": 34, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "\u00c1rea de servi\u00e7o", 
+    "tag_vivareal": "Maid's Quarters"
+  }
+},
+{
+  "pk": 35, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Cinema", 
+    "tag_vivareal": "Movie Theater"
+  }
+},
+{
+  "pk": 36, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Circuito de seguran\u00e7a", 
+    "tag_vivareal": "TV Security"
+  }
+},
+{
+  "pk": 37, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Conex\u00e3o \u00e0 internet", 
+    "tag_vivareal": "Internet Connection"
+  }
+},
+{
+  "pk": 38, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": " Conjunto fechado", 
+    "tag_vivareal": "Gated Community"
+  }
+},
+{
+  "pk": 39, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Cozinha", 
+    "tag_vivareal": "Kitchen"
+  }
+},
+{
+  "pk": 40, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Dep\u00f3sito", 
+    "tag_vivareal": "Warehouse"
+  }
+},
+{
+  "pk": 41, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Elevador", 
+    "tag_vivareal": "Elevator"
+  }
+},
+{
+  "pk": 42, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Espelhos D'\u00e1gua", 
+    "tag_vivareal": "Reflective Pool"
+  }
+},
+{
+  "pk": 43, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Gerador el\u00e9trico", 
+    "tag_vivareal": "Generator"
+  }
+},
+{
+  "pk": 44, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Grama", 
+    "tag_vivareal": "Lawn"
+  }
+},
+{
+  "pk": 45, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Espa\u00e7o verde / Parque", 
+    "tag_vivareal": "Green space / Park"
+  }
+},
+{
+  "pk": 46, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Interfone", 
+    "tag_vivareal": "Intercom"
+  }
+},
+{
+  "pk": 47, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Lareira", 
+    "tag_vivareal": "Fireplace"
+  }
+},
+{
+  "pk": 48, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Lavanderia", 
+    "tag_vivareal": "Laundry"
+  }
+},
+{
+  "pk": 49, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sala de Massagem", 
+    "tag_vivareal": "Massage Room"
+  }
+},
+{
+  "pk": 50, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Perto de escola", 
+    "tag_vivareal": "Close to schools"
+  }
+},
+{
+  "pk": 51, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Perto de Shopping Center", 
+    "tag_vivareal": "Close to shopping centers"
+  }
+},
+{
+  "pk": 52, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Perto de vias de acesso", 
+    "tag_vivareal": "Close to main roads/avenues"
+  }
+},
+{
+  "pk": 53, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Perto a hospitais", 
+    "tag_vivareal": "Close to hospitals"
+  }
+},
+{
+  "pk": 54, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Quintal", 
+    "tag_vivareal": "Backyard"
+  }
+},
+{
+  "pk": 55, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Recep\u00e7\u00e3o", 
+    "tag_vivareal": "Reception room"
+  }
+},
+{
+  "pk": 56, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sacada", 
+    "tag_vivareal": "Balcony/Terrace"
+  }
+},
+{
+  "pk": 57, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sal\u00e3o de Jogos infantil", 
+    "tag_vivareal": "Game room for kids"
+  }
+},
+{
+  "pk": 58, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Seguran\u00e7a 24 horas", 
+    "tag_vivareal": "24 Hour Security"
+  }
+},
+{
+  "pk": 59, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Servi\u00e7os de Limpeza", 
+    "tag_vivareal": "Cleaning Services"
+  }
+},
+{
+  "pk": 60, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Servi\u00e7os pay-per-use", 
+    "tag_vivareal": "Pay-per-use Services"
+  }
+},
+{
+  "pk": 61, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Sistema de alarme", 
+    "tag_vivareal": "Alarm System"
+  }
+},
+{
+  "pk": 62, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Squash", 
+    "tag_vivareal": "Squash"
+  }
+},
+{
+  "pk": 63, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "TV a cabo", 
+    "tag_vivareal": "Cable Television"
+  }
+},
+{
+  "pk": 64, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Varanda Gourmet", 
+    "tag_vivareal": "Veranda"
+  }
+},
+{
+  "pk": 65, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Vigia", 
+    "tag_vivareal": "Doorman"
+  }
+},
+{
+  "pk": 66, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Vista exterior", 
+    "tag_vivareal": "Exterior View"
+  }
+},
+{
+  "pk": 67, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Vista para a montanha", 
+    "tag_vivareal": "Mountain View"
+  }
+},
+{
+  "pk": 68, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Vista para lago", 
+    "tag_vivareal": "Lake View"
+  }
+},
+{
+  "pk": 69, 
+  "model": "ibuscador.areadelazer", 
+  "fields": {
+    "descricao": "Vista para o mar", 
+    "tag_vivareal": "Ocean View"
+  }
+}
+]

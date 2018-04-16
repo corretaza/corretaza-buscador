@@ -44,7 +44,3 @@ django-crontab==0.6.0
 #selenium==2.48.0
 
 -e git://github.com/DjenieLabs/django-magicemailtemplates.git#egg=django-magicemailtemplates
-
--e git+git@bitbucket.org:corretazadev/dj-corretaza-autoatendimento.git#egg=dj_corretaza_autoatendimento-dev
--e git+git@bitbucket.org:corretazadev/dj-corretaza-pclientes.git#egg=dj_corretaza_pclientes-dev
--e git+git@bitbucket.org:corretazadev/dj-corretaza-pcorretor.git#egg=dj_corretaza_pcorretor-dev
